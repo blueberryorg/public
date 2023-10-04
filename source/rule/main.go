@@ -212,10 +212,10 @@ func main() {
 				}
 			}(), r.Payload(), tag)
 
-			switch r.RuleType() {
-			case constant.IPCIDR, constant.SrcIPCIDR:
-				line += ",no-resolve"
-			}
+			//switch r.RuleType() {
+			//case constant.IPCIDR, constant.SrcIPCIDR:
+			//	line += ",no-resolve"
+			//}
 
 			return line
 		}
