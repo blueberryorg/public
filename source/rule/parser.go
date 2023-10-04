@@ -9,10 +9,7 @@ import (
 )
 
 func ParseRules(line string) (constant.Rule, error) {
-	for strings.HasSuffix(line, ",no-resolve") {
-		line = strings.TrimSuffix(line, ",no-resolve")
-	}
-
+	line = strings.ReplaceAll(line, ",no-resolve", "")
 	rule := trimArr(strings.Split(line, ","))
 
 	var target string

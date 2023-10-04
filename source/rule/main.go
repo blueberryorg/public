@@ -225,6 +225,14 @@ func main() {
 		ruleMap[r.Adapter()] = append(ruleMap[r.Adapter()], line(r.Adapter()))
 	})
 
+	if osx.IsDir("../../rules/") {
+		err = os.RemoveAll("../../rules/")
+		if err != nil {
+			log.Errorf("err:%v", err)
+			return
+		}
+	}
+
 	if !osx.IsDir("../../rules/") {
 		err = os.MkdirAll("../../rules/", 0666)
 		if err != nil {
