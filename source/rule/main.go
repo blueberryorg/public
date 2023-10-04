@@ -241,14 +241,22 @@ func main() {
 		}
 	}
 
+	var keys []string
 	for key, lines := range ruleMap {
 		err = os.WriteFile(fmt.Sprintf("../../rules/%s.list", key), []byte(strings.Join(lines, "\n")), 0666)
 		if err != nil {
 			log.Errorf("err:%v", err)
 			return
 		}
+
+		keys = append(keys, key)
 	}
 
+	err = os.WriteFile("../../rules/list", []byte(strings.Join(keys, "\n")), 0666)
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return
+	}
 }
 
 type Collector struct {
