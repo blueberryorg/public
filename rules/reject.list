@@ -332,10 +332,8 @@ DOMAIN,adcs-ue.myappsget.com,reject
 DOMAIN,adj.st,reject
 DOMAIN,adjust.net.in,reject
 DOMAIN,adlc-exchange.toast.com,reject
-DOMAIN,adlockscreen.goforandroid.com,reject
 DOMAIN,adlog.foxitcloud.com,reject
 DOMAIN,adlog.ifood.tv,reject
-DOMAIN,adpushsdk.goforandroid.com,reject
 DOMAIN,adpxl.co,reject
 DOMAIN,adpxljs.adpxl.co,reject
 DOMAIN,ads-router-noneu.truecaller.com,reject
@@ -369,9 +367,7 @@ DOMAIN,adstune.com,reject
 DOMAIN,adtrack.adleadevent.com,reject
 DOMAIN,adv.herocraft.com,reject
 DOMAIN,adverster.com,reject
-DOMAIN,adviap.goforandroid.com,reject
 DOMAIN,advrts.onelouder.com,reject
-DOMAIN,advshield.goforandroid.com,reject
 DOMAIN,adx-exchange.toast.com,reject
 DOMAIN,adx.apiok.net,reject
 DOMAIN,adx.hasmobi.net,reject
@@ -959,7 +955,6 @@ DOMAIN,gcwdq.com,reject
 DOMAIN,gd.xxtvphoto.com,reject
 DOMAIN,gdpr.api.bcdn.jp,reject
 DOMAIN,geoip.cookieyes.com,reject
-DOMAIN,geoip.goforandroid.com,reject
 DOMAIN,get-fuck-tonight-us4-foryou.dailynews.ovh,reject
 DOMAIN,get.civicscience.com,reject
 DOMAIN,get.sessions.exchange,reject
@@ -1275,7 +1270,6 @@ DOMAIN,na.hasmobi.net,reject
 DOMAIN,narwhal.mobidia.com,reject
 DOMAIN,native-set-tags.otherlevels.com,reject
 DOMAIN,nav.telematicsdirect.com,reject
-DOMAIN,navigation.api.hk.goforandroid.com,reject
 DOMAIN,nb898.com,reject
 DOMAIN,neptune.mobileposse.com,reject
 DOMAIN,netperform-is.vodafone.com.tr,reject
@@ -13946,6 +13940,7 @@ DOMAIN-SUFFIX,13niao20230422.live,reject
 DOMAIN-SUFFIX,13p76nnir.de,reject
 DOMAIN-SUFFIX,1409674995.rsc.cdn77.org,reject
 DOMAIN-SUFFIX,1431327521.rsc.cdn77.org,reject
+DOMAIN-SUFFIX,1436653548.rsc.cdn77.org,reject
 DOMAIN-SUFFIX,1437262877.rsc.cdn77.org,reject
 DOMAIN-SUFFIX,1437953666.rsc.cdn77.org,reject
 DOMAIN-SUFFIX,143nchrtl3.com,reject
@@ -14033,6 +14028,7 @@ DOMAIN-SUFFIX,190282.xyz,reject
 DOMAIN-SUFFIX,19028a7caf.com,reject
 DOMAIN-SUFFIX,1917697853.rsc.cdn77.org,reject
 DOMAIN-SUFFIX,19273817.com,reject
+DOMAIN-SUFFIX,1942213827.rsc.cdn77.org,reject
 DOMAIN-SUFFIX,1944696125.rsc.cdn77.org,reject
 DOMAIN-SUFFIX,194ac5b0e3.com,reject
 DOMAIN-SUFFIX,194b7af8c3.com,reject
@@ -15162,6 +15158,7 @@ DOMAIN-SUFFIX,6d789c3692.com,reject
 DOMAIN-SUFFIX,6db7837ac4.com,reject
 DOMAIN-SUFFIX,6dd4a8313e.com,reject
 DOMAIN-SUFFIX,6e3ee87ff2.com,reject
+DOMAIN-SUFFIX,6f752f73ce.com,reject
 DOMAIN-SUFFIX,6fe24753fb.com,reject
 DOMAIN-SUFFIX,6fxo.icu,reject
 DOMAIN-SUFFIX,6fxtpu64lxyt.com,reject
@@ -17573,7 +17570,6 @@ DOMAIN-SUFFIX,adprotraffic.com,reject
 DOMAIN-SUFFIX,adproxy.tf1.fr,reject
 DOMAIN-SUFFIX,adpstatic.com,reject
 DOMAIN-SUFFIX,adpulse.ir,reject
-DOMAIN-SUFFIX,adpush.goforandroid.com,reject
 DOMAIN-SUFFIX,adpushup.com,reject
 DOMAIN-SUFFIX,adq.nextag.com,reject
 DOMAIN-SUFFIX,adqapvtrad.com,reject
@@ -22737,6 +22733,7 @@ DOMAIN-SUFFIX,bajarlo.net,reject
 DOMAIN-SUFFIX,bajracashboy.com,reject
 DOMAIN-SUFFIX,bak-home.com,reject
 DOMAIN-SUFFIX,bak0-store.com,reject
+DOMAIN-SUFFIX,bakatvackzat.com,reject
 DOMAIN-SUFFIX,bakerbrandy.com,reject
 DOMAIN-SUFFIX,bakeronerousfollowing.com,reject
 DOMAIN-SUFFIX,baklajansss.site,reject
@@ -23676,6 +23673,7 @@ DOMAIN-SUFFIX,bestdisplaycontent.com,reject
 DOMAIN-SUFFIX,bestdisplayformats.com,reject
 DOMAIN-SUFFIX,bestdoska.ru,reject
 DOMAIN-SUFFIX,beste1.icu,reject
+DOMAIN-SUFFIX,beste3.icu,reject
 DOMAIN-SUFFIX,besteasyclick.com,reject
 DOMAIN-SUFFIX,bestexp1.com,reject
 DOMAIN-SUFFIX,bestfoods.co,reject
@@ -29840,6 +29838,7 @@ DOMAIN-SUFFIX,datakitschelm.com,reject
 DOMAIN-SUFFIX,datam.com,reject
 DOMAIN-SUFFIX,datamilk.app,reject
 DOMAIN-SUFFIX,datamind.ru,reject
+DOMAIN-SUFFIX,dataofpages.com,reject
 DOMAIN-SUFFIX,dataperforma.com,reject
 DOMAIN-SUFFIX,dataprajna.net,reject
 DOMAIN-SUFFIX,datarating.com,reject
@@ -34291,6 +34290,7 @@ DOMAIN-SUFFIX,fb99ef9239.com,reject
 DOMAIN-SUFFIX,fbcctf.com,reject
 DOMAIN-SUFFIX,fbcjk.com,reject
 DOMAIN-SUFFIX,fbd.de,reject
+DOMAIN-SUFFIX,fbebmgbiou.com,reject
 DOMAIN-SUFFIX,fbfd396918c60838.com,reject
 DOMAIN-SUFFIX,fbffdfproxwqi.com,reject
 DOMAIN-SUFFIX,fbgdc.com,reject
@@ -39181,6 +39181,7 @@ DOMAIN-SUFFIX,hoydenlooms.website,reject
 DOMAIN-SUFFIX,hozoaxan.com,reject
 DOMAIN-SUFFIX,hp.myway.com,reject
 DOMAIN-SUFFIX,hp1.tcbnet.ne.jp,reject
+DOMAIN-SUFFIX,hpaakmsumarzy.com,reject
 DOMAIN-SUFFIX,hpad.www.infoseek.co.jp,reject
 DOMAIN-SUFFIX,hpcfdhvwjwlt.com,reject
 DOMAIN-SUFFIX,hpcwwd.com,reject
@@ -39559,6 +39560,7 @@ DOMAIN-SUFFIX,hysdknb.com,reject
 DOMAIN-SUFFIX,hystericalpotprecede.com,reject
 DOMAIN-SUFFIX,hystrixcreped.com,reject
 DOMAIN-SUFFIX,hyyaofjnidwiyg.com,reject
+DOMAIN-SUFFIX,hz9x6ka2t5gka7wa6c0wp0shmkaw7xj5x8vaydg0aqp6gjat5x.com,reject
 DOMAIN-SUFFIX,hzbxm.com,reject
 DOMAIN-SUFFIX,hzcp.fun,reject
 DOMAIN-SUFFIX,hzkachqd.com,reject
@@ -41925,6 +41927,7 @@ DOMAIN-SUFFIX,jody0sora.com,reject
 DOMAIN-SUFFIX,joereisp.xyz,reject
 DOMAIN-SUFFIX,joetec.net,reject
 DOMAIN-SUFFIX,jofbu.com,reject
+DOMAIN-SUFFIX,jofknbpe.xyz,reject
 DOMAIN-SUFFIX,jogdied.com,reject
 DOMAIN-SUFFIX,joggingavenge.com,reject
 DOMAIN-SUFFIX,johamp.com,reject
@@ -45365,6 +45368,7 @@ DOMAIN-SUFFIX,lsnoownml.fun,reject
 DOMAIN-SUFFIX,lspzhtvstux.com,reject
 DOMAIN-SUFFIX,lsqggflcsm.com,reject
 DOMAIN-SUFFIX,lsqzxexvphk.com,reject
+DOMAIN-SUFFIX,lsvblpynuezkbf.com,reject
 DOMAIN-SUFFIX,ltaqqgvitq.com,reject
 DOMAIN-SUFFIX,ltassrv.com,reject
 DOMAIN-SUFFIX,ltckrqiy.com,reject
@@ -47126,6 +47130,7 @@ DOMAIN-SUFFIX,mindenegyben.com,reject
 DOMAIN-SUFFIX,mindenegybenblog.hu,reject
 DOMAIN-SUFFIX,mindenegybenblog.net,reject
 DOMAIN-SUFFIX,minderalasselfemployed.com,reject
+DOMAIN-SUFFIX,mindless-fruit.pro,reject
 DOMAIN-SUFFIX,mindless-series.pro,reject
 DOMAIN-SUFFIX,mindlessslogan.com,reject
 DOMAIN-SUFFIX,mindlytix.com,reject
@@ -54877,6 +54882,7 @@ DOMAIN-SUFFIX,psoukesh.com,reject
 DOMAIN-SUFFIX,psounsoo.xyz,reject
 DOMAIN-SUFFIX,psouphoz.com,reject
 DOMAIN-SUFFIX,psozoult.net,reject
+DOMAIN-SUFFIX,psroyx.icu,reject
 DOMAIN-SUFFIX,pssy.xyz,reject
 DOMAIN-SUFFIX,pstats.com,reject
 DOMAIN-SUFFIX,pstmrk.it,reject
@@ -56644,6 +56650,7 @@ DOMAIN-SUFFIX,recruitics.com,reject
 DOMAIN-SUFFIX,recruitresidebitterness.com,reject
 DOMAIN-SUFFIX,recs.atgsvcs.com,reject
 DOMAIN-SUFFIX,recs.richrelevance.com,reject
+DOMAIN-SUFFIX,rectangular-hook.pro,reject
 DOMAIN-SUFFIX,rectanthenwirit.com,reject
 DOMAIN-SUFFIX,rectificationnervous.com,reject
 DOMAIN-SUFFIX,rectresultofthepla.info,reject
@@ -59444,6 +59451,7 @@ DOMAIN-SUFFIX,serenecascade.com,reject
 DOMAIN-SUFFIX,serenitycandles.com.se,reject
 DOMAIN-SUFFIX,serenityspokenrust.com,reject
 DOMAIN-SUFFIX,serenky.ru,reject
+DOMAIN-SUFFIX,serfdivia.com,reject
 DOMAIN-SUFFIX,serff.fr,reject
 DOMAIN-SUFFIX,sergeantunhealthy.com,reject
 DOMAIN-SUFFIX,sergey-mavrodi-mmm.net,reject
@@ -66894,6 +66902,7 @@ DOMAIN-SUFFIX,ulogix.ru,reject
 DOMAIN-SUFFIX,ulojlvmejkaem.xyz,reject
 DOMAIN-SUFFIX,ulosmuynstes.ml,reject
 DOMAIN-SUFFIX,ulourgaz.net,reject
+DOMAIN-SUFFIX,ulrvkee.xyz,reject
 DOMAIN-SUFFIX,ulrzovfukgkljw.com,reject
 DOMAIN-SUFFIX,ulsynmlt.fun,reject
 DOMAIN-SUFFIX,ult-blk-cbl.com,reject
@@ -68932,6 +68941,7 @@ DOMAIN-SUFFIX,vtracy.de,reject
 DOMAIN-SUFFIX,vtrnpueqtqke.xyz,reject
 DOMAIN-SUFFIX,vtrodqjicfys.com,reject
 DOMAIN-SUFFIX,vtsgaqnfvzcyu.ru,reject
+DOMAIN-SUFFIX,vttqld.xyz,reject
 DOMAIN-SUFFIX,vttyjakvvdce.com,reject
 DOMAIN-SUFFIX,vtveyowwjvz.com,reject
 DOMAIN-SUFFIX,vtvnnl.xyz,reject
@@ -72399,6 +72409,7 @@ DOMAIN-SUFFIX,ymtrack6.co,reject
 DOMAIN-SUFFIX,ymuitydkdoy.com,reject
 DOMAIN-SUFFIX,ymwehrducswbeu.com,reject
 DOMAIN-SUFFIX,yncfwy.net,reject
+DOMAIN-SUFFIX,yndhi.com,reject
 DOMAIN-SUFFIX,yndxstat.ru,reject
 DOMAIN-SUFFIX,yneationsliee.xyz,reject
 DOMAIN-SUFFIX,ynfxxbp.xyz,reject
@@ -74164,6 +74175,7 @@ DOMAIN-SUFFIX,a0c77.com,reject
 DOMAIN-SUFFIX,a0usa.top,reject
 DOMAIN-SUFFIX,a1.bookapka.com,reject
 DOMAIN-SUFFIX,a1.huiqituan.com,reject
+DOMAIN-SUFFIX,a1.liuxue86.com,reject
 DOMAIN-SUFFIX,a1.shusanqi.com,reject
 DOMAIN-SUFFIX,a1.sumiaowang.com,reject
 DOMAIN-SUFFIX,a1.yuuedu.com,reject
@@ -74323,6 +74335,7 @@ DOMAIN-SUFFIX,adadvisor.net,reject
 DOMAIN-SUFFIX,adaog.com,reject
 DOMAIN-SUFFIX,adap.tv,reject
 DOMAIN-SUFFIX,adbana.com,reject
+DOMAIN-SUFFIX,adbd.liuxue86.com,reject
 DOMAIN-SUFFIX,adbidgo.com,reject
 DOMAIN-SUFFIX,adbot.tw,reject
 DOMAIN-SUFFIX,adbuyer3.lycos.com,reject

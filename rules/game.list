@@ -412,12 +412,15 @@ DOMAIN-SUFFIX,lolusercontent.com,game
 DOMAIN-SUFFIX,lpl.com.cn,game
 DOMAIN-SUFFIX,molesports.com,game
 DOMAIN-SUFFIX,playvalorant.com,game
+DOMAIN-SUFFIX,pvp.net,game
 DOMAIN-SUFFIX,pvp.tv,game
 DOMAIN-SUFFIX,rgpub.io,game
 DOMAIN-SUFFIX,riot-games.com,game
 DOMAIN-SUFFIX,riot.com,game
 DOMAIN-SUFFIX,riot.net,game
+DOMAIN-SUFFIX,riotcdn.net,game
 DOMAIN-SUFFIX,riotforgegames.com,game
+DOMAIN-SUFFIX,riotgames.com,game
 DOMAIN-SUFFIX,riotgames.info,game
 DOMAIN-SUFFIX,riotgames.jp,game
 DOMAIN-SUFFIX,riotgames.net,game
@@ -489,9 +492,6 @@ DOMAIN-SUFFIX,ubisoft-orbit-savegames.s3.amazonaws.com,game
 DOMAIN-SUFFIX,ubisoft-uplay-savegames.s3.amazonaws.com,game
 DOMAIN-SUFFIX,ubisoft.com,game
 DOMAIN-SUFFIX,uplay.com,game
-DOMAIN-SUFFIX,pvp.net,game
-DOMAIN-SUFFIX,riotcdn.net,game
-DOMAIN-SUFFIX,riotgames.com,game
 DOMAIN-SUFFIX,beth.games,game
 DOMAIN-SUFFIX,bethesda.net,game
 DOMAIN-SUFFIX,bethesdagamestudios.com,game
