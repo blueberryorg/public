@@ -85,7 +85,7 @@ func (p *Collector) Clash() error {
 		return err
 	}
 
-	err := os.WriteFile("../../rules/clash/all.list", []byte(strings.Join(ruleList, "\n")), 0666)
+	err = os.WriteFile("../../rules/clash/all.list", []byte(strings.Join(ruleList, "\n")), 0666)
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err
