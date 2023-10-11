@@ -14,46 +14,42 @@ import (
 func (p *Collector) Clash() error {
 	//var ruleList []string
 	ruleMap := map[string][]string{}
+	var ruleList []string
 	pie.Each(p.ExportRules(), func(r constant.Rule) {
-		line := func(tag string) string {
-			line := fmt.Sprintf("%s,%s,%s", func() string {
-				switch r.RuleType() {
-				case constant.Domain:
-					return "DOMAIN"
-				case constant.DomainSuffix:
-					return "DOMAIN-SUFFIX"
-				case constant.DomainKeyword:
-					return "DOMAIN-KEYWORD"
-				case constant.ProcessPath:
-					return "PROCESS-PATH"
-				case constant.Process:
-					return "PROCESS-NAME"
-				case constant.SrcPort:
-					return "SRC-PORT"
-				case constant.DstPort:
-					return "DST-PORT"
-				case constant.IPCIDR:
-					return "IP-CIDR"
-				case constant.SrcIPCIDR:
-					return "SRC-IP-CIDR"
-				case constant.GEOIP:
-					return "GEOIP"
-				default:
-					return r.RuleType().String()
-				}
-			}(), r.Payload(), tag)
-
-			//switch r.RuleType() {
-			//case constant.IPCIDR, constant.SrcIPCIDR:
-			//	line += ",no-resolve"
-			//}
-
-			return line
+		var b bytes.Buffer
+		switch r.RuleType() {
+		case constant.Domain:
+			b.WriteString("DOMAIN")
+		case constant.DomainSuffix:
+			b.WriteString("DOMAIN-SUFFIX")
+		case constant.DomainKeyword:
+			b.WriteString("DOMAIN-KEYWORD")
+		case constant.ProcessPath:
+			b.WriteString("PROCESS-PATH")
+		case constant.Process:
+			b.WriteString("PROCESS-NAME")
+		case constant.SrcPort:
+			b.WriteString("SRC-PORT")
+		case constant.DstPort:
+			b.WriteString("DST-PORT")
+		case constant.IPCIDR:
+			b.WriteString("IP-CIDR")
+		case constant.SrcIPCIDR:
+			b.WriteString("SRC-IP-CIDR")
+		case constant.GEOIP:
+			b.WriteString("GEOIP")
+		default:
+			return
 		}
 
-		//ruleList = append(ruleList, line(r.Adapter()))
+		b.WriteString(",")
+		b.WriteString(r.Payload())
+		b.WriteString(",")
 
-		ruleMap[r.Adapter()] = append(ruleMap[r.Adapter()], line(r.Adapter()))
+		b.WriteString(r.Adapter())
+
+		ruleMap[r.Adapter()] = append(ruleMap[r.Adapter()], b.String())
+		ruleList = append(ruleList, b.String())
 	})
 
 	if osx.IsDir("../../rules/clash/") {
@@ -83,7 +79,13 @@ func (p *Collector) Clash() error {
 		keys = append(keys, key)
 	}
 
-	err := os.WriteFile("../../rules/clash/list", []byte(strings.Join(keys, "\n")), 0666)
+	err := os.WriteFile("../../rules/clash/list.keys", []byte(strings.Join(keys, "\n")), 0666)
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
+	err := os.WriteFile("../../rules/clash/all.list", []byte(strings.Join(ruleList, "\n")), 0666)
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err
@@ -117,12 +119,7 @@ func (p *Collector) QuanX() error {
 		b.WriteString(r.Payload())
 		b.WriteString(",")
 
-		switch r.Adapter() {
-		case Direct, Reject:
-			b.WriteString(strings.ToUpper(r.Adapter()))
-		default:
-			b.WriteString(r.Adapter())
-		}
+		b.WriteString(r.Adapter())
 
 		ruleMap[r.Adapter()] = append(ruleMap[r.Adapter()], b.String())
 	})
