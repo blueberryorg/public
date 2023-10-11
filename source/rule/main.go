@@ -47,7 +47,7 @@ var client = resty.New().
 	SetTimeout(time.Minute * 10).
 	SetRetryWaitTime(time.Second * 30).
 	SetRetryCount(10).
-	SetProxy("http://192.168.1.8:7890").
+	//SetProxy("http://192.168.1.8:7890").
 	SetTLSClientConfig(&tls.Config{
 		InsecureSkipVerify: true,
 	})
@@ -282,8 +282,8 @@ func (p *Collector) Parse(key string, path string, tag string) (err error) {
 	log.SetTrace(fmt.Sprintf("%s_%s", key, filepath.Base(path)))
 	log.Infof("parse for key:%s path:%s tag:%s", key, path, tag)
 
-	//body, err := p.downloadWithoutCache(key, path)
-	body, err := p.downloadWithCache(key, path)
+	body, err := p.downloadWithoutCache(key, path)
+	//body, err := p.downloadWithCache(key, path)
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err
