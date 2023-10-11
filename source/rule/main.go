@@ -3,12 +3,12 @@ package main
 import (
 	"crypto/tls"
 	"fmt"
+	"github.com/ice-cream-heaven/utils/cryptox"
 	"github.com/ice-cream-heaven/utils/osx"
 	"github.com/pterm/pterm"
 	"os"
 	"path/filepath"
 	"strconv"
-	"strings"
 	"time"
 
 	"github.com/go-resty/resty/v2"
@@ -47,7 +47,7 @@ var client = resty.New().
 	SetTimeout(time.Minute * 10).
 	SetRetryWaitTime(time.Second * 30).
 	SetRetryCount(10).
-	//SetProxy("http://192.168.1.8:7890").
+	SetProxy("http://192.168.1.8:7890").
 	SetTLSClientConfig(&tls.Config{
 		InsecureSkipVerify: true,
 	})
@@ -181,82 +181,18 @@ func main() {
 		return
 	}
 
-	//var ruleList []string
-	ruleMap := map[string][]string{}
-	pie.Each(c.ExportRules(), func(r constant.Rule) {
-		line := func(tag string) string {
-			line := fmt.Sprintf("%s,%s,%s", func() string {
-				switch r.RuleType() {
-				case constant.Domain:
-					return "DOMAIN"
-				case constant.DomainSuffix:
-					return "DOMAIN-SUFFIX"
-				case constant.DomainKeyword:
-					return "DOMAIN-KEYWORD"
-				case constant.ProcessPath:
-					return "PROCESS-PATH"
-				case constant.Process:
-					return "PROCESS-NAME"
-				case constant.SrcPort:
-					return "SRC-PORT"
-				case constant.DstPort:
-					return "DST-PORT"
-				case constant.IPCIDR:
-					return "IP-CIDR"
-				case constant.SrcIPCIDR:
-					return "SRC-IP-CIDR"
-				case constant.GEOIP:
-					return "GEOIP"
-				default:
-					return r.RuleType().String()
-				}
-			}(), r.Payload(), tag)
-
-			//switch r.RuleType() {
-			//case constant.IPCIDR, constant.SrcIPCIDR:
-			//	line += ",no-resolve"
-			//}
-
-			return line
-		}
-
-		//ruleList = append(ruleList, line(r.Adapter()))
-
-		ruleMap[r.Adapter()] = append(ruleMap[r.Adapter()], line(r.Adapter()))
-	})
-
-	if osx.IsDir("../../rules/") {
-		err = os.RemoveAll("../../rules/")
-		if err != nil {
-			log.Errorf("err:%v", err)
-			return
-		}
-	}
-
-	if !osx.IsDir("../../rules/") {
-		err = os.MkdirAll("../../rules/", 0666)
-		if err != nil {
-			log.Errorf("err:%v", err)
-			return
-		}
-	}
-
-	var keys []string
-	for key, lines := range ruleMap {
-		err = os.WriteFile(fmt.Sprintf("../../rules/%s.list", key), []byte(strings.Join(lines, "\n")), 0666)
-		if err != nil {
-			log.Errorf("err:%v", err)
-			return
-		}
-
-		keys = append(keys, key)
-	}
-
-	err = os.WriteFile("../../rules/list", []byte(strings.Join(keys, "\n")), 0666)
+	err = c.Clash()
 	if err != nil {
-		log.Errorf("err:%v", err)
+		log.Panicf("err:%v", err)
 		return
 	}
+
+	err = c.QuanX()
+	if err != nil {
+		log.Panicf("err:%v", err)
+		return
+	}
+
 }
 
 type Collector struct {
@@ -285,54 +221,69 @@ func (p *Collector) AddHandle(k string, c CollectorInter) {
 	p.CollectorMap[k] = c
 }
 
+func (p *Collector) downloadWithCache(key, path string) ([]byte, error) {
+	cachePath := filepath.Join("tmp", "cache", cryptox.Sha512(fmt.Sprintf("%s_%s", key, filepath.Base(path))))
+
+	if !osx.IsDir(filepath.Dir(cachePath)) {
+		err := os.MkdirAll(filepath.Dir(cachePath), 0777)
+		if err != nil {
+			log.Errorf("err:%v", err)
+			return nil, err
+		}
+	}
+
+	var needUp bool
+	if !osx.IsFile(cachePath) {
+		needUp = true
+	} else {
+		info, err := os.Stat(cachePath)
+		if err != nil {
+			log.Errorf("err:%v", err)
+			return nil, err
+		}
+
+		needUp = p.CollectorMap[key].NeedUpdate(info)
+	}
+
+	if needUp {
+		body, err := p.CollectorMap[key].Download(path)
+		if err != nil {
+			log.Errorf("err:%v", err)
+			return nil, err
+		}
+
+		err = os.WriteFile(cachePath, body, 0666)
+		if err != nil {
+			log.Errorf("err:%v", err)
+			return nil, err
+		}
+	}
+
+	body, err := os.ReadFile(cachePath)
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return nil, err
+	}
+
+	return body, nil
+}
+
+func (p *Collector) downloadWithoutCache(key, path string) ([]byte, error) {
+	body, err := p.CollectorMap[key].Download(path)
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return nil, err
+	}
+
+	return body, nil
+}
+
 func (p *Collector) Parse(key string, path string, tag string) (err error) {
 	log.SetTrace(fmt.Sprintf("%s_%s", key, filepath.Base(path)))
 	log.Infof("parse for key:%s path:%s tag:%s", key, path, tag)
 
-	//cachePath := filepath.Join("tmp", "cache", cryptox.Sha512(fmt.Sprintf("%s_%s", key, filepath.Base(path))))
-	//
-	//if !osx.IsDir(filepath.Dir(cachePath)) {
-	//	err = os.MkdirAll(filepath.Dir(cachePath), 0777)
-	//	if err != nil {
-	//		log.Errorf("err:%v", err)
-	//		return err
-	//	}
-	//}
-	//
-	//var needUp bool
-	//if !osx.IsFile(cachePath) {
-	//	needUp = true
-	//} else {
-	//	info, err := os.Stat(cachePath)
-	//	if err != nil {
-	//		log.Errorf("err:%v", err)
-	//		return err
-	//	}
-	//
-	//	needUp = p.CollectorMap[key].NeedUpdate(info)
-	//}
-	//
-	//if needUp {
-	//	body, err := p.CollectorMap[key].Download(path)
-	//	if err != nil {
-	//		log.Errorf("err:%v", err)
-	//		return err
-	//	}
-	//
-	//	err = os.WriteFile(cachePath, body, 0666)
-	//	if err != nil {
-	//		log.Errorf("err:%v", err)
-	//		return err
-	//	}
-	//}
-	//
-	//body, err := os.ReadFile(cachePath)
-	//if err != nil {
-	//	log.Errorf("err:%v", err)
-	//	return err
-	//}
-
-	body, err := p.CollectorMap[key].Download(path)
+	//body, err := p.downloadWithoutCache(key, path)
+	body, err := p.downloadWithCache(key, path)
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err
