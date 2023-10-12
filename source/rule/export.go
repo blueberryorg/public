@@ -437,7 +437,7 @@ type ProxyAdapter struct {
 
 	Adapters []string `json:"adapters,omitempty" yaml:"adapters,omitempty"`
 
-	Set string `yaml:"set,omitempty" yaml:"set,omitempty"`
+	Set string `json:"set,omitempty" yaml:"set,omitempty"`
 }
 
 type ProxyRoleConfig struct {
