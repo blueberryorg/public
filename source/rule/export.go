@@ -154,6 +154,7 @@ func (p *Collector) QuanX() error {
 
 func (p *Collector) Blue() error {
 	var ruleList []string
+	ruleMap := map[string][]string{}
 	pie.Each(p.ExportRules(), func(r rules.Rule) {
 		var b bytes.Buffer
 		switch r.RuleType() {
@@ -188,6 +189,7 @@ func (p *Collector) Blue() error {
 		b.WriteString(r.Adapter())
 
 		ruleList = append(ruleList, b.String())
+		ruleMap[r.Adapter()] = append(ruleMap[r.Adapter()], b.String())
 	})
 
 	if !osx.IsDir("../../rules/") {
@@ -198,7 +200,24 @@ func (p *Collector) Blue() error {
 		}
 	}
 
-	err := os.WriteFile("../../rules/all.list", []byte(strings.Join(ruleList, "\n")), 0666)
+	var keys []string
+	for key, lines := range ruleMap {
+		err := os.WriteFile(fmt.Sprintf("../../rules/blueberry/%s.list", key), []byte(strings.Join(lines, "\n")), 0666)
+		if err != nil {
+			log.Errorf("err:%v", err)
+			return err
+		}
+
+		keys = append(keys, key)
+	}
+
+	err := os.WriteFile("../../rules/blueberry/list.keys", []byte(strings.Join(keys, "\n")), 0666)
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
+	err := os.WriteFile("../../rules/blueberry/all.list", []byte(strings.Join(ruleList, "\n")), 0666)
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err
