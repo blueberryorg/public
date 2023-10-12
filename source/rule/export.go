@@ -192,8 +192,16 @@ func (p *Collector) Blue() error {
 		ruleMap[r.Adapter()] = append(ruleMap[r.Adapter()], b.String())
 	})
 
-	if !osx.IsDir("../../rules/") {
-		err := os.MkdirAll("../../rules/", 0666)
+	if osx.IsDir("../../rules/blueberry/") {
+		err := os.RemoveAll("../../rules/blueberry/")
+		if err != nil {
+			log.Errorf("err:%v", err)
+			return err
+		}
+	}
+
+	if !osx.IsDir("../../rules/blueberry/") {
+		err := os.MkdirAll("../../rules/blueberry/", 0666)
 		if err != nil {
 			log.Errorf("err:%v", err)
 			return err
