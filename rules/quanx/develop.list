@@ -10,7 +10,6 @@ HOST-SUFFIX,github-avatars.oss-cn-hongkong.aliyuncs.com,develop
 HOST-SUFFIX,github-cloud.s3.amazonaws.com,develop
 HOST-SUFFIX,github.blog,develop
 HOST-SUFFIX,github.com,develop
-HOST-SUFFIX,github.community,develop
 HOST-SUFFIX,github.dev,develop
 HOST-SUFFIX,github.io,develop
 HOST-SUFFIX,githubapp.com,develop
@@ -27,7 +26,6 @@ HOST-SUFFIX,npmjs.com,develop
 HOST-SUFFIX,npmjs.org,develop
 HOST-SUFFIX,opensource.guide,develop
 HOST-SUFFIX,rawgit.com,develop
-HOST-SUFFIX,rawgithub.com,develop
 HOST-SUFFIX,repo.new,develop
 HOST-SUFFIX,thegithubshop.com,develop
 HOST-KEYWORD,github,develop
@@ -39,7 +37,6 @@ HOST-SUFFIX,appleworldwidedeveloper.hb-api.omtrdc.net,develop
 HOST-SUFFIX,appleworldwidedeveloper.sc.omtrdc.net,develop
 HOST-SUFFIX,calendarserver.org,develop
 HOST-SUFFIX,carekit.org,develop
-HOST-SUFFIX,courier-push-apple.com.akadns.net,develop
 HOST-SUFFIX,cups.org,develop
 HOST-SUFFIX,developer.apple.com,develop
 HOST-SUFFIX,devimages-cdn.apple.com,develop
@@ -51,7 +48,6 @@ HOST-SUFFIX,macruby.net,develop
 HOST-SUFFIX,macruby.org,develop
 HOST-SUFFIX,p-events-delivery.akamaized.net,develop
 HOST-SUFFIX,playgrounds-cdn.apple.com,develop
-HOST-SUFFIX,push-apple.com.akadns.net,develop
 HOST-SUFFIX,researchandcare.org,develop
 HOST-SUFFIX,researchkit.cn,develop
 HOST-SUFFIX,researchkit.com.cn,develop
@@ -66,13 +62,11 @@ HOST-SUFFIX,swiftui.com.cn,develop
 HOST-SUFFIX,webkit.org,develop
 HOST-SUFFIX,webkitgtk.org,develop
 HOST-SUFFIX,webobjects.com,develop
-HOST-SUFFIX,wpewebkit.org,develop
 HOST-SUFFIX,apache.org,develop
 HOST-SUFFIX,atlassian.com,develop
 HOST-SUFFIX,debian.com,develop
 HOST-SUFFIX,docker.com,develop
 HOST-SUFFIX,elastic.co,develop
-HOST-SUFFIX,elastic.com,develop
 HOST-SUFFIX,fontawesome.com,develop
 HOST-SUFFIX,gcr.io,develop
 HOST-SUFFIX,gitlab.com,develop

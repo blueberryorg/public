@@ -10,6 +10,8 @@ require (
 	github.com/ice-cream-heaven/utils v0.0.0-20231003152002-33e2b8c2f09c
 	github.com/projectdiscovery/mapcidr v1.1.10
 	github.com/pterm/pterm v0.12.66
+	github.com/samber/lo v1.38.1
+	github.com/stretchr/testify v1.8.4
 	gopkg.in/yaml.v3 v3.0.1
 )
 
@@ -20,6 +22,7 @@ require (
 	github.com/Dreamacro/protobytes v0.0.0-20230617041236-6500a9f4f158 // indirect
 	github.com/aymerick/douceur v0.2.0 // indirect
 	github.com/containerd/console v1.0.3 // indirect
+	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/gofrs/uuid/v5 v5.0.0 // indirect
 	github.com/google/uuid v1.3.1 // indirect
 	github.com/gookit/color v1.5.4 // indirect
@@ -36,13 +39,12 @@ require (
 	github.com/oschwald/maxminddb-golang v1.11.0 // indirect
 	github.com/petermattis/goid v0.0.0-20230904192822-1876fd5063bc // indirect
 	github.com/pkg/errors v0.9.1 // indirect
+	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/projectdiscovery/blackrock v0.0.1 // indirect
 	github.com/projectdiscovery/utils v0.0.55 // indirect
 	github.com/rivo/uniseg v0.4.4 // indirect
 	github.com/saintfish/chardet v0.0.0-20230101081208-5e3ef4b5456d // indirect
 	github.com/sirupsen/logrus v1.9.3 // indirect
-	github.com/vishvananda/netlink v1.2.1-beta.2.0.20230420174744-55c8b9515a01 // indirect
-	github.com/vishvananda/netns v0.0.0-20200728191858-db3c7e526aae // indirect
 	github.com/xo/terminfo v0.0.0-20220910002029-abceb7e1c41e // indirect
 	go.uber.org/atomic v1.11.0 // indirect
 	go.uber.org/multierr v1.11.0 // indirect

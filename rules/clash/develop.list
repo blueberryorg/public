@@ -14,7 +14,6 @@ DOMAIN-SUFFIX,github-avatars.oss-cn-hongkong.aliyuncs.com,develop
 DOMAIN-SUFFIX,github-cloud.s3.amazonaws.com,develop
 DOMAIN-SUFFIX,github.blog,develop
 DOMAIN-SUFFIX,github.com,develop
-DOMAIN-SUFFIX,github.community,develop
 DOMAIN-SUFFIX,github.dev,develop
 DOMAIN-SUFFIX,github.io,develop
 DOMAIN-SUFFIX,githubapp.com,develop
@@ -31,7 +30,6 @@ DOMAIN-SUFFIX,npmjs.com,develop
 DOMAIN-SUFFIX,npmjs.org,develop
 DOMAIN-SUFFIX,opensource.guide,develop
 DOMAIN-SUFFIX,rawgit.com,develop
-DOMAIN-SUFFIX,rawgithub.com,develop
 DOMAIN-SUFFIX,repo.new,develop
 DOMAIN-SUFFIX,thegithubshop.com,develop
 DOMAIN-KEYWORD,github,develop
@@ -43,7 +41,6 @@ DOMAIN-SUFFIX,appleworldwidedeveloper.hb-api.omtrdc.net,develop
 DOMAIN-SUFFIX,appleworldwidedeveloper.sc.omtrdc.net,develop
 DOMAIN-SUFFIX,calendarserver.org,develop
 DOMAIN-SUFFIX,carekit.org,develop
-DOMAIN-SUFFIX,courier-push-apple.com.akadns.net,develop
 DOMAIN-SUFFIX,cups.org,develop
 DOMAIN-SUFFIX,developer.apple.com,develop
 DOMAIN-SUFFIX,devimages-cdn.apple.com,develop
@@ -55,7 +52,6 @@ DOMAIN-SUFFIX,macruby.net,develop
 DOMAIN-SUFFIX,macruby.org,develop
 DOMAIN-SUFFIX,p-events-delivery.akamaized.net,develop
 DOMAIN-SUFFIX,playgrounds-cdn.apple.com,develop
-DOMAIN-SUFFIX,push-apple.com.akadns.net,develop
 DOMAIN-SUFFIX,researchandcare.org,develop
 DOMAIN-SUFFIX,researchkit.cn,develop
 DOMAIN-SUFFIX,researchkit.com.cn,develop
@@ -70,13 +66,11 @@ DOMAIN-SUFFIX,swiftui.com.cn,develop
 DOMAIN-SUFFIX,webkit.org,develop
 DOMAIN-SUFFIX,webkitgtk.org,develop
 DOMAIN-SUFFIX,webobjects.com,develop
-DOMAIN-SUFFIX,wpewebkit.org,develop
 DOMAIN-SUFFIX,apache.org,develop
 DOMAIN-SUFFIX,atlassian.com,develop
 DOMAIN-SUFFIX,debian.com,develop
 DOMAIN-SUFFIX,docker.com,develop
 DOMAIN-SUFFIX,elastic.co,develop
-DOMAIN-SUFFIX,elastic.com,develop
 DOMAIN-SUFFIX,fontawesome.com,develop
 DOMAIN-SUFFIX,gcr.io,develop
 DOMAIN-SUFFIX,gitlab.com,develop
