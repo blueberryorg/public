@@ -2,7 +2,7 @@ package main
 
 import (
 	"errors"
-	"github.com/Dreamacro/clash/constant"
+	"github.com/blueberryorg/public/source/rule/rules"
 	"net/http"
 	"os"
 	"strings"
@@ -31,7 +31,7 @@ func (p *Cidr) Download(path string) ([]byte, error) {
 	return resp.Body(), nil
 }
 
-func (p *Cidr) ParseBody(tag string, body []byte) (rules []constant.Rule) {
+func (p *Cidr) ParseBody(tag string, body []byte) (rules []rules.Rule) {
 	pie.Each(strings.Split(string(body), "\n"), func(line string) {
 		line = strings.ReplaceAll(line, "\r", "")
 

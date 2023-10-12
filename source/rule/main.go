@@ -3,18 +3,18 @@ package main
 import (
 	"crypto/tls"
 	"fmt"
+	"github.com/blueberryorg/public/source/rule/rules"
 	"github.com/ice-cream-heaven/utils/cryptox"
 	"github.com/ice-cream-heaven/utils/osx"
 	"github.com/pterm/pterm"
 	"os"
 	"path/filepath"
-	"strconv"
+	"strings"
 	"time"
 
 	"github.com/go-resty/resty/v2"
 	"github.com/ice-cream-heaven/utils/unit"
 
-	"github.com/Dreamacro/clash/constant"
 	"github.com/elliotchance/pie/v2"
 	"github.com/ice-cream-heaven/log"
 )
@@ -193,19 +193,24 @@ func main() {
 		return
 	}
 
+	err = c.Blue()
+	if err != nil {
+		log.Panicf("err:%v", err)
+		return
+	}
 }
 
 type Collector struct {
 	CollectorMap map[string]CollectorInter
 
-	rules []constant.Rule
+	rules []rules.Rule
 }
 
 func NewCollector() *Collector {
 	p := &Collector{
 		CollectorMap: map[string]CollectorInter{},
 
-		rules: []constant.Rule{},
+		rules: []rules.Rule{},
 	}
 
 	err := p.LoadBefore()
@@ -282,8 +287,8 @@ func (p *Collector) Parse(key string, path string, tag string) (err error) {
 	log.SetTrace(fmt.Sprintf("%s_%s", key, filepath.Base(path)))
 	log.Infof("parse for key:%s path:%s tag:%s", key, path, tag)
 
-	body, err := p.downloadWithoutCache(key, path)
-	//body, err := p.downloadWithCache(key, path)
+	//body, err := p.downloadWithoutCache(key, path)
+	body, err := p.downloadWithCache(key, path)
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err
@@ -291,10 +296,11 @@ func (p *Collector) Parse(key string, path string, tag string) (err error) {
 
 	log.Infof("download success for key:%s path:%s tag:%s size:%s", key, path, tag, unit.FormatSize(int64(len(body))))
 
-	rules := p.CollectorMap[key].ParseBody(tag, body)
+	ruleList := p.CollectorMap[key].ParseBody(tag, body)
 
 	bar, _ := pterm.DefaultProgressbar.
-		WithTotal(len(rules)).
+		WithTotal(len(ruleList)).
+		WithShowElapsedTime(true).
 		WithElapsedTimeRoundingFactor(time.Second).
 		WithMaxWidth(120).
 		WithShowCount(true).
@@ -303,7 +309,7 @@ func (p *Collector) Parse(key string, path string, tag string) (err error) {
 		Start()
 	defer bar.Stop()
 
-	pie.Each(rules, func(r constant.Rule) {
+	pie.Each(ruleList, func(r rules.Rule) {
 		p.AddRule(r)
 		bar.Increment()
 	})
@@ -311,50 +317,119 @@ func (p *Collector) Parse(key string, path string, tag string) (err error) {
 	return nil
 }
 
-func (p *Collector) AddRule(r constant.Rule) {
+func (p *Collector) AddRule(r rules.Rule) {
 	if cache.Freq(r) {
 		return
 	}
 
-	meta := &constant.Metadata{}
+	// 返回 true 表示已经存在，需要丢弃
+	var handler func(ri rules.Rule) bool
+
 	switch r.RuleType() {
-	case constant.Domain:
-		meta.Host = r.Payload()
-	case constant.DomainSuffix:
-		meta.Host = r.Payload()
-	case constant.DomainKeyword:
-		meta.Host = r.Payload()
-	case constant.SrcPort:
-		port, _ := strconv.ParseUint(r.Payload(), 10, 64)
-		meta.SrcPort = constant.Port(port)
-	case constant.DstPort:
-		port, _ := strconv.ParseUint(r.Payload(), 10, 64)
-		meta.DstPort = constant.Port(port)
-	case constant.Process:
-		meta.ProcessPath = r.Payload()
-	case constant.ProcessPath:
-		meta.ProcessPath = r.Payload()
+	case rules.RuleTypeDomain:
+		handler = func(ri rules.Rule) bool {
+			switch ri.RuleType() {
+			case rules.RuleTypeDomain:
+				// 完全匹配
+				return r.Payload() == ri.Payload()
+			case rules.RuleTypeDomainKeyword:
+				// 字串串匹配
+				return strings.Contains(ri.Payload(), r.Payload())
+			default:
+				return false
+			}
+		}
+	case rules.RuleTypeDomainSuffix:
+		handler = func(ri rules.Rule) bool {
+			switch ri.RuleType() {
+			case rules.RuleTypeDomain:
+				return r.Payload() == ri.Payload()
+			case rules.RuleTypeDomainSuffix:
+				return strings.Contains(r.Payload(), ri.Payload())
+			case rules.RuleTypeDomainKeyword:
+				// 字串串匹配
+				return strings.Contains(ri.Payload(), r.Payload())
+			default:
+				return false
+			}
+		}
+	case rules.RuleTypeDomainKeyword:
+		handler = func(ri rules.Rule) bool {
+			switch ri.RuleType() {
+			case rules.RuleTypeDomainKeyword:
+				// 字串串匹配
+				return strings.Contains(r.Payload(), ri.Payload())
+			default:
+				return false
+			}
+		}
+	case rules.RuleTypeSrcPort:
+		handler = func(ri rules.Rule) bool {
+			switch ri.RuleType() {
+			case rules.RuleTypeSrcPort:
+				// 字串串匹配
+				return r.Payload() == ri.Payload()
+			default:
+				return false
+			}
+		}
+	case rules.RuleTypeDstPort:
+		handler = func(ri rules.Rule) bool {
+			switch ri.RuleType() {
+			case rules.RuleTypeDstPort:
+				// 字串串匹配
+				return r.Payload() == ri.Payload()
+			default:
+				return false
+			}
+		}
+	case rules.RuleTypeProcess:
+		handler = func(ri rules.Rule) bool {
+			switch ri.RuleType() {
+			case rules.RuleTypeProcess:
+				// 字串串匹配
+				return strings.EqualFold(r.Payload(), ri.Payload())
+			case rules.RuleTypeProcessPath:
+				// 字串串匹配
+				return strings.EqualFold(r.Payload(), ri.Payload()) ||
+					strings.EqualFold(filepath.Base(ri.Payload()), r.Payload())
+			default:
+				return false
+			}
+		}
+	case rules.RuleTypeProcessPath:
+		handler = func(ri rules.Rule) bool {
+			switch ri.RuleType() {
+			case rules.RuleTypeProcess:
+				// 字串串匹配
+				return strings.EqualFold(r.Payload(), ri.Payload()) ||
+					strings.EqualFold(filepath.Base(r.Payload()), ri.Payload())
+			case rules.RuleTypeProcessPath:
+				// 字串串匹配
+				return strings.EqualFold(r.Payload(), ri.Payload())
+			default:
+				return false
+			}
+		}
 	default:
 		p.rules = append(p.rules, r)
 		return
 	}
 
-	if pie.Any(p.rules, func(ri constant.Rule) bool {
-		return ri.Match(meta)
-	}) {
+	if pie.Any(p.rules, handler) {
 		return
 	}
 
 	p.rules = append(p.rules, r)
 }
 
-func (p *Collector) ExportRules() []constant.Rule {
+func (p *Collector) ExportRules() []rules.Rule {
 	rs := p.rules
 	return rs
 }
 
 type CollectorInter interface {
 	Download(path string) ([]byte, error)
-	ParseBody(tag string, body []byte) (rules []constant.Rule)
+	ParseBody(tag string, body []byte) (rules []rules.Rule)
 	NeedUpdate(info os.FileInfo) bool
 }

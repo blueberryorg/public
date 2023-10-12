@@ -2,7 +2,7 @@ package main
 
 import (
 	"errors"
-	"github.com/Dreamacro/clash/constant"
+	"github.com/blueberryorg/public/source/rule/rules"
 	"net"
 	"net/http"
 	"os"
@@ -34,7 +34,7 @@ func (p *Loyalsoldier) Download(path string) ([]byte, error) {
 	return resp.Body(), nil
 }
 
-func (p *Loyalsoldier) ParseBody(tag string, body []byte) (rules []constant.Rule) {
+func (p *Loyalsoldier) ParseBody(tag string, body []byte) (rules []rules.Rule) {
 	var data struct {
 		Payload []string `yaml:"payload"`
 	}

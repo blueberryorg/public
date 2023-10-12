@@ -2,13 +2,12 @@ package main
 
 import (
 	"fmt"
-	"github.com/Dreamacro/clash/constant"
-	R "github.com/Dreamacro/clash/rule"
+	"github.com/blueberryorg/public/source/rule/rules"
 	"github.com/ice-cream-heaven/log"
 	"strings"
 )
 
-func ParseRules(line string) (constant.Rule, error) {
+func ParseRules(line string) (rules.Rule, error) {
 	line = strings.ReplaceAll(line, ",no-resolve", "")
 	rule := trimArr(strings.Split(line, ","))
 
@@ -33,7 +32,7 @@ func ParseRules(line string) (constant.Rule, error) {
 	rule = trimArr(rule)
 	params = trimArr(params)
 
-	parsed, err := R.ParseRule(rule[0], payload, target, params)
+	parsed, err := rules.ParseRule(rule[0], payload, target, params)
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return nil, err

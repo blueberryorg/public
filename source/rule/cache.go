@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/Dreamacro/clash/constant"
+	"github.com/blueberryorg/public/source/rule/rules"
 	"sync"
 )
 
@@ -16,8 +16,8 @@ func NewRuleCache() *RuleCache {
 	return &RuleCache{}
 }
 
-func (p *RuleCache) Freq(r constant.Rule) bool {
-	key := fmt.Sprintf("%s-,%s", r.RuleType(), r.Payload())
+func (p *RuleCache) Freq(r rules.Rule) bool {
+	key := fmt.Sprintf("%d-,%s", r.RuleType(), r.Payload())
 
 	_, ok := p.m.Load(key)
 	if ok {

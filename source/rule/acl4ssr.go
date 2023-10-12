@@ -2,7 +2,7 @@ package main
 
 import (
 	"errors"
-	"github.com/Dreamacro/clash/constant"
+	"github.com/blueberryorg/public/source/rule/rules"
 	"net/http"
 	"os"
 	"strings"
@@ -40,7 +40,7 @@ func (p *Acl4SSR) Download(path string) ([]byte, error) {
 	return resp.Body(), nil
 }
 
-func (p *Acl4SSR) ParseBody(tag string, body []byte) (rules []constant.Rule) {
+func (p *Acl4SSR) ParseBody(tag string, body []byte) (rules []rules.Rule) {
 	pie.Each(strings.Split(string(body), "\n"), func(line string) {
 		if line == "" {
 			return

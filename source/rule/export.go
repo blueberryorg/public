@@ -3,7 +3,7 @@ package main
 import (
 	"bytes"
 	"fmt"
-	"github.com/Dreamacro/clash/constant"
+	"github.com/blueberryorg/public/source/rule/rules"
 	"github.com/elliotchance/pie/v2"
 	"github.com/ice-cream-heaven/log"
 	"github.com/ice-cream-heaven/utils/osx"
@@ -14,29 +14,28 @@ import (
 func (p *Collector) Clash() error {
 	//var ruleList []string
 	ruleMap := map[string][]string{}
-	var ruleList []string
-	pie.Each(p.ExportRules(), func(r constant.Rule) {
+	pie.Each(p.ExportRules(), func(r rules.Rule) {
 		var b bytes.Buffer
 		switch r.RuleType() {
-		case constant.Domain:
+		case rules.RuleTypeDomain:
 			b.WriteString("DOMAIN")
-		case constant.DomainSuffix:
+		case rules.RuleTypeDomainSuffix:
 			b.WriteString("DOMAIN-SUFFIX")
-		case constant.DomainKeyword:
+		case rules.RuleTypeDomainKeyword:
 			b.WriteString("DOMAIN-KEYWORD")
-		case constant.ProcessPath:
+		case rules.RuleTypeProcessPath:
 			b.WriteString("PROCESS-PATH")
-		case constant.Process:
+		case rules.RuleTypeProcess:
 			b.WriteString("PROCESS-NAME")
-		case constant.SrcPort:
+		case rules.RuleTypeSrcPort:
 			b.WriteString("SRC-PORT")
-		case constant.DstPort:
+		case rules.RuleTypeDstPort:
 			b.WriteString("DST-PORT")
-		case constant.IPCIDR:
+		case rules.RuleTypeIPCIDR:
 			b.WriteString("IP-CIDR")
-		case constant.SrcIPCIDR:
+		case rules.RuleTypeSrcIPCIDR:
 			b.WriteString("SRC-IP-CIDR")
-		case constant.GEOIP:
+		case rules.RuleTypeGEOIP:
 			b.WriteString("GEOIP")
 		default:
 			return
@@ -49,7 +48,6 @@ func (p *Collector) Clash() error {
 		b.WriteString(r.Adapter())
 
 		ruleMap[r.Adapter()] = append(ruleMap[r.Adapter()], b.String())
-		ruleList = append(ruleList, b.String())
 	})
 
 	if osx.IsDir("../../rules/clash/") {
@@ -85,31 +83,25 @@ func (p *Collector) Clash() error {
 		return err
 	}
 
-	err = os.WriteFile("../../rules/clash/all.list", []byte(strings.Join(ruleList, "\n")), 0666)
-	if err != nil {
-		log.Errorf("err:%v", err)
-		return err
-	}
-
 	return nil
 }
 
 func (p *Collector) QuanX() error {
 	//var ruleList []string
 	ruleMap := map[string][]string{}
-	pie.Each(p.ExportRules(), func(r constant.Rule) {
+	pie.Each(p.ExportRules(), func(r rules.Rule) {
 		var b bytes.Buffer
 
 		switch r.RuleType() {
-		case constant.Domain:
+		case rules.RuleTypeDomain:
 			b.WriteString("HOST")
-		case constant.DomainSuffix:
+		case rules.RuleTypeDomainSuffix:
 			b.WriteString("HOST-SUFFIX")
-		case constant.DomainKeyword:
+		case rules.RuleTypeDomainKeyword:
 			b.WriteString("HOST-KEYWORD")
-		case constant.IPCIDR:
+		case rules.RuleTypeIPCIDR:
 			b.WriteString("IP-CIDR")
-		case constant.GEOIP:
+		case rules.RuleTypeGEOIP:
 			b.WriteString("GEOIP")
 		default:
 			return
@@ -152,6 +144,61 @@ func (p *Collector) QuanX() error {
 	}
 
 	err := os.WriteFile("../../rules/quanx/list", []byte(strings.Join(keys, "\n")), 0666)
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
+	return nil
+}
+
+func (p *Collector) Blue() error {
+	var ruleList []string
+	pie.Each(p.ExportRules(), func(r rules.Rule) {
+		var b bytes.Buffer
+		switch r.RuleType() {
+		case rules.RuleTypeDomain:
+			b.WriteString("DOMAIN")
+		case rules.RuleTypeDomainSuffix:
+			b.WriteString("DOMAIN-SUFFIX")
+		case rules.RuleTypeDomainKeyword:
+			b.WriteString("DOMAIN-KEYWORD")
+		case rules.RuleTypeProcessPath:
+			b.WriteString("PROCESS-PATH")
+		case rules.RuleTypeProcess:
+			b.WriteString("PROCESS-NAME")
+		case rules.RuleTypeSrcPort:
+			b.WriteString("SRC-PORT")
+		case rules.RuleTypeDstPort:
+			b.WriteString("DST-PORT")
+		case rules.RuleTypeIPCIDR:
+			b.WriteString("IP-CIDR")
+		case rules.RuleTypeSrcIPCIDR:
+			b.WriteString("SRC-IP-CIDR")
+		case rules.RuleTypeGEOIP:
+			b.WriteString("GEOIP")
+		default:
+			return
+		}
+
+		b.WriteString(",")
+		b.WriteString(r.Payload())
+		b.WriteString(",")
+
+		b.WriteString(r.Adapter())
+
+		ruleList = append(ruleList, b.String())
+	})
+
+	if !osx.IsDir("../../rules/") {
+		err := os.MkdirAll("../../rules/", 0666)
+		if err != nil {
+			log.Errorf("err:%v", err)
+			return err
+		}
+	}
+
+	err := os.WriteFile("../../rules/all.list", []byte(strings.Join(ruleList, "\n")), 0666)
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err

@@ -2,7 +2,7 @@ package main
 
 import (
 	"errors"
-	"github.com/Dreamacro/clash/constant"
+	"github.com/blueberryorg/public/source/rule/rules"
 	"net"
 	"net/http"
 	"os"
@@ -41,7 +41,7 @@ func (p *Blackmatrix7) Download(path string) ([]byte, error) {
 	return resp.Body(), nil
 }
 
-func (p *Blackmatrix7) ParseBody(tag string, body []byte) (rules []constant.Rule) {
+func (p *Blackmatrix7) ParseBody(tag string, body []byte) (rules []rules.Rule) {
 	var data struct {
 		Payload []string `yaml:"payload"`
 	}
