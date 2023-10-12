@@ -7,6 +7,7 @@ import (
 	"github.com/elliotchance/pie/v2"
 	"github.com/ice-cream-heaven/log"
 	"github.com/ice-cream-heaven/utils/osx"
+	"gopkg.in/yaml.v3"
 	"os"
 	"strings"
 )
@@ -231,5 +232,216 @@ func (p *Collector) Blue() error {
 		return err
 	}
 
+	info := &ProxyRoleConfig{
+		Adapters: []*ProxyAdapter{
+			{
+				Type: "select",
+				Name: "代理选择",
+				Adapters: []string{
+					"故障切换",
+					"延时最低",
+					"手动选择",
+					"负载均衡",
+				},
+				Set: Proxy,
+			},
+			{
+				Type:    "fallback",
+				Name:    "故障切换",
+				AddNode: true,
+			},
+			{
+				Type:    "min_delay",
+				Name:    "延时最低",
+				AddNode: true,
+			},
+			{
+				Type:    "select",
+				Name:    "手动选择",
+				AddNode: true,
+			},
+			{
+				Type:    "load_balance",
+				Name:    "负载均衡",
+				AddNode: true,
+			},
+
+			{
+				Type: "select",
+				Name: "Youtube",
+				Adapters: []string{
+					"代理选择",
+					"故障切换",
+					"延时最低",
+					"手动选择",
+					"负载均衡",
+				},
+				Set: Youtube,
+			},
+			{
+				Type: "select",
+				Name: "Netflix",
+				Adapters: []string{
+					"代理选择",
+					"故障切换",
+					"延时最低",
+					"手动选择",
+					"负载均衡",
+				},
+				Set: Netflix,
+			},
+			{
+				Type: "select",
+				Name: "Disney",
+				Adapters: []string{
+					"代理选择",
+					"故障切换",
+					"延时最低",
+					"手动选择",
+					"负载均衡",
+				},
+				Set: Disney,
+			},
+			{
+				Type: "select",
+				Name: "BiliBili",
+				Adapters: []string{
+					"代理选择",
+					"故障切换",
+					"延时最低",
+					"手动选择",
+					"负载均衡",
+				},
+				Set: BiliBili,
+			},
+
+			{
+				Type: "select",
+				Name: "OpenAI",
+				Adapters: []string{
+					"代理选择",
+					"故障切换",
+					"延时最低",
+					"手动选择",
+					"负载均衡",
+				},
+				Set: OpenAI,
+			},
+			{
+				Type: "select",
+				Name: "Game",
+				Adapters: []string{
+					"代理选择",
+					"故障切换",
+					"延时最低",
+					"手动选择",
+					"负载均衡",
+				},
+				Set: Game,
+			},
+			{
+				Type: "select",
+				Name: "Develop",
+				Adapters: []string{
+					"代理选择",
+					"故障切换",
+					"延时最低",
+					"手动选择",
+					"负载均衡",
+				},
+				Set: Develop,
+			},
+
+			{
+				Type: "select",
+				Name: "广告屏蔽",
+				Adapters: []string{
+					"REJECT",
+					"DIRECT",
+					"代理选择",
+					"故障切换",
+					"延时最低",
+					"手动选择",
+					"负载均衡",
+				},
+				Set: Reject,
+			},
+			{
+				Type: "select",
+				Name: "隐私保护",
+				Adapters: []string{
+					"REJECT",
+					"DIRECT",
+					"代理选择",
+					"故障切换",
+					"延时最低",
+					"手动选择",
+					"负载均衡",
+				},
+				Set: Privacy,
+			},
+
+			{
+				Type: "select",
+				Name: "国内站点",
+				Adapters: []string{
+					"DIRECT",
+					"REJECT",
+					"代理选择",
+					"故障切换",
+					"延时最低",
+					"手动选择",
+					"负载均衡",
+				},
+				Set: Direct,
+			},
+
+			{
+				Type: "finial",
+				Name: "规则以外",
+				Adapters: []string{
+					"代理选择",
+					"故障切换",
+					"延时最低",
+					"手动选择",
+					"负载均衡",
+					"DIRECT",
+					"REJECT",
+				},
+			},
+		},
+		RuleList: keys,
+	}
+
+	infoBuf, err := yaml.Marshal(info)
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
+	err = os.WriteFile("../../rules/blueberry/proxy_rule.yaml", infoBuf, 0666)
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
 	return nil
+}
+
+type ProxyAdapter struct {
+	Type string `json:"type,omitempty" yaml:"type,omitempty"`
+
+	Name string `json:"name,omitempty" yaml:"name,omitempty"`
+
+	AddNode bool `json:"add_node,omitempty" yaml:"add_node,omitempty"`
+
+	Adapters []string `json:"adapters,omitempty" yaml:"adapters,omitempty"`
+
+	Set string `yaml:"set,omitempty" yaml:"set,omitempty"`
+}
+
+type ProxyRoleConfig struct {
+	Adapters []*ProxyAdapter `json:"adapters,omitempty" yaml:"adapters,omitempty"`
+
+	RuleList []string `json:"rule_list,omitempty" yaml:"rule_list,omitempty"`
 }
