@@ -33,13 +33,8 @@ HOST-SUFFIX,disney.co.th,disney
 HOST-SUFFIX,disney.co.uk,disney
 HOST-SUFFIX,disney.co.za,disney
 HOST-SUFFIX,disney.com,disney
-HOST-SUFFIX,disney.com.au,disney
-HOST-SUFFIX,disney.com.br,disney
-HOST-SUFFIX,disney.com.hk,disney
-HOST-SUFFIX,disney.com.tw,disney
 HOST-SUFFIX,disney.cz,disney
 HOST-SUFFIX,disney.de,disney
-HOST-SUFFIX,disney.demdex.net,disney
 HOST-SUFFIX,disney.dk,disney
 HOST-SUFFIX,disney.es,disney
 HOST-SUFFIX,disney.fi,disney
@@ -51,7 +46,6 @@ HOST-SUFFIX,disney.in,disney
 HOST-SUFFIX,disney.io,disney
 HOST-SUFFIX,disney.it,disney
 HOST-SUFFIX,disney.my,disney
-HOST-SUFFIX,disney.my.sentry.io,disney
 HOST-SUFFIX,disney.nl,disney
 HOST-SUFFIX,disney.no,disney
 HOST-SUFFIX,disney.ph,disney
@@ -98,7 +92,6 @@ HOST-SUFFIX,disneynow.com,disney
 HOST-SUFFIX,disneypeoplesurveys.com,disney
 HOST-SUFFIX,disneyplus.bn5x.net,disney
 HOST-SUFFIX,disneyplus.com,disney
-HOST-SUFFIX,disneyplus.com.ssl.sc.omtrdc.net,disney
 HOST-SUFFIX,disneyprivacycenter.com,disney
 HOST-SUFFIX,disneyredirects.com,disney
 HOST-SUFFIX,disneysrivieraresort.com,disney
@@ -149,10 +142,7 @@ HOST-SUFFIX,nationalgeographicpartners.com,disney
 HOST-SUFFIX,ngeo.com,disney
 HOST-SUFFIX,nomadlandmovie.ch,disney
 HOST-SUFFIX,playmation.com,disney
-HOST-SUFFIX,shopdisney.com,disney
-HOST-SUFFIX,shops-disney.com,disney
 HOST-SUFFIX,sorcerersarena.com,disney
-HOST-SUFFIX,spaindisney.com,disney
 HOST-SUFFIX,star-brasil.com,disney
 HOST-SUFFIX,star-latam.com,disney
 HOST-SUFFIX,starott.com,disney
@@ -166,4 +156,3 @@ HOST-SUFFIX,thestationbymaker.com,disney
 HOST-SUFFIX,thewaltdisneycompany.com,disney
 HOST-SUFFIX,thisispolaris.com,disney
 HOST-SUFFIX,watchdisneyfe.com,disney
-HOST-SUFFIX,watchespn.com,disney

@@ -68,7 +68,6 @@ HOST-SUFFIX,biliapi.com,bilibili
 HOST-SUFFIX,biliapi.net,bilibili
 HOST-SUFFIX,bilibili.cc,bilibili
 HOST-SUFFIX,bilibili.cn,bilibili
-HOST-SUFFIX,bilibili.co,bilibili
 HOST-SUFFIX,bilibili.net,bilibili
 HOST-SUFFIX,bilibili.tv,bilibili
 HOST-SUFFIX,bilibiligame.cn,bilibili
@@ -84,9 +83,7 @@ HOST-SUFFIX,bilicdn5.com,bilibili
 HOST-SUFFIX,bilicomics.com,bilibili
 HOST-SUFFIX,biligame.cn,bilibili
 HOST-SUFFIX,biligame.co,bilibili
-HOST-SUFFIX,biligame.com,bilibili
 HOST-SUFFIX,biligame.net,bilibili
-HOST-SUFFIX,biligo.com,bilibili
 HOST-SUFFIX,biliimg.com,bilibili
 HOST-SUFFIX,biliintl.com,bilibili
 HOST-SUFFIX,biliplus.com,bilibili
@@ -97,8 +94,6 @@ HOST-SUFFIX,corari.com,bilibili
 HOST-SUFFIX,dreamcast.hk,bilibili
 HOST-SUFFIX,dyhgames.com,bilibili
 HOST-SUFFIX,hdslb.com,bilibili
-HOST-SUFFIX,hdslb.com.w.kunlunhuf.com,bilibili
-HOST-SUFFIX,hdslb.com.w.kunlunpi.com,bilibili
 HOST-SUFFIX,hdslb.net,bilibili
 HOST-SUFFIX,hdslb.org,bilibili
 HOST-SUFFIX,im9.com,bilibili
@@ -118,3 +113,4 @@ IP-CIDR,120.92.113.99/32,bilibili
 IP-CIDR,120.92.153.217/32,bilibili
 IP-CIDR,134.175.207.130/32,bilibili
 IP-CIDR,203.107.1.0/24,bilibili
+HOST,apm-misaka.biliapi.net,bilibili

@@ -33,13 +33,8 @@ DOMAIN-SUFFIX,disney.co.th,disney
 DOMAIN-SUFFIX,disney.co.uk,disney
 DOMAIN-SUFFIX,disney.co.za,disney
 DOMAIN-SUFFIX,disney.com,disney
-DOMAIN-SUFFIX,disney.com.au,disney
-DOMAIN-SUFFIX,disney.com.br,disney
-DOMAIN-SUFFIX,disney.com.hk,disney
-DOMAIN-SUFFIX,disney.com.tw,disney
 DOMAIN-SUFFIX,disney.cz,disney
 DOMAIN-SUFFIX,disney.de,disney
-DOMAIN-SUFFIX,disney.demdex.net,disney
 DOMAIN-SUFFIX,disney.dk,disney
 DOMAIN-SUFFIX,disney.es,disney
 DOMAIN-SUFFIX,disney.fi,disney
@@ -51,7 +46,6 @@ DOMAIN-SUFFIX,disney.in,disney
 DOMAIN-SUFFIX,disney.io,disney
 DOMAIN-SUFFIX,disney.it,disney
 DOMAIN-SUFFIX,disney.my,disney
-DOMAIN-SUFFIX,disney.my.sentry.io,disney
 DOMAIN-SUFFIX,disney.nl,disney
 DOMAIN-SUFFIX,disney.no,disney
 DOMAIN-SUFFIX,disney.ph,disney
@@ -98,7 +92,6 @@ DOMAIN-SUFFIX,disneynow.com,disney
 DOMAIN-SUFFIX,disneypeoplesurveys.com,disney
 DOMAIN-SUFFIX,disneyplus.bn5x.net,disney
 DOMAIN-SUFFIX,disneyplus.com,disney
-DOMAIN-SUFFIX,disneyplus.com.ssl.sc.omtrdc.net,disney
 DOMAIN-SUFFIX,disneyprivacycenter.com,disney
 DOMAIN-SUFFIX,disneyredirects.com,disney
 DOMAIN-SUFFIX,disneysrivieraresort.com,disney
@@ -149,10 +142,7 @@ DOMAIN-SUFFIX,nationalgeographicpartners.com,disney
 DOMAIN-SUFFIX,ngeo.com,disney
 DOMAIN-SUFFIX,nomadlandmovie.ch,disney
 DOMAIN-SUFFIX,playmation.com,disney
-DOMAIN-SUFFIX,shopdisney.com,disney
-DOMAIN-SUFFIX,shops-disney.com,disney
 DOMAIN-SUFFIX,sorcerersarena.com,disney
-DOMAIN-SUFFIX,spaindisney.com,disney
 DOMAIN-SUFFIX,star-brasil.com,disney
 DOMAIN-SUFFIX,star-latam.com,disney
 DOMAIN-SUFFIX,starott.com,disney
@@ -166,6 +156,5 @@ DOMAIN-SUFFIX,thestationbymaker.com,disney
 DOMAIN-SUFFIX,thewaltdisneycompany.com,disney
 DOMAIN-SUFFIX,thisispolaris.com,disney
 DOMAIN-SUFFIX,watchdisneyfe.com,disney
-DOMAIN-SUFFIX,watchespn.com,disney
 PROCESS-NAME,com.disney.datg.videoplatforms.android.abc,disney
 PROCESS-NAME,com.disney.disneyplus,disney

@@ -68,7 +68,6 @@ DOMAIN-SUFFIX,biliapi.com,bilibili
 DOMAIN-SUFFIX,biliapi.net,bilibili
 DOMAIN-SUFFIX,bilibili.cc,bilibili
 DOMAIN-SUFFIX,bilibili.cn,bilibili
-DOMAIN-SUFFIX,bilibili.co,bilibili
 DOMAIN-SUFFIX,bilibili.net,bilibili
 DOMAIN-SUFFIX,bilibili.tv,bilibili
 DOMAIN-SUFFIX,bilibiligame.cn,bilibili
@@ -84,9 +83,7 @@ DOMAIN-SUFFIX,bilicdn5.com,bilibili
 DOMAIN-SUFFIX,bilicomics.com,bilibili
 DOMAIN-SUFFIX,biligame.cn,bilibili
 DOMAIN-SUFFIX,biligame.co,bilibili
-DOMAIN-SUFFIX,biligame.com,bilibili
 DOMAIN-SUFFIX,biligame.net,bilibili
-DOMAIN-SUFFIX,biligo.com,bilibili
 DOMAIN-SUFFIX,biliimg.com,bilibili
 DOMAIN-SUFFIX,biliintl.com,bilibili
 DOMAIN-SUFFIX,biliplus.com,bilibili
@@ -97,8 +94,6 @@ DOMAIN-SUFFIX,corari.com,bilibili
 DOMAIN-SUFFIX,dreamcast.hk,bilibili
 DOMAIN-SUFFIX,dyhgames.com,bilibili
 DOMAIN-SUFFIX,hdslb.com,bilibili
-DOMAIN-SUFFIX,hdslb.com.w.kunlunhuf.com,bilibili
-DOMAIN-SUFFIX,hdslb.com.w.kunlunpi.com,bilibili
 DOMAIN-SUFFIX,hdslb.net,bilibili
 DOMAIN-SUFFIX,hdslb.org,bilibili
 DOMAIN-SUFFIX,im9.com,bilibili
@@ -124,4 +119,5 @@ PROCESS-NAME,com.bilibili.comic,bilibili
 PROCESS-NAME,com.bilibili.comic.intl,bilibili
 PROCESS-NAME,tv.danmaku.bili,bilibili
 PROCESS-NAME,tv.danmaku.bilibilihd,bilibili
+DOMAIN,apm-misaka.biliapi.net,bilibili
 PROCESS-NAME,com.bstar.intl,bilibili
