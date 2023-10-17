@@ -170,7 +170,6 @@ DOMAIN-SUFFIX,apture.com,proxy
 DOMAIN-SUFFIX,area120.com,proxy
 DOMAIN-SUFFIX,asp-cc.com,proxy
 DOMAIN-SUFFIX,autodraw.com,proxy
-DOMAIN-SUFFIX,avail.googleflights.net,proxy
 DOMAIN-SUFFIX,bandpage.com,proxy
 DOMAIN-SUFFIX,baselinestudy.com,proxy
 DOMAIN-SUFFIX,baselinestudy.org,proxy
@@ -633,7 +632,6 @@ DOMAIN-SUFFIX,qagpublic.qpdp1.net,proxy
 DOMAIN-SUFFIX,qgadmin.qatp1.net,proxy
 DOMAIN-SUFFIX,qgadmin.qcpp1.net,proxy
 DOMAIN-SUFFIX,qgadmin.qpdp1.net,proxy
-DOMAIN-SUFFIX,qpx.googleflights.net,proxy
 DOMAIN-SUFFIX,qualysapi.qatp1.net,proxy
 DOMAIN-SUFFIX,qualysapi.qcpp1.net,proxy
 DOMAIN-SUFFIX,qualysapi.qpdp1.net,proxy
@@ -837,7 +835,6 @@ DOMAIN-SUFFIX,apihub-internal.cn,proxy
 DOMAIN-SUFFIX,apisof.net,proxy
 DOMAIN-SUFFIX,appcenter.ms,proxy
 DOMAIN-SUFFIX,applicationinsights.io,proxy
-DOMAIN-SUFFIX,applicationinsights.net,proxy
 DOMAIN-SUFFIX,appserviceenvironment.cn,proxy
 DOMAIN-SUFFIX,aria.ms,proxy
 DOMAIN-SUFFIX,asp.net,proxy
@@ -1110,7 +1107,6 @@ DOMAIN-SUFFIX,s-msft.com,proxy
 DOMAIN-SUFFIX,sankie.net,proxy
 DOMAIN-SUFFIX,serverlesslibrary.net,proxy
 DOMAIN-SUFFIX,sfbassets.com,proxy
-DOMAIN-SUFFIX,sfbassets.net,proxy
 DOMAIN-SUFFIX,sfx.ms,proxy
 DOMAIN-SUFFIX,sharepoint.cn,proxy
 DOMAIN-SUFFIX,signalr.net,proxy
@@ -1369,7 +1365,6 @@ DOMAIN-SUFFIX,braintreepayments.org,proxy
 DOMAIN-SUFFIX,braintreepayments.tv,proxy
 DOMAIN-SUFFIX,braintreepaymentsolutions.com,proxy
 DOMAIN-SUFFIX,braintreeps.com,proxy
-DOMAIN-SUFFIX,briantreepayments.net,proxy
 DOMAIN-SUFFIX,briantreepayments.tv,proxy
 DOMAIN-SUFFIX,buyfast-paysmart.net,proxy
 DOMAIN-SUFFIX,card.io,proxy
@@ -1491,7 +1486,6 @@ DOMAIN-SUFFIX,paypal-support.com,proxy
 DOMAIN-SUFFIX,paypal-survey.com,proxy
 DOMAIN-SUFFIX,paypal-survey.org,proxy
 DOMAIN-SUFFIX,paypal-team.com,proxy
-DOMAIN-SUFFIX,paypal-viewpoints.net,proxy
 DOMAIN-SUFFIX,paypal.ca,proxy
 DOMAIN-SUFFIX,paypal.com,proxy
 DOMAIN-SUFFIX,paypal.hk,proxy
@@ -2753,7 +2747,6 @@ DOMAIN-SUFFIX,1-apple.com.tw,proxy
 DOMAIN-SUFFIX,10.tt,proxy
 DOMAIN-SUFFIX,1000giri.net,proxy
 DOMAIN-SUFFIX,100ke.org,proxy
-DOMAIN-SUFFIX,10beasts.net,proxy
 DOMAIN-SUFFIX,10conditionsoflove.com,proxy
 DOMAIN-SUFFIX,10musume.com,proxy
 DOMAIN-SUFFIX,123rf.com,proxy
@@ -4043,7 +4036,6 @@ DOMAIN-SUFFIX,epochweek.com,proxy
 DOMAIN-SUFFIX,equinenow.com,proxy
 DOMAIN-SUFFIX,eracom.com.tw,proxy
 DOMAIN-SUFFIX,erepublik.com,proxy
-DOMAIN-SUFFIX,erights.net,proxy
 DOMAIN-SUFFIX,erktv.com,proxy
 DOMAIN-SUFFIX,ernestmandel.org,proxy
 DOMAIN-SUFFIX,erodaizensyu.com,proxy
@@ -4200,7 +4192,6 @@ DOMAIN-SUFFIX,ff.im,proxy
 DOMAIN-SUFFIX,fffff.at,proxy
 DOMAIN-SUFFIX,ffvpn.com,proxy
 DOMAIN-SUFFIX,fgmtv.net,proxy
-DOMAIN-SUFFIX,fhreports.net,proxy
 DOMAIN-SUFFIX,fiftythree.com,proxy
 DOMAIN-SUFFIX,figprayer.com,proxy
 DOMAIN-SUFFIX,fileflyer.com,proxy
@@ -6199,7 +6190,6 @@ DOMAIN-SUFFIX,puffstore.com,proxy
 DOMAIN-SUFFIX,pullfolio.com,proxy
 DOMAIN-SUFFIX,punyu.com,proxy
 DOMAIN-SUFFIX,pure18.com,proxy
-DOMAIN-SUFFIX,pureconcepts.net,proxy
 DOMAIN-SUFFIX,pureinsight.org,proxy
 DOMAIN-SUFFIX,purepdf.com,proxy
 DOMAIN-SUFFIX,purevpn.com,proxy
@@ -6838,7 +6828,6 @@ DOMAIN-SUFFIX,tap.io,proxy
 DOMAIN-SUFFIX,tapanwap.com,proxy
 DOMAIN-SUFFIX,tapatalk.com,proxy
 DOMAIN-SUFFIX,tapbots.com,proxy
-DOMAIN-SUFFIX,tapbots.net,proxy
 DOMAIN-SUFFIX,taptap.tw,proxy
 DOMAIN-SUFFIX,taragana.com,proxy
 DOMAIN-SUFFIX,taup.net,proxy
@@ -7325,7 +7314,6 @@ DOMAIN-SUFFIX,uu-gg.com,proxy
 DOMAIN-SUFFIX,uukanshu.com,proxy
 DOMAIN-SUFFIX,uvwxyz.xyz,proxy
 DOMAIN-SUFFIX,uwants.com,proxy
-DOMAIN-SUFFIX,uwants.net,proxy
 DOMAIN-SUFFIX,uyghur-j.org,proxy
 DOMAIN-SUFFIX,uyghur.co.uk,proxy
 DOMAIN-SUFFIX,uyghuraa.org,proxy
@@ -7603,7 +7591,6 @@ DOMAIN-SUFFIX,wisevid.com,proxy
 DOMAIN-SUFFIX,wistia.com,proxy
 DOMAIN-SUFFIX,witnessleeteaching.com,proxy
 DOMAIN-SUFFIX,witopia.net,proxy
-DOMAIN-SUFFIX,wizcrafts.net,proxy
 DOMAIN-SUFFIX,wjbk.org,proxy
 DOMAIN-SUFFIX,wn.com,proxy
 DOMAIN-SUFFIX,wnacg.com,proxy
