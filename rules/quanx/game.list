@@ -396,15 +396,12 @@ HOST-SUFFIX,lolusercontent.com,game
 HOST-SUFFIX,lpl.com.cn,game
 HOST-SUFFIX,molesports.com,game
 HOST-SUFFIX,playvalorant.com,game
-HOST-SUFFIX,pvp.net,game
 HOST-SUFFIX,pvp.tv,game
 HOST-SUFFIX,rgpub.io,game
 HOST-SUFFIX,riot-games.com,game
 HOST-SUFFIX,riot.com,game
 HOST-SUFFIX,riot.net,game
-HOST-SUFFIX,riotcdn.net,game
 HOST-SUFFIX,riotforgegames.com,game
-HOST-SUFFIX,riotgames.com,game
 HOST-SUFFIX,riotgames.info,game
 HOST-SUFFIX,riotgames.jp,game
 HOST-SUFFIX,riotgames.net,game
@@ -474,6 +471,9 @@ HOST-SUFFIX,ubisoft-orbit-savegames.s3.amazonaws.com,game
 HOST-SUFFIX,ubisoft-uplay-savegames.s3.amazonaws.com,game
 HOST-SUFFIX,ubisoft.com,game
 HOST-SUFFIX,uplay.com,game
+HOST-SUFFIX,pvp.net,game
+HOST-SUFFIX,riotcdn.net,game
+HOST-SUFFIX,riotgames.com,game
 HOST-SUFFIX,beth.games,game
 HOST-SUFFIX,bethesda.net,game
 HOST-SUFFIX,bethesdagamestudios.com,game
