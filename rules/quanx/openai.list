@@ -1,3 +1,4 @@
+HOST,ai.cn,openai
 HOST-SUFFIX,ai.com,openai
 HOST-SUFFIX,auth0.com,openai
 HOST-SUFFIX,challenges.cloudflare.com,openai

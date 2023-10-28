@@ -3,6 +3,7 @@ DOMAIN,hmma.baidu.com,privacy
 DOMAIN,ios-pclog.i4.cn,privacy
 DOMAIN,js.users.51.la,privacy
 DOMAIN,mc.51.la,privacy
+DOMAIN,o33249.ingest.sentry.io,privacy
 DOMAIN,opencloud.wostore.cn,privacy
 DOMAIN,p1-play.edge4k.com,privacy
 DOMAIN,p1-play.kgslb.com,privacy
@@ -5938,7 +5939,6 @@ DOMAIN-SUFFIX,gksqdt.reitmans.com,privacy
 DOMAIN-SUFFIX,gksqfw.reverso.net,privacy
 DOMAIN-SUFFIX,gl5g98t0vfjb.panprices.com,privacy
 DOMAIN-SUFFIX,glamipixel.com,privacy
-DOMAIN-SUFFIX,glassmoni.researchgate.net,privacy
 DOMAIN-SUFFIX,gleamingcow.com,privacy
 DOMAIN-SUFFIX,gleamingtrade.com,privacy
 DOMAIN-SUFFIX,gli9.inseec-bs.com,privacy
@@ -9886,6 +9886,7 @@ DOMAIN-SUFFIX,pergeroni.openapp.link,privacy
 DOMAIN-SUFFIX,permission.au.actonservice.com,privacy
 DOMAIN-SUFFIX,permutive.app,privacy
 DOMAIN-SUFFIX,perpetualpail.com,privacy
+DOMAIN-SUFFIX,perr.hola.org,privacy
 DOMAIN-SUFFIX,personal.sonicwall.com,privacy
 DOMAIN-SUFFIX,persuadesock.com,privacy
 DOMAIN-SUFFIX,pet-recycling.husky.ca,privacy
@@ -13554,6 +13555,7 @@ DOMAIN-SUFFIX,stat.detelefoongids.nl,privacy
 DOMAIN-SUFFIX,stat.eagleplatform.com,privacy
 DOMAIN-SUFFIX,stat.glaze.ai,privacy
 DOMAIN-SUFFIX,stat.guiasjuridicas.es,privacy
+DOMAIN-SUFFIX,stat.iteye.com,privacy
 DOMAIN-SUFFIX,stat.juridicas.com,privacy
 DOMAIN-SUFFIX,stat.laley.es,privacy
 DOMAIN-SUFFIX,stat.laleynext.es,privacy

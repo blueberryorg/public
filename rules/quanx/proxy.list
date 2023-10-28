@@ -91,13 +91,13 @@ HOST-SUFFIX,dealclub.de,proxy
 HOST-SUFFIX,comments.app,proxy
 HOST-SUFFIX,contest.com,proxy
 HOST-SUFFIX,graph.org,proxy
+HOST-SUFFIX,legra.ph,proxy
 HOST-SUFFIX,mbrx.app,proxy
 HOST-SUFFIX,quiz.directory,proxy
 HOST-SUFFIX,stel.com,proxy
 HOST-SUFFIX,t.me,proxy
 HOST-SUFFIX,tdesktop.com,proxy
 HOST-SUFFIX,telega.one,proxy
-HOST-SUFFIX,telegra.ph,proxy
 HOST-SUFFIX,telegram-cdn.org,proxy
 HOST-SUFFIX,telegram.dog,proxy
 HOST-SUFFIX,telegram.me,proxy
@@ -1786,6 +1786,7 @@ HOST-KEYWORD,nivod,proxy
 HOST-KEYWORD,nowtv100,proxy
 HOST-KEYWORD,olevod,proxy
 HOST-KEYWORD,rthklive,proxy
+HOST-KEYWORD,tvbanywhere,proxy
 IP-CIDR,1.37.35.6/32,proxy
 IP-CIDR,101.100.179.242/32,proxy
 IP-CIDR,101.100.179.250/32,proxy
@@ -2949,7 +2950,6 @@ HOST-SUFFIX,amnesty.org,proxy
 HOST-SUFFIX,amnesty.tw,proxy
 HOST-SUFFIX,amnestyusa.org,proxy
 HOST-SUFFIX,amnyemachen.org,proxy
-HOST-SUFFIX,amplitude.com,proxy
 HOST-SUFFIX,amtb-taipei.org,proxy
 HOST-SUFFIX,anaconda.com,proxy
 HOST-SUFFIX,anchor.fm,proxy
@@ -2994,6 +2994,7 @@ HOST-SUFFIX,apartmentratings.com,proxy
 HOST-SUFFIX,apartments.com,proxy
 HOST-SUFFIX,apat1989.org,proxy
 HOST-SUFFIX,apetube.com,proxy
+HOST-SUFFIX,api.amplitude.com,proxy
 HOST-SUFFIX,api.linksalpha.com,proxy
 HOST-SUFFIX,api.mixpanel.com,proxy
 HOST-SUFFIX,api.termius.com,proxy
@@ -3652,7 +3653,6 @@ HOST-SUFFIX,crd-net.org,proxy
 HOST-SUFFIX,creaders.net,proxy
 HOST-SUFFIX,crisp.chat,proxy
 HOST-SUFFIX,cristyli.com,proxy
-HOST-SUFFIX,crittercism.com,proxy
 HOST-SUFFIX,crocotube.com,proxy
 HOST-SUFFIX,crossthewall.net,proxy
 HOST-SUFFIX,crossvpn.net,proxy
@@ -3878,7 +3878,6 @@ HOST-SUFFIX,dtic.mil,proxy
 HOST-SUFFIX,dtwang.org,proxy
 HOST-SUFFIX,duanzhihu.com,proxy
 HOST-SUFFIX,duck.com,proxy
-HOST-SUFFIX,duckdns.org,proxy
 HOST-SUFFIX,duckload.com,proxy
 HOST-SUFFIX,duckmylife.com,proxy
 HOST-SUFFIX,dueapp.com,proxy
@@ -4710,7 +4709,6 @@ HOST-SUFFIX,hnjhj.com,proxy
 HOST-SUFFIX,hnntube.com,proxy
 HOST-SUFFIX,hojemacau.com.mo,proxy
 HOST-SUFFIX,hola.com,proxy
-HOST-SUFFIX,hola.org,proxy
 HOST-SUFFIX,holyspiritspeaks.org,proxy
 HOST-SUFFIX,home.sina.com,proxy
 HOST-SUFFIX,homeip.net,proxy
@@ -5877,7 +5875,6 @@ HOST-SUFFIX,omny.fm,proxy
 HOST-SUFFIX,omy.sg,proxy
 HOST-SUFFIX,on.cc,proxy
 HOST-SUFFIX,onapp.com,proxy
-HOST-SUFFIX,onedumb.com,proxy
 HOST-SUFFIX,onion.city,proxy
 HOST-SUFFIX,onion.ly,proxy
 HOST-SUFFIX,onlinecha.com,proxy
@@ -5912,7 +5909,6 @@ HOST-SUFFIX,oraclecloud.com,proxy
 HOST-SUFFIX,orchidbbs.com,proxy
 HOST-SUFFIX,organcare.org.tw,proxy
 HOST-SUFFIX,organharvestinvestigation.net,proxy
-HOST-SUFFIX,organiccrap.com,proxy
 HOST-SUFFIX,orgasm.com,proxy
 HOST-SUFFIX,orgfree.com,proxy
 HOST-SUFFIX,oricon.co.jp,proxy
@@ -7739,20 +7735,17 @@ HOST-SUFFIX,yipub.com,proxy
 HOST-SUFFIX,yobit.net,proxy
 HOST-SUFFIX,yobt.tv,proxy
 HOST-SUFFIX,yogichen.org,proxy
-HOST-SUFFIX,yolasite.com,proxy
 HOST-SUFFIX,yomiuri.co.jp,proxy
 HOST-SUFFIX,yong.hu,proxy
 HOST-SUFFIX,yorkbbs.ca,proxy
 HOST-SUFFIX,you-get.org,proxy
 HOST-SUFFIX,you.com,proxy
-HOST-SUFFIX,youdontcare.com,proxy
 HOST-SUFFIX,youjizz.com,proxy
 HOST-SUFFIX,youmaker.com,proxy
 HOST-SUFFIX,youngspiration.hk,proxy
 HOST-SUFFIX,youpai.org,proxy
 HOST-SUFFIX,your-freedom.net,proxy
 HOST-SUFFIX,yourlisten.com,proxy
-HOST-SUFFIX,yourtrap.com,proxy
 HOST-SUFFIX,youshun12.com,proxy
 HOST-SUFFIX,youthforfreechina.org,proxy
 HOST-SUFFIX,youthnetradio.org,proxy
@@ -10772,7 +10765,6 @@ HOST-SUFFIX,.cg,proxy
 HOST-SUFFIX,.ch,proxy
 HOST-SUFFIX,.ci,proxy
 HOST-SUFFIX,.ck,proxy
-HOST-SUFFIX,.cl,proxy
 HOST-SUFFIX,.cm,proxy
 HOST-SUFFIX,.cr,proxy
 HOST-SUFFIX,.cu,proxy
@@ -10792,7 +10784,6 @@ HOST-SUFFIX,.ee,proxy
 HOST-SUFFIX,.eg,proxy
 HOST-SUFFIX,.eh,proxy
 HOST-SUFFIX,.er,proxy
-HOST-SUFFIX,.es,proxy
 HOST-SUFFIX,.et,proxy
 HOST-SUFFIX,.eu,proxy
 HOST-SUFFIX,.fi,proxy
@@ -10800,7 +10791,6 @@ HOST-SUFFIX,.fj,proxy
 HOST-SUFFIX,.fk,proxy
 HOST-SUFFIX,.fm,proxy
 HOST-SUFFIX,.fo,proxy
-HOST-SUFFIX,.fr,proxy
 HOST-SUFFIX,.ga,proxy
 HOST-SUFFIX,.gb,proxy
 HOST-SUFFIX,.gd,proxy
@@ -10852,7 +10842,6 @@ HOST-SUFFIX,.kz,proxy
 HOST-SUFFIX,.la,proxy
 HOST-SUFFIX,.lb,proxy
 HOST-SUFFIX,.lc,proxy
-HOST-SUFFIX,.li,proxy
 HOST-SUFFIX,.lk,proxy
 HOST-SUFFIX,.lr,proxy
 HOST-SUFFIX,.ls,proxy
@@ -10883,7 +10872,6 @@ HOST-SUFFIX,.na,proxy
 HOST-SUFFIX,.nc,proxy
 HOST-SUFFIX,.nf,proxy
 HOST-SUFFIX,.ng,proxy
-HOST-SUFFIX,.ni,proxy
 HOST-SUFFIX,.nl,proxy
 HOST-SUFFIX,.no,proxy
 HOST-SUFFIX,.np,proxy
@@ -10932,7 +10920,6 @@ HOST-SUFFIX,.sv,proxy
 HOST-SUFFIX,.sx,proxy
 HOST-SUFFIX,.sy,proxy
 HOST-SUFFIX,.sz,proxy
-HOST-SUFFIX,.tc,proxy
 HOST-SUFFIX,.td,proxy
 HOST-SUFFIX,.tf,proxy
 HOST-SUFFIX,.tg,proxy
@@ -10983,11 +10970,12 @@ HOST-SUFFIX,.xerox,proxy
 HOST-SUFFIX,.hermes,proxy
 HOST-SUFFIX,.iwc,proxy
 HOST-SUFFIX,.jlc,proxy
+HOST-SUFFIX,.lipsy,proxy
 HOST-SUFFIX,.loft,proxy
 HOST-SUFFIX,.mango,proxy
 HOST-SUFFIX,.netaporter,proxy
 HOST-SUFFIX,.nextdirect,proxy
-HOST-SUFFIX,.next,proxy
+HOST-SUFFIX,.nike,proxy
 HOST-SUFFIX,.oldnavy,proxy
 HOST-SUFFIX,.piaget,proxy
 HOST-SUFFIX,.piperlime,proxy
@@ -11007,6 +10995,7 @@ HOST-SUFFIX,.bcn,proxy
 HOST-SUFFIX,.budapest,proxy
 HOST-SUFFIX,.conlogne,proxy
 HOST-SUFFIX,.corsica,proxy
+HOST-SUFFIX,.frl,proxy
 HOST-SUFFIX,.hamburg,proxy
 HOST-SUFFIX,.helsinki,proxy
 HOST-SUFFIX,.koeln,proxy
@@ -11028,6 +11017,7 @@ HOST-SUFFIX,.abbott,proxy
 HOST-SUFFIX,.abbvie,proxy
 HOST-SUFFIX,.anthem,proxy
 HOST-SUFFIX,.dabur,proxy
+HOST-SUFFIX,.fresenius,proxy
 HOST-SUFFIX,.jnj,proxy
 HOST-SUFFIX,.merck,proxy
 HOST-SUFFIX,.dupont,proxy
@@ -11043,6 +11033,8 @@ HOST-SUFFIX,.kone,proxy
 HOST-SUFFIX,.ksb,proxy
 HOST-SUFFIX,.kuokgroup,proxy
 HOST-SUFFIX,.leclerc,proxy
+HOST-SUFFIX,.lidl,proxy
+HOST-SUFFIX,.linde,proxy
 HOST-SUFFIX,.lotte,proxy
 HOST-SUFFIX,.man,proxy
 HOST-SUFFIX,.ril,proxy
@@ -11062,6 +11054,7 @@ HOST-SUFFIX,.gcc,proxy
 HOST-SUFFIX,.hot,proxy
 HOST-SUFFIX,.ikano,proxy
 HOST-SUFFIX,.lgbt,proxy
+HOST-SUFFIX,.livestrong,proxy
 HOST-SUFFIX,.maif,proxy
 HOST-SUFFIX,.mattel,proxy
 HOST-SUFFIX,.poker,proxy
@@ -11079,6 +11072,7 @@ HOST-SUFFIX,.xn--mgbi4ecexp,proxy
 HOST-SUFFIX,.cern,proxy
 HOST-SUFFIX,.emerck,proxy
 HOST-SUFFIX,.hisamitsu,proxy
+HOST-SUFFIX,.lilly,proxy
 HOST-SUFFIX,.otsuka,proxy
 HOST-SUFFIX,.teva,proxy
 HOST-SUFFIX,.toray,proxy
@@ -11167,10 +11161,12 @@ HOST-SUFFIX,.hyundai,proxy
 HOST-SUFFIX,.iveco,proxy
 HOST-SUFFIX,.jaguar,proxy
 HOST-SUFFIX,.lexus,proxy
+HOST-SUFFIX,.lincoln,proxy
 HOST-SUFFIX,.maserati,proxy
 HOST-SUFFIX,.mini,proxy
 HOST-SUFFIX,.mitsubishi,proxy
 HOST-SUFFIX,.newholland,proxy
+HOST-SUFFIX,.nissan,proxy
 HOST-SUFFIX,.ram,proxy
 HOST-SUFFIX,.tatamotors,proxy
 HOST-SUFFIX,.toyota,proxy
@@ -11185,6 +11181,7 @@ HOST-SUFFIX,.fujitsu,proxy
 HOST-SUFFIX,.fujixerox,proxy
 HOST-SUFFIX,.goldpoint,proxy
 HOST-SUFFIX,.ibm,proxy
+HOST-SUFFIX,.nikon,proxy
 HOST-SUFFIX,.olympus,proxy
 HOST-SUFFIX,.pioneer,proxy
 HOST-SUFFIX,.toshiba,proxy
@@ -11200,6 +11197,7 @@ HOST-SUFFIX,.hsbc,proxy
 HOST-SUFFIX,.jcb,proxy
 HOST-SUFFIX,.jll,proxy
 HOST-SUFFIX,.kfh,proxy
+HOST-SUFFIX,.lixil,proxy
 HOST-SUFFIX,.lplfinancial,proxy
 HOST-SUFFIX,.lpl,proxy
 HOST-SUFFIX,.netbank,proxy
@@ -11216,12 +11214,13 @@ HOST-SUFFIX,.diy,proxy
 HOST-SUFFIX,.duck,proxy
 HOST-SUFFIX,.homedepot,proxy
 HOST-SUFFIX,.homegoods,proxy
-HOST-SUFFIX,.off,proxy
 HOST-SUFFIX,.raid,proxy
 HOST-SUFFIX,.rightathome,proxy
+HOST-SUFFIX,.esurance,proxy
 HOST-SUFFIX,.farmers,proxy
 HOST-SUFFIX,.goodhands,proxy
 HOST-SUFFIX,.metlife,proxy
+HOST-SUFFIX,.nissay,proxy
 HOST-SUFFIX,.onyourside,proxy
 HOST-SUFFIX,.swiftcover,proxy
 HOST-SUFFIX,.tiaa,proxy
@@ -11254,6 +11253,8 @@ HOST-SUFFIX,.emerson,proxy
 HOST-SUFFIX,.epson,proxy
 HOST-SUFFIX,.fairwinds,proxy
 HOST-SUFFIX,.flickr,proxy
+HOST-SUFFIX,.frogans,proxy
+HOST-SUFFIX,.frontier,proxy
 HOST-SUFFIX,.ftr,proxy
 HOST-SUFFIX,.godaddy,proxy
 HOST-SUFFIX,.goog,proxy
@@ -11265,6 +11266,7 @@ HOST-SUFFIX,.jcp,proxy
 HOST-SUFFIX,.juniper,proxy
 HOST-SUFFIX,.kddi,proxy
 HOST-SUFFIX,.konami,proxy
+HOST-SUFFIX,.liaison,proxy
 HOST-SUFFIX,.locker,proxy
 HOST-SUFFIX,.meo,proxy
 HOST-SUFFIX,.mih,proxy
@@ -11275,6 +11277,7 @@ HOST-SUFFIX,.mit,proxy
 HOST-SUFFIX,.nec,proxy
 HOST-SUFFIX,.neustar,proxy
 HOST-SUFFIX,.nexus,proxy
+HOST-SUFFIX,.nico,proxy
 HOST-SUFFIX,.ntt,proxy
 HOST-SUFFIX,.ollo,proxy
 HOST-SUFFIX,.oracle,proxy
@@ -11287,6 +11290,7 @@ HOST-SUFFIX,.richardli,proxy
 HOST-SUFFIX,.ricoh,proxy
 HOST-SUFFIX,.sfr,proxy
 HOST-SUFFIX,.tata,proxy
+HOST-SUFFIX,.tci,proxy
 HOST-SUFFIX,.telecity,proxy
 HOST-SUFFIX,.telefonica,proxy
 HOST-SUFFIX,.terra,proxy
@@ -11299,6 +11303,7 @@ HOST-SUFFIX,.xperia,proxy
 HOST-SUFFIX,.yahoo,proxy
 HOST-SUFFIX,.yandex,proxy
 HOST-SUFFIX,.youtube,proxy
+HOST-SUFFIX,.clinique,proxy
 HOST-SUFFIX,.loreal,proxy
 HOST-SUFFIX,.matrix,proxy
 HOST-SUFFIX,.maybelline,proxy
@@ -11332,6 +11337,7 @@ HOST-SUFFIX,.xn--qcka1pmc,proxy
 HOST-SUFFIX,.xn--w4r85el8fhu5dnra,proxy
 HOST-SUFFIX,.xn--w4rs40l,proxy
 HOST-SUFFIX,.avianca,proxy
+HOST-SUFFIX,.clubmed,proxy
 HOST-SUFFIX,.hilton,proxy
 HOST-SUFFIX,.hyatt,proxy
 HOST-SUFFIX,.marriott,proxy
@@ -11341,6 +11347,7 @@ HOST-SUFFIX,.viking,proxy
 HOST-SUFFIX,.webjet,proxy
 HOST-SUFFIX,.able,proxy
 HOST-SUFFIX,.cbre,proxy
+HOST-SUFFIX,.frontdoor,proxy
 HOST-SUFFIX,.lefrak,proxy
 HOST-SUFFIX,.abc,proxy
 HOST-SUFFIX,.cbn,proxy
