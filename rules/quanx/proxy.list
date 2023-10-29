@@ -111,10 +111,7 @@ HOST-SUFFIX,usercontent.dev,proxy
 HOST-KEYWORD,nicegram,proxy
 IP-CIDR,109.239.140.0/24,proxy
 IP-CIDR,149.154.160.0/20,proxy
-IP-CIDR,5.28.195.163/32,proxy
-IP-CIDR,5.28.195.205/32,proxy
-IP-CIDR,5.28.195.37/32,proxy
-IP-CIDR,5.28.195.80/32,proxy
+IP-CIDR,5.28.192.0/18,proxy
 IP-CIDR,91.108.0.0/16,proxy
 IP-CIDR,2001:67c:4e8::/48,proxy
 IP-CIDR,2001:b28:f23c::/47,proxy
