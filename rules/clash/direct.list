@@ -61267,6 +61267,8 @@ PROCESS-NAME,Surge%202,direct
 PROCESS-NAME,Surge%203,direct
 PROCESS-NAME,Surge%204,direct
 PROCESS-NAME,BitComet.exe,direct
+PROCESS-NAME,BitComet_x64.exe,direct
+PROCESS-NAME,DownloadSDKServer.exe,direct
 PROCESS-NAME,NeatDM,direct
 PROCESS-NAME,NeatDM.exe,direct
 PROCESS-NAME,NetTransport.exe,direct
