@@ -128,12 +128,12 @@ adapters:
 rule_list:
     - disney
     - bilibili
-    - privacy
-    - reject
+    - direct
+    - develop
     - proxy
     - game
     - youtube
     - netflix
     - openai
-    - direct
-    - develop
+    - reject
+    - privacy
