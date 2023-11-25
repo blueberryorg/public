@@ -537,6 +537,8 @@ DOMAIN-SUFFIX,wikivoyage.org,proxy
 DOMAIN-KEYWORD,apple-support.akadns.net,proxy
 DOMAIN-KEYWORD,apple.com.akadns.net,proxy
 DOMAIN-KEYWORD,apple.com.edgekey.net,proxy
+DOMAIN-KEYWORD,buy.itunes.apple.com,proxy
+DOMAIN-KEYWORD,smp-device,proxy
 DOMAIN-KEYWORD,testflight,proxy
 DOMAIN-KEYWORD,icloud.com.akadns.net,proxy
 IP-CIDR,139.178.128.0/18,proxy
@@ -9205,7 +9207,6 @@ DOMAIN-SUFFIX,.in,proxy
 DOMAIN-SUFFIX,.iq,proxy
 DOMAIN-SUFFIX,.ir,proxy
 DOMAIN-SUFFIX,.is,proxy
-DOMAIN-SUFFIX,.it,proxy
 DOMAIN-SUFFIX,.je,proxy
 DOMAIN-SUFFIX,.jm,proxy
 DOMAIN-SUFFIX,.jo,proxy
@@ -9528,7 +9529,6 @@ DOMAIN-SUFFIX,.uconnect,proxy
 DOMAIN-SUFFIX,.volkswagen,proxy
 DOMAIN-SUFFIX,.volvo,proxy
 DOMAIN-SUFFIX,.android,proxy
-DOMAIN-SUFFIX,.apple,proxy
 DOMAIN-SUFFIX,.digikey,proxy
 DOMAIN-SUFFIX,.fujitsu,proxy
 DOMAIN-SUFFIX,.fujixerox,proxy
@@ -9545,6 +9545,7 @@ DOMAIN-SUFFIX,.everbank,proxy
 DOMAIN-SUFFIX,.hdfcbank,proxy
 DOMAIN-SUFFIX,.hdfc,proxy
 DOMAIN-SUFFIX,.hsbc,proxy
+DOMAIN-SUFFIX,.itau,proxy
 DOMAIN-SUFFIX,.jcb,proxy
 DOMAIN-SUFFIX,.jll,proxy
 DOMAIN-SUFFIX,.kfh,proxy
@@ -9682,5 +9683,6 @@ DOMAIN-SUFFIX,.cbn,proxy
 DOMAIN-SUFFIX,.cbs,proxy
 DOMAIN-SUFFIX,.dstv,proxy
 DOMAIN-SUFFIX,.gotv,proxy
+DOMAIN-SUFFIX,.itv,proxy
 DOMAIN-SUFFIX,.spiegel,proxy
 DOMAIN-SUFFIX,.rmit,proxy
