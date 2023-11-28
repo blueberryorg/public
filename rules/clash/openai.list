@@ -1,3 +1,4 @@
+DOMAIN,chatgpt.livekit.cloud,openai
 DOMAIN,static.cloudflareinsights.com,openai
 DOMAIN-SUFFIX,ai.com,openai
 DOMAIN-SUFFIX,algolia.net,openai

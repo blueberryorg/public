@@ -1,3 +1,4 @@
+HOST,chatgpt.livekit.cloud,openai
 HOST,static.cloudflareinsights.com,openai
 HOST-SUFFIX,ai.com,openai
 HOST-SUFFIX,algolia.net,openai
