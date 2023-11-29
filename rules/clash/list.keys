@@ -1,11 +1,11 @@
-proxy
 game
-youtube
-direct
-reject
 netflix
 disney
 bilibili
+direct
+develop
+reject
+proxy
+youtube
 openai
 privacy
-develop
