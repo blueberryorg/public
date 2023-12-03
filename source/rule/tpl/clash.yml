@@ -32,7 +32,7 @@ dns:
         - https://cloudflare-dns.com/dns-query
         - https://dns.google/dns-query
     fallback-filter:
-        geoip: true  默认
+        geoip: true
         geoip-code: CN
         ipcidr:
             - 240.0.0.0/4
