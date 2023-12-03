@@ -13,6 +13,7 @@ import (
 )
 
 func (p *Collector) Clash() error {
+
 	//var ruleList []string
 	ruleMap := map[string][]string{}
 	pie.Each(p.ExportRules(), func(r rules.Rule) {
@@ -79,6 +80,148 @@ func (p *Collector) Clash() error {
 	}
 
 	err := os.WriteFile("../../rules/clash/list.keys", []byte(strings.Join(keys, "\n")), 0666)
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
+	return nil
+}
+
+func (p *Collector) Subconverter() error {
+	rb := log.GetBuffer()
+	defer log.PutBuffer(rb)
+
+	rb.WriteString("[custom]")
+	rb.WriteString("\n")
+
+	rb.WriteString("enable_rule_generator=true\n")
+	rb.WriteString("overwrite_original_rules=true\n")
+
+	ruleMap := map[string][]string{}
+	pie.Each(p.ExportRules(), func(r rules.Rule) {
+		var b bytes.Buffer
+		switch r.RuleType() {
+		case rules.RuleTypeDomain:
+			b.WriteString("DOMAIN")
+		case rules.RuleTypeDomainSuffix:
+			b.WriteString("DOMAIN-SUFFIX")
+		case rules.RuleTypeDomainKeyword:
+			b.WriteString("DOMAIN-KEYWORD")
+		case rules.RuleTypeProcessPath:
+			b.WriteString("PROCESS-PATH")
+		case rules.RuleTypeProcess:
+			b.WriteString("PROCESS-NAME")
+		case rules.RuleTypeSrcPort:
+			b.WriteString("SRC-PORT")
+		case rules.RuleTypeDstPort:
+			b.WriteString("DST-PORT")
+		case rules.RuleTypeIPCIDR:
+			b.WriteString("IP-CIDR")
+		case rules.RuleTypeSrcIPCIDR:
+			b.WriteString("SRC-IP-CIDR")
+		case rules.RuleTypeGEOIP:
+			b.WriteString("GEOIP")
+		default:
+			return
+		}
+
+		b.WriteString(",")
+		b.WriteString(r.Payload())
+		b.WriteString(",")
+
+		b.WriteString(r.Adapter())
+
+		ruleMap[r.Adapter()] = append(ruleMap[r.Adapter()], b.String())
+	})
+
+	if osx.IsDir("../../rules/subconverter/") {
+		err := os.RemoveAll("../../rules/subconverter/")
+		if err != nil {
+			log.Errorf("err:%v", err)
+			return err
+		}
+	}
+
+	if !osx.IsDir("../../rules/subconverter/") {
+		err := os.MkdirAll("../../rules/subconverter/", 0666)
+		if err != nil {
+			log.Errorf("err:%v", err)
+			return err
+		}
+	}
+
+	var keys []string
+	for key, lines := range ruleMap {
+		err := os.WriteFile(fmt.Sprintf("../../rules/subconverter/%s.list", key), []byte(strings.Join(lines, "\n")), 0666)
+		if err != nil {
+			log.Errorf("err:%v", err)
+			return err
+		}
+
+		keys = append(keys, key)
+	}
+
+	// NOTE: 规则集
+	rb.WriteString("\n")
+	for _, key := range keys {
+		rb.WriteString("ruleset")
+		rb.WriteString("=")
+		rb.WriteString(key)
+		rb.WriteString(",")
+
+		rb.WriteString("https://cdn.jsdelivr.net/gh/blueberryorg/public@master/rules/")
+		rb.WriteString("subconverter")
+		rb.WriteString("/")
+		rb.WriteString(key)
+		rb.WriteString(".list")
+		rb.WriteString("\n")
+	}
+
+	rb.WriteString("ruleset=DIRECT,[]GEOIP,LAN")
+	rb.WriteString("ruleset=DIRECT,[]GEOIP,CN")
+	rb.WriteString("ruleset=PROXY,[]FINAL")
+
+	// NOTE: 分组
+	rb.WriteString("\n")
+
+	rb.WriteString("custom_proxy_group代理选择`select`[]故障转移`[]自动选择`[]手动选择`[]负载均衡`[]DIRECT`[]REJECT`")
+	pie.Each(
+		pie.FilterNot(keys, func(s string) bool {
+			return s == Direct || s == Reject || s == Privacy
+		}),
+		func(s string) {
+			rb.WriteString("[]")
+			rb.WriteString(s)
+			rb.WriteString("`")
+		},
+	)
+	rb.WriteString("\n")
+
+	rb.WriteString("custom_proxy_group=手动选择`select`.*`https://www.google.com/generate_204`60,,2\n")
+	rb.WriteString("custom_proxy_group=故障转移`fallback`.*`https://www.google.com/generate_204`60,,2\n")
+	rb.WriteString("custom_proxy_group=负载均衡`load-balance`.*`https://www.google.com/generate_204`60,,2\n")
+	rb.WriteString("custom_proxy_group=自动选择`url-test`.*`https://www.google.com/generate_204`60,,2\n")
+
+	rb.WriteString("custom_proxy_group=直接连接`select`[]")
+	rb.WriteString(Direct)
+	rb.WriteString("`[]DIRECT`[]REJECT`[]代理选择`\n")
+
+	rb.WriteString("custom_proxy_group=连接拦截`select`[]")
+	rb.WriteString(Reject)
+	rb.WriteString("`[]REJECT`[]DIRECT`[]代理选择`\n")
+
+	rb.WriteString("custom_proxy_group=隐私保护`select`[]")
+	rb.WriteString(Reject)
+	rb.WriteString("`[]REJECT`[]DIRECT`[]代理选择`\n")
+
+	err := os.WriteFile("../../rules/subconverter/list.keys", []byte(strings.Join(keys, "\n")), 0666)
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
+	err = os.WriteFile("../../rules/subconverter/blueberry.ini", rb.Bytes(), 0666)
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err

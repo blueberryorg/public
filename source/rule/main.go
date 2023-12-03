@@ -187,6 +187,12 @@ func main() {
 		return
 	}
 
+	err = c.Subconverter()
+	if err != nil {
+		log.Panicf("err:%v", err)
+		return
+	}
+
 	err = c.QuanX()
 	if err != nil {
 		log.Panicf("err:%v", err)
