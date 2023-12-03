@@ -90,7 +90,7 @@ func (p *Collector) Clash() error {
 
 func (p *Collector) Subconverter() (err error) {
 	//const baseUrl = "https://cdn.jsdelivr.net/gh/blueberryorg/public@master/rules/subconverter/"
-	const baseUrl = "https://github.com/blueberryorg/public/raw/master/rules/subconverter/"
+	const baseUrl = "https://raw.githubusercontent.com/blueberryorg/public/master/rules/subconverter/"
 
 	rb := log.GetBuffer()
 	defer log.PutBuffer(rb)
