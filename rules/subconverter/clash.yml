@@ -32,7 +32,7 @@ dns:
         - https://cloudflare-dns.com/dns-query
         - https://dns.google/dns-query
     fallback-filter:
-        geoip: true  默认
+        geoip: true
         geoip-code: CN
         ipcidr:
             - 240.0.0.0/4
@@ -48,6 +48,14 @@ cfw-proxies-order: latency
 cfw-bypass:
     - "*.csdn.net"
     - "*.dmxq.info"
+    - "*.ffzy-online6.com"
+    - "*.ddzyku.com"
+    - "*.1080pzy.co"
+    - "*.bfvvs.com"
+    - "*.xlzys.com"
+    - "*.xlzyd.com"
+    - "*.qwedfc123.com"
+    - "*.dmzybf.com"
     - "*.zhenbuka5.com.*"
     - "*.goproxy.cn.*"
     - "*.goproxy.io.*"
@@ -51084,7 +51092,6 @@ cfw-bypass:
     - "*.ffzy-online3.com"
     - "*.ffzy-online4.com"
     - "*.ffzy-online5.com"
-    - "*.ffzy-online6.com"
     - "*.ffzy-online7.com"
     - "*.ffzy-online8.com"
     - "*.ffzy-online9.com"
@@ -51118,3 +51125,4 @@ cfw-bypass:
     - 172.31.*
     - 192.168.*
     - <local>
+
