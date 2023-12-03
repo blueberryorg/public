@@ -128,9 +128,6 @@ func (p *Collector) Subconverter() error {
 
 		b.WriteString(",")
 		b.WriteString(r.Payload())
-		b.WriteString(",")
-
-		b.WriteString(RuleType(r.Adapter()).Chinese())
 
 		ruleMap[r.Adapter()] = append(ruleMap[r.Adapter()], b.String())
 	})
@@ -178,9 +175,9 @@ func (p *Collector) Subconverter() error {
 		rb.WriteString("\n")
 	}
 
-	rb.WriteString("ruleset=DIRECT,[]GEOIP,LAN")
-	rb.WriteString("ruleset=DIRECT,[]GEOIP,CN")
-	rb.WriteString("ruleset=PROXY,[]FINAL")
+	rb.WriteString("ruleset=DIRECT,[]GEOIP,LAN\n")
+	rb.WriteString("ruleset=DIRECT,[]GEOIP,CN\n")
+	rb.WriteString("ruleset=PROXY,[]FINAL\n")
 
 	// NOTE: 分组
 	rb.WriteString("\n")
@@ -201,10 +198,10 @@ func (p *Collector) Subconverter() error {
 		},
 	)
 
-	rb.WriteString("custom_proxy_group=手动选择`select`.*`https://www.google.com/generate_204`60,,2\n")
-	rb.WriteString("custom_proxy_group=故障转移`fallback`.*`https://www.google.com/generate_204`60,,2\n")
-	rb.WriteString("custom_proxy_group=负载均衡`load-balance`.*`https://www.google.com/generate_204`60,,2\n")
-	rb.WriteString("custom_proxy_group=自动选择`url-test`.*`https://www.google.com/generate_204`60,,2\n")
+	rb.WriteString("custom_proxy_group=手动选择`select`.*`https://www.google.com/generate_204`180,,2\n")
+	rb.WriteString("custom_proxy_group=故障转移`fallback`.*`https://www.google.com/generate_204`180,,2\n")
+	rb.WriteString("custom_proxy_group=负载均衡`load-balance`.*`https://www.google.com/generate_204`180,,2\n")
+	rb.WriteString("custom_proxy_group=自动选择`url-test`.*`https://www.google.com/generate_204`180,,2\n")
 
 	rb.WriteString("custom_proxy_group=")
 	rb.WriteString(Direct.Chinese())
