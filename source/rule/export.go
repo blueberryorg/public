@@ -187,35 +187,45 @@ func (p *Collector) Subconverter() error {
 
 	rb.WriteString("custom_proxy_group=")
 	rb.WriteString(Proxy.Chinese())
-	rb.WriteString("`select`[]故障转移`[]自动选择`[]手动选择`[]负载均衡`[]DIRECT`[]REJECT`")
+	rb.WriteString("`select`[]故障转移`[]自动选择`[]手动选择`[]负载均衡`[]DIRECT`[]REJECT`\n")
 	pie.Each(
 		pie.FilterNot(keys, func(s string) bool {
 			return RuleType(s) == Direct || RuleType(s) == Reject || RuleType(s) == Privacy
 		}),
 		func(s string) {
-			rb.WriteString("[]")
-			rb.WriteString(s)
-			rb.WriteString("`")
+			rb.WriteString("custom_proxy_group=")
+			rb.WriteString(RuleType(s).Chinese())
+			rb.WriteString("`select`[]")
+			rb.WriteString(Proxy.String())
+			rb.WriteString("`[]故障转移`[]自动选择`[]手动选择`[]负载均衡`[]DIRECT`[]REJECT`\n")
 		},
 	)
-	rb.WriteString("\n")
 
 	rb.WriteString("custom_proxy_group=手动选择`select`.*`https://www.google.com/generate_204`60,,2\n")
 	rb.WriteString("custom_proxy_group=故障转移`fallback`.*`https://www.google.com/generate_204`60,,2\n")
 	rb.WriteString("custom_proxy_group=负载均衡`load-balance`.*`https://www.google.com/generate_204`60,,2\n")
 	rb.WriteString("custom_proxy_group=自动选择`url-test`.*`https://www.google.com/generate_204`60,,2\n")
 
-	rb.WriteString("custom_proxy_group=直接连接`select`[]")
+	rb.WriteString("custom_proxy_group=")
 	rb.WriteString(Direct.Chinese())
-	rb.WriteString("`[]DIRECT`[]REJECT`[]代理选择`\n")
+	rb.WriteString("`select`[]")
+	rb.WriteString("`[]DIRECT`[]REJECT`[]")
+	rb.WriteString(Proxy.Chinese())
+	rb.WriteString("`\n")
 
-	rb.WriteString("custom_proxy_group=连接拦截`select`[]")
+	rb.WriteString("custom_proxy_group=")
 	rb.WriteString(Reject.Chinese())
-	rb.WriteString("`[]REJECT`[]DIRECT`[]代理选择`\n")
+	rb.WriteString("`select`[]")
+	rb.WriteString("`[]REJECT`[]DIRECT`[]")
+	rb.WriteString(Proxy.Chinese())
+	rb.WriteString("`\n")
 
-	rb.WriteString("custom_proxy_group=隐私保护`select`[]")
+	rb.WriteString("custom_proxy_group=")
 	rb.WriteString(Reject.Chinese())
-	rb.WriteString("`[]REJECT`[]DIRECT`[]代理选择`\n")
+	rb.WriteString("`select`[]")
+	rb.WriteString("`[]REJECT`[]DIRECT`[]")
+	rb.WriteString(Proxy.Chinese())
+	rb.WriteString("`\n")
 
 	err := os.WriteFile("../../rules/subconverter/list.keys", []byte(strings.Join(keys, "\n")), 0666)
 	if err != nil {
