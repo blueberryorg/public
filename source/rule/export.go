@@ -232,6 +232,10 @@ func (p *Collector) Subconverter() (err error) {
 		return err
 	}
 
+	// NOTE: 节点
+	rb.WriteString("\n")
+	rb.WriteString("exclude_remarks=\n")
+
 	err = os.WriteFile("../../rules/subconverter/blueberry.ini", rb.Bytes(), 0666)
 	if err != nil {
 		log.Errorf("err:%v", err)
