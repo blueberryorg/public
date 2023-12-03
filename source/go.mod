@@ -7,7 +7,7 @@ require (
 	github.com/elliotchance/pie/v2 v2.8.0
 	github.com/go-resty/resty/v2 v2.10.0
 	github.com/ice-cream-heaven/log v0.0.0-20231104075759-d72cba493e33
-	github.com/ice-cream-heaven/utils v0.0.0-20231108120248-8b5bc13ee20f
+	github.com/ice-cream-heaven/utils v0.0.0-20231203084652-473c2aa76f05
 	github.com/projectdiscovery/mapcidr v1.1.16
 	github.com/pterm/pterm v0.12.71
 	github.com/samber/lo v1.38.1
@@ -21,16 +21,26 @@ require (
 	atomicgo.dev/schedule v0.1.0 // indirect
 	github.com/Dreamacro/protobytes v0.0.0-20230911123819-0bbf144b9b9a // indirect
 	github.com/aymerick/douceur v0.2.0 // indirect
+	github.com/bytedance/sonic v1.10.2 // indirect
+	github.com/chenzhuoyu/base64x v0.0.0-20230717121745-296ad89f973d // indirect
+	github.com/chenzhuoyu/iasm v0.9.1 // indirect
 	github.com/containerd/console v1.0.3 // indirect
 	github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc // indirect
+	github.com/gabriel-vasile/mimetype v1.4.3 // indirect
+	github.com/go-playground/locales v0.14.1 // indirect
+	github.com/go-playground/universal-translator v0.18.1 // indirect
+	github.com/go-playground/validator/v10 v10.16.0 // indirect
 	github.com/gofrs/uuid/v5 v5.0.0 // indirect
 	github.com/google/uuid v1.4.0 // indirect
 	github.com/gookit/color v1.5.4 // indirect
 	github.com/gorilla/css v1.0.1 // indirect
+	github.com/klauspost/cpuid/v2 v2.2.6 // indirect
+	github.com/leodido/go-urn v1.2.4 // indirect
 	github.com/lestrrat-go/file-rotatelogs v2.4.0+incompatible // indirect
 	github.com/lestrrat-go/strftime v1.0.6 // indirect
 	github.com/lithammer/fuzzysearch v1.1.8 // indirect
 	github.com/mattn/go-runewidth v0.0.15 // indirect
+	github.com/mcuadros/go-defaults v1.2.0 // indirect
 	github.com/microcosm-cc/bluemonday v1.0.26 // indirect
 	github.com/miekg/dns v1.1.57 // indirect
 	github.com/nats-io/nuid v1.0.1 // indirect
@@ -45,10 +55,13 @@ require (
 	github.com/rivo/uniseg v0.4.4 // indirect
 	github.com/saintfish/chardet v0.0.0-20230101081208-5e3ef4b5456d // indirect
 	github.com/sirupsen/logrus v1.9.3 // indirect
+	github.com/twitchyliquid64/golang-asm v0.15.1 // indirect
 	github.com/xo/terminfo v0.0.0-20220910002029-abceb7e1c41e // indirect
 	go.uber.org/atomic v1.11.0 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
 	go.uber.org/zap v1.26.0 // indirect
+	golang.org/x/arch v0.6.0 // indirect
+	golang.org/x/crypto v0.16.0 // indirect
 	golang.org/x/exp v0.0.0-20231127185646-65229373498e // indirect
 	golang.org/x/mod v0.14.0 // indirect
 	golang.org/x/net v0.19.0 // indirect

@@ -88,7 +88,7 @@ func (p *Collector) Clash() error {
 	return nil
 }
 
-func (p *Collector) Subconverter() error {
+func (p *Collector) Subconverter() (err error) {
 	rb := log.GetBuffer()
 	defer log.PutBuffer(rb)
 
@@ -221,7 +221,18 @@ func (p *Collector) Subconverter() error {
 	rb.WriteString(Proxy.Chinese())
 	rb.WriteString("`\n")
 
-	err := os.WriteFile("../../rules/subconverter/blueberry.ini", rb.Bytes(), 0666)
+	// NOTE: 模版
+	rb.WriteString("\n")
+
+	// NOTE: clash
+	rb.WriteString("clash_rule_base=https://cdn.jsdelivr.net/gh/blueberryorg/public@master/rules/subconverter/clash.yml\n")
+	err = osx.Copy("./tpl/clash.yml", "../../rules/subconverter/clash.yml")
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
+	err = os.WriteFile("../../rules/subconverter/blueberry.ini", rb.Bytes(), 0666)
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err
