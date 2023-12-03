@@ -126,14 +126,14 @@ adapters:
         - direct
         - reject
 rule_list:
-    - reject
-    - youtube
-    - disney
-    - bilibili
-    - privacy
     - openai
     - direct
+    - reject
+    - youtube
+    - netflix
+    - bilibili
     - develop
     - proxy
     - game
-    - netflix
+    - disney
+    - privacy
