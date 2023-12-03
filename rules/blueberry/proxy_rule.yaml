@@ -47,7 +47,7 @@ adapters:
         - 负载均衡
       set: disney
     - type: select
-      name: BiliBili
+      name: 哔哩哔哩
       adapters:
         - 代理选择
         - 故障切换
@@ -65,7 +65,7 @@ adapters:
         - 负载均衡
       set: openai
     - type: select
-      name: Game
+      name: 游戏分流
       adapters:
         - 代理选择
         - 故障切换
@@ -74,7 +74,7 @@ adapters:
         - 负载均衡
       set: game
     - type: select
-      name: Develop
+      name: 开发专用
       adapters:
         - 代理选择
         - 故障切换
@@ -83,7 +83,7 @@ adapters:
         - 负载均衡
       set: develop
     - type: select
-      name: 广告屏蔽
+      name: 拒绝连接
       adapters:
         - REJECT
         - DIRECT
@@ -94,7 +94,7 @@ adapters:
         - 负载均衡
       set: reject
     - type: select
-      name: 隐私保护
+      name: privacy
       adapters:
         - REJECT
         - DIRECT
@@ -103,9 +103,9 @@ adapters:
         - 延时最低
         - 手动选择
         - 负载均衡
-      set: privacy
+      set: 隐私保护
     - type: select
-      name: 国内站点
+      name: 直接连接
       adapters:
         - DIRECT
         - REJECT
@@ -118,22 +118,22 @@ adapters:
     - type: finial
       name: 规则以外
       adapters:
-        - 代理选择
+        - proxy
         - 故障切换
         - 延时最低
         - 手动选择
         - 负载均衡
-        - DIRECT
-        - REJECT
+        - direct
+        - reject
 rule_list:
-    - direct
-    - proxy
-    - disney
-    - bilibili
-    - openai
-    - privacy
     - develop
+    - privacy
+    - direct
     - reject
+    - proxy
     - game
     - youtube
     - netflix
+    - disney
+    - bilibili
+    - openai
