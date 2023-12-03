@@ -287,7 +287,7 @@ func (p *Collector) Subconverter() (err error) {
 		log.Errorf("err:%v", err)
 		return err
 	}
-	err = osx.Append("../../rules/subconverter/clash.yml", clashBypass)
+	err = osx.Append("../../rules/subconverter/clash.yml", clashBypass.Bytes())
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err
