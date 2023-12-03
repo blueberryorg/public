@@ -7,7 +7,7 @@ require (
 	github.com/elliotchance/pie/v2 v2.8.0
 	github.com/go-resty/resty/v2 v2.10.0
 	github.com/ice-cream-heaven/log v0.0.0-20231104075759-d72cba493e33
-	github.com/ice-cream-heaven/utils v0.0.0-20231203094440-d5093a2004a1
+	github.com/ice-cream-heaven/utils v0.0.0-20231203100907-67b7610dee1d
 	github.com/projectdiscovery/mapcidr v1.1.16
 	github.com/pterm/pterm v0.12.71
 	github.com/samber/lo v1.38.1
