@@ -79,7 +79,7 @@ func (p *Collector) Clash() error {
 		keys = append(keys, key)
 	}
 
-	err := os.WriteFile("../../rules/clash/list.keys", []byte(strings.Join(keys, "\n")), 0666)
+	err := os.WriteFile("../../rules/clash/list.keys", []byte(strings.Join(pie.Unique(keys), "\n")), 0666)
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err
@@ -218,16 +218,10 @@ func (p *Collector) Subconverter() error {
 	rb.WriteString("custom_proxy_group=")
 	rb.WriteString(Privacy.Chinese())
 	rb.WriteString("`select`[]REJECT`[]DIRECT`[]")
-	rb.WriteString(Privacy.Chinese())
+	rb.WriteString(Proxy.Chinese())
 	rb.WriteString("`\n")
 
-	err := os.WriteFile("../../rules/subconverter/list.keys", []byte(strings.Join(keys, "\n")), 0666)
-	if err != nil {
-		log.Errorf("err:%v", err)
-		return err
-	}
-
-	err = os.WriteFile("../../rules/subconverter/blueberry.ini", rb.Bytes(), 0666)
+	err := os.WriteFile("../../rules/subconverter/blueberry.ini", rb.Bytes(), 0666)
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err
@@ -369,7 +363,7 @@ func (p *Collector) Blue() error {
 		keys = append(keys, key)
 	}
 
-	err := os.WriteFile("../../rules/blueberry/list.keys", []byte(strings.Join(keys, "\n")), 0666)
+	err := os.WriteFile("../../rules/blueberry/list.keys", []byte(strings.Join(pie.Unique(keys), "\n")), 0666)
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err
