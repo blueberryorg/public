@@ -45,3 +45,4 @@ cfw-conn-break-strategy:
     profile: false
     mode: false
 cfw-proxies-order: latency
+{{Bypass}}

@@ -89,8 +89,8 @@ func (p *Collector) Clash() error {
 }
 
 func (p *Collector) Subconverter() (err error) {
-	//const baseUrl = "https://cdn.jsdelivr.net/gh/blueberryorg/public@master/rules/subconverter/"
-	const baseUrl = "https://raw.githubusercontent.com/blueberryorg/public/master/rules/subconverter/"
+	const baseUrl = "https://cdn.jsdelivr.net/gh/blueberryorg/public@master/rules/subconverter/"
+	//const baseUrl = "https://raw.githubusercontent.com/blueberryorg/public/master/rules/subconverter/"
 
 	rb := log.GetBuffer()
 	defer log.PutBuffer(rb)
@@ -259,63 +259,79 @@ func (p *Collector) Subconverter() (err error) {
 	rb.WriteString("\n")
 
 	// NOTE: clash
-	// https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/GeneralClashConfig.yml
-	rb.WriteString("clash_rule_base=")
-	rb.WriteString(baseUrl)
-	rb.WriteString("clash.yml\n")
+	{
+		// https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/GeneralClashConfig.yml
+		rb.WriteString("clash_rule_base=")
+		rb.WriteString(baseUrl)
+		rb.WriteString("clash.yml\n")
 
-	clashBypass.WriteString(`    - "localhost"`)
-	clashBypass.WriteString("\n")
-	clashBypass.WriteString(`    - 127.*`)
-	clashBypass.WriteString("\n")
-	clashBypass.WriteString(`    - 10.*`)
-	clashBypass.WriteString("\n")
-	clashBypass.WriteString(`    - 172.16.*`)
-	clashBypass.WriteString("\n")
-	clashBypass.WriteString(`    - 172.17.*`)
-	clashBypass.WriteString("\n")
-	clashBypass.WriteString(`    - 172.18.*`)
-	clashBypass.WriteString("\n")
-	clashBypass.WriteString(`    - 172.19.*`)
-	clashBypass.WriteString("\n")
-	clashBypass.WriteString(`    - 172.20.*`)
-	clashBypass.WriteString("\n")
-	clashBypass.WriteString(`    - 172.21.*`)
-	clashBypass.WriteString("\n")
-	clashBypass.WriteString(`    - 172.22.*`)
-	clashBypass.WriteString("\n")
-	clashBypass.WriteString(`    - 172.23.*`)
-	clashBypass.WriteString("\n")
-	clashBypass.WriteString(`    - 172.24.*`)
-	clashBypass.WriteString("\n")
-	clashBypass.WriteString(`    - 172.25.*`)
-	clashBypass.WriteString("\n")
-	clashBypass.WriteString(`    - 172.26.*`)
-	clashBypass.WriteString("\n")
-	clashBypass.WriteString(`    - 172.27.*`)
-	clashBypass.WriteString("\n")
-	clashBypass.WriteString(`    - 172.28.*`)
-	clashBypass.WriteString("\n")
-	clashBypass.WriteString(`    - 172.29.*`)
-	clashBypass.WriteString("\n")
-	clashBypass.WriteString(`    - 172.30.*`)
-	clashBypass.WriteString("\n")
-	clashBypass.WriteString(`    - 172.31.*`)
-	clashBypass.WriteString("\n")
-	clashBypass.WriteString(`    - 192.168.*`)
-	clashBypass.WriteString("\n")
-	clashBypass.WriteString(`    - <local>`)
-	clashBypass.WriteString("\n")
+		clashBypass.WriteString(`    - "localhost"`)
+		clashBypass.WriteString("\n")
+		clashBypass.WriteString(`    - 127.*`)
+		clashBypass.WriteString("\n")
+		clashBypass.WriteString(`    - 10.*`)
+		clashBypass.WriteString("\n")
+		clashBypass.WriteString(`    - 172.16.*`)
+		clashBypass.WriteString("\n")
+		clashBypass.WriteString(`    - 172.17.*`)
+		clashBypass.WriteString("\n")
+		clashBypass.WriteString(`    - 172.18.*`)
+		clashBypass.WriteString("\n")
+		clashBypass.WriteString(`    - 172.19.*`)
+		clashBypass.WriteString("\n")
+		clashBypass.WriteString(`    - 172.20.*`)
+		clashBypass.WriteString("\n")
+		clashBypass.WriteString(`    - 172.21.*`)
+		clashBypass.WriteString("\n")
+		clashBypass.WriteString(`    - 172.22.*`)
+		clashBypass.WriteString("\n")
+		clashBypass.WriteString(`    - 172.23.*`)
+		clashBypass.WriteString("\n")
+		clashBypass.WriteString(`    - 172.24.*`)
+		clashBypass.WriteString("\n")
+		clashBypass.WriteString(`    - 172.25.*`)
+		clashBypass.WriteString("\n")
+		clashBypass.WriteString(`    - 172.26.*`)
+		clashBypass.WriteString("\n")
+		clashBypass.WriteString(`    - 172.27.*`)
+		clashBypass.WriteString("\n")
+		clashBypass.WriteString(`    - 172.28.*`)
+		clashBypass.WriteString("\n")
+		clashBypass.WriteString(`    - 172.29.*`)
+		clashBypass.WriteString("\n")
+		clashBypass.WriteString(`    - 172.30.*`)
+		clashBypass.WriteString("\n")
+		clashBypass.WriteString(`    - 172.31.*`)
+		clashBypass.WriteString("\n")
+		clashBypass.WriteString(`    - 192.168.*`)
+		clashBypass.WriteString("\n")
+		clashBypass.WriteString(`    - <local>`)
+		clashBypass.WriteString("\n")
 
-	err = osx.Copy("./tpl/clash.yml", "../../rules/subconverter/clash.yml")
-	if err != nil {
-		log.Errorf("err:%v", err)
-		return err
+		{
+			buf, err := os.ReadFile("./tpl/clash.yml")
+			if err != nil {
+				log.Errorf("err:%v", err)
+				return err
+			}
+
+			buf = bytes.ReplaceAll(buf, []byte("{{Bypass}}"), clashBypass.Bytes())
+
+			err = os.WriteFile("../../rules/subconverter/clash.yml", buf, 0666)
+			if err != nil {
+				log.Errorf("err:%v", err)
+				return err
+			}
+		}
 	}
-	err = osx.Append("../../rules/subconverter/clash.yml", clashBypass.Bytes())
-	if err != nil {
-		log.Errorf("err:%v", err)
-		return err
+
+	//NOTE: quanx
+	{
+		rb.WriteString("quanx_rule_base=")
+		rb.WriteString(baseUrl)
+		rb.WriteString("quanx.conf\n")
+
+		err = osx.Copy("./tpl/quanx.conf", "../../rules/subconverter/quanx.conf")
 	}
 
 	// NOTE: 其他
