@@ -130,7 +130,7 @@ func (p *Collector) Subconverter() error {
 		b.WriteString(r.Payload())
 		b.WriteString(",")
 
-		b.WriteString(r.Adapter())
+		b.WriteString(RuleType(r.Adapter()).Chinese())
 
 		ruleMap[r.Adapter()] = append(ruleMap[r.Adapter()], b.String())
 	})
@@ -167,7 +167,7 @@ func (p *Collector) Subconverter() error {
 	for _, key := range keys {
 		rb.WriteString("ruleset")
 		rb.WriteString("=")
-		rb.WriteString(key)
+		rb.WriteString(RuleType(key).Chinese())
 		rb.WriteString(",")
 
 		rb.WriteString("https://cdn.jsdelivr.net/gh/blueberryorg/public@master/rules/")
@@ -185,10 +185,12 @@ func (p *Collector) Subconverter() error {
 	// NOTE: 分组
 	rb.WriteString("\n")
 
-	rb.WriteString("custom_proxy_group=代理选择`select`[]故障转移`[]自动选择`[]手动选择`[]负载均衡`[]DIRECT`[]REJECT`")
+	rb.WriteString("custom_proxy_group=")
+	rb.WriteString(Proxy.Chinese())
+	rb.WriteString("`select`[]故障转移`[]自动选择`[]手动选择`[]负载均衡`[]DIRECT`[]REJECT`")
 	pie.Each(
 		pie.FilterNot(keys, func(s string) bool {
-			return s == Direct || s == Reject || s == Privacy
+			return RuleType(s) == Direct || RuleType(s) == Reject || RuleType(s) == Privacy
 		}),
 		func(s string) {
 			rb.WriteString("[]")
@@ -204,15 +206,15 @@ func (p *Collector) Subconverter() error {
 	rb.WriteString("custom_proxy_group=自动选择`url-test`.*`https://www.google.com/generate_204`60,,2\n")
 
 	rb.WriteString("custom_proxy_group=直接连接`select`[]")
-	rb.WriteString(Direct)
+	rb.WriteString(Direct.Chinese())
 	rb.WriteString("`[]DIRECT`[]REJECT`[]代理选择`\n")
 
 	rb.WriteString("custom_proxy_group=连接拦截`select`[]")
-	rb.WriteString(Reject)
+	rb.WriteString(Reject.Chinese())
 	rb.WriteString("`[]REJECT`[]DIRECT`[]代理选择`\n")
 
 	rb.WriteString("custom_proxy_group=隐私保护`select`[]")
-	rb.WriteString(Reject)
+	rb.WriteString(Reject.Chinese())
 	rb.WriteString("`[]REJECT`[]DIRECT`[]代理选择`\n")
 
 	err := os.WriteFile("../../rules/subconverter/list.keys", []byte(strings.Join(keys, "\n")), 0666)
@@ -379,14 +381,14 @@ func (p *Collector) Blue() error {
 		Adapters: []*ProxyAdapter{
 			{
 				Type: "select",
-				Name: "代理选择",
+				Name: Proxy.Chinese(),
 				Adapters: []string{
 					"故障切换",
 					"延时最低",
 					"手动选择",
 					"负载均衡",
 				},
-				Set: Proxy,
+				Set: Proxy.String(),
 			},
 			{
 				Type:    "fallback",
@@ -411,7 +413,7 @@ func (p *Collector) Blue() error {
 
 			{
 				Type: "select",
-				Name: "Youtube",
+				Name: Youtube.Chinese(),
 				Adapters: []string{
 					"代理选择",
 					"故障切换",
@@ -419,11 +421,11 @@ func (p *Collector) Blue() error {
 					"手动选择",
 					"负载均衡",
 				},
-				Set: Youtube,
+				Set: Youtube.String(),
 			},
 			{
 				Type: "select",
-				Name: "Netflix",
+				Name: Netflix.Chinese(),
 				Adapters: []string{
 					"代理选择",
 					"故障切换",
@@ -431,11 +433,11 @@ func (p *Collector) Blue() error {
 					"手动选择",
 					"负载均衡",
 				},
-				Set: Netflix,
+				Set: Netflix.String(),
 			},
 			{
 				Type: "select",
-				Name: "Disney",
+				Name: Disney.Chinese(),
 				Adapters: []string{
 					"代理选择",
 					"故障切换",
@@ -443,11 +445,11 @@ func (p *Collector) Blue() error {
 					"手动选择",
 					"负载均衡",
 				},
-				Set: Disney,
+				Set: Disney.String(),
 			},
 			{
 				Type: "select",
-				Name: "BiliBili",
+				Name: BiliBili.Chinese(),
 				Adapters: []string{
 					"代理选择",
 					"故障切换",
@@ -455,49 +457,49 @@ func (p *Collector) Blue() error {
 					"手动选择",
 					"负载均衡",
 				},
-				Set: BiliBili,
-			},
-
-			{
-				Type: "select",
-				Name: "OpenAI",
-				Adapters: []string{
-					"代理选择",
-					"故障切换",
-					"延时最低",
-					"手动选择",
-					"负载均衡",
-				},
-				Set: OpenAI,
-			},
-			{
-				Type: "select",
-				Name: "Game",
-				Adapters: []string{
-					"代理选择",
-					"故障切换",
-					"延时最低",
-					"手动选择",
-					"负载均衡",
-				},
-				Set: Game,
-			},
-			{
-				Type: "select",
-				Name: "Develop",
-				Adapters: []string{
-					"代理选择",
-					"故障切换",
-					"延时最低",
-					"手动选择",
-					"负载均衡",
-				},
-				Set: Develop,
+				Set: BiliBili.String(),
 			},
 
 			{
 				Type: "select",
-				Name: "广告屏蔽",
+				Name: OpenAI.Chinese(),
+				Adapters: []string{
+					"代理选择",
+					"故障切换",
+					"延时最低",
+					"手动选择",
+					"负载均衡",
+				},
+				Set: OpenAI.String(),
+			},
+			{
+				Type: "select",
+				Name: Game.Chinese(),
+				Adapters: []string{
+					"代理选择",
+					"故障切换",
+					"延时最低",
+					"手动选择",
+					"负载均衡",
+				},
+				Set: Game.String(),
+			},
+			{
+				Type: "select",
+				Name: Develop.Chinese(),
+				Adapters: []string{
+					"代理选择",
+					"故障切换",
+					"延时最低",
+					"手动选择",
+					"负载均衡",
+				},
+				Set: Develop.String(),
+			},
+
+			{
+				Type: "select",
+				Name: Reject.Chinese(),
 				Adapters: []string{
 					"REJECT",
 					"DIRECT",
@@ -507,11 +509,11 @@ func (p *Collector) Blue() error {
 					"手动选择",
 					"负载均衡",
 				},
-				Set: Reject,
+				Set: Reject.String(),
 			},
 			{
 				Type: "select",
-				Name: "隐私保护",
+				Name: Privacy.String(),
 				Adapters: []string{
 					"REJECT",
 					"DIRECT",
@@ -521,12 +523,12 @@ func (p *Collector) Blue() error {
 					"手动选择",
 					"负载均衡",
 				},
-				Set: Privacy,
+				Set: Privacy.Chinese(),
 			},
 
 			{
 				Type: "select",
-				Name: "国内站点",
+				Name: Direct.Chinese(),
 				Adapters: []string{
 					"DIRECT",
 					"REJECT",
@@ -536,20 +538,20 @@ func (p *Collector) Blue() error {
 					"手动选择",
 					"负载均衡",
 				},
-				Set: Direct,
+				Set: Direct.String(),
 			},
 
 			{
 				Type: "finial",
 				Name: "规则以外",
 				Adapters: []string{
-					"代理选择",
+					Proxy.String(),
 					"故障切换",
 					"延时最低",
 					"手动选择",
 					"负载均衡",
-					"DIRECT",
-					"REJECT",
+					Direct.String(),
+					Reject.String(),
 				},
 			},
 		},

@@ -19,22 +19,57 @@ import (
 	"github.com/ice-cream-heaven/log"
 )
 
+type RuleType string
+
 const (
-	Proxy   = "proxy"
-	Direct  = "direct"
-	Reject  = "reject"
-	Privacy = "privacy"
+	Proxy   RuleType = "proxy"
+	Direct  RuleType = "direct"
+	Reject  RuleType = "reject"
+	Privacy RuleType = "privacy"
 
 	// 流媒体
-	Youtube  = "youtube"
-	Netflix  = "netflix"
-	Disney   = "disney"
-	BiliBili = "bilibili"
+	Youtube  RuleType = "youtube"
+	Netflix  RuleType = "netflix"
+	Disney   RuleType = "disney"
+	BiliBili RuleType = "bilibili"
 
-	OpenAI  = "openai"
-	Game    = "game"
-	Develop = "develop"
+	OpenAI  RuleType = "openai"
+	Game    RuleType = "game"
+	Develop RuleType = "develop"
 )
+
+func (p RuleType) String() string {
+	return string(p)
+}
+
+func (p RuleType) Chinese() string {
+	switch p {
+	case Proxy:
+		return "代理选择"
+	case Direct:
+		return "直接连接"
+	case Reject:
+		return "拒绝连接"
+	case Privacy:
+		return "隐私保护"
+	case Youtube:
+		return "Youtube"
+	case Netflix:
+		return "Netflix"
+	case Disney:
+		return "Disney"
+	case BiliBili:
+		return "哔哩哔哩"
+	case OpenAI:
+		return "OpenAI"
+	case Game:
+		return "游戏分流"
+	case Develop:
+		return "开发专用"
+	default:
+		panic(fmt.Sprintf("unkown %s", p))
+	}
+}
 
 const (
 	CIDR         = "Cidr"
@@ -73,7 +108,7 @@ func main() {
 	type ParseRule struct {
 		Key  string
 		Path string
-		Tag  string
+		Tag  RuleType
 	}
 
 	ParseList := []ParseRule{
@@ -168,7 +203,7 @@ func main() {
 	}
 
 	for _, i := range ParseList {
-		err = c.Parse(i.Key, i.Path, i.Tag)
+		err = c.Parse(i.Key, i.Path, i.Tag.String())
 		if err != nil {
 			log.Errorf("err:%v", err)
 			return
