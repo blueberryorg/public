@@ -79,7 +79,7 @@ func (p *Collector) Clash() error {
 		keys = append(keys, key)
 	}
 
-	err := os.WriteFile("../../rules/clash/list.keys", []byte(strings.Join(pie.Unique(keys), "\n")), 0666)
+	err := os.WriteFile("../../rules/clash/list.keys", []byte(strings.Join(pie.Sort(keys), "\n")), 0666)
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err
@@ -442,7 +442,7 @@ func (p *Collector) Blue() error {
 		keys = append(keys, key)
 	}
 
-	err := os.WriteFile("../../rules/blueberry/list.keys", []byte(strings.Join(pie.Unique(keys), "\n")), 0666)
+	err := os.WriteFile("../../rules/blueberry/list.keys", []byte(strings.Join(pie.Sort(keys), "\n")), 0666)
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err
