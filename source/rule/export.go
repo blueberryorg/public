@@ -89,6 +89,9 @@ func (p *Collector) Clash() error {
 }
 
 func (p *Collector) Subconverter() (err error) {
+	//const baseUrl = "https://cdn.jsdelivr.net/gh/blueberryorg/public@master/rules/subconverter/"
+	const baseUrl = "https://github.com/blueberryorg/public/raw/master/rules/subconverter/"
+
 	rb := log.GetBuffer()
 	defer log.PutBuffer(rb)
 
@@ -195,9 +198,7 @@ func (p *Collector) Subconverter() (err error) {
 		rb.WriteString(RuleType(key).Chinese())
 		rb.WriteString(",")
 
-		rb.WriteString("https://cdn.jsdelivr.net/gh/blueberryorg/public@master/rules/")
-		rb.WriteString("subconverter")
-		rb.WriteString("/")
+		rb.WriteString(baseUrl)
 		rb.WriteString(key)
 		rb.WriteString(".list")
 		rb.WriteString("\n")
@@ -259,7 +260,8 @@ func (p *Collector) Subconverter() (err error) {
 
 	// NOTE: clash
 	// https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/GeneralClashConfig.yml
-	rb.WriteString("clash_rule_base=https://cdn.jsdelivr.net/gh/blueberryorg/public@master/rules/subconverter/clash.yml\n")
+	rb.WriteString(baseUrl)
+	rb.WriteString("clash.yml\n")
 
 	clashBypass.WriteString(`    - "localhost"`)
 	clashBypass.WriteString("\n")
