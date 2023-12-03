@@ -8,8 +8,20 @@ DOMAIN-SUFFIX,stackoverflow.com,develop
 # Baidu广告
 DOMAIN,fclog.baidu.com,reject
 
+# Google分析
+DOMAIN-SUFFIX,google-analytics.com,privacy
+
 # 大米星球
 DOMAIN-SUFFIX,dmxq.info,direct
+DOMAIN-SUFFIX,ffzy-online6.com,direct
+DOMAIN-SUFFIX,ffzy-online6.com,direct
+DOMAIN-SUFFIX,ddzyku.com,direct
+DOMAIN-SUFFIX,1080pzy.co,direct
+DOMAIN-SUFFIX,bfvvs.com,direct
+DOMAIN-SUFFIX,xlzys.com,direct
+DOMAIN-SUFFIX,xlzyd.com,direct
+DOMAIN-SUFFIX,qwedfc123.com,direct
+DOMAIN-SUFFIX,dmzybf.com,direct
 
 DOMAIN-KEYWORD,breached.to,proxy
 DOMAIN-KEYWORD,relingo.net,proxy
