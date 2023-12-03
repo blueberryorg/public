@@ -38,11 +38,7 @@ dns:
             - 240.0.0.0/4
 
 # cfw配置
-cfw-latency-timeout: 5000
+cfw-latency-timeout: 3000
 cfw-latency-url: https://www.google.com/generate_204
-cfw-conn-break-strategy:
-    proxy: none
-    profile: false
-    mode: false
 cfw-proxies-order: latency
 {{Bypass}}
