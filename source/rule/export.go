@@ -212,16 +212,14 @@ func (p *Collector) Subconverter() error {
 
 	rb.WriteString("custom_proxy_group=")
 	rb.WriteString(Reject.Chinese())
-	rb.WriteString("`select`[]")
-	rb.WriteString("`[]REJECT`[]DIRECT`[]")
+	rb.WriteString("`select`[]REJECT`[]DIRECT`[]")
 	rb.WriteString(Proxy.Chinese())
 	rb.WriteString("`\n")
 
 	rb.WriteString("custom_proxy_group=")
-	rb.WriteString(Reject.Chinese())
-	rb.WriteString("`select`[]")
-	rb.WriteString("`[]REJECT`[]DIRECT`[]")
-	rb.WriteString(Proxy.Chinese())
+	rb.WriteString(Privacy.Chinese())
+	rb.WriteString("`select`[]REJECT`[]DIRECT`[]")
+	rb.WriteString(Privacy.Chinese())
 	rb.WriteString("`\n")
 
 	err := os.WriteFile("../../rules/subconverter/list.keys", []byte(strings.Join(keys, "\n")), 0666)
