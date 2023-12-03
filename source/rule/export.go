@@ -205,7 +205,7 @@ func (p *Collector) Subconverter() (err error) {
 
 	rb.WriteString("ruleset=DIRECT,[]GEOIP,LAN\n")
 	rb.WriteString("ruleset=DIRECT,[]GEOIP,CN\n")
-	rb.WriteString("ruleset=PROXY,[]FINAL\n")
+	rb.WriteString("ruleset=规则以外,[]FINAL\n")
 
 	// NOTE: 分组
 	rb.WriteString("\n")
@@ -248,6 +248,10 @@ func (p *Collector) Subconverter() (err error) {
 	rb.WriteString("`select`[]REJECT`[]DIRECT`[]")
 	rb.WriteString(Proxy.Chinese())
 	rb.WriteString("`\n")
+
+	rb.WriteString("custom_proxy_group=规则以外`select`[]")
+	rb.WriteString(Proxy.Chinese())
+	rb.WriteString("`[]故障转移`[]自动选择`[]手动选择`[]负载均衡`[]DIRECT`[]REJECT`")
 
 	// NOTE: 模版
 	rb.WriteString("\n")
