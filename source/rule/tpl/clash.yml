@@ -7,10 +7,10 @@ experimental:
     ignore-resolve-fail: true
 dns:
     enable: false
-    listen: 0.0.0.0:53
+    listen: 0.0.0.0:5353
     ipv6: false
     enhanced-mode: fake-ip
     nameserver:
         - 119.29.29.29
-        - 114.114.114.114
         - 223.5.5.5
+        - 114.114.114.114

@@ -232,9 +232,12 @@ func (p *Collector) Subconverter() (err error) {
 		return err
 	}
 
-	// NOTE: 节点
+	// NOTE: 其他
 	rb.WriteString("\n")
-	rb.WriteString("exclude_remarks=\n")
+	rb.WriteString("rename=Test-(.*?)-(.*?)-(.*?)\\((.*?)\\)@\\1\\4x测试线路_自\\2到\\3")
+	rb.WriteString("rename=\\(?((x|X)?(\\d+)(\\.?\\d+)?)((\\s?倍率?)|(x|X))\\)?@$1x\n")
+
+	//rb.WriteString("exclude_remarks=\n")
 
 	err = os.WriteFile("../../rules/subconverter/blueberry.ini", rb.Bytes(), 0666)
 	if err != nil {
