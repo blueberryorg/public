@@ -8,6 +8,9 @@ DOMAIN-SUFFIX,stackoverflow.com,develop
 # Baidu广告
 DOMAIN,fclog.baidu.com,reject
 
+# 大米星球
+DOMAIN-SUFFIX,dmxq.info,direct
+
 DOMAIN-KEYWORD,breached.to,proxy
 DOMAIN-KEYWORD,relingo.net,proxy
 DOMAIN-KEYWORD,javlib.com,proxy
