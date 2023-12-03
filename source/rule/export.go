@@ -390,7 +390,7 @@ func (p *Collector) QuanX() error {
 		keys = append(keys, key)
 	}
 
-	err := os.WriteFile("../../rules/quanx/list", []byte(strings.Join(keys, "\n")), 0666)
+	err := os.WriteFile("../../rules/quanx/list.keys", []byte(strings.Join(pie.Unique(keys), "\n")), 0666)
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err
