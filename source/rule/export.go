@@ -205,8 +205,7 @@ func (p *Collector) Subconverter() error {
 
 	rb.WriteString("custom_proxy_group=")
 	rb.WriteString(Direct.Chinese())
-	rb.WriteString("`select`[]")
-	rb.WriteString("`[]DIRECT`[]REJECT`[]")
+	rb.WriteString("`select`[]DIRECT`[]REJECT`[]")
 	rb.WriteString(Proxy.Chinese())
 	rb.WriteString("`\n")
 
