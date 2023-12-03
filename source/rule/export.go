@@ -185,7 +185,7 @@ func (p *Collector) Subconverter() error {
 	// NOTE: 分组
 	rb.WriteString("\n")
 
-	rb.WriteString("custom_proxy_group代理选择`select`[]故障转移`[]自动选择`[]手动选择`[]负载均衡`[]DIRECT`[]REJECT`")
+	rb.WriteString("custom_proxy_group=代理选择`select`[]故障转移`[]自动选择`[]手动选择`[]负载均衡`[]DIRECT`[]REJECT`")
 	pie.Each(
 		pie.FilterNot(keys, func(s string) bool {
 			return s == Direct || s == Reject || s == Privacy
