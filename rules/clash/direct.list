@@ -17,7 +17,7 @@ DOMAIN-KEYWORD,sub.danhu.ml,direct
 DOMAIN-KEYWORD,onedriveclubproddm,direct
 DOMAIN-KEYWORD,yroscope.io,direct
 DOMAIN-KEYWORD,bizihu.com,direct
-DOMAIN-SUFFIX,.hdslb.com,direct
+DOMAIN-SUFFIX,hdslb.com,direct
 DOMAIN-SUFFIX,youdao.com,direct
 DOMAIN-SUFFIX,dmxq1.com,direct
 DOMAIN-SUFFIX,suoyou.live,direct
@@ -60976,6 +60976,7 @@ IP-CIDR,115.238.76.0/22,direct
 IP-CIDR,101.199.196.0/22,direct
 DOMAIN-SUFFIX,13th.tech,direct
 DOMAIN-SUFFIX,chaipip.com,direct
+DOMAIN-SUFFIX,chinaplay.store,direct
 DOMAIN-SUFFIX,laomo.me,direct
 DOMAIN-SUFFIX,zhenguanyu.biz,direct
 DOMAIN-KEYWORD,360buy,direct
@@ -61015,13 +61016,10 @@ IP-CIDR,221.226.128.146/32,direct
 DOMAIN-SUFFIX,doh.360.cn,direct
 IP-CIDR,1.12.12.12/32,direct
 DOMAIN-SUFFIX,algocasts.io,direct
-DOMAIN-SUFFIX,biquge.com,direct
 DOMAIN-SUFFIX,element-plus.org,direct
 DOMAIN-SUFFIX,fantasy.tv,direct
 DOMAIN-SUFFIX,letitfly.me,direct
-DOMAIN-SUFFIX,shumilou.net,direct
 DOMAIN-SUFFIX,simplecd.me,direct
-DOMAIN-SUFFIX,th-sjy.com,direct
 DOMAIN-SUFFIX,tmiaoo.com,direct
 DOMAIN-SUFFIX,umengcloud.com,direct
 DOMAIN-SUFFIX,xip.io,direct
