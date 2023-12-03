@@ -36,9 +36,3 @@ dns:
         geoip-code: CN
         ipcidr:
             - 240.0.0.0/4
-
-# cfw配置
-cfw-latency-timeout: 3000
-cfw-latency-url: https://www.google.com/generate_204
-cfw-proxies-order: latency
-{{Bypass}}
