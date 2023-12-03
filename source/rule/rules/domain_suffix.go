@@ -36,7 +36,7 @@ func (ds *DomainSuffix) ShouldFindProcess() bool {
 
 func NewDomainSuffix(suffix string, adapter string) *DomainSuffix {
 	return &DomainSuffix{
-		suffix:  strings.ToLower(suffix),
+		suffix:  strings.TrimPrefix(strings.ToLower(suffix), "."),
 		adapter: adapter,
 	}
 }

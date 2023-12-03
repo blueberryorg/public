@@ -98,6 +98,11 @@ func (p *Collector) Subconverter() (err error) {
 	rb.WriteString("enable_rule_generator=true\n")
 	rb.WriteString("overwrite_original_rules=true\n")
 
+	clashBypass := log.GetBuffer()
+	defer log.PutBuffer(clashBypass)
+
+	clashBypass.WriteString("cfw-bypass:\n")
+
 	ruleMap := map[string][]string{}
 	pie.Each(p.ExportRules(), func(r rules.Rule) {
 		var b bytes.Buffer
@@ -128,6 +133,29 @@ func (p *Collector) Subconverter() (err error) {
 
 		b.WriteString(",")
 		b.WriteString(r.Payload())
+
+		switch r.Adapter() {
+		case Direct.String():
+			switch r.RuleType() {
+			case rules.RuleTypeDomain:
+				clashBypass.WriteString(`    - "`)
+				clashBypass.WriteString(r.Payload())
+				clashBypass.WriteString(`"`)
+				clashBypass.WriteString("\n")
+
+			case rules.RuleTypeDomainSuffix:
+				clashBypass.WriteString(`    - "*.`)
+				clashBypass.WriteString(r.Payload())
+				clashBypass.WriteString(`"`)
+				clashBypass.WriteString("\n")
+
+			case rules.RuleTypeDomainKeyword:
+				clashBypass.WriteString(`    - "*.`)
+				clashBypass.WriteString(r.Payload())
+				clashBypass.WriteString(`.*"`)
+				clashBypass.WriteString("\n")
+			}
+		}
 
 		ruleMap[r.Adapter()] = append(ruleMap[r.Adapter()], b.String())
 	})
@@ -193,7 +221,7 @@ func (p *Collector) Subconverter() (err error) {
 			rb.WriteString("custom_proxy_group=")
 			rb.WriteString(RuleType(s).Chinese())
 			rb.WriteString("`select`[]")
-			rb.WriteString(Proxy.String())
+			rb.WriteString(Proxy.Chinese())
 			rb.WriteString("`[]故障转移`[]自动选择`[]手动选择`[]负载均衡`[]DIRECT`[]REJECT`\n")
 		},
 	)
@@ -225,8 +253,37 @@ func (p *Collector) Subconverter() (err error) {
 	rb.WriteString("\n")
 
 	// NOTE: clash
+	// https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/GeneralClashConfig.yml
 	rb.WriteString("clash_rule_base=https://cdn.jsdelivr.net/gh/blueberryorg/public@master/rules/subconverter/clash.yml\n")
+
+	clashBypass.WriteString(`    - "localhost"`)
+	clashBypass.WriteString(`    - 127.*`)
+	clashBypass.WriteString(`    - 10.*`)
+	clashBypass.WriteString(`    - 172.16.*`)
+	clashBypass.WriteString(`    - 172.17.*`)
+	clashBypass.WriteString(`    - 172.18.*`)
+	clashBypass.WriteString(`    - 172.19.*`)
+	clashBypass.WriteString(`    - 172.20.*`)
+	clashBypass.WriteString(`    - 172.21.*`)
+	clashBypass.WriteString(`    - 172.22.*`)
+	clashBypass.WriteString(`    - 172.23.*`)
+	clashBypass.WriteString(`    - 172.24.*`)
+	clashBypass.WriteString(`    - 172.25.*`)
+	clashBypass.WriteString(`    - 172.26.*`)
+	clashBypass.WriteString(`    - 172.27.*`)
+	clashBypass.WriteString(`    - 172.28.*`)
+	clashBypass.WriteString(`    - 172.29.*`)
+	clashBypass.WriteString(`    - 172.30.*`)
+	clashBypass.WriteString(`    - 172.31.*`)
+	clashBypass.WriteString(`    - 192.168.*`)
+	clashBypass.WriteString(`    - <local>`)
+
 	err = osx.Copy("./tpl/clash.yml", "../../rules/subconverter/clash.yml")
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+	err = osx.Append("../../rules/subconverter/clash.yml", clashBypass)
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err
