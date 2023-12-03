@@ -47,6 +47,7 @@ cfw-conn-break-strategy:
 cfw-proxies-order: latency
 cfw-bypass:
     - "*.csdn.net"
+    - "*.dmxq.info"
     - "*.zhenbuka5.com.*"
     - "*.goproxy.cn.*"
     - "*.goproxy.io.*"
