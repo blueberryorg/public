@@ -260,6 +260,7 @@ func (p *Collector) Subconverter() (err error) {
 
 	// NOTE: clash
 	// https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/GeneralClashConfig.yml
+	rb.WriteString("clash_rule_base=")
 	rb.WriteString(baseUrl)
 	rb.WriteString("clash.yml\n")
 
