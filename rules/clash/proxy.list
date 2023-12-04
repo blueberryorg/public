@@ -3137,6 +3137,7 @@ DOMAIN-SUFFIX,babylonbee.com,proxy
 DOMAIN-SUFFIX,backchina.com,proxy
 DOMAIN-SUFFIX,backpackers.com.tw,proxy
 DOMAIN-SUFFIX,backtotiananmen.com,proxy
+DOMAIN-SUFFIX,bad.news,proxy
 DOMAIN-SUFFIX,badiucao.com,proxy
 DOMAIN-SUFFIX,badjojo.com,proxy
 DOMAIN-SUFFIX,badoo.com,proxy
@@ -4939,6 +4940,7 @@ DOMAIN-SUFFIX,info-graf.fr,proxy
 DOMAIN-SUFFIX,informer.com,proxy
 DOMAIN-SUFFIX,ingress.com,proxy
 DOMAIN-SUFFIX,initiativesforchina.org,proxy
+DOMAIN-SUFFIX,inkbunny.net,proxy
 DOMAIN-SUFFIX,inkui.com,proxy
 DOMAIN-SUFFIX,inmediahk.net,proxy
 DOMAIN-SUFFIX,innermongolia.org,proxy
@@ -5437,6 +5439,7 @@ DOMAIN-SUFFIX,matome-plus.net,proxy
 DOMAIN-SUFFIX,matrix.org,proxy
 DOMAIN-SUFFIX,matsushimakaede.com,proxy
 DOMAIN-SUFFIX,matters.news,proxy
+DOMAIN-SUFFIX,matters.town,proxy
 DOMAIN-SUFFIX,mattwilcox.net,proxy
 DOMAIN-SUFFIX,maturejp.com,proxy
 DOMAIN-SUFFIX,maxing.jp,proxy
