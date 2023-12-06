@@ -2728,9 +2728,11 @@ IP-CIDR,2620:100:3000::/40,proxy
 IP-CIDR,2620:10c:7000::/44,proxy
 IP-CIDR,2a00:86c0::/32,proxy
 IP-CIDR,2a03:5640::/32,proxy
+PROCESS-NAME,com.hktve.viutv,proxy
 PROCESS-NAME,com.hulu.plus,proxy
 PROCESS-NAME,com.linecorp.linetv,proxy
 PROCESS-NAME,com.tencent.ibg.joox,proxy
+PROCESS-NAME,com.twgood.android,proxy
 PROCESS-NAME,com.viu.pad,proxy
 PROCESS-NAME,com.viu.phone,proxy
 PROCESS-NAME,com.vuclip.viu,proxy

@@ -2728,9 +2728,11 @@ IP-CIDR,2620:100:3000::/40
 IP-CIDR,2620:10c:7000::/44
 IP-CIDR,2a00:86c0::/32
 IP-CIDR,2a03:5640::/32
+PROCESS-NAME,com.hktve.viutv
 PROCESS-NAME,com.hulu.plus
 PROCESS-NAME,com.linecorp.linetv
 PROCESS-NAME,com.tencent.ibg.joox
+PROCESS-NAME,com.twgood.android
 PROCESS-NAME,com.viu.pad
 PROCESS-NAME,com.viu.phone
 PROCESS-NAME,com.vuclip.viu
