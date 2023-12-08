@@ -19,18 +19,24 @@ dns:
     nameserver:
         - 119.29.29.29
         - 223.5.5.5
+		- 180.184.1.1
+  		- 94.140.14.14
         - tls://dot.pub
+		- tls://dns.alidns.com
+  		- tls://dns.adguard.com
         - https://doh.pub/dns-query
         - https://dns.alidns.com/dns-query
+		- https://dns.adguard.com/dns-query
     fallback:
         - 8.8.8.8
         - 1.1.1.1
-        - tls://dns.rubyfish.cn:853
-        - tls://1.0.0.1:853
-        - tls://dns.google:853
-        - https://dns.rubyfish.cn/dns-query
-        - https://cloudflare-dns.com/dns-query
-        - https://dns.google/dns-query
+		- 94.140.14.14
+  		- tls://dns.google
+		- tls://one.one.one.one
+  		- tls://dns.adguard.com
+		- https://dns.google/dns-query
+  		- https://cloudflare-dns.com/dns-query
+		- https://dns.adguard.com/dns-query
     fallback-filter:
         geoip: true
         geoip-code: CN
