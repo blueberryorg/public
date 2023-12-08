@@ -218,10 +218,10 @@ func (p *Collector) Subconverter() (err error) {
 	rb.WriteString(Proxy.Chinese())
 	rb.WriteString("`select`[]故障转移`[]自动选择`[]手动选择`[]负载均衡`[]DIRECT`[]REJECT`\n")
 
-	rb.WriteString("custom_proxy_group=手动选择`select`.*`https://www.google.com/generate_204`180,,2\n")
-	rb.WriteString("custom_proxy_group=故障转移`fallback`.*`https://www.google.com/generate_204`180,,2\n")
-	rb.WriteString("custom_proxy_group=负载均衡`load-balance`.*`https://www.google.com/generate_204`180,,2\n")
-	rb.WriteString("custom_proxy_group=自动选择`url-test`.*`https://www.google.com/generate_204`180,,2\n")
+	rb.WriteString("custom_proxy_group=手动选择`select`.*`https://www.google.com/generate_204`120,,2\n")
+	rb.WriteString("custom_proxy_group=故障转移`fallback`.*`https://www.google.com/generate_204`60,,1\n")
+	rb.WriteString("custom_proxy_group=负载均衡`load-balance`.*`https://www.google.com/generate_204`60,,1\n")
+	rb.WriteString("custom_proxy_group=自动选择`url-test`.*`https://www.google.com/generate_204`60,,1\n")
 
 	pie.Each(
 		pie.FilterNot(keys, func(s string) bool {
