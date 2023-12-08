@@ -92,6 +92,7 @@ PROCESS-NAME,tor.exe
 PROCESS-NAME,tor
 PROCESS-NAME,ZeroNet.exe
 PROCESS-NAME,ZeroNet
+DOMAIN,api.swiftgram.app
 DOMAIN-SUFFIX,comments.app
 DOMAIN-SUFFIX,contest.com
 DOMAIN-SUFFIX,graph.org

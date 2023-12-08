@@ -88,6 +88,7 @@ HOST-SUFFIX,srv00.com,proxy
 HOST-SUFFIX,org.uk,proxy
 HOST-SUFFIX,jiesen.life,proxy
 HOST-SUFFIX,dealclub.de,proxy
+HOST,api.swiftgram.app,proxy
 HOST-SUFFIX,comments.app,proxy
 HOST-SUFFIX,contest.com,proxy
 HOST-SUFFIX,graph.org,proxy
