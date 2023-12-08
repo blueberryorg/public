@@ -14,11 +14,11 @@ dns:
     fake-ip-range: 198.18.0.1/16
     fake-ip-filter:
         - '*.lan'
+		- '*.test'
         - localhost.ptlogin2.qq.com
     nameserver:
         - 119.29.29.29
         - 223.5.5.5
-        - 114.114.114.114
         - tls://dot.pub
         - https://doh.pub/dns-query
         - https://dns.alidns.com/dns-query
@@ -36,3 +36,8 @@ dns:
         geoip-code: CN
         ipcidr:
             - 240.0.0.0/4
+	nameserver-policy:
+      '+.qq.com': '119.29.29.29'
+	  '+.baidu.com': '119.29.29.29'
+   	  '+.taobao.com': '223.5.5.5'
+	  '+.alipay.com': '223.5.5.5'
