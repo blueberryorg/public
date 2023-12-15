@@ -2987,6 +2987,7 @@ HOST-SUFFIX,anpopo.com,proxy
 HOST-SUFFIX,answering-islam.org,proxy
 HOST-SUFFIX,antd.org,proxy
 HOST-SUFFIX,anthonycalzadilla.com,proxy
+HOST-SUFFIX,anthropic.com,proxy
 HOST-SUFFIX,anti1984.com,proxy
 HOST-SUFFIX,antichristendom.com,proxy
 HOST-SUFFIX,antiwave.net,proxy
@@ -3568,6 +3569,7 @@ HOST-SUFFIX,ck101.com,proxy
 HOST-SUFFIX,cl.ly,proxy
 HOST-SUFFIX,clarionproject.org,proxy
 HOST-SUFFIX,classicalguitarblog.net,proxy
+HOST-SUFFIX,claude.ai,proxy
 HOST-SUFFIX,clb.org.hk,proxy
 HOST-SUFFIX,cleansite.biz,proxy
 HOST-SUFFIX,cleansite.info,proxy
@@ -7837,6 +7839,8 @@ HOST-SUFFIX,zonaeuropa.com,proxy
 HOST-SUFFIX,zonghexinwen.com,proxy
 HOST-SUFFIX,zonghexinwen.net,proxy
 HOST-SUFFIX,zoogvpn.com,proxy
+HOST-SUFFIX,zoom.us,proxy
+HOST-SUFFIX,zoomgov.com,proxy
 HOST-SUFFIX,zootool.com,proxy
 HOST-SUFFIX,zoozle.net,proxy
 HOST-SUFFIX,zophar.net,proxy

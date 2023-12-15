@@ -3016,6 +3016,7 @@ DOMAIN-SUFFIX,anpopo.com,proxy
 DOMAIN-SUFFIX,answering-islam.org,proxy
 DOMAIN-SUFFIX,antd.org,proxy
 DOMAIN-SUFFIX,anthonycalzadilla.com,proxy
+DOMAIN-SUFFIX,anthropic.com,proxy
 DOMAIN-SUFFIX,anti1984.com,proxy
 DOMAIN-SUFFIX,antichristendom.com,proxy
 DOMAIN-SUFFIX,antiwave.net,proxy
@@ -3597,6 +3598,7 @@ DOMAIN-SUFFIX,ck101.com,proxy
 DOMAIN-SUFFIX,cl.ly,proxy
 DOMAIN-SUFFIX,clarionproject.org,proxy
 DOMAIN-SUFFIX,classicalguitarblog.net,proxy
+DOMAIN-SUFFIX,claude.ai,proxy
 DOMAIN-SUFFIX,clb.org.hk,proxy
 DOMAIN-SUFFIX,cleansite.biz,proxy
 DOMAIN-SUFFIX,cleansite.info,proxy
@@ -7866,6 +7868,8 @@ DOMAIN-SUFFIX,zonaeuropa.com,proxy
 DOMAIN-SUFFIX,zonghexinwen.com,proxy
 DOMAIN-SUFFIX,zonghexinwen.net,proxy
 DOMAIN-SUFFIX,zoogvpn.com,proxy
+DOMAIN-SUFFIX,zoom.us,proxy
+DOMAIN-SUFFIX,zoomgov.com,proxy
 DOMAIN-SUFFIX,zootool.com,proxy
 DOMAIN-SUFFIX,zoozle.net,proxy
 DOMAIN-SUFFIX,zophar.net,proxy
