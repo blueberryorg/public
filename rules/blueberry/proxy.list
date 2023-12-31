@@ -3843,6 +3843,7 @@ DOMAIN-SUFFIX,discordstatus.com,proxy
 DOMAIN-SUFFIX,discuss.com.hk,proxy
 DOMAIN-SUFFIX,discuss4u.com,proxy
 DOMAIN-SUFFIX,dish.com,proxy
+DOMAIN-SUFFIX,disk.yandex.ru,proxy
 DOMAIN-SUFFIX,disp.cc,proxy
 DOMAIN-SUFFIX,disq.us,proxy
 DOMAIN-SUFFIX,disqus.com,proxy
@@ -5887,6 +5888,7 @@ DOMAIN-SUFFIX,oann.com,proxy
 DOMAIN-SUFFIX,oauth.net,proxy
 DOMAIN-SUFFIX,observechina.net,proxy
 DOMAIN-SUFFIX,obutu.com,proxy
+DOMAIN-SUFFIX,obyte.org,proxy
 DOMAIN-SUFFIX,ocaspro.com,proxy
 DOMAIN-SUFFIX,occupytiananmen.com,proxy
 DOMAIN-SUFFIX,oclp.hk,proxy
@@ -6195,6 +6197,7 @@ DOMAIN-SUFFIX,pshvpn.com,proxy
 DOMAIN-SUFFIX,psiphon.ca,proxy
 DOMAIN-SUFFIX,psiphon3.com,proxy
 DOMAIN-SUFFIX,psiphontoday.com,proxy
+DOMAIN-SUFFIX,pstatic.net,proxy
 DOMAIN-SUFFIX,pt.im,proxy
 DOMAIN-SUFFIX,pts.org.tw,proxy
 DOMAIN-SUFFIX,ptt.cc,proxy
@@ -6941,6 +6944,7 @@ DOMAIN-SUFFIX,thlib.org,proxy
 DOMAIN-SUFFIX,thomasbernhard.org,proxy
 DOMAIN-SUFFIX,thongdreams.com,proxy
 DOMAIN-SUFFIX,threadreaderapp.com,proxy
+DOMAIN-SUFFIX,threads.net,proxy
 DOMAIN-SUFFIX,threatchaos.com,proxy
 DOMAIN-SUFFIX,throughnightsfire.com,proxy
 DOMAIN-SUFFIX,thumbzilla.com,proxy
@@ -7608,6 +7612,7 @@ DOMAIN-SUFFIX,wistia.com,proxy
 DOMAIN-SUFFIX,witnessleeteaching.com,proxy
 DOMAIN-SUFFIX,witopia.net,proxy
 DOMAIN-SUFFIX,wjbk.org,proxy
+DOMAIN-SUFFIX,wmflabs.org,proxy
 DOMAIN-SUFFIX,wn.com,proxy
 DOMAIN-SUFFIX,wnacg.com,proxy
 DOMAIN-SUFFIX,wnacg.org,proxy
