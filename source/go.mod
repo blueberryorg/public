@@ -8,6 +8,8 @@ require (
 	github.com/go-resty/resty/v2 v2.10.0
 	github.com/ice-cream-heaven/log v0.0.0-20231104075759-d72cba493e33
 	github.com/ice-cream-heaven/utils v0.0.0-20231203104255-a353bc8e9ad8
+	github.com/maxmind/mmdbwriter v1.0.0
+	github.com/minio/minio-go/v7 v7.0.66
 	github.com/projectdiscovery/mapcidr v1.1.16
 	github.com/pterm/pterm v0.12.71
 	github.com/samber/lo v1.38.1
@@ -35,11 +37,9 @@ require (
 	github.com/lestrrat-go/strftime v1.0.6 // indirect
 	github.com/lithammer/fuzzysearch v1.1.8 // indirect
 	github.com/mattn/go-runewidth v0.0.15 // indirect
-	github.com/maxmind/mmdbwriter v1.0.0 // indirect
 	github.com/microcosm-cc/bluemonday v1.0.26 // indirect
 	github.com/miekg/dns v1.1.57 // indirect
 	github.com/minio/md5-simd v1.1.2 // indirect
-	github.com/minio/minio-go/v7 v7.0.66 // indirect
 	github.com/minio/sha256-simd v1.0.1 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
 	github.com/modern-go/reflect2 v1.0.2 // indirect
