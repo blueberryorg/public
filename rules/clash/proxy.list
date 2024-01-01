@@ -3393,6 +3393,7 @@ DOMAIN-SUFFIX,cahr.org.tw,proxy
 DOMAIN-SUFFIX,caijinglengyan.com,proxy
 DOMAIN-SUFFIX,calameo.com,proxy
 DOMAIN-SUFFIX,calebelston.com,proxy
+DOMAIN-SUFFIX,calendarz.com,proxy
 DOMAIN-SUFFIX,calgarychinese.ca,proxy
 DOMAIN-SUFFIX,calgarychinese.com,proxy
 DOMAIN-SUFFIX,calgarychinese.net,proxy
@@ -4431,6 +4432,7 @@ DOMAIN-SUFFIX,geekerhome.com,proxy
 DOMAIN-SUFFIX,geekheart.info,proxy
 DOMAIN-SUFFIX,gekikame.com,proxy
 DOMAIN-SUFFIX,gelbooru.com,proxy
+DOMAIN-SUFFIX,generated.photos,proxy
 DOMAIN-SUFFIX,geni.us,proxy
 DOMAIN-SUFFIX,genius.com,proxy
 DOMAIN-SUFFIX,geocities.co.jp,proxy
@@ -4821,6 +4823,7 @@ DOMAIN-SUFFIX,huaxin.ph,proxy
 DOMAIN-SUFFIX,huayuworld.org,proxy
 DOMAIN-SUFFIX,hudatoriq.web.id,proxy
 DOMAIN-SUFFIX,hudson.org,proxy
+DOMAIN-SUFFIX,huggingface.co,proxy
 DOMAIN-SUFFIX,hugoroy.eu,proxy
 DOMAIN-SUFFIX,huhamhire.com,proxy
 DOMAIN-SUFFIX,huhangfei.com,proxy
@@ -7513,6 +7516,7 @@ DOMAIN-SUFFIX,watchmygf.net,proxy
 DOMAIN-SUFFIX,watchout.tw,proxy
 DOMAIN-SUFFIX,wattpad.com,proxy
 DOMAIN-SUFFIX,wav.tv,proxy
+DOMAIN-SUFFIX,wd.bible,proxy
 DOMAIN-SUFFIX,wdf5.com,proxy
 DOMAIN-SUFFIX,wealth.com.tw,proxy
 DOMAIN-SUFFIX,wearehairy.com,proxy
