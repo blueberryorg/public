@@ -13,7 +13,6 @@ import (
 	"github.com/maxmind/mmdbwriter/mmdbtype"
 	"github.com/minio/minio-go/v7"
 	"github.com/minio/minio-go/v7/pkg/credentials"
-	"github.com/pterm/pterm"
 	"io"
 	"net"
 	"net/http"
@@ -42,12 +41,13 @@ func (p *MMDB) Upload() error {
 	}
 
 	_, err = client.FPutObject(context.Background(), "blueberry", "ice.mmdb", filepath.Join(os.TempDir(), "ice.mmdb"), minio.PutObjectOptions{
-		ContentType:           "application/x-mmdb",
-		ContentDisposition:    "attachment; filename=ice.mmdb",
-		CacheControl:          "public, max-age=300",
-		PartSize:              unit.MB * 4,
-		SendContentMd5:        true,
-		ConcurrentStreamParts: true,
+		ContentType:        "application/x-mmdb",
+		ContentEncoding:    "",
+		ContentDisposition: "attachment; filename=ice.mmdb",
+		ContentLanguage:    "",
+		CacheControl:       "public, max-age=300",
+		NumThreads:         1,
+		PartSize:           unit.MB,
 	})
 	if err != nil {
 		log.Errorf("err:%v", err)
@@ -194,7 +194,7 @@ func (p *MMDB) UpdateAsnCountry(writer *mmdbwriter.Tree) (err error) {
 
 func (p *MMDB) UpdateChinaOrg(writer *mmdbwriter.Tree) (err error) {
 	update := func(path string, logic func(first, last net.IP) error) error {
-		pterm.Info.Printfln("handle %s", path)
+		log.Infof("handle %s", path)
 
 		client := &http.Client{
 			Timeout: time.Hour,
