@@ -3,6 +3,7 @@ package main
 import (
 	_ "embed"
 	"github.com/blueberryorg/public/source/rule/rules"
+	"net/netip"
 	"strings"
 
 	"github.com/elliotchance/pie/v2"
@@ -64,6 +65,14 @@ func (p *Collector) clear() {
 
 		if rule.Adapter() == "" {
 			return false
+		}
+
+		switch rule.RuleType() {
+		case rules.RuleTypeIPCIDR, rules.RuleTypeSrcIPCIDR:
+			_, err := netip.ParsePrefix(rule.Payload())
+			if err != nil {
+				return false
+			}
 		}
 
 		return true
