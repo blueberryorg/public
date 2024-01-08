@@ -40,7 +40,7 @@ func (p *MMDB) Upload() error {
 		return err
 	}
 
-	_, err = client.FPutObject(context.Background(), "blueberry", "ice.mmdb", filepath.Join(os.TempDir(), "ice.mmdb"), minio.PutObjectOptions{
+	_, err = client.FPutObject(context.Background(), "blueberry", "public/ice.mmdb", filepath.Join(os.TempDir(), "ice.mmdb"), minio.PutObjectOptions{
 		ContentType:        "application/x-mmdb",
 		ContentDisposition: "attachment; filename=ice.mmdb",
 		CacheControl:       "public, max-age=300",

@@ -2,6 +2,7 @@ package main
 
 import (
 	_ "embed"
+	"github.com/blueberryorg/public/source/rule/rules"
 	"strings"
 
 	"github.com/elliotchance/pie/v2"
@@ -55,6 +56,28 @@ func (p *Collector) LoadBefore() (err error) {
 	return nil
 }
 
-func (p *Collector) LoadAfter() error {
-	return p.load(after)
+func (p *Collector) clear() {
+	p.rules = pie.Filter(p.rules, func(rule rules.Rule) bool {
+		if rule.Payload() == "" {
+			return false
+		}
+
+		if rule.Adapter() == "" {
+			return false
+		}
+
+		return true
+	})
+}
+
+func (p *Collector) LoadAfter() (err error) {
+	err = p.load(after)
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
+	p.clear()
+
+	return nil
 }
