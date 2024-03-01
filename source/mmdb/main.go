@@ -343,36 +343,96 @@ func clone(src mmdbtype.DataType) mmdbtype.Map {
 		}
 
 		// NOTE: 对特殊字段的处理
-		if value, ok := dst["as_organization"]; ok {
-			if org, ok := value.(mmdbtype.String); ok {
-				org := strings.ToLower(string(org))
-				if strings.Contains(org, "alibaba") {
-					dst["as_organization"] = mmdbtype.String("阿里云")
-				} else if strings.Contains(org, "tencent") {
-					dst["as_organization"] = mmdbtype.String("腾讯云")
-				} else if strings.Contains(org, "baidu") {
-					dst["as_organization"] = mmdbtype.String("百度云")
-				} else if strings.Contains(org, "huawei") {
-					dst["as_organization"] = mmdbtype.String("华为云")
-				} else if strings.Contains(org, "amazon") {
-					dst["as_organization"] = mmdbtype.String("亚马逊")
-				} else if strings.Contains(org, "microsoft") {
-					dst["as_organization"] = mmdbtype.String("微软")
-				} else if strings.Contains(org, "google") {
-					dst["as_organization"] = mmdbtype.String("谷歌")
-				} else if strings.Contains(org, "cloudflare") {
-					dst["as_organization"] = mmdbtype.String("Cloudflare")
-				} else if strings.Contains(org, "fastly") {
-					dst["as_organization"] = mmdbtype.String("Fastly")
-				} else if strings.Contains(org, "akamai") {
-					dst["as_organization"] = mmdbtype.String("Akamai")
-				} else if strings.Contains(org, "oracle") {
-					dst["as_organization"] = mmdbtype.String("甲骨文")
-				} else {
-					log.Warnf("unknown as_organization:%s", org)
-				}
+		asOrganization := func() {
+			value, ok := dst["as_organization"]
+			if !ok {
+				return
 			}
+
+			mmdbValue, ok := value.(mmdbtype.String)
+			if !ok {
+				return
+			}
+
+			org := strings.ToLower(string(mmdbValue))
+			if strings.Contains(org, "alibaba") {
+				dst["as_organization"] = mmdbtype.String("阿里云")
+				return
+			}
+			if strings.Contains(org, "tencent") {
+				dst["as_organization"] = mmdbtype.String("腾讯云")
+				return
+			}
+
+			if strings.Contains(org, "baidu") {
+				dst["as_organization"] = mmdbtype.String("百度云")
+				return
+			}
+
+			if strings.Contains(org, "huawei") {
+				dst["as_organization"] = mmdbtype.String("华为云")
+				return
+			}
+
+			if strings.Contains(org, "amazon") {
+				dst["as_organization"] = mmdbtype.String("亚马逊")
+				return
+			}
+
+			if strings.Contains(org, "microsoft") {
+				dst["as_organization"] = mmdbtype.String("微软")
+				return
+			}
+
+			if strings.Contains(org, "google") {
+				dst["as_organization"] = mmdbtype.String("谷歌")
+				return
+			}
+
+			if strings.Contains(org, "cloudflare") {
+				dst["as_organization"] = mmdbtype.String("Cloudflare")
+				return
+			}
+
+			if strings.Contains(org, "fastly") {
+				dst["as_organization"] = mmdbtype.String("Fastly")
+				return
+			}
+
+			if strings.Contains(org, "akamai") {
+				dst["as_organization"] = mmdbtype.String("Akamai")
+				return
+			}
+
+			if strings.Contains(org, "oracle") {
+				dst["as_organization"] = mmdbtype.String("甲骨文")
+				return
+			}
+
+			if strings.Contains(org, "pvimpelcom") {
+				dst["as_organization"] = mmdbtype.String("Beeline-俄罗斯")
+				return
+			}
+
+			if strings.Contains(org, "aconet") {
+				dst["as_organization"] = mmdbtype.String("ACOnet-奥地利")
+				return
+			}
+
+			if strings.Contains(org, "sky uk limited") {
+				dst["as_organization"] = mmdbtype.String("天空有限公司-英国")
+				return
+			}
+
+			if strings.Contains(org, "vodafone czech republic a.s.") {
+				dst["as_organization"] = mmdbtype.String("Vodafone-捷克")
+				return
+			}
+
+			// log.Warnf("as_organization:%s", org)
 		}
+
+		asOrganization()
 
 		return dst
 	}
