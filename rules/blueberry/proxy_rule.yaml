@@ -129,6 +129,11 @@ rule_list:
     - direct
     - develop
     - reject
+    - youtube
+    - netflix
+    - openai
     - privacy
     - proxy
     - game
+    - disney
+    - bilibili

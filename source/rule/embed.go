@@ -2,6 +2,7 @@ package main
 
 import (
 	_ "embed"
+	"github.com/blueberryorg/public/source/rule/cidrmerge"
 	"github.com/blueberryorg/public/source/rule/collector"
 	"github.com/blueberryorg/public/source/rule/rules"
 	"net/netip"
@@ -74,65 +75,102 @@ func (p *Collector) clear() {
 		return true
 	})
 
-	// 对于连续的IP段进行合并
-	cm := rules.NewCIDRMerge()
-	var nr []rules.Rule
-	pie.Each(p.rules, func(rule rules.Rule) {
-		switch rule.RuleType() {
-		case rules.RuleTypeIPCIDR, rules.RuleTypeSrcIPCIDR:
-			if !cm.CanMerge(rule.Adapter()) {
-				if cm.Len() <= 0 {
-					panic("merge error")
+	// NOTE: 对于连续的IP段进行合并
+	{
+		cm := cidrmerge.NewCIDRMerge()
+		var nr []rules.Rule
+		pie.Each(p.rules, func(rule rules.Rule) {
+			switch rule.RuleType() {
+			case rules.RuleTypeIPCIDR, rules.RuleTypeSrcIPCIDR:
+				if !cm.CanMerge(rule.Adapter()) {
+					if cm.Len() <= 0 {
+						panic("merge error")
+					}
+
+					list, err := cm.Merge()
+					if err != nil {
+						log.Errorf("err:%v", err)
+						return
+					}
+
+					for _, s := range list {
+						r, err := rules.NewIPCIDR(s, cm.Adapter())
+						if err != nil {
+							log.Errorf("err:%v", err)
+							continue
+						}
+
+						nr = append(nr, r)
+					}
+
+					cm.Clear()
 				}
 
-				list, err := cm.Merge()
-				if err != nil {
-					log.Errorf("err:%v", err)
+				cm.SetAdapter(rule.Adapter())
+				cm.AddCIDR(rule.Payload())
+				return
+
+			default:
+				if cm.Len() > 0 {
+					list, err := cm.Merge()
+					if err != nil {
+						log.Errorf("err:%v", err)
+						list = cm.CIDRs()
+						log.Errorf("err:%v", list)
+					}
+
+					for _, s := range list {
+						r, err := rules.NewIPCIDR(s, cm.Adapter())
+						if err != nil {
+							log.Errorf("err:%v", err)
+							continue
+						}
+
+						nr = append(nr, r)
+					}
+
+					cm.Clear()
+				}
+			}
+
+			nr = append(nr, rule)
+		})
+	}
+
+	// NOTE: 清理对于的CIDR
+	{
+		var nr []rules.Rule
+		pie.Each(p.rules, func(rule rules.Rule) {
+			switch rule.RuleType() {
+			case rules.RuleTypeIPCIDR, rules.RuleTypeSrcIPCIDR:
+				pp := netip.MustParsePrefix(rule.Payload())
+
+				if pie.Any(nr, func(r rules.Rule) bool {
+					if r.RuleType() != rules.RuleTypeIPCIDR {
+						return false
+					}
+
+					if r.RuleType() != rules.RuleTypeSrcIPCIDR {
+						return false
+					}
+
+					if netip.MustParsePrefix(r.Payload()).Overlaps(pp) {
+						return true
+					}
+
+					return false
+				}) {
 					return
 				}
 
-				for _, s := range list {
-					r, err := rules.NewIPCIDR(s, rule.Adapter())
-					if err != nil {
-						log.Errorf("err:%v", err)
-						continue
-					}
-
-					nr = append(nr, r)
-				}
-
-				cm.Clear()
+				nr = append(nr, rule)
+			default:
+				nr = append(nr, rule)
 			}
+		})
+		p.rules = nr
+	}
 
-			cm.SetAdapter(rule.Adapter())
-			cm.AddCIDR(rule.Payload())
-			return
-
-		default:
-			if cm.Len() > 0 {
-				list, err := cm.Merge()
-				if err != nil {
-					return
-				}
-
-				for _, s := range list {
-					r, err := rules.NewIPCIDR(s, rule.Adapter())
-					if err != nil {
-						log.Errorf("err:%v", err)
-						continue
-					}
-
-					nr = append(nr, r)
-				}
-
-				cm.Clear()
-			}
-		}
-
-		nr = append(nr, rule)
-	})
-
-	p.rules = nr
 }
 
 func (p *Collector) LoadAfter() (err error) {

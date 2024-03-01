@@ -1,8 +1,4 @@
-package rules
-
-import (
-	"github.com/EvilSuperstars/go-cidrman"
-)
+package cidrmerge
 
 type CIDRMerge struct {
 	cidrs   []string
@@ -30,16 +26,11 @@ func (p *CIDRMerge) Adapter() string {
 }
 
 func (p *CIDRMerge) Merge() ([]string, error) {
-	if len(p.cidrs) == 0 {
-		return nil, nil
-	}
+	return MergeCIDRs(p.cidrs)
+}
 
-	cirds, err := cidrman.MergeCIDRs(p.cidrs)
-	if err != nil {
-		return nil, err
-	}
-
-	return cirds, nil
+func (p *CIDRMerge) CIDRs() []string {
+	return p.cidrs
 }
 
 func (p *CIDRMerge) Clear() {

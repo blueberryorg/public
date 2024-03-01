@@ -17,6 +17,7 @@ const (
 	RuleTypeDstPort
 	RuleTypeProcess
 	RuleTypeProcessPath
+	RuleTypeUserAgent
 )
 
 type Rule interface {
@@ -49,6 +50,8 @@ func ParseRule(tp, payload, target string, params []string) (Rule, error) {
 		return NewProcess(payload, target, true)
 	case "PROCESS-PATH":
 		return NewProcess(payload, target, false)
+	case "USER-AGENT":
+		return NewUserAgent(payload, target)
 	default:
 		return nil, fmt.Errorf("unsupported rule type %s", tp)
 	}
