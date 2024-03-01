@@ -1,0 +1,139 @@
+adapters:
+    - type: select
+      name: 代理选择
+      adapters:
+        - 故障切换
+        - 延时最低
+        - 手动选择
+        - 负载均衡
+      set: proxy
+    - type: fallback
+      name: 故障切换
+      add_node: true
+    - type: min_delay
+      name: 延时最低
+      add_node: true
+    - type: select
+      name: 手动选择
+      add_node: true
+    - type: load_balance
+      name: 负载均衡
+      add_node: true
+    - type: select
+      name: Youtube
+      adapters:
+        - 代理选择
+        - 故障切换
+        - 延时最低
+        - 手动选择
+        - 负载均衡
+      set: youtube
+    - type: select
+      name: Netflix
+      adapters:
+        - 代理选择
+        - 故障切换
+        - 延时最低
+        - 手动选择
+        - 负载均衡
+      set: netflix
+    - type: select
+      name: Disney
+      adapters:
+        - 代理选择
+        - 故障切换
+        - 延时最低
+        - 手动选择
+        - 负载均衡
+      set: disney
+    - type: select
+      name: 哔哩哔哩
+      adapters:
+        - 代理选择
+        - 故障切换
+        - 延时最低
+        - 手动选择
+        - 负载均衡
+      set: bilibili
+    - type: select
+      name: OpenAI
+      adapters:
+        - 代理选择
+        - 故障切换
+        - 延时最低
+        - 手动选择
+        - 负载均衡
+      set: openai
+    - type: select
+      name: 游戏分流
+      adapters:
+        - 代理选择
+        - 故障切换
+        - 延时最低
+        - 手动选择
+        - 负载均衡
+      set: game
+    - type: select
+      name: 开发专用
+      adapters:
+        - 代理选择
+        - 故障切换
+        - 延时最低
+        - 手动选择
+        - 负载均衡
+      set: develop
+    - type: select
+      name: 拒绝连接
+      adapters:
+        - REJECT
+        - DIRECT
+        - 代理选择
+        - 故障切换
+        - 延时最低
+        - 手动选择
+        - 负载均衡
+      set: reject
+    - type: select
+      name: privacy
+      adapters:
+        - REJECT
+        - DIRECT
+        - 代理选择
+        - 故障切换
+        - 延时最低
+        - 手动选择
+        - 负载均衡
+      set: 隐私保护
+    - type: select
+      name: 直接连接
+      adapters:
+        - DIRECT
+        - REJECT
+        - 代理选择
+        - 故障切换
+        - 延时最低
+        - 手动选择
+        - 负载均衡
+      set: direct
+    - type: finial
+      name: 规则以外
+      adapters:
+        - proxy
+        - 故障切换
+        - 延时最低
+        - 手动选择
+        - 负载均衡
+        - direct
+        - reject
+rule_list:
+    - develop
+    - reject
+    - netflix
+    - disney
+    - bilibili
+    - openai
+    - direct
+    - privacy
+    - proxy
+    - game
+    - youtube
