@@ -137,7 +137,7 @@ func (p *Collector) clear() {
 		})
 	}
 
-	// NOTE: 清理对于的CIDR
+	// NOTE: 清理多余的配置
 	{
 		var nr []rules.Rule
 		pie.Each(p.rules, func(rule rules.Rule) {

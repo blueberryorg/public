@@ -3,9 +3,50 @@ allow-lan: false
 mode: Rule
 log-level: info
 external-controller: :9090
+
+geodata-mode: true
+geo-auto-update: true
+geo-update-interval: 24
+geox-url:
+    geoip: https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geoip.dat
+    geosite: https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geosite.dat
+    mmdb: https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.metadb
+
+profile:
+    store-selected: true
+    store-fake-ip: true
+
+sniffer:
+    enable: false
+    sniff:
+        TLS:
+            ports: [443]
+        HTTP:
+            ports: [80]
+            override-destination: true
+
+ntp:
+    enable: true
+    write-to-system: true
+    server: ntp.aliyun.com
+    port: 123
+    interval: 60
+
+find-process-mode: always
+unified-delay: false
+tcp-concurrent: false
+global-client-fingerprint: chrome
+
 experimental:
+    quic-go-disable-gso: false
+    quic-go-disable-ecn: false
     ignore-resolve-fail: true
     sniff-tls-sni: true
+
+url-rewrite:
+    - ^https?:\/\/(www.)?(g|google)\.cn https://www.google.com 302
+    - ^https?:\/\/(ditu|maps).google\.cn https://maps.google.com 302
+
 dns:
     enable: true
     ipv6: false
@@ -172,6 +213,7 @@ dns:
         '+.wechat.com': '119.29.29.29'
         '+.weixin.com': '119.29.29.29'
         '+.weiyun.com': '119.29.29.29'
+
 cfw-bypass:
     # CN域名直连(中国|公司|网络)
     - "*.cn"

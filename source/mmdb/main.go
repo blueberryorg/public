@@ -107,7 +107,7 @@ func (p *MMDB) update(path string, logic func(record []string) error) error {
 			break
 		}
 
-		//log.Infof("handle %s -> %s", record[0], record[1])
+		// log.Infof("handle %s -> %s", record[0], record[1])
 
 		err = logic(record)
 		if err != nil {
@@ -349,6 +349,37 @@ func clone(src mmdbtype.DataType) mmdbtype.Map {
 		for k, v := range src {
 			dst[k] = v
 		}
+
+		// NOTE: 对特殊字段的处理
+		if value, ok := dst["as_organization"]; ok {
+			if org, ok := value.(mmdbtype.String); ok {
+				org := strings.ToLower(string(org))
+				if strings.Contains(org, "alibaba") {
+					dst["as_organization"] = mmdbtype.String("阿里云")
+				} else if strings.Contains(org, "tencent") {
+					dst["as_organization"] = mmdbtype.String("腾讯云")
+				} else if strings.Contains(org, "baidu") {
+					dst["as_organization"] = mmdbtype.String("百度云")
+				} else if strings.Contains(org, "huawei") {
+					dst["as_organization"] = mmdbtype.String("华为云")
+				} else if strings.Contains(org, "amazon") {
+					dst["as_organization"] = mmdbtype.String("亚马逊")
+				} else if strings.Contains(org, "microsoft") {
+					dst["as_organization"] = mmdbtype.String("微软")
+				} else if strings.Contains(org, "google") {
+					dst["as_organization"] = mmdbtype.String("谷歌")
+				} else if strings.Contains(org, "cloudflare") {
+					dst["as_organization"] = mmdbtype.String("Cloudflare")
+				} else if strings.Contains(org, "fastly") {
+					dst["as_organization"] = mmdbtype.String("Fastly")
+				} else if strings.Contains(org, "akamai") {
+					dst["as_organization"] = mmdbtype.String("Akamai")
+				} else if strings.Contains(org, "oracle") {
+					dst["as_organization"] = mmdbtype.String("甲骨文")
+				}
+			}
+		}
+
 		return dst
 	}
 
@@ -454,4 +485,4 @@ func main() {
 	}
 }
 
-//ln -fds /data/rclone/alist/storage/minio/138.2.116.185/blueberry/public /opt/1panel/apps/minio/minio/data/blueberry/public
+// ln -fds /data/rclone/alist/storage/minio/138.2.116.185/blueberry/public /opt/1panel/apps/minio/minio/data/blueberry/public
