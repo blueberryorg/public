@@ -10,8 +10,6 @@ github.com/Dreamacro/clash v1.18.0 h1:tic7ykTOCaT0mxwAkXo6QP3LN3Nps8oZz9atgr6TU8
 github.com/Dreamacro/clash v1.18.0/go.mod h1:r//xe/2pA3Zl+3fjIiI/o6RjIVd+z87drCD58dpRnFg=
 github.com/Dreamacro/protobytes v0.0.0-20230911123819-0bbf144b9b9a h1:1AtE37gqotGM0T90bcmdh2J2eVIjQneS/4/PGLIjl3Y=
 github.com/Dreamacro/protobytes v0.0.0-20230911123819-0bbf144b9b9a/go.mod h1:ESt8LLs50hyrYzfb7NRh3cDm8W1/r/9+CEAKWV+gc38=
-github.com/EvilSuperstars/go-cidrman v0.0.0-20190607145828-28e79e32899a h1:D9u6wYxZ2bPjDwYYq25y+n6ZmOKj/TsAMGSl4xL1yQI=
-github.com/EvilSuperstars/go-cidrman v0.0.0-20190607145828-28e79e32899a/go.mod h1:pzTfWeRUe2RpUHYF4s8PfLt7C3jnxg62RX10Eh9myYY=
 github.com/MarvinJWendt/testza v0.1.0/go.mod h1:7AxNvlfeHP7Z/hDQ5JtE3OKYT3XFUeLCDE2DQninSqs=
 github.com/MarvinJWendt/testza v0.2.1/go.mod h1:God7bhG8n6uQxwdScay+gjm9/LnO4D3kkcZX4hv9Rp8=
 github.com/MarvinJWendt/testza v0.2.8/go.mod h1:nwIcjmr0Zz+Rcwfh3/4UhBp7ePKVhuBExvZqnKYWlII=
@@ -156,8 +154,6 @@ github.com/rs/xid v1.5.0 h1:mKX4bl4iPYJtEIxp6CYiUuLQ/8DYMoz0PUdtGgMFRVc=
 github.com/rs/xid v1.5.0/go.mod h1:trrq9SKmegXys3aeAKXMUTdJsYXVwGY3RLcfgqegfbg=
 github.com/saintfish/chardet v0.0.0-20230101081208-5e3ef4b5456d h1:hrujxIzL1woJ7AwssoOcM/tq5JjjG2yYOc8odClEiXA=
 github.com/saintfish/chardet v0.0.0-20230101081208-5e3ef4b5456d/go.mod h1:uugorj2VCxiV1x+LzaIdVa9b4S4qGAcH6cbhh4qVxOU=
-github.com/samber/lo v1.38.1 h1:j2XEAqXKb09Am4ebOg31SpvzUTTs6EN3VfgeLUhPdXM=
-github.com/samber/lo v1.38.1/go.mod h1:+m/ZKRl6ClXCE2Lgf3MsQlWfh4bn1bz6CXEOxnEXnEA=
 github.com/sergi/go-diff v1.2.0 h1:XU+rvMAioB0UC3q1MFrIQy4Vo5/4VsRDQQXHsEya6xQ=
 github.com/sergi/go-diff v1.2.0/go.mod h1:STckp+ISIX8hZLjrqAeVduY0gWCT9IjLuqbuNXdaHfM=
 github.com/sirupsen/logrus v1.9.3 h1:dueUQJ1C2q9oE3F7wvmSGAaVtTmUizReu6fjN8uqzbQ=

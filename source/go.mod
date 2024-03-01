@@ -15,8 +15,6 @@ require (
 	github.com/minio/minio-go/v7 v7.0.66
 	github.com/projectdiscovery/mapcidr v1.1.16
 	github.com/pterm/pterm v0.12.78
-	github.com/samber/lo v1.38.1
-	github.com/stretchr/testify v1.8.4
 	golang.org/x/net v0.20.0
 	gopkg.in/yaml.v3 v3.0.1
 )
@@ -26,14 +24,12 @@ require (
 	atomicgo.dev/keyboard v0.2.9 // indirect
 	atomicgo.dev/schedule v0.1.0 // indirect
 	github.com/Dreamacro/protobytes v0.0.0-20230911123819-0bbf144b9b9a // indirect
-	github.com/EvilSuperstars/go-cidrman v0.0.0-20190607145828-28e79e32899a // indirect
 	github.com/antchfx/xpath v1.2.5 // indirect
 	github.com/aymerick/douceur v0.2.0 // indirect
 	github.com/bytedance/sonic v1.10.2 // indirect
 	github.com/chenzhuoyu/base64x v0.0.0-20230717121745-296ad89f973d // indirect
 	github.com/chenzhuoyu/iasm v0.9.1 // indirect
 	github.com/containerd/console v1.0.3 // indirect
-	github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc // indirect
 	github.com/dustin/go-humanize v1.0.1 // indirect
 	github.com/gofrs/uuid/v5 v5.0.0 // indirect
 	github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da // indirect
@@ -59,7 +55,6 @@ require (
 	github.com/oschwald/maxminddb-golang v1.12.0 // indirect
 	github.com/petermattis/goid v0.0.0-20231207134359-e60b3f734c67 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
-	github.com/pmezard/go-difflib v1.0.1-0.20181226105442-5d4384ee4fb2 // indirect
 	github.com/projectdiscovery/blackrock v0.0.1 // indirect
 	github.com/projectdiscovery/utils v0.0.77 // indirect
 	github.com/rivo/uniseg v0.4.6 // indirect
