@@ -120,19 +120,11 @@ func (p *MMDB) update(path string, logic func(record []string) error) error {
 	return nil
 }
 
-func toPascalCase(s string) string {
-	words := strings.Fields(s)
-	for i, word := range words {
-		words[i] = strings.ToTitle(word)
-	}
-	return strings.Join(words, " ")
-}
-
 func (p *MMDB) UpdateASN(writer *mmdbwriter.Tree) (err error) {
 	err = p.update("https://raw.githubusercontent.com/sapics/ip-location-db/main/geolite2-asn/geolite2-asn-ipv4.csv", func(record []string) error {
 		return writer.InsertRange(net.ParseIP(record[0]), net.ParseIP(record[1]), mmdbtype.Map{
 			"as_number":       mmdbtype.String("AS" + record[2]),
-			"as_organization": mmdbtype.String(toPascalCase(record[3])),
+			"as_organization": mmdbtype.String(record[3]),
 		})
 	})
 	if err != nil {
@@ -143,7 +135,7 @@ func (p *MMDB) UpdateASN(writer *mmdbwriter.Tree) (err error) {
 	err = p.update("https://raw.githubusercontent.com/sapics/ip-location-db/main/geolite2-asn/geolite2-asn-ipv6.csv", func(record []string) error {
 		return writer.InsertRange(net.ParseIP(record[0]), net.ParseIP(record[1]), mmdbtype.Map{
 			"as_number":       mmdbtype.String("AS" + record[2]),
-			"as_organization": mmdbtype.String(toPascalCase(record[3])),
+			"as_organization": mmdbtype.String(record[3]),
 		})
 	})
 	if err != nil {
@@ -245,7 +237,7 @@ func (p *MMDB) UpdateChinaOrg(writer *mmdbwriter.Tree) (err error) {
 	err = update("https://gaoyifan.github.io/china-operator-ip/cernet.txt", func(first, last net.IP) error {
 		return writer.InsertRange(first, last, mmdbtype.Map{
 			"country_code":    mmdbtype.String("CN"),
-			"as_organization": mmdbtype.String("China Education"),
+			"as_organization": mmdbtype.String("中国教育网"),
 		})
 	})
 	if err != nil {
@@ -256,7 +248,7 @@ func (p *MMDB) UpdateChinaOrg(writer *mmdbwriter.Tree) (err error) {
 	err = update("https://gaoyifan.github.io/china-operator-ip/cernet6.txt", func(first, last net.IP) error {
 		return writer.InsertRange(first, last, mmdbtype.Map{
 			"country_code":    mmdbtype.String("CN"),
-			"as_organization": mmdbtype.String("China Education"),
+			"as_organization": mmdbtype.String("中国教育网"),
 		})
 	})
 	if err != nil {
@@ -267,7 +259,7 @@ func (p *MMDB) UpdateChinaOrg(writer *mmdbwriter.Tree) (err error) {
 	err = update("https://gaoyifan.github.io/china-operator-ip/chinanet.txt", func(first, last net.IP) error {
 		return writer.InsertRange(first, last, mmdbtype.Map{
 			"country_code":    mmdbtype.String("CN"),
-			"as_organization": mmdbtype.String("China Telecom"),
+			"as_organization": mmdbtype.String("中国电信"),
 		})
 	})
 	if err != nil {
@@ -278,7 +270,7 @@ func (p *MMDB) UpdateChinaOrg(writer *mmdbwriter.Tree) (err error) {
 	err = update("https://gaoyifan.github.io/china-operator-ip/chinanet6.txt", func(first, last net.IP) error {
 		return writer.InsertRange(first, last, mmdbtype.Map{
 			"country_code":    mmdbtype.String("CN"),
-			"as_organization": mmdbtype.String("China Telecom"),
+			"as_organization": mmdbtype.String("中国电信"),
 		})
 	})
 	if err != nil {
@@ -289,7 +281,7 @@ func (p *MMDB) UpdateChinaOrg(writer *mmdbwriter.Tree) (err error) {
 	err = update("https://gaoyifan.github.io/china-operator-ip/cmcc.txt", func(first, last net.IP) error {
 		return writer.InsertRange(first, last, mmdbtype.Map{
 			"country_code":    mmdbtype.String("CN"),
-			"as_organization": mmdbtype.String("China Mobile"),
+			"as_organization": mmdbtype.String("中国移动"),
 		})
 	})
 	if err != nil {
@@ -300,7 +292,7 @@ func (p *MMDB) UpdateChinaOrg(writer *mmdbwriter.Tree) (err error) {
 	err = update("https://gaoyifan.github.io/china-operator-ip/cmcc6.txt", func(first, last net.IP) error {
 		return writer.InsertRange(first, last, mmdbtype.Map{
 			"country_code":    mmdbtype.String("CN"),
-			"as_organization": mmdbtype.String("China Mobile"),
+			"as_organization": mmdbtype.String("中国移动"),
 		})
 	})
 	if err != nil {
@@ -311,28 +303,28 @@ func (p *MMDB) UpdateChinaOrg(writer *mmdbwriter.Tree) (err error) {
 	err = update("https://gaoyifan.github.io/china-operator-ip/drpeng.txt", func(first, last net.IP) error {
 		return writer.InsertRange(first, last, mmdbtype.Map{
 			"country_code":    mmdbtype.String("CN"),
-			"as_organization": mmdbtype.String("Dr. Peng"),
+			"as_organization": mmdbtype.String("鹏博士"),
 		})
 	})
 
 	err = update("https://gaoyifan.github.io/china-operator-ip/drpeng6.txt", func(first, last net.IP) error {
 		return writer.InsertRange(first, last, mmdbtype.Map{
 			"country_code":    mmdbtype.String("CN"),
-			"as_organization": mmdbtype.String("Dr. Peng"),
+			"as_organization": mmdbtype.String("鹏博士"),
 		})
 	})
 
 	err = update("https://gaoyifan.github.io/china-operator-ip/unicom.txt", func(first, last net.IP) error {
 		return writer.InsertRange(first, last, mmdbtype.Map{
 			"country_code":    mmdbtype.String("CN"),
-			"as_organization": mmdbtype.String("China Unicom"),
+			"as_organization": mmdbtype.String("中国联通"),
 		})
 	})
 
 	err = update("https://gaoyifan.github.io/china-operator-ip/unicom6.txt", func(first, last net.IP) error {
 		return writer.InsertRange(first, last, mmdbtype.Map{
 			"country_code":    mmdbtype.String("CN"),
-			"as_organization": mmdbtype.String("China Unicom"),
+			"as_organization": mmdbtype.String("中国联通"),
 		})
 	})
 
