@@ -368,6 +368,8 @@ func clone(src mmdbtype.DataType) mmdbtype.Map {
 					dst["as_organization"] = mmdbtype.String("Akamai")
 				} else if strings.Contains(org, "oracle") {
 					dst["as_organization"] = mmdbtype.String("甲骨文")
+				} else {
+					log.Warnf("unknown as_organization:%s", org)
 				}
 			}
 		}
