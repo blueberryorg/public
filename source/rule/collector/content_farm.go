@@ -63,7 +63,7 @@ func (p *ContentFarm) NeedUpdate(info os.FileInfo) bool {
 
 func NewContentFarm() *ContentFarm {
 	p := &ContentFarm{
-		baseUrl: "https://raw.githubusercontent.com/wdmpa/content-farm-list/main/",
+		baseUrl: "https://cdn.jsdelivr.net/gh/wdmpa/content-farm-list@main/",
 	}
 
 	return p

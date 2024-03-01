@@ -186,10 +186,10 @@ func main() {
 		{BLACKMATRIX7, "ZhihuAds/ZhihuAds.yaml", Reject},                 // 知乎广告拦截
 
 		// 国内IP清单
-		//{ACLSSR, "Clash/ChinaIp.list", Direct},                                                            // 国内IP https://github.com/17mon/china_ip_list/
-		//{CIDR, "https://raw.githubusercontent.com/mayaxcn/china-ip-list/master/chnroute.txt", Direct},     // 国内IP https://github.com/mayaxcn/china-ip-list
+		// {ACLSSR, "Clash/ChinaIp.list", Direct},                                                            // 国内IP https://github.com/17mon/china_ip_list/
+		// {CIDR, "https://cdn.jsdelivr.net/gh/mayaxcn/china-ip-list@master/chnroute.txt", Direct},     // 国内IP https://github.com/mayaxcn/china-ip-list
 		//
-		//{CIDR, "https://raw.githubusercontent.com/metowolf/iplist/master/data/special/china.txt", Direct}, // 国内IP https://github.com/metowolf/iplist
+		// {CIDR, "https://cdn.jsdelivr.net/gh/metowolf/iplist@master/data/special/china.txt", Direct}, // 国内IP https://github.com/metowolf/iplist
 	}
 
 	err = c.LoadBefore()
@@ -325,7 +325,7 @@ func (p *Collector) Parse(key string, path string, tag string) (err error) {
 	log.Infof("parse for key:%s path:%s tag:%s", key, path, tag)
 
 	body, err := p.downloadWithoutCache(key, path)
-	//body, err := p.downloadWithCache(key, path)
+	// body, err := p.downloadWithCache(key, path)
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err

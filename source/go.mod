@@ -26,6 +26,7 @@ require (
 	atomicgo.dev/keyboard v0.2.9 // indirect
 	atomicgo.dev/schedule v0.1.0 // indirect
 	github.com/Dreamacro/protobytes v0.0.0-20230911123819-0bbf144b9b9a // indirect
+	github.com/EvilSuperstars/go-cidrman v0.0.0-20190607145828-28e79e32899a // indirect
 	github.com/antchfx/xpath v1.2.5 // indirect
 	github.com/aymerick/douceur v0.2.0 // indirect
 	github.com/bytedance/sonic v1.10.2 // indirect

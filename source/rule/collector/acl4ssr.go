@@ -19,7 +19,7 @@ type Acl4SSR struct {
 
 func NewAclSSr() *Acl4SSR {
 	p := &Acl4SSR{
-		baseUrl: "https://github.com/ACL4SSR/ACL4SSR/raw/master/",
+		baseUrl: "https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/",
 	}
 
 	return p

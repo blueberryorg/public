@@ -22,7 +22,7 @@ type Blackmatrix7 struct {
 // https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Clash/README.md
 func NewBlackmatrix7() *Blackmatrix7 {
 	return &Blackmatrix7{
-		baseUrl: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/",
+		baseUrl: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/",
 	}
 }
 

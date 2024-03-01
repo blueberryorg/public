@@ -126,7 +126,7 @@ func (p *Loyalsoldier) ParseBody(tag string, body []byte) (rules []rules.Rule) {
 
 func NewLoyalsoldier() *Loyalsoldier {
 	return &Loyalsoldier{
-		baseUrl: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/",
+		baseUrl: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/",
 	}
 }
 

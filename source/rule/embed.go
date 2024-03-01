@@ -50,6 +50,8 @@ func (p *Collector) LoadBefore() (err error) {
 }
 
 func (p *Collector) clear() {
+
+	// 清理无效的规则
 	p.rules = pie.Filter(p.rules, func(rule rules.Rule) bool {
 		if rule.Payload() == "" {
 			return false
@@ -65,10 +67,72 @@ func (p *Collector) clear() {
 			if err != nil {
 				return false
 			}
+		default:
+			// do nothing
 		}
 
 		return true
 	})
+
+	// 对于连续的IP段进行合并
+	cm := rules.NewCIDRMerge()
+	var nr []rules.Rule
+	pie.Each(p.rules, func(rule rules.Rule) {
+		switch rule.RuleType() {
+		case rules.RuleTypeIPCIDR, rules.RuleTypeSrcIPCIDR:
+			if !cm.CanMerge(rule.Adapter()) {
+				if cm.Len() <= 0 {
+					panic("merge error")
+				}
+
+				list, err := cm.Merge()
+				if err != nil {
+					log.Errorf("err:%v", err)
+					return
+				}
+
+				for _, s := range list {
+					r, err := rules.NewIPCIDR(s, rule.Adapter())
+					if err != nil {
+						log.Errorf("err:%v", err)
+						continue
+					}
+
+					nr = append(nr, r)
+				}
+
+				cm.Clear()
+			}
+
+			cm.SetAdapter(rule.Adapter())
+			cm.AddCIDR(rule.Payload())
+			return
+
+		default:
+			if cm.Len() > 0 {
+				list, err := cm.Merge()
+				if err != nil {
+					return
+				}
+
+				for _, s := range list {
+					r, err := rules.NewIPCIDR(s, rule.Adapter())
+					if err != nil {
+						log.Errorf("err:%v", err)
+						continue
+					}
+
+					nr = append(nr, r)
+				}
+
+				cm.Clear()
+			}
+		}
+
+		nr = append(nr, rule)
+	})
+
+	p.rules = nr
 }
 
 func (p *Collector) LoadAfter() (err error) {
