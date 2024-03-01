@@ -434,8 +434,8 @@ func clone(src mmdbtype.DataType) mmdbtype.Map {
 				return
 			}
 
-			if strings.Contains(org, "hetzner online gmbh") {
-				dst["as_organization"] = mmdbtype.String("赫茨纳")
+			if strings.Contains(org, "ovh") {
+				dst["as_organization"] = mmdbtype.String("OVH")
 				return
 			}
 
