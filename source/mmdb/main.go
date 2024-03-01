@@ -409,23 +409,33 @@ func clone(src mmdbtype.DataType) mmdbtype.Map {
 				return
 			}
 
-			if strings.Contains(org, "pvimpelcom") {
-				dst["as_organization"] = mmdbtype.String("Beeline-俄罗斯")
-				return
-			}
-
-			if strings.Contains(org, "aconet") {
-				dst["as_organization"] = mmdbtype.String("ACOnet-奥地利")
-				return
-			}
-
 			if strings.Contains(org, "sky uk limited") {
-				dst["as_organization"] = mmdbtype.String("天空有限公司-英国")
+				dst["as_organization"] = mmdbtype.String("天空有限-英国")
 				return
 			}
 
 			if strings.Contains(org, "vodafone czech republic a.s.") {
-				dst["as_organization"] = mmdbtype.String("Vodafone-捷克")
+				dst["as_organization"] = mmdbtype.String("沃达丰捷克")
+				return
+			}
+
+			if strings.Contains(org, "globaltelehost") {
+				dst["as_organization"] = mmdbtype.String("GThos-加拿大")
+				return
+			}
+
+			if strings.Contains(org, "data communication business group") {
+				dst["as_organization"] = mmdbtype.String("中华电信")
+				return
+			}
+
+			if strings.Contains(org, "stark industries solutions ltd") {
+				dst["as_organization"] = mmdbtype.String("斯塔克工业")
+				return
+			}
+
+			if strings.Contains(org, "hetzner online gmbh") {
+				dst["as_organization"] = mmdbtype.String("赫茨纳")
 				return
 			}
 
