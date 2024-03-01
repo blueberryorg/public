@@ -380,12 +380,12 @@ func clone(src mmdbtype.DataType) mmdbtype.Map {
 			}
 
 			if strings.Contains(org, "microsoft") {
-				dst["as_organization"] = mmdbtype.String("微软")
+				dst["as_organization"] = mmdbtype.String("微软云")
 				return
 			}
 
 			if strings.Contains(org, "google") {
-				dst["as_organization"] = mmdbtype.String("谷歌")
+				dst["as_organization"] = mmdbtype.String("谷歌云")
 				return
 			}
 
@@ -399,38 +399,13 @@ func clone(src mmdbtype.DataType) mmdbtype.Map {
 				return
 			}
 
-			if strings.Contains(org, "akamai") {
-				dst["as_organization"] = mmdbtype.String("Akamai")
-				return
-			}
-
 			if strings.Contains(org, "oracle") {
 				dst["as_organization"] = mmdbtype.String("甲骨文")
 				return
 			}
 
-			if strings.Contains(org, "sky uk limited") {
-				dst["as_organization"] = mmdbtype.String("天空有限-英国")
-				return
-			}
-
-			if strings.Contains(org, "vodafone czech republic a.s.") {
-				dst["as_organization"] = mmdbtype.String("沃达丰捷克")
-				return
-			}
-
-			if strings.Contains(org, "globaltelehost") {
-				dst["as_organization"] = mmdbtype.String("GThos-加拿大")
-				return
-			}
-
 			if strings.Contains(org, "data communication business group") {
 				dst["as_organization"] = mmdbtype.String("中华电信")
-				return
-			}
-
-			if strings.Contains(org, "stark industries solutions ltd") {
-				dst["as_organization"] = mmdbtype.String("斯塔克工业")
 				return
 			}
 
