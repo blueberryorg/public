@@ -129,7 +129,6 @@ HOST-SUFFIX,2mdn-cn.net,proxy
 HOST-SUFFIX,2mdn.net,proxy
 HOST-SUFFIX,466453.com,proxy
 HOST-SUFFIX,abc.xyz,proxy
-HOST-SUFFIX,accounts.googlers.com,proxy
 HOST-SUFFIX,adgoogle.net,proxy
 HOST-SUFFIX,admeld.com,proxy
 HOST-SUFFIX,admob-cn.com,proxy
@@ -323,7 +322,6 @@ HOST-SUFFIX,g.cn,proxy
 HOST-SUFFIX,g.dev,proxy
 HOST-SUFFIX,g.page,proxy
 HOST-SUFFIX,gateway.dev,proxy
-HOST-SUFFIX,gcpnode.com,proxy
 HOST-SUFFIX,gerritcodereview.com,proxy
 HOST-SUFFIX,get.app,proxy
 HOST-SUFFIX,get.dev,proxy
@@ -644,6 +642,7 @@ HOST-SUFFIX,qualysguard.qpdp1.net,proxy
 HOST-SUFFIX,questvisual.com,proxy
 HOST-SUFFIX,quickoffice.com,proxy
 HOST-SUFFIX,quiksee.com,proxy
+HOST-SUFFIX,recaptcha-cn.net,proxy
 HOST-SUFFIX,recaptcha.net,proxy
 HOST-SUFFIX,redhotlabs.com,proxy
 HOST-SUFFIX,registry.google,proxy
@@ -685,8 +684,6 @@ HOST-SUFFIX,tiltbrush.com,proxy
 HOST-SUFFIX,txcloud.net,proxy
 HOST-SUFFIX,txvia.com,proxy
 HOST-SUFFIX,unfiltered.news,proxy
-HOST-SUFFIX,up.corp.goog,proxy
-HOST-SUFFIX,up.gcp.googlers.com,proxy
 HOST-SUFFIX,urchin.com,proxy
 HOST-SUFFIX,useplannr.com,proxy
 HOST-SUFFIX,usvimosquito.com,proxy
