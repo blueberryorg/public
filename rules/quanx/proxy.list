@@ -633,6 +633,7 @@ HOST-SUFFIX,qagpublic.qpdp1.net,proxy
 HOST-SUFFIX,qgadmin.qatp1.net,proxy
 HOST-SUFFIX,qgadmin.qcpp1.net,proxy
 HOST-SUFFIX,qgadmin.qpdp1.net,proxy
+HOST-SUFFIX,qiao-cn.com,proxy
 HOST-SUFFIX,qualysapi.qatp1.net,proxy
 HOST-SUFFIX,qualysapi.qcpp1.net,proxy
 HOST-SUFFIX,qualysapi.qpdp1.net,proxy

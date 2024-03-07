@@ -641,6 +641,7 @@ DOMAIN-SUFFIX,qagpublic.qpdp1.net,proxy
 DOMAIN-SUFFIX,qgadmin.qatp1.net,proxy
 DOMAIN-SUFFIX,qgadmin.qcpp1.net,proxy
 DOMAIN-SUFFIX,qgadmin.qpdp1.net,proxy
+DOMAIN-SUFFIX,qiao-cn.com,proxy
 DOMAIN-SUFFIX,qualysapi.qatp1.net,proxy
 DOMAIN-SUFFIX,qualysapi.qcpp1.net,proxy
 DOMAIN-SUFFIX,qualysapi.qpdp1.net,proxy
