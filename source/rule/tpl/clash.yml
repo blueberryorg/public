@@ -382,7 +382,8 @@ cfw-bypass:
     - "*.huaweishop.net"
     - "*.hwccpc.com"
     - "*.vmall.com"
-    - "*.vmallres.com"# Iflytek 科大讯飞
+    - "*.vmallres.com"
+	 # Iflytek 科大讯飞
     - "*.iflyink.com"
     - "*.iflyrec.com"
     - "*.iflytek.com"
