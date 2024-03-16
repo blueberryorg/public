@@ -31,6 +31,7 @@ const (
 	Netflix  RuleType = "netflix"
 	Disney   RuleType = "disney"
 	BiliBili RuleType = "bilibili"
+	IQiyi    RuleType = "iqiyi"
 
 	OpenAI  RuleType = "openai"
 	Game    RuleType = "game"
@@ -59,6 +60,8 @@ func (p RuleType) Chinese() string {
 		return "Disney"
 	case BiliBili:
 		return "哔哩哔哩"
+	case IQiyi:
+		return "爱奇艺"
 	case OpenAI:
 		return "OpenAI"
 	case Game:
@@ -113,8 +116,9 @@ func main() {
 		{BLACKMATRIX7, "YouTubeMusic/YouTubeMusic.yaml", Youtube},  // YouTubeMusic
 		{BLACKMATRIX7, "Netflix/Netflix.yaml", Netflix},            // Netflix
 		{BLACKMATRIX7, "Disney/Disney.yaml", Disney},               // Disney
-		{BLACKMATRIX7, "BiliBili/BiliBili.yaml", BiliBili},         // BiliBili
-		{BLACKMATRIX7, "BiliBiliIntl/BiliBiliIntl.yaml", BiliBili}, // BiliBili
+		{BLACKMATRIX7, "BiliBili/BiliBili.yaml", BiliBili},         // 哔哩哔哩
+		{BLACKMATRIX7, "BiliBiliIntl/BiliBiliIntl.yaml", BiliBili}, // 哔哩哔哩
+		{BLACKMATRIX7, "iQIYI/iQIYI.yaml", IQiyi},                  // 爱奇艺
 
 		{BLACKMATRIX7, "Game/Game.yaml", Game}, // Game-聚合版
 

@@ -14,7 +14,7 @@ import (
 
 func (p *Collector) Clash() error {
 
-	//var ruleList []string
+	// var ruleList []string
 	ruleMap := map[string][]string{}
 	pie.Each(p.ExportRules(), func(r rules.Rule) {
 		var b bytes.Buffer
@@ -90,7 +90,7 @@ func (p *Collector) Clash() error {
 
 func (p *Collector) Subconverter() (err error) {
 	const baseUrl = "https://cdn.jsdelivr.net/gh/blueberryorg/public@master/rules/subconverter/"
-	//const baseUrl = "https://raw.githubusercontent.com/blueberryorg/public/master/rules/subconverter/"
+	// const baseUrl = "https://raw.githubusercontent.com/blueberryorg/public/master/rules/subconverter/"
 
 	rb := log.GetBuffer()
 	defer log.PutBuffer(rb)
@@ -104,10 +104,10 @@ func (p *Collector) Subconverter() (err error) {
 	rb.WriteString("udp_flag=true")
 	rb.WriteString("tcp_fast_open_flag=true")
 
-	//clashBypass := log.GetBuffer()
-	//defer log.PutBuffer(clashBypass)
+	// clashBypass := log.GetBuffer()
+	// defer log.PutBuffer(clashBypass)
 	//
-	//clashBypass.WriteString("cfw-bypass:\n")
+	// clashBypass.WriteString("cfw-bypass:\n")
 
 	ruleMap := map[string][]string{}
 	pie.Each(p.ExportRules(), func(r rules.Rule) {
@@ -140,8 +140,8 @@ func (p *Collector) Subconverter() (err error) {
 		b.WriteString(",")
 		b.WriteString(r.Payload())
 
-		//switch r.Adapter() {
-		//case Direct.String():
+		// switch r.Adapter() {
+		// case Direct.String():
 		//	switch r.RuleType() {
 		//	case rules.RuleTypeDomain:
 		//		clashBypass.WriteString(`    - "`)
@@ -161,7 +161,7 @@ func (p *Collector) Subconverter() (err error) {
 		//		clashBypass.WriteString(`.*"`)
 		//		clashBypass.WriteString("\n")
 		//	}
-		//}
+		// }
 
 		ruleMap[r.Adapter()] = append(ruleMap[r.Adapter()], b.String())
 	})
@@ -250,12 +250,17 @@ func (p *Collector) Subconverter() (err error) {
 			case Disney.String():
 				rb.WriteString("`select`[]")
 				rb.WriteString(Proxy.Chinese())
-				rb.WriteString("`[]故障转移`[]自动选择`[]手动选择`[]负载均衡`[]DIRECT`[]REJECT`([Dd]isney|迪士尼|🇩`)\n")
+				rb.WriteString("`[]故障转移`[]自动选择`[]手动选择`[]负载均衡`[]DIRECT`[]REJECT`([Dd]isney|迪士尼|🇩)`\n")
 
 			case BiliBili.String():
 				rb.WriteString("`select`[]DIRECT`[]")
 				rb.WriteString(Proxy.Chinese())
-				rb.WriteString("`[]故障转移`[]自动选择`[]手动选择`[]负载均衡`[]REJECT`([Dd]isney|迪士尼|🇩`)\n")
+				rb.WriteString("`[]故障转移`[]自动选择`[]手动选择`[]负载均衡`[]REJECT`([Dd]isney|迪士尼|🇩)`\n")
+
+			case IQiyi.String():
+				rb.WriteString("`select`[]DIRECT`[]")
+				rb.WriteString(Proxy.Chinese())
+				rb.WriteString("`[]故障转移`[]自动选择`[]手动选择`[]负载均衡`[]REJECT`(爱奇艺|[iI][Qq]i[Yy]i)`\n")
 
 			case Privacy.String():
 				rb.WriteString("`select`[]REJECT`[]DIRECT`[]")
@@ -302,48 +307,48 @@ func (p *Collector) Subconverter() (err error) {
 		rb.WriteString(baseUrl)
 		rb.WriteString("clash.yml\n")
 
-		//clashBypass.WriteString(`    - "localhost"`)
-		//clashBypass.WriteString("\n")
-		//clashBypass.WriteString(`    - 127.*`)
-		//clashBypass.WriteString("\n")
-		//clashBypass.WriteString(`    - 10.*`)
-		//clashBypass.WriteString("\n")
-		//clashBypass.WriteString(`    - 172.16.*`)
-		//clashBypass.WriteString("\n")
-		//clashBypass.WriteString(`    - 172.17.*`)
-		//clashBypass.WriteString("\n")
-		//clashBypass.WriteString(`    - 172.18.*`)
-		//clashBypass.WriteString("\n")
-		//clashBypass.WriteString(`    - 172.19.*`)
-		//clashBypass.WriteString("\n")
-		//clashBypass.WriteString(`    - 172.20.*`)
-		//clashBypass.WriteString("\n")
-		//clashBypass.WriteString(`    - 172.21.*`)
-		//clashBypass.WriteString("\n")
-		//clashBypass.WriteString(`    - 172.22.*`)
-		//clashBypass.WriteString("\n")
-		//clashBypass.WriteString(`    - 172.23.*`)
-		//clashBypass.WriteString("\n")
-		//clashBypass.WriteString(`    - 172.24.*`)
-		//clashBypass.WriteString("\n")
-		//clashBypass.WriteString(`    - 172.25.*`)
-		//clashBypass.WriteString("\n")
-		//clashBypass.WriteString(`    - 172.26.*`)
-		//clashBypass.WriteString("\n")
-		//clashBypass.WriteString(`    - 172.27.*`)
-		//clashBypass.WriteString("\n")
-		//clashBypass.WriteString(`    - 172.28.*`)
-		//clashBypass.WriteString("\n")
-		//clashBypass.WriteString(`    - 172.29.*`)
-		//clashBypass.WriteString("\n")
-		//clashBypass.WriteString(`    - 172.30.*`)
-		//clashBypass.WriteString("\n")
-		//clashBypass.WriteString(`    - 172.31.*`)
-		//clashBypass.WriteString("\n")
-		//clashBypass.WriteString(`    - 192.168.*`)
-		//clashBypass.WriteString("\n")
-		//clashBypass.WriteString(`    - <local>`)
-		//clashBypass.WriteString("\n")
+		// clashBypass.WriteString(`    - "localhost"`)
+		// clashBypass.WriteString("\n")
+		// clashBypass.WriteString(`    - 127.*`)
+		// clashBypass.WriteString("\n")
+		// clashBypass.WriteString(`    - 10.*`)
+		// clashBypass.WriteString("\n")
+		// clashBypass.WriteString(`    - 172.16.*`)
+		// clashBypass.WriteString("\n")
+		// clashBypass.WriteString(`    - 172.17.*`)
+		// clashBypass.WriteString("\n")
+		// clashBypass.WriteString(`    - 172.18.*`)
+		// clashBypass.WriteString("\n")
+		// clashBypass.WriteString(`    - 172.19.*`)
+		// clashBypass.WriteString("\n")
+		// clashBypass.WriteString(`    - 172.20.*`)
+		// clashBypass.WriteString("\n")
+		// clashBypass.WriteString(`    - 172.21.*`)
+		// clashBypass.WriteString("\n")
+		// clashBypass.WriteString(`    - 172.22.*`)
+		// clashBypass.WriteString("\n")
+		// clashBypass.WriteString(`    - 172.23.*`)
+		// clashBypass.WriteString("\n")
+		// clashBypass.WriteString(`    - 172.24.*`)
+		// clashBypass.WriteString("\n")
+		// clashBypass.WriteString(`    - 172.25.*`)
+		// clashBypass.WriteString("\n")
+		// clashBypass.WriteString(`    - 172.26.*`)
+		// clashBypass.WriteString("\n")
+		// clashBypass.WriteString(`    - 172.27.*`)
+		// clashBypass.WriteString("\n")
+		// clashBypass.WriteString(`    - 172.28.*`)
+		// clashBypass.WriteString("\n")
+		// clashBypass.WriteString(`    - 172.29.*`)
+		// clashBypass.WriteString("\n")
+		// clashBypass.WriteString(`    - 172.30.*`)
+		// clashBypass.WriteString("\n")
+		// clashBypass.WriteString(`    - 172.31.*`)
+		// clashBypass.WriteString("\n")
+		// clashBypass.WriteString(`    - 192.168.*`)
+		// clashBypass.WriteString("\n")
+		// clashBypass.WriteString(`    - <local>`)
+		// clashBypass.WriteString("\n")
 
 		{
 			buf, err := os.ReadFile("./tpl/clash.yml")
@@ -352,7 +357,7 @@ func (p *Collector) Subconverter() (err error) {
 				return err
 			}
 
-			//buf = bytes.ReplaceAll(buf, []byte("{{Bypass}}"), clashBypass.Bytes())
+			// buf = bytes.ReplaceAll(buf, []byte("{{Bypass}}"), clashBypass.Bytes())
 
 			err = os.WriteFile("../../rules/subconverter/clash.yml", buf, 0666)
 			if err != nil {
@@ -362,7 +367,7 @@ func (p *Collector) Subconverter() (err error) {
 		}
 	}
 
-	//NOTE: quanx
+	// NOTE: quanx
 	{
 		rb.WriteString("quanx_rule_base=")
 		rb.WriteString(baseUrl)
@@ -421,7 +426,7 @@ func (p *Collector) Subconverter() (err error) {
 	rb.WriteString("rename=Test-(.*?)-(.*?)-(.*?)\\((.*?)\\)@\\1\\4x测试线路_自\\2到\\3")
 	rb.WriteString("rename=\\(?((x|X)?(\\d+)(\\.?\\d+)?)((\\s?倍率?)|(x|X))\\)?@$1x\n")
 
-	//rb.WriteString("exclude_remarks=\n")
+	// rb.WriteString("exclude_remarks=\n")
 
 	err = os.WriteFile("../../rules/subconverter/blueberry.ini", rb.Bytes(), 0666)
 	if err != nil {
@@ -433,7 +438,7 @@ func (p *Collector) Subconverter() (err error) {
 }
 
 func (p *Collector) QuanX() error {
-	//var ruleList []string
+	// var ruleList []string
 	ruleMap := map[string][]string{}
 	pie.Each(p.ExportRules(), func(r rules.Rule) {
 		var b bytes.Buffer
@@ -651,6 +656,7 @@ func (p *Collector) Blue() error {
 				Type: "select",
 				Name: BiliBili.Chinese(),
 				Adapters: []string{
+					Direct.String(),
 					"代理选择",
 					"故障切换",
 					"延时最低",
@@ -658,6 +664,19 @@ func (p *Collector) Blue() error {
 					"负载均衡",
 				},
 				Set: BiliBili.String(),
+			},
+			{
+				Type: "select",
+				Name: IQiyi.Chinese(),
+				Adapters: []string{
+					Direct.String(),
+					"代理选择",
+					"故障切换",
+					"延时最低",
+					"手动选择",
+					"负载均衡",
+				},
+				Set: IQiyi.String(),
 			},
 
 			{
