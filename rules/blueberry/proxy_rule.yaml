@@ -49,12 +49,23 @@ adapters:
     - type: select
       name: 哔哩哔哩
       adapters:
+        - direct
         - 代理选择
         - 故障切换
         - 延时最低
         - 手动选择
         - 负载均衡
       set: bilibili
+    - type: select
+      name: 爱奇艺
+      adapters:
+        - direct
+        - 代理选择
+        - 故障切换
+        - 延时最低
+        - 手动选择
+        - 负载均衡
+      set: iqiyi
     - type: select
       name: OpenAI
       adapters:
@@ -126,14 +137,15 @@ adapters:
         - direct
         - reject
 rule_list:
-    - netflix
-    - bilibili
+    - develop
     - reject
+    - privacy
     - proxy
     - game
     - youtube
-    - openai
-    - direct
-    - develop
-    - privacy
     - disney
+    - direct
+    - openai
+    - bilibili
+    - iqiyi
+    - netflix
