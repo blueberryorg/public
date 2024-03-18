@@ -1763,14 +1763,11 @@ HOST-KEYWORD,tvbanywhere,proxy
 IP-CIDR,1.37.35.6/32,proxy
 IP-CIDR,101.100.179.242/32,proxy
 IP-CIDR,101.100.179.250/32,proxy
-IP-CIDR,103.5.34.153/32,proxy
 IP-CIDR,103.87.204.0/22,proxy
-IP-CIDR,104.109.129.153/32,proxy
 IP-CIDR,104.85.165.17/32,proxy
 IP-CIDR,105.187.240.196/31,proxy
 IP-CIDR,105.187.243.5/32,proxy
 IP-CIDR,105.187.243.6/32,proxy
-IP-CIDR,110.238.107.47/32,proxy
 IP-CIDR,112.198.26.2/32,proxy
 IP-CIDR,118.26.32.162/32,proxy
 IP-CIDR,118.26.32.178/32,proxy
@@ -2130,11 +2127,6 @@ IP-CIDR,203.116.0.0/16,proxy
 IP-CIDR,203.177.54.2/32,proxy
 IP-CIDR,203.198.0.0/20,proxy
 IP-CIDR,203.198.80.0/21,proxy
-IP-CIDR,203.211.4.169/32,proxy
-IP-CIDR,203.211.4.193/32,proxy
-IP-CIDR,203.74.95.131/32,proxy
-IP-CIDR,203.74.95.139/32,proxy
-IP-CIDR,203.74.95.153/32,proxy
 IP-CIDR,203.75.84.0/24,proxy
 IP-CIDR,203.80.97.203/32,proxy
 IP-CIDR,203.83.220.0/22,proxy
@@ -2199,10 +2191,6 @@ IP-CIDR,208.76.186.7/32,proxy
 IP-CIDR,208.91.156.0/22,proxy
 IP-CIDR,209.166.100.18/32,proxy
 IP-CIDR,209.166.100.22/32,proxy
-IP-CIDR,210.201.32.11/32,proxy
-IP-CIDR,210.201.32.8/32,proxy
-IP-CIDR,210.71.227.200/32,proxy
-IP-CIDR,210.71.227.202/32,proxy
 IP-CIDR,211.25.221.90/32,proxy
 IP-CIDR,211.25.221.94/32,proxy
 IP-CIDR,212.113.160.242/32,proxy
@@ -2245,8 +2233,6 @@ IP-CIDR,23.228.131.233/32,proxy
 IP-CIDR,23.228.131.235/32,proxy
 IP-CIDR,23.228.131.237/32,proxy
 IP-CIDR,23.228.131.239/32,proxy
-IP-CIDR,23.40.242.10/32,proxy
-IP-CIDR,23.53.32.88/32,proxy
 IP-CIDR,23.59.252.0/24,proxy
 IP-CIDR,23.78.0.0/16,proxy
 IP-CIDR,24.101.22.50/32,proxy
@@ -7081,7 +7067,6 @@ HOST-SUFFIX,tvplayvideos.com,proxy
 HOST-SUFFIX,tvunetworks.com,proxy
 HOST-SUFFIX,tw-npo.org,proxy
 HOST-SUFFIX,tw.hao123.com,proxy
-HOST-SUFFIX,tw.iqiyi.com,proxy
 HOST-SUFFIX,tw01.org,proxy
 HOST-SUFFIX,twaitter.com,proxy
 HOST-SUFFIX,twapperkeeper.com,proxy
@@ -7136,7 +7121,6 @@ HOST-SUFFIX,twitch.tv,proxy
 HOST-SUFFIX,twitchcdn.net,proxy
 HOST-SUFFIX,twitgether.com,proxy
 HOST-SUFFIX,twitgoo.com,proxy
-HOST-SUFFIX,twitiq.com,proxy
 HOST-SUFFIX,twitlonger.com,proxy
 HOST-SUFFIX,twitmania.com,proxy
 HOST-SUFFIX,twitoaster.com,proxy
