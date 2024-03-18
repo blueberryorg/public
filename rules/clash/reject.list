@@ -19433,6 +19433,7 @@ DOMAIN-SUFFIX,0hq6k.site,reject
 DOMAIN-SUFFIX,0i0i0i0.com,reject
 DOMAIN-SUFFIX,0j775d.cn,reject
 DOMAIN-SUFFIX,0l1201s548b2.top,reject
+DOMAIN-SUFFIX,0oqt9i.cn,reject
 DOMAIN-SUFFIX,0pengl.com,reject
 DOMAIN-SUFFIX,0s6s0.top,reject
 DOMAIN-SUFFIX,0stats.com,reject
@@ -29181,6 +29182,7 @@ DOMAIN-SUFFIX,kqvrmebkljleb.top,reject
 DOMAIN-SUFFIX,kqyywvok.xyz,reject
 DOMAIN-SUFFIX,ksccqu.xyz,reject
 DOMAIN-SUFFIX,kslbahd.top,reject
+DOMAIN-SUFFIX,kssolo.com,reject
 DOMAIN-SUFFIX,kstorybank.top,reject
 DOMAIN-SUFFIX,ksuoodqeiuupey.com,reject
 DOMAIN-SUFFIX,kt5850pjz0.com,reject
@@ -35530,6 +35532,7 @@ DOMAIN-SUFFIX,storystack.com,reject
 DOMAIN-SUFFIX,stotchou.com,reject
 DOMAIN-SUFFIX,stotoowu.net,reject
 DOMAIN-SUFFIX,stouksom.xyz,reject
+DOMAIN-SUFFIX,stouphou.net,reject
 DOMAIN-SUFFIX,stoushgowds.com,reject
 DOMAIN-SUFFIX,stovoori.net,reject
 DOMAIN-SUFFIX,stowamends.com,reject
@@ -36705,6 +36708,7 @@ DOMAIN-SUFFIX,udmserve.net,reject
 DOMAIN-SUFFIX,udncoeln.com,reject
 DOMAIN-SUFFIX,udpdmeb.cn,reject
 DOMAIN-SUFFIX,udsahkln.xyz,reject
+DOMAIN-SUFFIX,udykkl.cn,reject
 DOMAIN-SUFFIX,ue8im.com,reject
 DOMAIN-SUFFIX,ueaynogiwgqr.com,reject
 DOMAIN-SUFFIX,uebohjhh.xyz,reject
@@ -38600,6 +38604,7 @@ DOMAIN-SUFFIX,xqblnei.cn,reject
 DOMAIN-SUFFIX,xqdfnqfgixjwpdb.xyz,reject
 DOMAIN-SUFFIX,xqjqripb.xyz,reject
 DOMAIN-SUFFIX,xqwcryh.com,reject
+DOMAIN-SUFFIX,xrdqdd.xyz,reject
 DOMAIN-SUFFIX,xref.io,reject
 DOMAIN-SUFFIX,xrewo.xyz,reject
 DOMAIN-SUFFIX,xrkxapomphh.com,reject
@@ -43256,7 +43261,6 @@ IP-CIDR,202.98.24.122/31,reject
 IP-CIDR,202.98.24.124/31,reject
 IP-CIDR,202.99.254.230/31,reject
 IP-CIDR,202.99.254.232/32,reject
-IP-CIDR,203.107.1.65/32,reject
 IP-CIDR,203.119.206.64/32,reject
 IP-CIDR,203.119.211.219/32,reject
 IP-CIDR,203.195.121.0/31,reject

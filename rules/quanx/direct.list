@@ -43101,13 +43101,6 @@ HOST-SUFFIX,simplecd.me,direct
 HOST-SUFFIX,umengcloud.com,direct
 HOST-SUFFIX,xdrig.com,direct
 HOST-SUFFIX,xip.io,direct
-HOST,apiintl.biliapi.net,direct
-HOST,upos-hz-mirrorakam.akamaized.net,direct
-HOST,intel-cache.m.iqiyi.com,direct
-HOST,intel-cache.video.iqiyi.com,direct
-HOST,intl-rcd.iqiyi.com,direct
-HOST,intl-subscription.iqiyi.com,direct
-IP-CIDR,223.119.62.224/28,direct
 HOST-SUFFIX,ffzy-online1.com,direct
 HOST-SUFFIX,ffzy-online2.com,direct
 HOST-SUFFIX,ffzy-online3.com,direct

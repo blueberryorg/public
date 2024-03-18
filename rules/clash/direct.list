@@ -43214,13 +43214,6 @@ DOMAIN-SUFFIX,simplecd.me,direct
 DOMAIN-SUFFIX,umengcloud.com,direct
 DOMAIN-SUFFIX,xdrig.com,direct
 DOMAIN-SUFFIX,xip.io,direct
-DOMAIN,apiintl.biliapi.net,direct
-DOMAIN,upos-hz-mirrorakam.akamaized.net,direct
-DOMAIN,intel-cache.m.iqiyi.com,direct
-DOMAIN,intel-cache.video.iqiyi.com,direct
-DOMAIN,intl-rcd.iqiyi.com,direct
-DOMAIN,intl-subscription.iqiyi.com,direct
-IP-CIDR,223.119.62.224/28,direct
 DOMAIN-SUFFIX,ffzy-online1.com,direct
 DOMAIN-SUFFIX,ffzy-online2.com,direct
 DOMAIN-SUFFIX,ffzy-online3.com,direct
