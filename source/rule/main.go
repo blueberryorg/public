@@ -112,17 +112,30 @@ func main() {
 		{BLACKMATRIX7, "Lan/Lan.yaml", Direct}, // 本地局域网地址规则由
 
 		// 特殊分类
-		{BLACKMATRIX7, "YouTube/YouTube.yaml", Youtube},            // YouTube
-		{BLACKMATRIX7, "YouTubeMusic/YouTubeMusic.yaml", Youtube},  // YouTubeMusic
-		{BLACKMATRIX7, "Netflix/Netflix.yaml", Netflix},            // Netflix
-		{BLACKMATRIX7, "Disney/Disney.yaml", Disney},               // Disney
+		{BLACKMATRIX7, "YouTube/YouTube.yaml", Youtube}, // YouTube
+		{ACLSSR, "Clash/Ruleset/YouTube.list", Youtube}, // YouTube
+
+		{BLACKMATRIX7, "YouTubeMusic/YouTubeMusic.yaml", Youtube}, // YouTubeMusic
+		{ACLSSR, "Clash/Ruleset/YouTubeMusic.list", Youtube},      // YouTubeMusic
+
+		{BLACKMATRIX7, "Netflix/Netflix.yaml", Netflix}, // Netflix
+		{ACLSSR, "Clash/Ruleset/Netflix.list", IQiyi},   // Netflix
+		{ACLSSR, "Clash/Ruleset/NetflixIP.list", IQiyi}, // Netflix
+
+		{BLACKMATRIX7, "Disney/Disney.yaml", Disney},     // Disney
+		{ACLSSR, "Clash/Ruleset/DisneyPlus.list", IQiyi}, // Disney
+
 		{BLACKMATRIX7, "BiliBili/BiliBili.yaml", BiliBili},         // 哔哩哔哩
 		{BLACKMATRIX7, "BiliBiliIntl/BiliBiliIntl.yaml", BiliBili}, // 哔哩哔哩
-		{BLACKMATRIX7, "iQIYI/iQIYI.yaml", IQiyi},                  // 爱奇艺
+		{ACLSSR, "Clash/Ruleset/Bilibili.list", BiliBili},          // 哔哩哔哩
+		{ACLSSR, "Clash/Ruleset/BilibiliHMT.list", BiliBili},       // 哔哩哔哩
 
-		{BLACKMATRIX7, "Game/Game.yaml", Game}, // Game-聚合版
+		{BLACKMATRIX7, "iQIYI/iQIYI.yaml", IQiyi},      // 爱奇艺
+		{ACLSSR, "Clash/Ruleset/Iqiyi.list", IQiyi},    // 爱奇艺
+		{ACLSSR, "Clash/Ruleset/IqiyiHMT.list", IQiyi}, // 爱奇艺
 
-		{BLACKMATRIX7, "OpenAI/OpenAI.yaml", OpenAI}, // OpenAI
+		{BLACKMATRIX7, "OpenAI/OpenAI.yaml", OpenAI},  // OpenAI
+		{ACLSSR, "Clash/Ruleset/OpenAi.list", OpenAI}, // OpenAI
 
 		{BLACKMATRIX7, "GitHub/GitHub.yaml", Develop},       // GitHub
 		{BLACKMATRIX7, "Developer/Developer.yaml", Develop}, // GitHub
@@ -153,6 +166,8 @@ func main() {
 
 		{BLACKMATRIX7, "Whatsapp/Whatsapp.yaml", Proxy}, // Whatsapp
 		{BLACKMATRIX7, "Twitter/Twitter.yaml", Proxy},   // Twitter
+
+		{BLACKMATRIX7, "Game/Game.yaml", Game}, // Game-聚合版
 
 		// BLACKMATRIX7 代理集合
 		{BLACKMATRIX7, "Global/Global.yaml", Proxy},                           // Global
