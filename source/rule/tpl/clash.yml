@@ -7,10 +7,6 @@ external-controller: :9090
 geodata-mode: true
 geo-auto-update: true
 geo-update-interval: 86400
-geox-url:
-    geoip: https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geoip.dat
-    geosite: https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geosite.dat
-    mmdb: https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.metadb
 
 profile:
     store-selected: true
