@@ -1,25 +1,42 @@
 mixed-port: 7890
 allow-lan: false
 mode: Rule
-log-level: info
+log-level: silent
 external-controller: :9090
+external-ui-name: metacubexd
+external-ui-url: "https://cdn.jsdelivr.net/gh/MetaCubeX/metacubexd@releases/download/latest/compressed-dist.tgz"
+
+ipv6: false
 
 geodata-mode: true
 geo-auto-update: true
-geo-update-interval: 86400
+geo-update-interval: 24
+geodata-loader: memconservative
+geox-url:
+    geoip: "https://testingcf.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geoip.dat"
+    geosite: "https://testingcf.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geosite.dat"
+    mmdb: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.metadb"
+    asn: "https://testingcf.jsdelivr.net/gh/xishang0128/geoip/releases/download/latest/GeoLite2-ASN.mmdb"
 
 profile:
     store-selected: true
     store-fake-ip: true
+    tracing: false
 
 sniffer:
-    enable: false
+    enable: true
+    force-dns-mapping: true
+    parse-pure-ip: true
+    override-destination: false
+    force-domain: true
     sniff:
-        TLS:
-            ports: [ 443 ]
         HTTP:
-            ports: [ 80 ]
+            ports: [ 80, 8080-8880 ]
             override-destination: true
+        TLS:
+            ports: [ 443, 8443 ]
+        QUIC:
+            ports: [ 443, 8443 ]
 
 ntp:
     enable: true
@@ -28,14 +45,21 @@ ntp:
     port: 123
     interval: 60
 
-find-process-mode: strict
+find-process-mode: always
 unified-delay: true
 tcp-concurrent: true
 global-client-fingerprint: chrome
 
+skip-auth-prefixes:
+    - 127.0.0.1/8
+    - ::1/128
+
+keep-alive-interval: 60
+
 experimental:
     quic-go-disable-gso: false
     quic-go-disable-ecn: false
+    dialer-ip4p-convert: true
     ignore-resolve-fail: true
     sniff-tls-sni: true
 
@@ -43,10 +67,29 @@ url-rewrite:
     - ^https?:\/\/(www.)?(g|google)\.cn https://www.google.com 302
     - ^https?:\/\/(ditu|maps).google\.cn https://maps.google.com 302
 
+tun:
+    enable: false
+    stack: gvisor
+    dns-hijack:
+        - any:15353
+    auto-route: true
+    auto-redir: true
+    auto-detect-interface: true
+    mtu: 9000
+    strict-route: true
+    gso: true
+    gso-max-size: 65536
+    udp-timeout: 300
+    endpoint-independent-nat: false
+    include-package:
+        - com.android.chrome
+    exclude-package:
+        - com.android.captiveportallogin
+
 dns:
     enable: true
     ipv6: false
-    listen: 0.0.0.0:5353
+    listen: 0.0.0.0:15353
     enhanced-mode: fake-ip
     fake-ip-range: 198.18.0.1/16
     fake-ip-filter:
