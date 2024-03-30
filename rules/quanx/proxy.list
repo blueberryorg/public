@@ -2991,6 +2991,7 @@ HOST-SUFFIX,arcgis.com,proxy
 HOST-SUFFIX,archive.fo,proxy
 HOST-SUFFIX,archive.is,proxy
 HOST-SUFFIX,archive.li,proxy
+HOST-SUFFIX,archive.md,proxy
 HOST-SUFFIX,archive.org,proxy
 HOST-SUFFIX,archive.ph,proxy
 HOST-SUFFIX,archive.today,proxy
@@ -3313,6 +3314,7 @@ HOST-SUFFIX,c-est-simple.com,proxy
 HOST-SUFFIX,c-span.org,proxy
 HOST-SUFFIX,c-spanvideo.org,proxy
 HOST-SUFFIX,c100tibet.org,proxy
+HOST-SUFFIX,cableav.tv,proxy
 HOST-SUFFIX,cablegatesearch.net,proxy
 HOST-SUFFIX,cachefly.net,proxy
 HOST-SUFFIX,cachinese.com,proxy
@@ -3616,6 +3618,7 @@ HOST-SUFFIX,cosplayjav.pl,proxy
 HOST-SUFFIX,costco.com,proxy
 HOST-SUFFIX,counter.social,proxy
 HOST-SUFFIX,coursehero.com,proxy
+HOST-SUFFIX,coze.com,proxy
 HOST-SUFFIX,cpj.org,proxy
 HOST-SUFFIX,cq99.us,proxy
 HOST-SUFFIX,crackle.com,proxy

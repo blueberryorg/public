@@ -28,7 +28,6 @@ sniffer:
     force-dns-mapping: true
     parse-pure-ip: true
     override-destination: false
-    force-domain: true
     sniff:
         HTTP:
             ports:
