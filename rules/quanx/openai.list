@@ -4,7 +4,6 @@ HOST-SUFFIX,ai.com,openai
 HOST-SUFFIX,algolia.net,openai
 HOST-SUFFIX,api.statsig.com,openai
 HOST-SUFFIX,auth0.com,openai
-HOST-SUFFIX,cdn.cloudflare.net,openai
 HOST-SUFFIX,chatgpt.com,openai
 HOST-SUFFIX,chatgpt.livekit.cloud,openai
 HOST-SUFFIX,client-api.arkoselabs.com,openai

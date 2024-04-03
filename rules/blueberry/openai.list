@@ -4,7 +4,6 @@ DOMAIN-SUFFIX,ai.com,openai
 DOMAIN-SUFFIX,algolia.net,openai
 DOMAIN-SUFFIX,api.statsig.com,openai
 DOMAIN-SUFFIX,auth0.com,openai
-DOMAIN-SUFFIX,cdn.cloudflare.net,openai
 DOMAIN-SUFFIX,chatgpt.com,openai
 DOMAIN-SUFFIX,chatgpt.livekit.cloud,openai
 DOMAIN-SUFFIX,client-api.arkoselabs.com,openai

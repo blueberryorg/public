@@ -231,29 +231,13 @@ func main() {
 		return
 	}
 
-	err = c.Clash()
+	err = c.Export()
 	if err != nil {
 		log.Panicf("err:%v", err)
 		return
 	}
 
-	err = c.Subconverter()
-	if err != nil {
-		log.Panicf("err:%v", err)
-		return
-	}
-
-	err = c.QuanX()
-	if err != nil {
-		log.Panicf("err:%v", err)
-		return
-	}
-
-	err = c.Blue()
-	if err != nil {
-		log.Panicf("err:%v", err)
-		return
-	}
+	pterm.Success.Printfln("生成完成")
 }
 
 type Collector struct {
@@ -343,8 +327,8 @@ func (p *Collector) Parse(key string, path string, tag string) (err error) {
 	log.SetTrace(fmt.Sprintf("%s_%s", key, filepath.Base(path)))
 	log.Infof("parse for key:%s path:%s tag:%s", key, path, tag)
 
-	body, err := p.downloadWithoutCache(key, path)
-	// body, err := p.downloadWithCache(key, path)
+	//body, err := p.downloadWithoutCache(key, path)
+	body, err := p.downloadWithCache(key, path)
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err

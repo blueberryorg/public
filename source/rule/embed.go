@@ -1,7 +1,7 @@
 package main
 
 import (
-	_ "embed"
+	"embed"
 	"github.com/blueberryorg/public/source/rule/cidrmerge"
 	"github.com/blueberryorg/public/source/rule/collector"
 	"github.com/blueberryorg/public/source/rule/rules"
@@ -12,14 +12,17 @@ import (
 	"github.com/ice-cream-heaven/log"
 )
 
-//go:embed before.rule
-var before string
+//go:embed *.rule
+var ruleFs embed.FS
 
-//go:embed after.rule
-var after string
+func (p *Collector) load(path string) error {
+	text, err := ruleFs.ReadFile(path)
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
 
-func (p *Collector) load(text string) error {
-	pie.Each(strings.Split(strings.ReplaceAll(text, "\r", ""), "\n"), func(line string) {
+	pie.Each(strings.Split(strings.ReplaceAll(string(text), "\r", ""), "\n"), func(line string) {
 		if line == "" {
 			return
 		}
@@ -41,7 +44,13 @@ func (p *Collector) load(text string) error {
 }
 
 func (p *Collector) LoadBefore() (err error) {
-	err = p.load(before)
+	err = p.load("before.rule")
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
+	err = p.load("process.rule")
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err
@@ -174,7 +183,7 @@ func (p *Collector) clear() {
 }
 
 func (p *Collector) LoadAfter() (err error) {
-	err = p.load(after)
+	err = p.load("after.rule")
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err

@@ -7,10 +7,40 @@ import (
 	"github.com/elliotchance/pie/v2"
 	"github.com/ice-cream-heaven/log"
 	"github.com/ice-cream-heaven/utils/osx"
+	"github.com/ice-cream-heaven/utils/runtime"
 	"gopkg.in/yaml.v3"
 	"os"
+	"path/filepath"
 	"strings"
 )
+
+func (p *Collector) Export() (err error) {
+	err = p.Clash()
+	if err != nil {
+		log.Panicf("err:%v", err)
+		return
+	}
+
+	err = p.Subconverter()
+	if err != nil {
+		log.Panicf("err:%v", err)
+		return
+	}
+
+	err = p.QuanX()
+	if err != nil {
+		log.Panicf("err:%v", err)
+		return
+	}
+
+	err = p.Blue()
+	if err != nil {
+		log.Panicf("err:%v", err)
+		return
+	}
+
+	return nil
+}
 
 func (p *Collector) Clash() error {
 
@@ -61,7 +91,7 @@ func (p *Collector) Clash() error {
 	}
 
 	if !osx.IsDir("../../rules/clash/") {
-		err := os.MkdirAll("../../rules/clash/", 0666)
+		err := os.MkdirAll("../../rules/clash/", 0777)
 		if err != nil {
 			log.Errorf("err:%v", err)
 			return err
@@ -70,7 +100,7 @@ func (p *Collector) Clash() error {
 
 	var keys []string
 	for key, lines := range ruleMap {
-		err := os.WriteFile(fmt.Sprintf("../../rules/clash/%s.list", key), []byte(strings.Join(lines, "\n")), 0666)
+		err := os.WriteFile(filepath.Join(runtime.Pwd(), "..", "..", "rules", "clash", key+".list"), []byte(strings.Join(lines, "\n")), 0777)
 		if err != nil {
 			log.Errorf("err:%v", err)
 			return err
@@ -79,7 +109,7 @@ func (p *Collector) Clash() error {
 		keys = append(keys, key)
 	}
 
-	err := os.WriteFile("../../rules/clash/list.keys", []byte(strings.Join(pie.Sort(pie.Unique(keys)), "\n")), 0666)
+	err := os.WriteFile("../../rules/clash/list.keys", []byte(strings.Join(pie.Sort(pie.Unique(keys)), "\n")), 0777)
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err
@@ -175,7 +205,7 @@ func (p *Collector) Subconverter() (err error) {
 	}
 
 	if !osx.IsDir("../../rules/subconverter/") {
-		err := os.MkdirAll("../../rules/subconverter/", 0666)
+		err := os.MkdirAll("../../rules/subconverter/", 0777)
 		if err != nil {
 			log.Errorf("err:%v", err)
 			return err
@@ -184,7 +214,7 @@ func (p *Collector) Subconverter() (err error) {
 
 	var keys []string
 	for key, lines := range ruleMap {
-		err := os.WriteFile(fmt.Sprintf("../../rules/subconverter/%s.list", key), []byte(strings.Join(lines, "\n")), 0666)
+		err := os.WriteFile(fmt.Sprintf("../../rules/subconverter/%s.list", key), []byte(strings.Join(lines, "\n")), 0777)
 		if err != nil {
 			log.Errorf("err:%v", err)
 			return err
@@ -261,11 +291,6 @@ func (p *Collector) Subconverter() (err error) {
 				rb.WriteString("`select`[]DIRECT`[]")
 				rb.WriteString(Proxy.Chinese())
 				rb.WriteString("`[]故障转移`[]自动选择`[]手动选择`[]负载均衡`[]REJECT`(爱奇艺|[iI][Qq]i[Yy]i)`\n")
-
-			case Privacy.String():
-				rb.WriteString("`select`[]REJECT`[]DIRECT`[]")
-				rb.WriteString(Proxy.Chinese())
-				rb.WriteString("`[]故障转移`[]自动选择`[]手动选择`[]负载均衡`)\n")
 
 			default:
 				rb.WriteString("`select`[]")
@@ -359,7 +384,7 @@ func (p *Collector) Subconverter() (err error) {
 
 			// buf = bytes.ReplaceAll(buf, []byte("{{Bypass}}"), clashBypass.Bytes())
 
-			err = os.WriteFile("../../rules/subconverter/clash.yml", buf, 0666)
+			err = os.WriteFile("../../rules/subconverter/clash.yml", buf, 0777)
 			if err != nil {
 				log.Errorf("err:%v", err)
 				return err
@@ -428,7 +453,7 @@ func (p *Collector) Subconverter() (err error) {
 
 	// rb.WriteString("exclude_remarks=\n")
 
-	err = os.WriteFile("../../rules/subconverter/blueberry.ini", rb.Bytes(), 0666)
+	err = os.WriteFile("../../rules/subconverter/blueberry.ini", rb.Bytes(), 0777)
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err
@@ -467,6 +492,47 @@ func (p *Collector) QuanX() error {
 		ruleMap[r.Adapter()] = append(ruleMap[r.Adapter()], b.String())
 	})
 
+	rb := log.GetBuffer()
+	defer log.PutBuffer(rb)
+
+	// NOTE: general
+	rb.WriteString("[general]")
+	rb.WriteString("\n")
+	rb.WriteString("\n")
+
+	rb.WriteString("resource_parser_url=https://cdn.jsdelivr.net/gh/KOP-XIAO/QuantumultX@master/Scripts/resource-parser.js\n")
+	rb.WriteString("geo_location_checker=http://ip-api.com/json/?lang=zh-CN, https://cdn.jsdelivr.net/gh/limbopro/QuantumultX@master/Scripts/IP_API.js\n")
+
+	rb.WriteString("excluded_routes=192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, 100.64.0.0/10, 17.0.0.0/8\n")
+	rb.WriteString("network_check_url=http://connect.rom.miui.com/generate_204, http://connectivitycheck.platform.hicloud.com/generate_204\n")
+	rb.WriteString("profile_img_url=https://yattazen.com/favicon.ico\n")
+	rb.WriteString("server_check_timeout=2000\n")
+
+	// NOTE: dns
+	rb.WriteString("\n[dns]\n")
+	rb.WriteString("no-ipv6\n")
+	rb.WriteString("server=119.29.29.29\n")
+	rb.WriteString("server=223.5.5.5\n")
+	rb.WriteString("server=/*.taobao.com/223.5.5.5\n")
+	rb.WriteString("server=/*.tmall.com/223.5.5.5\n")
+	rb.WriteString("server=/*.alipay.com/223.5.5.5\n")
+	rb.WriteString("server=/*.alicdn.com/223.5.5.5\n")
+	rb.WriteString("server=/*.aliyun.com/223.5.5.5\n")
+	rb.WriteString("server=/*.jd.com/119.28.28.28\n")
+	rb.WriteString("server=/*.qq.com/119.28.28.28\n")
+	rb.WriteString("server=/*.tencent.com/119.28.28.28\n")
+	rb.WriteString("server=/*.weixin.com/119.28.28.28\n")
+	rb.WriteString("server=/*.bilibili.com/119.29.29.29\n")
+	rb.WriteString("server=/hdslb.com/119.29.29.29\n")
+	rb.WriteString("server=/*.163.com/119.29.29.29\n")
+	rb.WriteString("server=/*.126.com/119.29.29.29\n")
+	rb.WriteString("server=/*.126.net/119.29.29.29\n")
+	rb.WriteString("server=/*.127.net/119.29.29.29\n")
+	rb.WriteString("server=/*.netease.com/119.29.29.29\n")
+	rb.WriteString("server=/*.mi.com/119.29.29.29\n")
+	rb.WriteString("server=/*.xiaomi.com/119.29.29.29\n")
+	rb.WriteString("address=/mtalk.google.com/108.177.125.188\n")
+
 	if osx.IsDir("../../rules/quanx/") {
 		err := os.RemoveAll("../../rules/quanx/")
 		if err != nil {
@@ -476,7 +542,7 @@ func (p *Collector) QuanX() error {
 	}
 
 	if !osx.IsDir("../../rules/quanx/") {
-		err := os.MkdirAll("../../rules/quanx/", 0666)
+		err := os.MkdirAll("../../rules/quanx/", 0777)
 		if err != nil {
 			log.Errorf("err:%v", err)
 			return err
@@ -485,7 +551,7 @@ func (p *Collector) QuanX() error {
 
 	var keys []string
 	for key, lines := range ruleMap {
-		err := os.WriteFile(fmt.Sprintf("../../rules/quanx/%s.list", key), []byte(strings.Join(lines, "\n")), 0666)
+		err := os.WriteFile(fmt.Sprintf("../../rules/quanx/%s.list", key), []byte(strings.Join(lines, "\n")), 0777)
 		if err != nil {
 			log.Errorf("err:%v", err)
 			return err
@@ -494,7 +560,159 @@ func (p *Collector) QuanX() error {
 		keys = append(keys, key)
 	}
 
-	err := os.WriteFile("../../rules/quanx/list.keys", []byte(strings.Join(pie.Sort(pie.Unique(keys)), "\n")), 0666)
+	rb.WriteString("\n[policy]\n")
+	rb.WriteString("static=代理选择, 故障转移, 延迟最低, 负载均衡, 手动选择, REJECT, DIRECT\n")
+	rb.WriteString("static=手动选择, server-tag-regex=^.*$\n")
+	rb.WriteString("url-latency-benchmark=延迟最低, server-tag-regex=^.*$, check-interval=300, tolerance=10\n")
+	rb.WriteString("available=故障转移, server-tag-regex=^.*$, check-interval=300, tolerance=10\n")
+	rb.WriteString("round-robin=负载均衡, server-tag-regex=^.*$, check-interval=300, tolerance=10\n")
+
+	pie.Each(
+		pie.FilterNot(keys, func(s string) bool {
+			return RuleType(s) == Direct || RuleType(s) == Reject || RuleType(s) == Privacy || RuleType(s) == Proxy
+		}),
+		func(s string) {
+			rb.WriteString("static=")
+			rb.WriteString(RuleType(s).Chinese())
+			rb.WriteString(", ")
+
+			switch s {
+			case Netflix.String():
+				rb.WriteString(Proxy.Chinese())
+				rb.WriteString(", 故障转移, 延迟最低, 负载均衡, 手动选择, REJECT, DIRECT")
+				rb.WriteString(", server-tag-regex=([nN]etflix|NF|奈飞|🇳)")
+
+			case OpenAI.String():
+				rb.WriteString(Proxy.Chinese())
+				rb.WriteString(", 故障转移, 延迟最低, 负载均衡, 手动选择, REJECT, DIRECT")
+				rb.WriteString(", server-tag-regex=([oO]pen[aA][iI]|[Cc]hat[Gg][Pp][Tt]|🇴)")
+
+			case Youtube.String():
+				rb.WriteString(Proxy.Chinese())
+				rb.WriteString(", 故障转移, 延迟最低, 负载均衡, 手动选择, REJECT, DIRECT")
+				rb.WriteString(", server-tag-regex=([Yy]outu[Bb]e|🇾)")
+
+			case Disney.String():
+				rb.WriteString(Proxy.Chinese())
+				rb.WriteString(", 故障转移, 延迟最低, 负载均衡, 手动选择, REJECT, DIRECT")
+				rb.WriteString(", server-tag-regex=([dD]isney|🇩)")
+
+			case BiliBili.String():
+				rb.WriteString(", DIRECT")
+				rb.WriteString(", ")
+				rb.WriteString(Proxy.Chinese())
+				rb.WriteString(", 故障转移, 延迟最低, 负载均衡, 手动选择, REJECT")
+				rb.WriteString(", server-tag-regex=([bB]ili[Bb]ili|🇧)")
+
+			case IQiyi.String():
+				rb.WriteString(", DIRECT")
+				rb.WriteString(", ")
+				rb.WriteString(Proxy.Chinese())
+				rb.WriteString(", 故障转移, 延迟最低, 负载均衡, 手动选择, REJECT")
+				rb.WriteString(", server-tag-regex=([iI]Qi[Ii]yi|🇮)")
+
+			default:
+				rb.WriteString(Proxy.Chinese())
+				rb.WriteString(", 故障转移, 延迟最低, 负载均衡, 手动选择, REJECT, DIRECT")
+
+			}
+
+			rb.WriteString("\n")
+		},
+	)
+
+	rb.WriteString("static=")
+	rb.WriteString(Direct.Chinese())
+	rb.WriteString(", ")
+	rb.WriteString(", DIRECT")
+	rb.WriteString(", ")
+	rb.WriteString(Proxy.Chinese())
+	rb.WriteString(", 故障转移, 延迟最低, 负载均衡, 手动选择, REJECT")
+	rb.WriteString("\n")
+
+	rb.WriteString("static=")
+	rb.WriteString(Reject.Chinese())
+	rb.WriteString(", ")
+	rb.WriteString("REJECT")
+	rb.WriteString(", ")
+	rb.WriteString(Proxy.Chinese())
+	rb.WriteString(", 故障转移, 延迟最低, 负载均衡, 手动选择, DIRECT")
+	rb.WriteString("\n")
+
+	rb.WriteString("static=")
+	rb.WriteString(Privacy.Chinese())
+	rb.WriteString(", ")
+	rb.WriteString("REJECT")
+	rb.WriteString(", ")
+	rb.WriteString(Proxy.Chinese())
+	rb.WriteString(", 故障转移, 延迟最低, 负载均衡, 手动选择, DIRECT")
+	rb.WriteString("\n")
+
+	rb.WriteString("static=")
+	rb.WriteString("未命中, ")
+	rb.WriteString(Proxy.Chinese())
+	rb.WriteString(", REJECT, 故障转移, 延迟最低, 负载均衡, 手动选择, DIRECT")
+	rb.WriteString("\n")
+
+	rb.WriteString("\n[server_remote]\n")
+
+	rb.WriteString("\n[rewrite_remote]\n")
+
+	rb.WriteString("\n[server_local]\n")
+
+	rb.WriteString("\n[rewrite_local]\n")
+
+	rb.WriteString("\n[filter_local]\n")
+	rb.WriteString("ip-cidr, 180.76.76.200/32, reject\n")
+	rb.WriteString("ip-cidr, 10.0.0.0/8, direct\n")
+	rb.WriteString("ip-cidr, 127.0.0.0/8, direct\n")
+	rb.WriteString("ip-cidr, 172.16.0.0/12, direct\n")
+	rb.WriteString("ip-cidr, 192.168.0.0/16, direct\n")
+	rb.WriteString("ip-cidr, 224.0.0.0/24, direct\n")
+	rb.WriteString("ip-cidr, 182.254.116.0/24, direct\n")
+	rb.WriteString("final, 未命中\n")
+
+	rb.WriteString("\n[task_local]\n")
+	rb.WriteString("event-interaction https://cdn.jsdelivr.net/gh/getsomecat/Qx@main/Net_Speed.js, tag=网速查询, img-url=bolt.square.fill.system, enabled=true\n")
+	rb.WriteString("event-interaction https://cdn.jsdelivr.net/gh/KOP-XIAO/QuantumultX@master/Scripts/streaming-ui-check.js, tag=媒体解锁查询, img-url=play.circle.system, enabled=true\n")
+	rb.WriteString("event-interaction https://cdn.jsdelivr.net/gh/KOP-XIAO/QuantumultX@master/Scripts/traffic-check.js, tag=策略流量查询, img-url=arrow.up.arrow.down.circle.system, enabled=true\n")
+
+	rb.WriteString("event-interaction https://cdn.jsdelivr.net/gh/KOP-XIAO/QuantumultX@master/Scripts/geo_location.js, tag=地理位置查询, img-url=location.circle.system, enabled=true\n")
+	rb.WriteString("event-interaction https://cdn.jsdelivr.net/gh/KOP-XIAO/QuantumultX@master/Scripts/switch-check-google.js, tag=谷歌送中查询, img-url=drop.circle.system, enabled=true\n")
+	rb.WriteString("event-interaction https://cdn.jsdelivr.net/gh/I-am-R-E/QuantumultX@main/TaskLocal/NeteaseMusicUnlockCheck.js, tag=网易音乐查询, img-url=lock.circle.system, enabled=true\n")
+
+	rb.WriteString("# > 代理链路检测\n")
+	rb.WriteString("event-interaction https://cdn.jsdelivr.net/gh/I-am-R-E/Functional-Store-Hub@Master/NodeLinkCheck/Script/NodeLinkCheck.js, tag=代理链路检测, img-url=link.circle.system, enabled=true\n")
+
+	rb.WriteString("\n[filter_remote]\n")
+	pie.Each(
+		keys,
+		//pie.FilterNot(keys, func(s string) bool {
+		//	return RuleType(s) == Direct || RuleType(s) == Reject || RuleType(s) == Privacy
+		//}),
+		func(s string) {
+			rb.WriteString("https://cdn.jsdelivr.net/gh/blueberryorg/public@raw/master/rules/quanx/")
+			rb.WriteString(s)
+
+			rb.WriteString(".list, tag=")
+			rb.WriteString(RuleType(s).Chinese())
+
+			rb.WriteString(", update-interval=86400, opt-parser=true")
+
+			rb.WriteString("\n")
+		},
+	)
+
+	rb.WriteString("\n[mitm]\n")
+	rb.WriteString("force_sni_domain_name = false\n")
+
+	err := os.WriteFile("../../rules/quanx/list.keys", []byte(strings.Join(pie.Sort(pie.Unique(keys)), "\n")), 0777)
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
+	err = os.WriteFile("../../rules/quanx/quan.conf", rb.Bytes(), 0777)
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err
@@ -552,7 +770,7 @@ func (p *Collector) Blue() error {
 	}
 
 	if !osx.IsDir("../../rules/blueberry/") {
-		err := os.MkdirAll("../../rules/blueberry/", 0666)
+		err := os.MkdirAll("../../rules/blueberry/", 0777)
 		if err != nil {
 			log.Errorf("err:%v", err)
 			return err
@@ -561,7 +779,7 @@ func (p *Collector) Blue() error {
 
 	var keys []string
 	for key, lines := range ruleMap {
-		err := os.WriteFile(fmt.Sprintf("../../rules/blueberry/%s.list", key), []byte(strings.Join(lines, "\n")), 0666)
+		err := os.WriteFile(fmt.Sprintf("../../rules/blueberry/%s.list", key), []byte(strings.Join(lines, "\n")), 0777)
 		if err != nil {
 			log.Errorf("err:%v", err)
 			return err
@@ -570,13 +788,13 @@ func (p *Collector) Blue() error {
 		keys = append(keys, key)
 	}
 
-	err := os.WriteFile("../../rules/blueberry/list.keys", []byte(strings.Join(pie.Sort(pie.Unique(keys)), "\n")), 0666)
+	err := os.WriteFile("../../rules/blueberry/list.keys", []byte(strings.Join(pie.Sort(pie.Unique(keys)), "\n")), 0777)
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err
 	}
 
-	err = os.WriteFile("../../rules/blueberry/all.list", []byte(strings.Join(ruleList, "\n")), 0666)
+	err = os.WriteFile("../../rules/blueberry/all.list", []byte(strings.Join(ruleList, "\n")), 0777)
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err
@@ -783,7 +1001,7 @@ func (p *Collector) Blue() error {
 		return err
 	}
 
-	err = os.WriteFile("../../rules/blueberry/proxy_rule.yaml", infoBuf, 0666)
+	err = os.WriteFile("../../rules/blueberry/proxy_rule.yaml", infoBuf, 0777)
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err

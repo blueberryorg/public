@@ -5,6 +5,8 @@ PROCESS-NAME,copilot-agent-win.exe,develop
 PROCESS-NAME,copilot-agent-macos-arm64,develop
 PROCESS-NAME,copilot-agent-macos,develop
 PROCESS-NAME,copilot-agent-linux,develop
+PROCESS-NAME,goland.exe,develop
+PROCESS-NAME,goland64.exe,develop
 DOMAIN-SUFFIX,atom.io,develop
 DOMAIN-SUFFIX,dependabot.com,develop
 DOMAIN-SUFFIX,ghcr.io,develop

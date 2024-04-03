@@ -1,0 +1,10 @@
+# windows
+PROCESS-NAME,QQ.exe,direct
+PROCESS-NAME,WeChat.exe,direct
+PROCESS-NAME,WeChat.exe,direct
+
+PROCESS-NAME,copilot-agent-win.exe,develop
+PROCESS-NAME,goland.exe,develop
+PROCESS-NAME,goland64.exe,develop
+
+PROCESS-NAME,telegram.exe,proxy
