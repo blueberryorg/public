@@ -9,6 +9,7 @@ import (
 	"github.com/ice-cream-heaven/utils/osx"
 	"github.com/ice-cream-heaven/utils/runtime"
 	"gopkg.in/yaml.v3"
+	"net/netip"
 	"os"
 	"path/filepath"
 	"strings"
@@ -395,8 +396,7 @@ func (p *Collector) Subconverter() (err error) {
 	// NOTE: quanx
 	{
 		rb.WriteString("quanx_rule_base=")
-		rb.WriteString(baseUrl)
-		rb.WriteString("quanx.conf\n")
+		rb.WriteString("https://cdn.jsdelivr.net/gh/blueberryorg/public@master/rules/quanx/quan.conf\n")
 
 		err = osx.Copy("./tpl/quanx.conf", "../../rules/subconverter/quanx.conf")
 	}
@@ -476,7 +476,11 @@ func (p *Collector) QuanX() error {
 		case rules.RuleTypeDomainKeyword:
 			b.WriteString("HOST-KEYWORD")
 		case rules.RuleTypeIPCIDR:
-			b.WriteString("IP-CIDR")
+			if netip.MustParsePrefix(r.Payload()).Addr().Is6() {
+				b.WriteString("IP6-CIDR")
+			} else {
+				b.WriteString("IP-CIDR")
+			}
 		case rules.RuleTypeGEOIP:
 			b.WriteString("GEOIP")
 		default:
@@ -691,7 +695,7 @@ func (p *Collector) QuanX() error {
 		//	return RuleType(s) == Direct || RuleType(s) == Reject || RuleType(s) == Privacy
 		//}),
 		func(s string) {
-			rb.WriteString("https://cdn.jsdelivr.net/gh/blueberryorg/public@raw/master/rules/quanx/")
+			rb.WriteString("https://cdn.jsdelivr.net/gh/blueberryorg/public@master/rules/quanx/")
 			rb.WriteString(s)
 
 			rb.WriteString(".list, tag=")
