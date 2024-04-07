@@ -21,3 +21,5 @@ DOMAIN-SUFFIX,ffzy-play9.com,direct
 DOMAIN-SUFFIX,bytecdntp.com,direct
 
 DOMAIN-KEYWORD,.ads.,reject
+
+DOMAIN-SUFFIX,tencent.com,direct

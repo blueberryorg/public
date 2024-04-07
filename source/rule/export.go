@@ -666,6 +666,9 @@ func (p *Collector) QuanX() error {
 
 	rb.WriteString("\n[rewrite_local]\n")
 
+	rb.WriteString("\n[http_backend]\n")
+	rb.WriteString("https://cdn.jsdelivr.net/gh/chavyleung/scripts@master/chavy.box.js, host=boxjs.com, tag=BoxJS, path=^/, enabled=false\n")
+
 	rb.WriteString("\n[filter_local]\n")
 	rb.WriteString("ip-cidr, 180.76.76.200/32, reject\n")
 	rb.WriteString("ip-cidr, 10.0.0.0/8, direct\n")
@@ -700,6 +703,11 @@ func (p *Collector) QuanX() error {
 
 			rb.WriteString(".list, tag=")
 			rb.WriteString(RuleType(s).Chinese())
+
+			switch RuleType(s) {
+			case Develop, Youtube, Netflix, OpenAI, Game, Disney:
+				rb.WriteString(", force-policy=代理选择")
+			}
 
 			rb.WriteString(", update-interval=86400, opt-parser=true")
 
