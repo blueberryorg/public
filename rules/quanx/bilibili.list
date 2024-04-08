@@ -112,6 +112,9 @@ IP-CIDR,120.92.113.99/32,bilibili
 IP-CIDR,120.92.153.217/32,bilibili
 IP-CIDR,134.175.207.130/32,bilibili
 IP-CIDR,203.107.1.0/24,bilibili
+USER-AGENT,Bilibili*,bilibili
+USER-AGENT,bili*,bilibili
+USER-AGENT,bili-inter*,bilibili
 HOST,apiintl.biliapi.net,bilibili
 HOST,upos-hz-mirrorakam.akamaized.net,bilibili
 IP-CIDR,45.43.32.234/32,bilibili

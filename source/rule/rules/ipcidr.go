@@ -2,6 +2,7 @@ package rules
 
 import (
 	"net"
+	"net/netip"
 )
 
 type IPCIDR struct {
@@ -9,6 +10,18 @@ type IPCIDR struct {
 	adapter     string
 	isSourceIP  bool
 	noResolveIP bool
+}
+
+func (p *IPCIDR) Clash() (string, bool) {
+	return "IP-CIDR", true
+}
+
+func (p *IPCIDR) QuanX() (string, bool) {
+	if netip.MustParsePrefix(p.Payload()).Addr().Is6() {
+		return "IP6-CIDR", true
+	} else {
+		return "IP-CIDR", true
+	}
 }
 
 func (i *IPCIDR) RuleType() RuleType {

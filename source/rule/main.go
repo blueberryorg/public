@@ -18,66 +18,12 @@ import (
 	"github.com/ice-cream-heaven/log"
 )
 
-type RuleType string
-
-const (
-	Proxy   RuleType = "proxy"
-	Direct  RuleType = "direct"
-	Reject  RuleType = "reject"
-	Privacy RuleType = "privacy"
-
-	// 流媒体
-	Youtube  RuleType = "youtube"
-	Netflix  RuleType = "netflix"
-	Disney   RuleType = "disney"
-	BiliBili RuleType = "bilibili"
-	IQiyi    RuleType = "iqiyi"
-
-	OpenAI  RuleType = "openai"
-	Game    RuleType = "game"
-	Develop RuleType = "develop"
-)
-
-func (p RuleType) String() string {
-	return string(p)
-}
-
-func (p RuleType) Chinese() string {
-	switch p {
-	case Proxy:
-		return "代理选择"
-	case Direct:
-		return "直接连接"
-	case Reject:
-		return "拒绝连接"
-	case Privacy:
-		return "隐私保护"
-	case Youtube:
-		return "Youtube"
-	case Netflix:
-		return "Netflix"
-	case Disney:
-		return "Disney"
-	case BiliBili:
-		return "哔哩哔哩"
-	case IQiyi:
-		return "爱奇艺"
-	case OpenAI:
-		return "OpenAI"
-	case Game:
-		return "游戏分流"
-	case Develop:
-		return "开发专用"
-	default:
-		panic(fmt.Sprintf("unkown %s", p))
-	}
-}
-
 const (
 	CIDR         = "Cidr"
 	ACLSSR       = "AclSSr"
 	LOYALSOLDIER = "Loyalsoldier"
 	BLACKMATRIX7 = "Blackmatrix7"
+	DaMiQ        = "damixinqiu"
 
 	ContentFarm = "content-farm"
 )
@@ -91,7 +37,7 @@ func main() {
 		pterm.Success.Printfln("耗时:%v", time.Since(start))
 	}()
 
-	log.SetLevel(log.ErrorLevel)
+	//log.SetLevel(log.ErrorLevel)
 	pterm.Info.Printfln("PID:%d", os.Getpid())
 
 	c := NewCollector()
@@ -99,6 +45,7 @@ func main() {
 	c.AddHandle(ACLSSR, collector.NewAclSSr())
 	c.AddHandle(LOYALSOLDIER, collector.NewLoyalsoldier())
 	c.AddHandle(BLACKMATRIX7, collector.NewBlackmatrix7())
+	c.AddHandle(DaMiQ, collector.NewDaMiQ())
 	c.AddHandle(ContentFarm, collector.NewContentFarm())
 
 	type ParseRule struct {
@@ -108,6 +55,8 @@ func main() {
 	}
 
 	ParseList := []ParseRule{
+		{DaMiQ, "", Direct},
+
 		// 特殊走直连的
 		{BLACKMATRIX7, "Lan/Lan.yaml", Direct}, // 本地局域网地址规则由
 
@@ -470,6 +419,6 @@ func (p *Collector) ExportRules() []rules.Rule {
 
 type CollectorInter interface {
 	Download(path string) ([]byte, error)
-	ParseBody(tag string, body []byte) (rules []rules.Rule)
+	ParseBody(tag string, body []byte) (rs []rules.Rule)
 	NeedUpdate(info os.FileInfo) bool
 }

@@ -9,6 +9,14 @@ type DomainSuffix struct {
 	adapter string
 }
 
+func (p *DomainSuffix) Clash() (string, bool) {
+	return "DOMAIN-SUFFIX", true
+}
+
+func (p *DomainSuffix) QuanX() (string, bool) {
+	return "HOST-SUFFIX", true
+}
+
 func (ds *DomainSuffix) RuleType() RuleType {
 	return RuleTypeDomainSuffix
 }

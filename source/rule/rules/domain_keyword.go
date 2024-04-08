@@ -9,6 +9,14 @@ type DomainKeyword struct {
 	adapter string
 }
 
+func (p *DomainKeyword) Clash() (string, bool) {
+	return "DOMAIN-KEYWORD", true
+}
+
+func (p *DomainKeyword) QuanX() (string, bool) {
+	return "HOST-KEYWORD", true
+}
+
 func (dk *DomainKeyword) RuleType() RuleType {
 	return RuleTypeDomainKeyword
 }

@@ -18,6 +18,21 @@ type Port struct {
 	portType PortType
 }
 
+func (p *Port) Clash() (string, bool) {
+	switch p.portType {
+	case PortTypeSrc:
+		return "SRC-PORT", true
+	case PortTypeDest:
+		return "DST-PORT", true
+	default:
+		panic(fmt.Errorf("unknown port type: %v", p.portType))
+	}
+}
+
+func (p *Port) QuanX() (string, bool) {
+	return "", false
+}
+
 func (p *Port) RuleType() RuleType {
 	switch p.portType {
 	case PortTypeSrc:

@@ -1,3 +1,4 @@
+USER-AGENT,Argo*,iqiyi
 IP-CIDR,8.41.4.0/24,iqiyi
 IP-CIDR,23.246.0.0/18,iqiyi
 IP-CIDR,37.77.184.0/21,iqiyi
@@ -864,6 +865,8 @@ IP-CIDR,176.34.159.192/26,iqiyi
 IP-CIDR,177.71.207.128/26,iqiyi
 IP-CIDR,204.246.166.0/24,iqiyi
 IP-CIDR,205.251.218.0/24,iqiyi
+USER-AGENT,Disney*,iqiyi
+USER-AGENT,Disney+*,iqiyi
 HOST,cdn.registerdisney.go.com,iqiyi
 HOST-SUFFIX,71.am,iqiyi
 HOST-SUFFIX,71edge.com,iqiyi
@@ -918,6 +921,8 @@ IP-CIDR,23.211.15.99/32,iqiyi
 IP-CIDR,23.40.241.251/32,iqiyi
 IP-CIDR,23.40.242.10/32,iqiyi
 IP-CIDR,23.53.32.88/32,iqiyi
+USER-AGENT,QYPlayer*,iqiyi
+USER-AGENT,iQIYI*,iqiyi
 HOST,intel-cache.m.iqiyi.com,iqiyi
 HOST,intel-cache.video.iqiyi.com,iqiyi
 HOST,intl-rcd.iqiyi.com,iqiyi

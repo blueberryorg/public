@@ -12,6 +12,14 @@ type GEOIP struct {
 	noResolveIP bool
 }
 
+func (p *GEOIP) Clash() (string, bool) {
+	return "GEOIP", true
+}
+
+func (p *GEOIP) QuanX() (string, bool) {
+	return "GEOIP", true
+}
+
 func (g *GEOIP) RuleType() RuleType {
 	return RuleTypeGEOIP
 }

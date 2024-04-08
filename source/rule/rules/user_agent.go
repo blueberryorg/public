@@ -5,6 +5,14 @@ type UserAgent struct {
 	target  string
 }
 
+func (p *UserAgent) Clash() (string, bool) {
+	return "", false
+}
+
+func (p *UserAgent) QuanX() (string, bool) {
+	return "USER-AGENT", true
+}
+
 func (p *UserAgent) Match(metadata *Metadata) bool {
 	panic("implement me")
 }

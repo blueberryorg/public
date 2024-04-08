@@ -9,6 +9,14 @@ type Domain struct {
 	adapter string
 }
 
+func (p *Domain) Clash() (string, bool) {
+	return "DOMAIN", true
+}
+
+func (p *Domain) QuanX() (string, bool) {
+	return "HOST", true
+}
+
 func (p *Domain) RuleType() RuleType {
 	return RuleTypeDomain
 }

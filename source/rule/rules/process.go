@@ -11,35 +11,46 @@ type Process struct {
 	nameOnly bool
 }
 
-func (ps *Process) RuleType() RuleType {
-	if ps.nameOnly {
+func (p *Process) Clash() (string, bool) {
+	if p.nameOnly {
+		return "PROCESS-NAME", true
+	}
+	return "PROCESS-PATH", true
+}
+
+func (p *Process) QuanX() (string, bool) {
+	return "", false
+}
+
+func (p *Process) RuleType() RuleType {
+	if p.nameOnly {
 		return RuleTypeProcess
 	}
 
 	return RuleTypeProcessPath
 }
 
-func (ps *Process) Match(metadata *Metadata) bool {
-	if ps.nameOnly {
-		return strings.EqualFold(filepath.Base(metadata.ProcessPath), ps.process)
+func (p *Process) Match(metadata *Metadata) bool {
+	if p.nameOnly {
+		return strings.EqualFold(filepath.Base(metadata.ProcessPath), p.process)
 	}
 
-	return strings.EqualFold(metadata.ProcessPath, ps.process)
+	return strings.EqualFold(metadata.ProcessPath, p.process)
 }
 
-func (ps *Process) Adapter() string {
-	return ps.adapter
+func (p *Process) Adapter() string {
+	return p.adapter
 }
 
-func (ps *Process) Payload() string {
-	return ps.process
+func (p *Process) Payload() string {
+	return p.process
 }
 
-func (ps *Process) ShouldResolveIP() bool {
+func (p *Process) ShouldResolveIP() bool {
 	return false
 }
 
-func (ps *Process) ShouldFindProcess() bool {
+func (p *Process) ShouldFindProcess() bool {
 	return true
 }
 

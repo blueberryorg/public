@@ -9,10 +9,13 @@ import (
 	"github.com/ice-cream-heaven/utils/osx"
 	"github.com/ice-cream-heaven/utils/runtime"
 	"gopkg.in/yaml.v3"
-	"net/netip"
 	"os"
 	"path/filepath"
 	"strings"
+)
+
+const (
+	checkUrl = "https://www.google.com/generate_204"
 )
 
 func (p *Collector) Export() (err error) {
@@ -34,11 +37,11 @@ func (p *Collector) Export() (err error) {
 		return
 	}
 
-	err = p.Blue()
-	if err != nil {
-		log.Panicf("err:%v", err)
-		return
-	}
+	//err = p.Blue()
+	//if err != nil {
+	//	log.Panicf("err:%v", err)
+	//	return
+	//}
 
 	return nil
 }
@@ -49,30 +52,13 @@ func (p *Collector) Clash() error {
 	ruleMap := map[string][]string{}
 	pie.Each(p.ExportRules(), func(r rules.Rule) {
 		var b bytes.Buffer
-		switch r.RuleType() {
-		case rules.RuleTypeDomain:
-			b.WriteString("DOMAIN")
-		case rules.RuleTypeDomainSuffix:
-			b.WriteString("DOMAIN-SUFFIX")
-		case rules.RuleTypeDomainKeyword:
-			b.WriteString("DOMAIN-KEYWORD")
-		case rules.RuleTypeProcessPath:
-			b.WriteString("PROCESS-PATH")
-		case rules.RuleTypeProcess:
-			b.WriteString("PROCESS-NAME")
-		case rules.RuleTypeSrcPort:
-			b.WriteString("SRC-PORT")
-		case rules.RuleTypeDstPort:
-			b.WriteString("DST-PORT")
-		case rules.RuleTypeIPCIDR:
-			b.WriteString("IP-CIDR")
-		case rules.RuleTypeSrcIPCIDR:
-			b.WriteString("SRC-IP-CIDR")
-		case rules.RuleTypeGEOIP:
-			b.WriteString("GEOIP")
-		default:
+
+		rt, ok := r.Clash()
+		if !ok {
 			return
 		}
+
+		b.WriteString(rt)
 
 		b.WriteString(",")
 		b.WriteString(r.Payload())
@@ -143,56 +129,15 @@ func (p *Collector) Subconverter() (err error) {
 	ruleMap := map[string][]string{}
 	pie.Each(p.ExportRules(), func(r rules.Rule) {
 		var b bytes.Buffer
-		switch r.RuleType() {
-		case rules.RuleTypeDomain:
-			b.WriteString("DOMAIN")
-		case rules.RuleTypeDomainSuffix:
-			b.WriteString("DOMAIN-SUFFIX")
-		case rules.RuleTypeDomainKeyword:
-			b.WriteString("DOMAIN-KEYWORD")
-		case rules.RuleTypeProcessPath:
-			b.WriteString("PROCESS-PATH")
-		case rules.RuleTypeProcess:
-			b.WriteString("PROCESS-NAME")
-		case rules.RuleTypeSrcPort:
-			b.WriteString("SRC-PORT")
-		case rules.RuleTypeDstPort:
-			b.WriteString("DST-PORT")
-		case rules.RuleTypeIPCIDR:
-			b.WriteString("IP-CIDR")
-		case rules.RuleTypeSrcIPCIDR:
-			b.WriteString("SRC-IP-CIDR")
-		case rules.RuleTypeGEOIP:
-			b.WriteString("GEOIP")
-		default:
+
+		rt, ok := r.Clash()
+		if !ok {
 			return
 		}
+		b.WriteString(rt)
 
 		b.WriteString(",")
 		b.WriteString(r.Payload())
-
-		// switch r.Adapter() {
-		// case Direct.String():
-		//	switch r.RuleType() {
-		//	case rules.RuleTypeDomain:
-		//		clashBypass.WriteString(`    - "`)
-		//		clashBypass.WriteString(r.Payload())
-		//		clashBypass.WriteString(`"`)
-		//		clashBypass.WriteString("\n")
-		//
-		//	case rules.RuleTypeDomainSuffix:
-		//		clashBypass.WriteString(`    - "*.`)
-		//		clashBypass.WriteString(r.Payload())
-		//		clashBypass.WriteString(`"`)
-		//		clashBypass.WriteString("\n")
-		//
-		//	case rules.RuleTypeDomainKeyword:
-		//		clashBypass.WriteString(`    - "*.`)
-		//		clashBypass.WriteString(r.Payload())
-		//		clashBypass.WriteString(`.*"`)
-		//		clashBypass.WriteString("\n")
-		//	}
-		// }
 
 		ruleMap[r.Adapter()] = append(ruleMap[r.Adapter()], b.String())
 	})
@@ -238,86 +183,67 @@ func (p *Collector) Subconverter() (err error) {
 		rb.WriteString("\n")
 	}
 
-	rb.WriteString("ruleset=DIRECT,[]GEOIP,LAN\n")
-	rb.WriteString("ruleset=DIRECT,[]GEOIP,CN\n")
+	rb.WriteString("ruleset=")
+	rb.WriteString(Direct.Chinese())
+	rb.WriteString(",[]GEOIP,LAN\n")
+
+	rb.WriteString("ruleset=")
+	rb.WriteString(Direct.Chinese())
+	rb.WriteString(",[]GEOIP,CN\n")
+
 	rb.WriteString("ruleset=规则以外,[]FINAL\n")
 
 	// NOTE: 分组
 	rb.WriteString("\n")
 
-	rb.WriteString("custom_proxy_group=")
-	rb.WriteString(Proxy.Chinese())
-	rb.WriteString("`select`[]故障转移`[]自动选择`[]手动选择`[]负载均衡`[]DIRECT`[]REJECT`\n")
+	pie.Each(AllRuleType, func(s RuleType) {
+		rb.WriteString("custom_proxy_group=")
+		rb.WriteString(s.Chinese())
+		rb.WriteString("`select")
 
-	rb.WriteString("custom_proxy_group=手动选择`select`.*`https://www.google.com/generate_204`120,,2\n")
-	rb.WriteString("custom_proxy_group=故障转移`fallback`.*`https://www.google.com/generate_204`60,,1\n")
-	rb.WriteString("custom_proxy_group=负载均衡`load-balance`.*`https://www.google.com/generate_204`60,,1\n")
-	rb.WriteString("custom_proxy_group=自动选择`url-test`.*`https://www.google.com/generate_204`60,,1\n")
+		switch s {
+		case Select:
+			rb.WriteString("`select`.*`")
+			rb.WriteString(checkUrl)
+			rb.WriteString("`60,,1\n")
+			return
 
-	pie.Each(
-		pie.FilterNot(keys, func(s string) bool {
-			return RuleType(s) == Direct || RuleType(s) == Reject || RuleType(s) == Privacy
-		}),
-		func(s string) {
-			rb.WriteString("custom_proxy_group=")
-			rb.WriteString(RuleType(s).Chinese())
+		case UrlLatency:
+			rb.WriteString("`url-test`.*`")
+			rb.WriteString(checkUrl)
+			rb.WriteString("`60,,1\n")
+			return
 
-			switch s {
-			case Netflix.String():
-				rb.WriteString("`select`[]")
-				rb.WriteString(Proxy.Chinese())
-				rb.WriteString("`[]故障转移`[]自动选择`[]手动选择`[]负载均衡`[]DIRECT`[]REJECT`([nN]etflix|NF|奈飞|🇳)`\n")
+		case Available:
+			rb.WriteString("`fallback`.*`")
+			rb.WriteString(checkUrl)
+			rb.WriteString("`60,,1\n")
+			return
 
-			case OpenAI.String():
-				rb.WriteString("`select`[]")
-				rb.WriteString(Proxy.Chinese())
-				rb.WriteString("`[]故障转移`[]自动选择`[]手动选择`[]负载均衡`[]DIRECT`[]REJECT`([oO]pen[aA][iI]|[Cc]hat[Gg][Pp][Tt]|🇴)`\n")
+		case RoundRobin:
+			rb.WriteString("`load-balance`.*`")
+			rb.WriteString(checkUrl)
+			rb.WriteString("`60,,1\n")
+			return
 
-			case Youtube.String():
-				rb.WriteString("`select`[]")
-				rb.WriteString(Proxy.Chinese())
-				rb.WriteString("`[]故障转移`[]自动选择`[]手动选择`[]负载均衡`[]DIRECT`[]REJECT`([Yy]outu[Bb]e|🇾)`\n")
+		}
 
-			case Disney.String():
-				rb.WriteString("`select`[]")
-				rb.WriteString(Proxy.Chinese())
-				rb.WriteString("`[]故障转移`[]自动选择`[]手动选择`[]负载均衡`[]DIRECT`[]REJECT`([Dd]isney|迪士尼|🇩)`\n")
+		pie.Each(s.SubRule(), func(sub RuleType) {
+			rb.WriteString("`[]")
+			rb.WriteString(sub.Provider())
+		})
 
-			case BiliBili.String():
-				rb.WriteString("`select`[]DIRECT`[]")
-				rb.WriteString(Proxy.Chinese())
-				rb.WriteString("`[]故障转移`[]自动选择`[]手动选择`[]负载均衡`[]REJECT`([Dd]isney|迪士尼|🇩)`\n")
+		switch s.TagRegex() {
+		case "":
+		case AllProxy:
+			rb.WriteString("`.*")
+		default:
+			rb.WriteString("`")
+			rb.WriteString(s.TagRegex())
+		}
 
-			case IQiyi.String():
-				rb.WriteString("`select`[]DIRECT`[]")
-				rb.WriteString(Proxy.Chinese())
-				rb.WriteString("`[]故障转移`[]自动选择`[]手动选择`[]负载均衡`[]REJECT`(爱奇艺|[iI][Qq]i[Yy]i)`\n")
-
-			default:
-				rb.WriteString("`select`[]")
-				rb.WriteString(Proxy.Chinese())
-				rb.WriteString("`[]故障转移`[]自动选择`[]手动选择`[]负载均衡`[]DIRECT`[]REJECT`.*`\n")
-			}
-		},
-	)
-
-	rb.WriteString("custom_proxy_group=")
-	rb.WriteString(Direct.Chinese())
-	rb.WriteString("`select`[]DIRECT`[]REJECT`[]")
-	rb.WriteString(Proxy.Chinese())
-	rb.WriteString("`\n")
-
-	rb.WriteString("custom_proxy_group=")
-	rb.WriteString(Reject.Chinese())
-	rb.WriteString("`select`[]REJECT`[]DIRECT`[]")
-	rb.WriteString(Proxy.Chinese())
-	rb.WriteString("`\n")
-
-	rb.WriteString("custom_proxy_group=")
-	rb.WriteString(Privacy.Chinese())
-	rb.WriteString("`select`[]REJECT`[]DIRECT`[]")
-	rb.WriteString(Proxy.Chinese())
-	rb.WriteString("`\n")
+		rb.WriteString("`\n")
+	})
 
 	rb.WriteString("custom_proxy_group=规则以外`select`[]")
 	rb.WriteString(Proxy.Chinese())
@@ -468,24 +394,12 @@ func (p *Collector) QuanX() error {
 	pie.Each(p.ExportRules(), func(r rules.Rule) {
 		var b bytes.Buffer
 
-		switch r.RuleType() {
-		case rules.RuleTypeDomain:
-			b.WriteString("HOST")
-		case rules.RuleTypeDomainSuffix:
-			b.WriteString("HOST-SUFFIX")
-		case rules.RuleTypeDomainKeyword:
-			b.WriteString("HOST-KEYWORD")
-		case rules.RuleTypeIPCIDR:
-			if netip.MustParsePrefix(r.Payload()).Addr().Is6() {
-				b.WriteString("IP6-CIDR")
-			} else {
-				b.WriteString("IP-CIDR")
-			}
-		case rules.RuleTypeGEOIP:
-			b.WriteString("GEOIP")
-		default:
+		rt, ok := r.QuanX()
+		if !ok {
 			return
 		}
+
+		b.WriteString(rt)
 
 		b.WriteString(",")
 		b.WriteString(r.Payload())
@@ -565,97 +479,48 @@ func (p *Collector) QuanX() error {
 	}
 
 	rb.WriteString("\n[policy]\n")
-	rb.WriteString("static=代理选择, 故障转移, 延迟最低, 负载均衡, 手动选择, REJECT, DIRECT\n")
-	rb.WriteString("static=手动选择, server-tag-regex=^.*$\n")
-	rb.WriteString("url-latency-benchmark=延迟最低, server-tag-regex=^.*$, check-interval=300, tolerance=10\n")
-	rb.WriteString("available=故障转移, server-tag-regex=^.*$, check-interval=300, tolerance=10\n")
-	rb.WriteString("round-robin=负载均衡, server-tag-regex=^.*$, check-interval=300, tolerance=10\n")
+	pie.Each(AllRuleType, func(s RuleType) {
+		switch s {
+		case Select:
+			rb.WriteString("static")
 
-	pie.Each(
-		pie.FilterNot(keys, func(s string) bool {
-			return RuleType(s) == Direct || RuleType(s) == Reject || RuleType(s) == Privacy || RuleType(s) == Proxy
-		}),
-		func(s string) {
-			rb.WriteString("static=")
-			rb.WriteString(RuleType(s).Chinese())
+		case UrlLatency:
+			rb.WriteString("url-latency-benchmark")
+
+		case Available:
+			rb.WriteString("available")
+
+		case RoundRobin:
+			rb.WriteString("round-robin")
+
+		default:
+			rb.WriteString("static")
+		}
+
+		rb.WriteString("=")
+		rb.WriteString(s.Chinese())
+
+		pie.Each(s.SubRule(), func(sub RuleType) {
 			rb.WriteString(", ")
+			rb.WriteString(sub.Provider())
+		})
 
-			switch s {
-			case Netflix.String():
-				rb.WriteString(Proxy.Chinese())
-				rb.WriteString(", 故障转移, 延迟最低, 负载均衡, 手动选择, REJECT, DIRECT")
-				rb.WriteString(", server-tag-regex=([nN]etflix|NF|奈飞|🇳)")
+		switch s.TagRegex() {
+		case "":
+			// do nothing
 
-			case OpenAI.String():
-				rb.WriteString(Proxy.Chinese())
-				rb.WriteString(", 故障转移, 延迟最低, 负载均衡, 手动选择, REJECT, DIRECT")
-				rb.WriteString(", server-tag-regex=([oO]pen[aA][iI]|[Cc]hat[Gg][Pp][Tt]|🇴)")
+		default:
+			rb.WriteString(", server-tag-regex=")
+			rb.WriteString(s.TagRegex())
+		}
 
-			case Youtube.String():
-				rb.WriteString(Proxy.Chinese())
-				rb.WriteString(", 故障转移, 延迟最低, 负载均衡, 手动选择, REJECT, DIRECT")
-				rb.WriteString(", server-tag-regex=([Yy]outu[Bb]e|🇾)")
-
-			case Disney.String():
-				rb.WriteString(Proxy.Chinese())
-				rb.WriteString(", 故障转移, 延迟最低, 负载均衡, 手动选择, REJECT, DIRECT")
-				rb.WriteString(", server-tag-regex=([dD]isney|🇩)")
-
-			case BiliBili.String():
-				rb.WriteString(", DIRECT")
-				rb.WriteString(", ")
-				rb.WriteString(Proxy.Chinese())
-				rb.WriteString(", 故障转移, 延迟最低, 负载均衡, 手动选择, REJECT")
-				rb.WriteString(", server-tag-regex=([bB]ili[Bb]ili|🇧)")
-
-			case IQiyi.String():
-				rb.WriteString(", DIRECT")
-				rb.WriteString(", ")
-				rb.WriteString(Proxy.Chinese())
-				rb.WriteString(", 故障转移, 延迟最低, 负载均衡, 手动选择, REJECT")
-				rb.WriteString(", server-tag-regex=([iI]Qi[Ii]yi|🇮)")
-
-			default:
-				rb.WriteString(Proxy.Chinese())
-				rb.WriteString(", 故障转移, 延迟最低, 负载均衡, 手动选择, REJECT, DIRECT")
-
-			}
-
-			rb.WriteString("\n")
-		},
-	)
-
-	rb.WriteString("static=")
-	rb.WriteString(Direct.Chinese())
-	rb.WriteString(", ")
-	rb.WriteString(", DIRECT")
-	rb.WriteString(", ")
-	rb.WriteString(Proxy.Chinese())
-	rb.WriteString(", 故障转移, 延迟最低, 负载均衡, 手动选择, REJECT")
-	rb.WriteString("\n")
-
-	rb.WriteString("static=")
-	rb.WriteString(Reject.Chinese())
-	rb.WriteString(", ")
-	rb.WriteString("REJECT")
-	rb.WriteString(", ")
-	rb.WriteString(Proxy.Chinese())
-	rb.WriteString(", 故障转移, 延迟最低, 负载均衡, 手动选择, DIRECT")
-	rb.WriteString("\n")
-
-	rb.WriteString("static=")
-	rb.WriteString(Privacy.Chinese())
-	rb.WriteString(", ")
-	rb.WriteString("REJECT")
-	rb.WriteString(", ")
-	rb.WriteString(Proxy.Chinese())
-	rb.WriteString(", 故障转移, 延迟最低, 负载均衡, 手动选择, DIRECT")
-	rb.WriteString("\n")
+		rb.WriteString(", check-interval=60, tolerance=10\n")
+	})
 
 	rb.WriteString("static=")
 	rb.WriteString("未命中, ")
 	rb.WriteString(Proxy.Chinese())
-	rb.WriteString(", REJECT, 故障转移, 延迟最低, 负载均衡, 手动选择, DIRECT")
+	rb.WriteString(", REJECT, 故障转移, 最低延时, 负载均衡, 手动选择, DIRECT")
 	rb.WriteString("\n")
 
 	rb.WriteString("\n[server_remote]\n")
@@ -693,7 +558,7 @@ func (p *Collector) QuanX() error {
 
 	rb.WriteString("\n[filter_remote]\n")
 	pie.Each(
-		keys,
+		pie.Sort(keys),
 		//pie.FilterNot(keys, func(s string) bool {
 		//	return RuleType(s) == Direct || RuleType(s) == Reject || RuleType(s) == Privacy
 		//}),

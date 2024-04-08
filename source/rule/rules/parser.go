@@ -21,11 +21,12 @@ const (
 )
 
 type Rule interface {
-	Match(metadata *Metadata) bool
-
 	RuleType() RuleType
 	Adapter() string
 	Payload() string
+
+	Clash() (string, bool)
+	QuanX() (string, bool)
 }
 
 func ParseRule(tp, payload, target string, params []string) (Rule, error) {
@@ -38,7 +39,7 @@ func ParseRule(tp, payload, target string, params []string) (Rule, error) {
 		return NewDomainKeyword(payload, target), nil
 	case "GEOIP":
 		return NewGEOIP(payload, target), nil
-	case "IP-CIDR", "IP-CIDR6":
+	case "IP-CIDR", "IP-CIDR6", "IP6-CIDR":
 		return NewIPCIDR(payload, target)
 	case "SRC-IP-CIDR":
 		return NewIPCIDR(payload, target)
