@@ -247,7 +247,7 @@ func (p *Collector) Subconverter() (err error) {
 
 	rb.WriteString("custom_proxy_group=规则以外`select`[]")
 	rb.WriteString(Proxy.Chinese())
-	rb.WriteString("`[]故障转移`[]自动选择`[]手动选择`[]负载均衡`[]DIRECT`[]REJECT`.*`\n")
+	rb.WriteString("`[]故障转移`[]最低延时`[]手动选择`[]负载均衡`[]DIRECT`[]REJECT`.*`\n")
 
 	// NOTE: 模版
 	rb.WriteString("\n")
