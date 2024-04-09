@@ -117,14 +117,16 @@ func (p *Collector) Subconverter() (err error) {
 
 	rb.WriteString("enable_rule_generator=true\n")
 	rb.WriteString("overwrite_original_rules=true\n")
-	rb.WriteString("skip_cert_verify_flag=false")
-	rb.WriteString("udp_flag=true")
-	rb.WriteString("tcp_fast_open_flag=true")
+	rb.WriteString("skip_cert_verify_flag=false\n")
+	rb.WriteString("udp_flag=true\n")
+	rb.WriteString("tcp_fast_open_flag=true\n")
 
 	// clashBypass := log.GetBuffer()
 	// defer log.PutBuffer(clashBypass)
 	//
 	// clashBypass.WriteString("cfw-bypass:\n")
+
+	rb.WriteString("\n")
 
 	ruleMap := map[string][]string{}
 	pie.Each(p.ExportRules(), func(r rules.Rule) {
@@ -569,10 +571,11 @@ func (p *Collector) QuanX() error {
 			rb.WriteString(".list, tag=")
 			rb.WriteString(RuleType(s).Chinese())
 
-			switch RuleType(s) {
-			case Develop, Youtube, Netflix, OpenAI, Game, Disney:
-				rb.WriteString(", force-policy=代理选择")
-			}
+			//switch RuleType(s) {
+			//case Develop, Youtube, Netflix, OpenAI, Game, Disney:
+			rb.WriteString(", force-policy=")
+			rb.WriteString(RuleType(s).Chinese())
+			//}
 
 			rb.WriteString(", update-interval=86400, opt-parser=true")
 
