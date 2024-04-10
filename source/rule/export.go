@@ -201,7 +201,6 @@ func (p *Collector) Subconverter() (err error) {
 	pie.Each(AllRuleType, func(s RuleType) {
 		rb.WriteString("custom_proxy_group=")
 		rb.WriteString(s.Chinese())
-		rb.WriteString("`select")
 
 		switch s {
 		case Select:
@@ -229,6 +228,8 @@ func (p *Collector) Subconverter() (err error) {
 			return
 
 		}
+
+		rb.WriteString("`select")
 
 		pie.Each(s.SubRule(), func(sub RuleType) {
 			rb.WriteString("`[]")

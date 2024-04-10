@@ -8,15 +8,15 @@ external-ui-url: "https://cdn.jsdelivr.net/gh/MetaCubeX/metacubexd@releases/down
 
 ipv6: false
 
-geodata-mode: true
-geo-auto-update: true
-geo-update-interval: 24
-geodata-loader: memconservative
-geox-url:
-    geoip: "https://testingcf.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geoip.dat"
-    geosite: "https://testingcf.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geosite.dat"
-    mmdb: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.metadb"
-    asn: "https://testingcf.jsdelivr.net/gh/xishang0128/geoip/releases/download/latest/GeoLite2-ASN.mmdb"
+#geodata-mode: true
+#geo-auto-update: true
+#geo-update-interval: 24
+#geodata-loader: memconservative
+#geox-url:
+#    geoip: "https://testingcf.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geoip.dat"
+#    geosite: "https://testingcf.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geosite.dat"
+#    mmdb: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.metadb"
+#    asn: "https://testingcf.jsdelivr.net/gh/xishang0128/geoip/releases/download/latest/GeoLite2-ASN.mmdb"
 
 profile:
     store-selected: true
