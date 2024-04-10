@@ -16,6 +16,8 @@ import (
 
 const (
 	checkUrl = "https://www.google.com/generate_204"
+	//baseRepoUrl = "https://cdn.jsdelivr.net/gh/blueberryorg/public@master/"
+	baseRepoUrl = "https://raw.githubusercontent.com/blueberryorg/public/master/"
 )
 
 func (p *Collector) Export() (err error) {
@@ -106,8 +108,7 @@ func (p *Collector) Clash() error {
 }
 
 func (p *Collector) Subconverter() (err error) {
-	const baseUrl = "https://cdn.jsdelivr.net/gh/blueberryorg/public@master/rules/subconverter/"
-	// const baseUrl = "https://raw.githubusercontent.com/blueberryorg/public/master/rules/subconverter/"
+	const baseUrl = baseRepoUrl + "rules/subconverter/"
 
 	rb := log.GetBuffer()
 	defer log.PutBuffer(rb)
@@ -325,7 +326,8 @@ func (p *Collector) Subconverter() (err error) {
 	// NOTE: quanx
 	{
 		rb.WriteString("quanx_rule_base=")
-		rb.WriteString("https://cdn.jsdelivr.net/gh/blueberryorg/public@master/rules/quanx/quan.conf\n")
+		rb.WriteString(baseRepoUrl)
+		rb.WriteString("rules/quanx/quan.conf\n")
 
 		err = osx.Copy("./tpl/quanx.conf", "../../rules/subconverter/quanx.conf")
 	}
@@ -566,7 +568,8 @@ func (p *Collector) QuanX() error {
 		//	return RuleType(s) == Direct || RuleType(s) == Reject || RuleType(s) == Privacy
 		//}),
 		func(s string) {
-			rb.WriteString("https://cdn.jsdelivr.net/gh/blueberryorg/public@master/rules/quanx/")
+			rb.WriteString(baseRepoUrl)
+			rb.WriteString("rules/quanx/")
 			rb.WriteString(s)
 
 			rb.WriteString(".list, tag=")
