@@ -38,10 +38,6 @@ sniffer:
             ports:
                 - 443
                 - 8443
-        QUIC:
-            ports:
-                - 443
-                - 8443
 
 ntp:
     enable: true
