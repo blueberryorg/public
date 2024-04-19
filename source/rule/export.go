@@ -15,9 +15,9 @@ import (
 )
 
 const (
-	checkUrl = "https://www.google.com/generate_204"
-	//baseRepoUrl = "https://cdn.jsdelivr.net/gh/blueberryorg/public@master/"
-	baseRepoUrl = "https://raw.githubusercontent.com/blueberryorg/public/master/"
+	checkUrl    = "https://www.google.com/generate_204"
+	baseRepoUrl = "https://cdn.jsdelivr.net/gh/blueberryorg/public@master/"
+	//baseRepoUrl = "https://raw.githubusercontent.com/blueberryorg/public/master/"
 )
 
 func (p *Collector) Export() (err error) {

@@ -816,16 +816,6 @@ IP-CIDR,198.183.17.0/24
 IP-CIDR,205.180.175.0/24
 IP-CIDR,63.92.224.0/19
 IP-CIDR,65.199.22.0/23
-PROCESS-NAME,/System/Library/PrivateFrameworks/Lookup.framework/Versions/A/XPCServices/LookupViewService.xpc/Contents/MacOS/LookupViewService
-PROCESS-NAME,CoreLocationAgent
-PROCESS-NAME,WeatherWidget
-PROCESS-NAME,apsd
-PROCESS-NAME,com.apple.Maps
-PROCESS-NAME,findmydevice-user-agent
-PROCESS-NAME,fmfd
-PROCESS-NAME,mapspushd
-PROCESS-NAME,netbiosd
-PROCESS-NAME,trustd
 PROCESS-NAME,com.apple.geod
 PROCESS-NAME,Music
 PROCESS-NAME,LookupViewService
@@ -1640,6 +1630,7 @@ DOMAIN-SUFFIX,tiktokd.net
 DOMAIN-SUFFIX,tiktokd.org
 DOMAIN-SUFFIX,tiktokmusic.app
 DOMAIN-SUFFIX,tiktokv.com
+DOMAIN-SUFFIX,tiktokv.us
 DOMAIN-KEYWORD,musical.ly
 DOMAIN-KEYWORD,tiktok
 PROCESS-NAME,com.zhiliaoapp.musically
@@ -2943,7 +2934,6 @@ DOMAIN-SUFFIX,alljackpotscasino.com
 DOMAIN-SUFFIX,allmovie.com
 DOMAIN-SUFFIX,allowed.org
 DOMAIN-SUFFIX,almasdarnews.com
-DOMAIN-SUFFIX,almostmy.com
 DOMAIN-SUFFIX,alternate-tools.com
 DOMAIN-SUFFIX,alternativeto.net
 DOMAIN-SUFFIX,altrec.com
@@ -3576,7 +3566,6 @@ DOMAIN-SUFFIX,classicalguitarblog.net
 DOMAIN-SUFFIX,claude.ai
 DOMAIN-SUFFIX,clb.org.hk
 DOMAIN-SUFFIX,cleansite.biz
-DOMAIN-SUFFIX,cleansite.info
 DOMAIN-SUFFIX,cleansite.us
 DOMAIN-SUFFIX,clearharmony.net
 DOMAIN-SUFFIX,clearsurance.com
@@ -3671,7 +3660,6 @@ DOMAIN-SUFFIX,crd-net.org
 DOMAIN-SUFFIX,creaders.net
 DOMAIN-SUFFIX,crisp.chat
 DOMAIN-SUFFIX,cristyli.com
-DOMAIN-SUFFIX,crittercism.com
 DOMAIN-SUFFIX,crocotube.com
 DOMAIN-SUFFIX,crossthewall.net
 DOMAIN-SUFFIX,crossvpn.net
@@ -3967,7 +3955,6 @@ DOMAIN-SUFFIX,ecministry.net
 DOMAIN-SUFFIX,edgecastcdn.net
 DOMAIN-SUFFIX,edicypages.com
 DOMAIN-SUFFIX,edmontonservice.com
-DOMAIN-SUFFIX,edns.biz
 DOMAIN-SUFFIX,edoors.com
 DOMAIN-SUFFIX,edubridge.com
 DOMAIN-SUFFIX,edupro.org
@@ -4610,7 +4597,6 @@ DOMAIN-SUFFIX,hdtvb.net
 DOMAIN-SUFFIX,hdzog.com
 DOMAIN-SUFFIX,he.net
 DOMAIN-SUFFIX,heavy-r.com
-DOMAIN-SUFFIX,hec.su
 DOMAIN-SUFFIX,hecaitou.net
 DOMAIN-SUFFIX,hechaji.com
 DOMAIN-SUFFIX,heeact.edu.tw
@@ -4725,7 +4711,6 @@ DOMAIN-SUFFIX,hnjhj.com
 DOMAIN-SUFFIX,hnntube.com
 DOMAIN-SUFFIX,hojemacau.com.mo
 DOMAIN-SUFFIX,hola.com
-DOMAIN-SUFFIX,hola.org
 DOMAIN-SUFFIX,holyspiritspeaks.org
 DOMAIN-SUFFIX,home.sina.com
 DOMAIN-SUFFIX,homeip.net
@@ -4836,6 +4821,7 @@ DOMAIN-SUFFIX,ibit.am
 DOMAIN-SUFFIX,iblogserv-f.net
 DOMAIN-SUFFIX,ibros.org
 DOMAIN-SUFFIX,ibtimes.com
+DOMAIN-SUFFIX,icedrive.net
 DOMAIN-SUFFIX,icij.org
 DOMAIN-SUFFIX,icl-fi.org
 DOMAIN-SUFFIX,icntv.xyz
@@ -5633,7 +5619,6 @@ DOMAIN-SUFFIX,mylftv.com
 DOMAIN-SUFFIX,mymaji.com
 DOMAIN-SUFFIX,mymediarom.com
 DOMAIN-SUFFIX,mymoe.moe
-DOMAIN-SUFFIX,mymom.info
 DOMAIN-SUFFIX,mymusic.net.tw
 DOMAIN-SUFFIX,mynetav.net
 DOMAIN-SUFFIX,mynetav.org
@@ -5996,7 +5981,6 @@ DOMAIN-SUFFIX,parse.com
 DOMAIN-SUFFIX,parsevideo.com
 DOMAIN-SUFFIX,passion.com
 DOMAIN-SUFFIX,passiontimes.hk
-DOMAIN-SUFFIX,paste.ee
 DOMAIN-SUFFIX,pastie.org
 DOMAIN-SUFFIX,patreon.com
 DOMAIN-SUFFIX,pawoo.net
@@ -6194,7 +6178,6 @@ DOMAIN-SUFFIX,pythonic.life
 DOMAIN-SUFFIX,pytorch.org
 DOMAIN-SUFFIX,qanote.com
 DOMAIN-SUFFIX,qgirl.com.tw
-DOMAIN-SUFFIX,qhigh.com
 DOMAIN-SUFFIX,qi-gong.me
 DOMAIN-SUFFIX,qianbai.tw
 DOMAIN-SUFFIX,qiandao.today
@@ -6340,6 +6323,7 @@ DOMAIN-SUFFIX,ronjoneswriter.com
 DOMAIN-SUFFIX,roodo.com
 DOMAIN-SUFFIX,rosechina.net
 DOMAIN-SUFFIX,rotten.com
+DOMAIN-SUFFIX,rou.video
 DOMAIN-SUFFIX,rsdlmonitor.com
 DOMAIN-SUFFIX,rsf-chinese.org
 DOMAIN-SUFFIX,rsf.org
@@ -7023,7 +7007,6 @@ DOMAIN-SUFFIX,tngrnow.net
 DOMAIN-SUFFIX,tnp.org
 DOMAIN-SUFFIX,togetter.com
 DOMAIN-SUFFIX,toggleable.com
-DOMAIN-SUFFIX,toh.info
 DOMAIN-SUFFIX,tokyo-247.com
 DOMAIN-SUFFIX,tomonews.net
 DOMAIN-SUFFIX,tomshardware.com
@@ -7698,7 +7681,6 @@ DOMAIN-SUFFIX,xvideos-cdn.com
 DOMAIN-SUFFIX,xvideos.com
 DOMAIN-SUFFIX,xvideos.es
 DOMAIN-SUFFIX,xvinlink.com
-DOMAIN-SUFFIX,xxlmovies.com
 DOMAIN-SUFFIX,xxuz.com
 DOMAIN-SUFFIX,xxx.xxx
 DOMAIN-SUFFIX,xxxfuckmom.com
