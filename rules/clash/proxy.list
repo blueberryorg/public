@@ -816,6 +816,15 @@ IP-CIDR,198.183.17.0/24,proxy
 IP-CIDR,205.180.175.0/24,proxy
 IP-CIDR,63.92.224.0/19,proxy
 IP-CIDR,65.199.22.0/23,proxy
+PROCESS-NAME,CoreLocationAgent,proxy
+PROCESS-NAME,WeatherWidget,proxy
+PROCESS-NAME,apsd,proxy
+PROCESS-NAME,com.apple.Maps,proxy
+PROCESS-NAME,findmydevice-user-agent,proxy
+PROCESS-NAME,fmfd,proxy
+PROCESS-NAME,mapspushd,proxy
+PROCESS-NAME,netbiosd,proxy
+PROCESS-NAME,trustd,proxy
 PROCESS-NAME,com.apple.geod,proxy
 PROCESS-NAME,Music,proxy
 PROCESS-NAME,LookupViewService,proxy
@@ -2688,16 +2697,9 @@ IP-CIDR,2620:100:3000::/40,proxy
 IP-CIDR,2620:10c:7000::/44,proxy
 IP-CIDR,2a00:86c0::/32,proxy
 IP-CIDR,2a03:5640::/32,proxy
-PROCESS-NAME,com.hktve.viutv,proxy
-PROCESS-NAME,com.hulu.plus,proxy
-PROCESS-NAME,com.linecorp.linetv,proxy
-PROCESS-NAME,com.tencent.ibg.joox,proxy
-PROCESS-NAME,com.twgood.android,proxy
 PROCESS-NAME,com.viu.pad,proxy
 PROCESS-NAME,com.viu.phone,proxy
 PROCESS-NAME,com.vuclip.viu,proxy
-PROCESS-NAME,com.wbd.stream,proxy
-PROCESS-NAME,tv.twitch.android.app,proxy
 DOMAIN-SUFFIX,globalsign-media.com,proxy
 DOMAIN-SUFFIX,globalsign.be,proxy
 DOMAIN-SUFFIX,globalsign.ch,proxy
@@ -2934,6 +2936,7 @@ DOMAIN-SUFFIX,alljackpotscasino.com,proxy
 DOMAIN-SUFFIX,allmovie.com,proxy
 DOMAIN-SUFFIX,allowed.org,proxy
 DOMAIN-SUFFIX,almasdarnews.com,proxy
+DOMAIN-SUFFIX,almostmy.com,proxy
 DOMAIN-SUFFIX,alternate-tools.com,proxy
 DOMAIN-SUFFIX,alternativeto.net,proxy
 DOMAIN-SUFFIX,altrec.com,proxy
@@ -3419,6 +3422,7 @@ DOMAIN-SUFFIX,cdcparty.com,proxy
 DOMAIN-SUFFIX,cdef.org,proxy
 DOMAIN-SUFFIX,cdig.info,proxy
 DOMAIN-SUFFIX,cdjp.org,proxy
+DOMAIN-SUFFIX,cdn.jwplayer.com,proxy
 DOMAIN-SUFFIX,cdnews.com.tw,proxy
 DOMAIN-SUFFIX,cdnst.net,proxy
 DOMAIN-SUFFIX,cdp1989.org,proxy
@@ -3566,6 +3570,7 @@ DOMAIN-SUFFIX,classicalguitarblog.net,proxy
 DOMAIN-SUFFIX,claude.ai,proxy
 DOMAIN-SUFFIX,clb.org.hk,proxy
 DOMAIN-SUFFIX,cleansite.biz,proxy
+DOMAIN-SUFFIX,cleansite.info,proxy
 DOMAIN-SUFFIX,cleansite.us,proxy
 DOMAIN-SUFFIX,clearharmony.net,proxy
 DOMAIN-SUFFIX,clearsurance.com,proxy
@@ -3660,6 +3665,7 @@ DOMAIN-SUFFIX,crd-net.org,proxy
 DOMAIN-SUFFIX,creaders.net,proxy
 DOMAIN-SUFFIX,crisp.chat,proxy
 DOMAIN-SUFFIX,cristyli.com,proxy
+DOMAIN-SUFFIX,crittercism.com,proxy
 DOMAIN-SUFFIX,crocotube.com,proxy
 DOMAIN-SUFFIX,crossthewall.net,proxy
 DOMAIN-SUFFIX,crossvpn.net,proxy
@@ -3884,6 +3890,7 @@ DOMAIN-SUFFIX,dtic.mil,proxy
 DOMAIN-SUFFIX,dtwang.org,proxy
 DOMAIN-SUFFIX,duanzhihu.com,proxy
 DOMAIN-SUFFIX,duck.com,proxy
+DOMAIN-SUFFIX,duckdns.org,proxy
 DOMAIN-SUFFIX,duckload.com,proxy
 DOMAIN-SUFFIX,duckmylife.com,proxy
 DOMAIN-SUFFIX,dueapp.com,proxy
@@ -3955,6 +3962,7 @@ DOMAIN-SUFFIX,ecministry.net,proxy
 DOMAIN-SUFFIX,edgecastcdn.net,proxy
 DOMAIN-SUFFIX,edicypages.com,proxy
 DOMAIN-SUFFIX,edmontonservice.com,proxy
+DOMAIN-SUFFIX,edns.biz,proxy
 DOMAIN-SUFFIX,edoors.com,proxy
 DOMAIN-SUFFIX,edubridge.com,proxy
 DOMAIN-SUFFIX,edupro.org,proxy
@@ -4027,6 +4035,7 @@ DOMAIN-SUFFIX,esurance.com,proxy
 DOMAIN-SUFFIX,etaa.org.au,proxy
 DOMAIN-SUFFIX,etaiwannews.com,proxy
 DOMAIN-SUFFIX,etherdelta.com,proxy
+DOMAIN-SUFFIX,ethermine.org,proxy
 DOMAIN-SUFFIX,etherscan.io,proxy
 DOMAIN-SUFFIX,etizer.org,proxy
 DOMAIN-SUFFIX,etokki.com,proxy
@@ -4063,6 +4072,7 @@ DOMAIN-SUFFIX,eyny.com,proxy
 DOMAIN-SUFFIX,ezpc.tk,proxy
 DOMAIN-SUFFIX,ezpeer.com,proxy
 DOMAIN-SUFFIX,ezua.com,proxy
+DOMAIN-SUFFIX,f2pool.com,proxy
 DOMAIN-SUFFIX,f8.com,proxy
 DOMAIN-SUFFIX,fa.gov.tw,proxy
 DOMAIN-SUFFIX,faceless.me,proxy
@@ -4597,6 +4607,7 @@ DOMAIN-SUFFIX,hdtvb.net,proxy
 DOMAIN-SUFFIX,hdzog.com,proxy
 DOMAIN-SUFFIX,he.net,proxy
 DOMAIN-SUFFIX,heavy-r.com,proxy
+DOMAIN-SUFFIX,hec.su,proxy
 DOMAIN-SUFFIX,hecaitou.net,proxy
 DOMAIN-SUFFIX,hechaji.com,proxy
 DOMAIN-SUFFIX,heeact.edu.tw,proxy
@@ -4711,6 +4722,7 @@ DOMAIN-SUFFIX,hnjhj.com,proxy
 DOMAIN-SUFFIX,hnntube.com,proxy
 DOMAIN-SUFFIX,hojemacau.com.mo,proxy
 DOMAIN-SUFFIX,hola.com,proxy
+DOMAIN-SUFFIX,hola.org,proxy
 DOMAIN-SUFFIX,holyspiritspeaks.org,proxy
 DOMAIN-SUFFIX,home.sina.com,proxy
 DOMAIN-SUFFIX,homeip.net,proxy
@@ -4749,6 +4761,7 @@ DOMAIN-SUFFIX,hrcchina.org,proxy
 DOMAIN-SUFFIX,hrcir.com,proxy
 DOMAIN-SUFFIX,hrea.org,proxy
 DOMAIN-SUFFIX,hrichina.org,proxy
+DOMAIN-SUFFIX,hrntt.org,proxy
 DOMAIN-SUFFIX,hrw.org,proxy
 DOMAIN-SUFFIX,hrweb.org,proxy
 DOMAIN-SUFFIX,hsjp.net,proxy
@@ -5619,6 +5632,7 @@ DOMAIN-SUFFIX,mylftv.com,proxy
 DOMAIN-SUFFIX,mymaji.com,proxy
 DOMAIN-SUFFIX,mymediarom.com,proxy
 DOMAIN-SUFFIX,mymoe.moe,proxy
+DOMAIN-SUFFIX,mymom.info,proxy
 DOMAIN-SUFFIX,mymusic.net.tw,proxy
 DOMAIN-SUFFIX,mynetav.net,proxy
 DOMAIN-SUFFIX,mynetav.org,proxy
@@ -5912,6 +5926,7 @@ DOMAIN-SUFFIX,oraclecloud.com,proxy
 DOMAIN-SUFFIX,orchidbbs.com,proxy
 DOMAIN-SUFFIX,organcare.org.tw,proxy
 DOMAIN-SUFFIX,organharvestinvestigation.net,proxy
+DOMAIN-SUFFIX,organiccrap.com,proxy
 DOMAIN-SUFFIX,orgasm.com,proxy
 DOMAIN-SUFFIX,orgfree.com,proxy
 DOMAIN-SUFFIX,oricon.co.jp,proxy
@@ -5981,6 +5996,7 @@ DOMAIN-SUFFIX,parse.com,proxy
 DOMAIN-SUFFIX,parsevideo.com,proxy
 DOMAIN-SUFFIX,passion.com,proxy
 DOMAIN-SUFFIX,passiontimes.hk,proxy
+DOMAIN-SUFFIX,paste.ee,proxy
 DOMAIN-SUFFIX,pastie.org,proxy
 DOMAIN-SUFFIX,patreon.com,proxy
 DOMAIN-SUFFIX,pawoo.net,proxy
@@ -6103,6 +6119,7 @@ DOMAIN-SUFFIX,post852.com,proxy
 DOMAIN-SUFFIX,postimg.org,proxy
 DOMAIN-SUFFIX,potato.im,proxy
 DOMAIN-SUFFIX,potvpn.com,proxy
+DOMAIN-SUFFIX,pourquoi.tw,proxy
 DOMAIN-SUFFIX,power.com,proxy
 DOMAIN-SUFFIX,powerapple.com,proxy
 DOMAIN-SUFFIX,powerphoto.org,proxy
@@ -6178,6 +6195,7 @@ DOMAIN-SUFFIX,pythonic.life,proxy
 DOMAIN-SUFFIX,pytorch.org,proxy
 DOMAIN-SUFFIX,qanote.com,proxy
 DOMAIN-SUFFIX,qgirl.com.tw,proxy
+DOMAIN-SUFFIX,qhigh.com,proxy
 DOMAIN-SUFFIX,qi-gong.me,proxy
 DOMAIN-SUFFIX,qianbai.tw,proxy
 DOMAIN-SUFFIX,qiandao.today,proxy
@@ -7007,6 +7025,7 @@ DOMAIN-SUFFIX,tngrnow.net,proxy
 DOMAIN-SUFFIX,tnp.org,proxy
 DOMAIN-SUFFIX,togetter.com,proxy
 DOMAIN-SUFFIX,toggleable.com,proxy
+DOMAIN-SUFFIX,toh.info,proxy
 DOMAIN-SUFFIX,tokyo-247.com,proxy
 DOMAIN-SUFFIX,tomonews.net,proxy
 DOMAIN-SUFFIX,tomshardware.com,proxy
@@ -7681,6 +7700,7 @@ DOMAIN-SUFFIX,xvideos-cdn.com,proxy
 DOMAIN-SUFFIX,xvideos.com,proxy
 DOMAIN-SUFFIX,xvideos.es,proxy
 DOMAIN-SUFFIX,xvinlink.com,proxy
+DOMAIN-SUFFIX,xxlmovies.com,proxy
 DOMAIN-SUFFIX,xxuz.com,proxy
 DOMAIN-SUFFIX,xxx.xxx,proxy
 DOMAIN-SUFFIX,xxxfuckmom.com,proxy
@@ -7733,17 +7753,20 @@ DOMAIN-SUFFIX,yipub.com,proxy
 DOMAIN-SUFFIX,yobit.net,proxy
 DOMAIN-SUFFIX,yobt.tv,proxy
 DOMAIN-SUFFIX,yogichen.org,proxy
+DOMAIN-SUFFIX,yolasite.com,proxy
 DOMAIN-SUFFIX,yomiuri.co.jp,proxy
 DOMAIN-SUFFIX,yong.hu,proxy
 DOMAIN-SUFFIX,yorkbbs.ca,proxy
 DOMAIN-SUFFIX,you-get.org,proxy
 DOMAIN-SUFFIX,you.com,proxy
+DOMAIN-SUFFIX,youdontcare.com,proxy
 DOMAIN-SUFFIX,youjizz.com,proxy
 DOMAIN-SUFFIX,youmaker.com,proxy
 DOMAIN-SUFFIX,youngspiration.hk,proxy
 DOMAIN-SUFFIX,youpai.org,proxy
 DOMAIN-SUFFIX,your-freedom.net,proxy
 DOMAIN-SUFFIX,yourlisten.com,proxy
+DOMAIN-SUFFIX,yourtrap.com,proxy
 DOMAIN-SUFFIX,youshun12.com,proxy
 DOMAIN-SUFFIX,youthforfreechina.org,proxy
 DOMAIN-SUFFIX,youthnetradio.org,proxy
@@ -7766,6 +7789,7 @@ DOMAIN-SUFFIX,yzzk.com,proxy
 DOMAIN-SUFFIX,z-lib.org,proxy
 DOMAIN-SUFFIX,zacebook.com,proxy
 DOMAIN-SUFFIX,zalmos.com,proxy
+DOMAIN-SUFFIX,zamimg.com,proxy
 DOMAIN-SUFFIX,zannel.com,proxy
 DOMAIN-SUFFIX,zaobao.com,proxy
 DOMAIN-SUFFIX,zaozon.com,proxy

@@ -2,9 +2,9 @@ mixed-port: 7890
 allow-lan: false
 mode: Rule
 log-level: silent
-external-controller: :9090
-external-ui-name: metacubexd
-external-ui-url: "https://cdn.jsdelivr.net/gh/MetaCubeX/metacubexd@releases/download/latest/compressed-dist.tgz"
+#external-controller: :9090
+#external-ui-name: metacubexd
+#external-ui-url: "https://cdn.jsdelivr.net/gh/MetaCubeX/metacubexd@releases/download/latest/compressed-dist.tgz"
 
 ipv6: false
 
@@ -17,11 +17,11 @@ ipv6: false
 #    geosite: "https://testingcf.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geosite.dat"
 #    mmdb: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.metadb"
 #    asn: "https://testingcf.jsdelivr.net/gh/xishang0128/geoip/releases/download/latest/GeoLite2-ASN.mmdb"
-
-profile:
-    store-selected: true
-    store-fake-ip: true
-    tracing: false
+#
+#profile:
+#    store-selected: true
+#    store-fake-ip: true
+#    tracing: false
 
 sniffer:
     enable: true
@@ -39,53 +39,53 @@ sniffer:
                 - 443
                 - 8443
 
-ntp:
-    enable: true
-    write-to-system: true
-    server: ntp.aliyun.com
-    port: 123
-    interval: 60
-
-find-process-mode: always
-unified-delay: true
-tcp-concurrent: true
-global-client-fingerprint: chrome
-
-skip-auth-prefixes:
-    - 127.0.0.1/8
-    - ::1/128
-
-keep-alive-interval: 60
-
-experimental:
-    quic-go-disable-gso: false
-    quic-go-disable-ecn: false
-    dialer-ip4p-convert: true
-    ignore-resolve-fail: true
-    sniff-tls-sni: true
-
-url-rewrite:
-    - ^https?:\/\/(www.)?(g|google)\.cn https://www.google.com 302
-    - ^https?:\/\/(ditu|maps).google\.cn https://maps.google.com 302
-
-tun:
-    enable: false
-    stack: gvisor
-    dns-hijack:
-        - any:15353
-    auto-route: true
-    auto-redir: true
-    auto-detect-interface: true
-    mtu: 9000
-    strict-route: true
-    gso: true
-    gso-max-size: 65536
-    udp-timeout: 300
-    endpoint-independent-nat: false
-    include-package:
-        - com.android.chrome
-    exclude-package:
-        - com.android.captiveportallogin
+#ntp:
+#    enable: true
+#    write-to-system: true
+#    server: ntp.aliyun.com
+#    port: 123
+#    interval: 60
+#
+#find-process-mode: always
+#unified-delay: true
+#tcp-concurrent: true
+#global-client-fingerprint: chrome
+#
+#skip-auth-prefixes:
+#    - 127.0.0.1/8
+#    - ::1/128
+#
+#keep-alive-interval: 60
+#
+#experimental:
+#    quic-go-disable-gso: false
+#    quic-go-disable-ecn: false
+#    dialer-ip4p-convert: true
+#    ignore-resolve-fail: true
+#    sniff-tls-sni: true
+#
+#url-rewrite:
+#    - ^https?:\/\/(www.)?(g|google)\.cn https://www.google.com 302
+#    - ^https?:\/\/(ditu|maps).google\.cn https://maps.google.com 302
+#
+#tun:
+#    enable: false
+#    stack: gvisor
+#    dns-hijack:
+#        - any:15353
+#    auto-route: true
+#    auto-redir: true
+#    auto-detect-interface: true
+#    mtu: 9000
+#    strict-route: true
+#    gso: true
+#    gso-max-size: 65536
+#    udp-timeout: 300
+#    endpoint-independent-nat: false
+#    include-package:
+#        - com.android.chrome
+#    exclude-package:
+#        - com.android.captiveportallogin
 
 dns:
     enable: true
