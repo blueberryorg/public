@@ -8,8 +8,10 @@ import (
 	"errors"
 	"fmt"
 	"github.com/ice-cream-heaven/log"
+	"github.com/ice-cream-heaven/utils/cryptox"
 	"github.com/ice-cream-heaven/utils/runtime"
 	"github.com/ice-cream-heaven/utils/unit"
+	"github.com/ice-cream-heaven/utils/xtime"
 	"github.com/maxmind/mmdbwriter"
 	"github.com/maxmind/mmdbwriter/inserter"
 	"github.com/maxmind/mmdbwriter/mmdbtype"
@@ -71,8 +73,24 @@ func (p *MMDB) Upload() error {
 	return nil
 }
 
-func (p *MMDB) update(path string, logic func(record []string) error) error {
-	log.Infof("handle %s", path)
+func (p *MMDB) getReader(path string) (io.ReadCloser, error) {
+	cachePath := filepath.Join("tmp", cryptox.Md5(path)+filepath.Ext(path))
+
+	stat, err := os.Stat(cachePath)
+	if err != nil {
+		if !os.IsNotExist(err) {
+			log.Errorf("err:%v", err)
+			return nil, err
+		}
+	} else if time.Since(stat.ModTime()) <= xtime.Week {
+		file, err := os.Open(cachePath)
+		if err != nil {
+			log.Errorf("err:%v", err)
+			return nil, err
+		}
+
+		return NewFileReader(filepath.Base(path), file)
+	}
 
 	client := &http.Client{
 		Timeout: time.Hour,
@@ -82,21 +100,54 @@ func (p *MMDB) update(path string, logic func(record []string) error) error {
 	resp, err := client.Get(path)
 	if err != nil {
 		log.Errorf("err:%v", err)
-		return err
+		return nil, err
 	}
 	defer resp.Body.Close()
 
 	if resp.StatusCode != http.StatusOK {
 		log.Errorf("err:%v", resp.StatusCode)
-		return errors.New("resp.StatusCode != http.StatusOK")
+		return nil, errors.New("resp.StatusCode != http.StatusOK")
 	}
+
+	file, err := os.OpenFile(cachePath, os.O_CREATE|os.O_WRONLY|os.O_TRUNC, 0666)
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return nil, err
+	}
+
+	_, err = io.Copy(file, resp.Body)
+	if err != nil {
+		_ = file.Close()
+		log.Errorf("err:%v", err)
+		return nil, err
+	}
+	_ = file.Close()
+
+	file, err = os.Open(cachePath)
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return nil, err
+	}
+
+	return NewFileReader(filepath.Base(path), file)
+}
+
+func (p *MMDB) update(path string, logic func(record []string) error) error {
+	log.Infof("handle %s", path)
+
+	remote, err := p.getReader(path)
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+	defer remote.Close()
 
 	var reader *csv.Reader
 	switch filepath.Ext(path) {
 	case ".csv":
-		reader = csv.NewReader(resp.Body)
+		reader = csv.NewReader(remote)
 	case ".gz":
-		gr, err := gzip.NewReader(resp.Body)
+		gr, err := gzip.NewReader(remote)
 		if err != nil {
 			log.Errorf("err:%v", err)
 			return err
@@ -116,7 +167,6 @@ func (p *MMDB) update(path string, logic func(record []string) error) error {
 			if err == io.EOF {
 				break
 			}
-
 			log.Errorf("err:%v", err)
 			break
 		}
@@ -200,24 +250,14 @@ func (p *MMDB) UpdateChinaOrg(writer *mmdbwriter.Tree) (err error) {
 	update := func(path string, logic func(first, last net.IP) error) error {
 		log.Infof("handle %s", path)
 
-		client := &http.Client{
-			Timeout: time.Hour,
-		}
-		defer client.CloseIdleConnections()
-
-		resp, err := client.Get(path)
+		remote, err := p.getReader(path)
 		if err != nil {
 			log.Errorf("err:%v", err)
 			return err
 		}
-		defer resp.Body.Close()
+		defer remote.Close()
 
-		if resp.StatusCode != http.StatusOK {
-			log.Errorf("err:%v", resp.StatusCode)
-			return errors.New("resp.StatusCode != http.StatusOK")
-		}
-
-		reader := bufio.NewScanner(resp.Body)
+		reader := bufio.NewScanner(remote)
 		reader.Split(bufio.ScanLines)
 
 		for reader.Scan() {

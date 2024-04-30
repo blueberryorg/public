@@ -17,7 +17,6 @@ HOST-SUFFIX,launchdarkly.com,openai
 HOST-SUFFIX,oaistatic.com,openai
 HOST-SUFFIX,oaiusercontent.com,openai
 HOST-SUFFIX,observeit.net,openai
-HOST-SUFFIX,poe.com,openai
 HOST-SUFFIX,segment.io,openai
 HOST-SUFFIX,sentry.io,openai
 HOST-SUFFIX,turn.livekit.cloud,openai

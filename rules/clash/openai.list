@@ -17,7 +17,6 @@ DOMAIN-SUFFIX,launchdarkly.com,openai
 DOMAIN-SUFFIX,oaistatic.com,openai
 DOMAIN-SUFFIX,oaiusercontent.com,openai
 DOMAIN-SUFFIX,observeit.net,openai
-DOMAIN-SUFFIX,poe.com,openai
 DOMAIN-SUFFIX,segment.io,openai
 DOMAIN-SUFFIX,sentry.io,openai
 DOMAIN-SUFFIX,turn.livekit.cloud,openai

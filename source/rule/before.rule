@@ -1,5 +1,6 @@
 DOMAIN-SUFFIX,csdn.net,direct
-DOMAIN,barbecue.qvcp1z.cf,direct
+DOMAIN-SUFFIX,qvcp1z.cf,direct
+DOMAIN-SUFFIX,qvcp1z.tk,direct
 
 # go语言
 DOMAIN,go.dev,develop
