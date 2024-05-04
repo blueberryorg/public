@@ -423,6 +423,7 @@ func (p *Collector) QuanX() error {
 	rb.WriteString("\n")
 	rb.WriteString("\n")
 
+	rb.WriteString("server_check_url=http://www.google.com/generate_204\n")
 	rb.WriteString("resource_parser_url=https://cdn.jsdelivr.net/gh/KOP-XIAO/QuantumultX@master/Scripts/resource-parser.js\n")
 	rb.WriteString("geo_location_checker=http://ip-api.com/json/?lang=zh-CN, https://cdn.jsdelivr.net/gh/limbopro/QuantumultX@master/Scripts/IP_API.js\n")
 
