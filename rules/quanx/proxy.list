@@ -3385,7 +3385,6 @@ HOST-SUFFIX,cdcparty.com,proxy
 HOST-SUFFIX,cdef.org,proxy
 HOST-SUFFIX,cdig.info,proxy
 HOST-SUFFIX,cdjp.org,proxy
-HOST-SUFFIX,cdn.jwplayer.com,proxy
 HOST-SUFFIX,cdnews.com.tw,proxy
 HOST-SUFFIX,cdnst.net,proxy
 HOST-SUFFIX,cdp1989.org,proxy
@@ -5062,6 +5061,7 @@ HOST-SUFFIX,justtristan.com,proxy
 HOST-SUFFIX,juyuange.org,proxy
 HOST-SUFFIX,juziyue.com,proxy
 HOST-SUFFIX,jwmusic.org,proxy
+HOST-SUFFIX,jwplayer.com,proxy
 HOST-SUFFIX,jyxf.net,proxy
 HOST-SUFFIX,k-doujin.net,proxy
 HOST-SUFFIX,kadokawa.co.jp,proxy

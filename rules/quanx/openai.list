@@ -23,5 +23,6 @@ HOST-SUFFIX,turn.livekit.cloud,openai
 HOST-KEYWORD,openai,openai
 IP-CIDR,24.199.123.28/32,openai
 IP-CIDR,64.23.132.171/32,openai
+HOST,gemini.google.com,openai
 HOST-SUFFIX,challenges.cloudflare.com,openai
 HOST-SUFFIX,openaiapi-site.azureedge.net,openai

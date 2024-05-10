@@ -23,5 +23,6 @@ DOMAIN-SUFFIX,turn.livekit.cloud
 DOMAIN-KEYWORD,openai
 IP-CIDR,24.199.123.28/32
 IP-CIDR,64.23.132.171/32
+DOMAIN,gemini.google.com
 DOMAIN-SUFFIX,challenges.cloudflare.com
 DOMAIN-SUFFIX,openaiapi-site.azureedge.net

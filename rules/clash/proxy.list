@@ -3420,7 +3420,6 @@ DOMAIN-SUFFIX,cdcparty.com,proxy
 DOMAIN-SUFFIX,cdef.org,proxy
 DOMAIN-SUFFIX,cdig.info,proxy
 DOMAIN-SUFFIX,cdjp.org,proxy
-DOMAIN-SUFFIX,cdn.jwplayer.com,proxy
 DOMAIN-SUFFIX,cdnews.com.tw,proxy
 DOMAIN-SUFFIX,cdnst.net,proxy
 DOMAIN-SUFFIX,cdp1989.org,proxy
@@ -5097,6 +5096,7 @@ DOMAIN-SUFFIX,justtristan.com,proxy
 DOMAIN-SUFFIX,juyuange.org,proxy
 DOMAIN-SUFFIX,juziyue.com,proxy
 DOMAIN-SUFFIX,jwmusic.org,proxy
+DOMAIN-SUFFIX,jwplayer.com,proxy
 DOMAIN-SUFFIX,jyxf.net,proxy
 DOMAIN-SUFFIX,k-doujin.net,proxy
 DOMAIN-SUFFIX,kadokawa.co.jp,proxy
