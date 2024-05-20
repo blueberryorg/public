@@ -21,13 +21,13 @@ DOMAIN-SUFFIX,hellogithub.com,direct
 
 # 大米星球
 DOMAIN-SUFFIX,dmxq.info,direct
+DOMAIN-SUFFIX,ynajax.com,direct
 DOMAIN-SUFFIX,instantts.top,direct
 DOMAIN-SUFFIX,vpic.cms.qq.com,direct
 DOMAIN-SUFFIX,vip.lz-cdn6.com,direct
 DOMAIN-SUFFIX,qoqkkhy.com,direct
 DOMAIN-SUFFIX,ymuuy.com,direct
 DOMAIN-SUFFIX,kuaikan-play2.com,direct
-DOMAIN-SUFFIX,ynajax.com,direct
 DOMAIN-SUFFIX,damit.store,direct
 DOMAIN-SUFFIX,damiq.online,direct
 DOMAIN-SUFFIX,dmflm.com,direct
@@ -45,6 +45,7 @@ DOMAIN-SUFFIX,dmzybf.com,direct
 DOMAIN-SUFFIX,damiq.cc,direct
 
 DOMAIN-KEYWORD,breached.to,proxy
+DOMAIN-SUFFIX,colobu.com,proxy
 DOMAIN-KEYWORD,relingo.net,proxy
 DOMAIN-KEYWORD,javlib.com,proxy
 DOMAIN-KEYWORD,missav.com,proxy
