@@ -375,14 +375,11 @@ DOMAIN-SUFFIX,lolstatic-a.akamaihd.net,game
 DOMAIN-SUFFIX,lolstatic.com,game
 DOMAIN-SUFFIX,lpl.com.cn,game
 DOMAIN-SUFFIX,molesports.com,game
-DOMAIN-SUFFIX,pvp.net,game
 DOMAIN-SUFFIX,pvp.tv,game
 DOMAIN-SUFFIX,rgpub.io,game
 DOMAIN-SUFFIX,riot-games.com,game
 DOMAIN-SUFFIX,riot.net,game
-DOMAIN-SUFFIX,riotcdn.net,game
 DOMAIN-SUFFIX,riotforgegames.com,game
-DOMAIN-SUFFIX,riotgames.com,game
 DOMAIN-SUFFIX,riotgames.info,game
 DOMAIN-SUFFIX,riotgames.jp,game
 DOMAIN-SUFFIX,riotgames.net,game
@@ -434,6 +431,9 @@ DOMAIN-SUFFIX,brawlstars.com,game
 DOMAIN-SUFFIX,brawlstarsgame.com,game
 DOMAIN-SUFFIX,ubi.com,game
 DOMAIN-SUFFIX,uplay.com,game
+DOMAIN-SUFFIX,pvp.net,game
+DOMAIN-SUFFIX,riotcdn.net,game
+DOMAIN-SUFFIX,riotgames.com,game
 DOMAIN-SUFFIX,xboxab.net,game
 DOMAIN-SUFFIX,xboxservice.com,game
 DOMAIN-KEYWORD,epicgames,game
@@ -444,9 +444,6 @@ IP-CIDR,182.162.135.1/32,game
 IP-CIDR,210.242.235.6/32,game
 IP-CIDR,54.94.196.47/32,game
 IP-CIDR,182.162.132.1/32,game
-IP-CIDR,185.60.112.157/32,game
-IP-CIDR,185.60.112.158/32,game
-IP-CIDR,24.105.30.129/32,game
 IP-CIDR,182.162.116.1/32,game
 IP-CIDR,202.9.67.59/32,game
 IP-CIDR,203.69.111.4/32,game
@@ -456,9 +453,12 @@ IP-CIDR,203.66.81.98/32,game
 IP-CIDR,211.234.110.1/32,game
 IP-CIDR,54.207.107.12/32,game
 IP-CIDR,103.4.114.233/32,game
+IP-CIDR,185.60.112.157/32,game
+IP-CIDR,185.60.112.158/32,game
 IP-CIDR,185.60.114.159/32,game
 IP-CIDR,202.9.67.254/32,game
 IP-CIDR,222.231.22.1/32,game
+IP-CIDR,24.105.30.129/32,game
 IP-CIDR,24.105.62.129/32,game
 IP-CIDR,13.210.25.233/32,game
 IP-CIDR,13.212.170.102/32,game
