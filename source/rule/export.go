@@ -39,11 +39,11 @@ func (p *Collector) Export() (err error) {
 		return
 	}
 
-	//err = p.Blue()
-	//if err != nil {
-	//	log.Panicf("err:%v", err)
-	//	return
-	//}
+	err = p.Blueberry()
+	if err != nil {
+		log.Panicf("err:%v", err)
+		return
+	}
 
 	return nil
 }
@@ -606,7 +606,7 @@ func (p *Collector) QuanX() error {
 	return nil
 }
 
-func (p *Collector) Blue() error {
+func (p *Collector) Blueberry() error {
 	var ruleList []string
 	ruleMap := map[string][]string{}
 	pie.Each(p.ExportRules(), func(r rules.Rule) {

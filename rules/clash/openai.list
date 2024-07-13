@@ -1,4 +1,10 @@
 DOMAIN,browser-intake-datadoghq.com,openai
+DOMAIN,chat.openai.com.cdn.cloudflare.net,openai
+DOMAIN,gemini.google.com,openai
+DOMAIN,openai-api.arkoselabs.com,openai
+DOMAIN,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net,openai
+DOMAIN,openaicomproductionae4b.blob.core.windows.net,openai
+DOMAIN,production-openaicom-storage.azureedge.net,openai
 DOMAIN,static.cloudflareinsights.com,openai
 DOMAIN-SUFFIX,ai.com,openai
 DOMAIN-SUFFIX,algolia.net,openai
@@ -17,12 +23,12 @@ DOMAIN-SUFFIX,launchdarkly.com,openai
 DOMAIN-SUFFIX,oaistatic.com,openai
 DOMAIN-SUFFIX,oaiusercontent.com,openai
 DOMAIN-SUFFIX,observeit.net,openai
+DOMAIN-SUFFIX,openaiapi-site.azureedge.net,openai
+DOMAIN-SUFFIX,openaicom.imgix.net,openai
 DOMAIN-SUFFIX,segment.io,openai
 DOMAIN-SUFFIX,sentry.io,openai
 DOMAIN-SUFFIX,turn.livekit.cloud,openai
 DOMAIN-KEYWORD,openai,openai
 IP-CIDR,24.199.123.28/32,openai
 IP-CIDR,64.23.132.171/32,openai
-DOMAIN,gemini.google.com,openai
 DOMAIN-SUFFIX,challenges.cloudflare.com,openai
-DOMAIN-SUFFIX,openaiapi-site.azureedge.net,openai

@@ -3,12 +3,14 @@ package main
 import (
 	"crypto/tls"
 	"errors"
+	"github.com/andybalholm/brotli"
 	"github.com/beefsack/go-rate"
 	"github.com/elliotchance/pie/v2"
 	"github.com/go-resty/resty/v2"
 	"github.com/ice-cream-heaven/log"
 	"github.com/ice-cream-heaven/utils/json"
 	"github.com/ice-cream-heaven/utils/osx"
+	"github.com/ice-cream-heaven/utils/unit"
 	"net/http"
 	"os"
 	"strings"
@@ -252,6 +254,99 @@ func (p *Hitokoto) saveAsSql() error {
 	return nil
 }
 
+func (p *Hitokoto) saveAsBinary() error {
+	log.Infof("save as binary")
+
+	b := log.GetBuffer()
+	defer log.PutBuffer(b)
+
+	for _, sentence := range p.sentences {
+		b.WriteString(sentence.Text)
+		b.WriteString("\n")
+	}
+
+	log.Info(unit.FormatSize(int64(b.Len())))
+
+	//// snappy
+	//{
+	//
+	//	log.Info(unit.FormatSize(int64(len(snappy.Encode(nil, b.Bytes())))))
+	//}
+	//
+	//// gzip
+	//{
+	//	bb := log.GetBuffer()
+	//	wr, _ := gzip.NewWriterLevel(bb, 9)
+	//	wr.Write(b.Bytes())
+	//	wr.Flush()
+	//	wr.Close()
+	//	log.Info(unit.FormatSize(int64(bb.Len())))
+	//	log.PutBuffer(bb)
+	//}
+	//
+	//{
+	//	bb := log.GetBuffer()
+	//	wr, _ := flate.NewWriter(bb, flate.BestCompression)
+	//	wr.Write(b.Bytes())
+	//	wr.Flush()
+	//	wr.Close()
+	//	log.Info(unit.FormatSize(int64(bb.Len())))
+	//	log.PutBuffer(bb)
+	//}
+	//
+	//// zlib
+	//{
+	//	bb := log.GetBuffer()
+	//	wr, _ := zlib.NewWriterLevel(bb, 9)
+	//	wr.Write(b.Bytes())
+	//	wr.Flush()
+	//	wr.Close()
+	//	log.Info(unit.FormatSize(int64(bb.Len())))
+	//	log.PutBuffer(bb)
+	//}
+	//
+	//// lz4
+	//{
+	//	bb := log.GetBuffer()
+	//	wr := lz4.NewWriter(bb)
+	//	wr.Apply(lz4.CompressionLevelOption(lz4.Level9))
+	//	wr.Write(b.Bytes())
+	//	wr.Close()
+	//	log.Info(unit.FormatSize(int64(bb.Len())))
+	//	log.PutBuffer(bb)
+	//}
+
+	// brotli
+	bb := log.GetBuffer()
+	wr := brotli.NewWriterLevel(bb, 11)
+	wr.Write(b.Bytes())
+	wr.Close()
+
+	//// zlib
+	//{
+	//	bb := log.GetBuffer()
+	//	wr, _ := zlib.NewWriterLevel(bb, 9)
+	//	wr.Write(b.Bytes())
+	//	wr.Flush()
+	//	wr.Close()
+	//	err := os.WriteFile("../../sentences/sentences.zlib", bb.Bytes(), 0666)
+	//	if err != nil {
+	//		log.Errorf("err:%v", err)
+	//		return err
+	//	}
+	//	log.Info(unit.FormatSize(int64(bb.Len())))
+	//	log.PutBuffer(bb)
+	//}
+
+	err := os.WriteFile("../../sentences/sentences.bin", bb.Bytes(), 0666)
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
+	return nil
+}
+
 func (p *Hitokoto) Save() (err error) {
 	err = p.saveAsJson()
 	if err != nil {
@@ -266,6 +361,12 @@ func (p *Hitokoto) Save() (err error) {
 	}
 
 	err = p.saveAsSql()
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
+	err = p.saveAsBinary()
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err

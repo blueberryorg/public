@@ -72,6 +72,7 @@ DOMAIN-SUFFIX,apache.org,develop
 DOMAIN-SUFFIX,atlassian.com,develop
 DOMAIN-SUFFIX,debian.com,develop
 DOMAIN-SUFFIX,docker.com,develop
+DOMAIN-SUFFIX,docker.io,develop
 DOMAIN-SUFFIX,elastic.co,develop
 DOMAIN-SUFFIX,fontawesome.com,develop
 DOMAIN-SUFFIX,gcr.io,develop

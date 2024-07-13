@@ -1,5 +1,4 @@
 DOMAIN-SUFFIX,google-analytics.com,privacy
-DOMAIN,hm.baidu.com,privacy
 DOMAIN,hmma.baidu.com,privacy
 DOMAIN,ios-pclog.i4.cn,privacy
 DOMAIN,js.users.51.la,privacy
@@ -28,6 +27,7 @@ DOMAIN-SUFFIX,10ro53kulyb.groove.so,privacy
 DOMAIN-SUFFIX,125.net.jumia.co.ke,privacy
 DOMAIN-SUFFIX,12915784.help.sanvello.com,privacy
 DOMAIN-SUFFIX,12build.actonservice.com,privacy
+DOMAIN-SUFFIX,1438976156.recolution.de,privacy
 DOMAIN-SUFFIX,161779.publy.co,privacy
 DOMAIN-SUFFIX,176.net.jumia.ma,privacy
 DOMAIN-SUFFIX,1amehwchx31.bloxdhop.io,privacy
@@ -107,6 +107,7 @@ DOMAIN-SUFFIX,a.spv.se,privacy
 DOMAIN-SUFFIX,a.swd5.com,privacy
 DOMAIN-SUFFIX,a.tactics.com,privacy
 DOMAIN-SUFFIX,a.telus.com,privacy
+DOMAIN-SUFFIX,a.vturb.net,privacy
 DOMAIN-SUFFIX,a.zleep.com,privacy
 DOMAIN-SUFFIX,a10053.actonservice.com,privacy
 DOMAIN-SUFFIX,a10645.actonservice.com,privacy
@@ -2142,6 +2143,7 @@ DOMAIN-SUFFIX,app.pixapp.com,privacy
 DOMAIN-SUFFIX,app.poconoraceway.com,privacy
 DOMAIN-SUFFIX,app.pointer.com.br,privacy
 DOMAIN-SUFFIX,app.pooler.io,privacy
+DOMAIN-SUFFIX,app.popsa.com,privacy
 DOMAIN-SUFFIX,app.poupaenergia.pt,privacy
 DOMAIN-SUFFIX,app.ppacri.org,privacy
 DOMAIN-SUFFIX,app.priceoff.com.br,privacy
@@ -2537,6 +2539,7 @@ DOMAIN-SUFFIX,chelsea.clicks.hqo.co,privacy
 DOMAIN-SUFFIX,cherry.le.com,privacy
 DOMAIN-SUFFIX,ci.quickbooks.com,privacy
 DOMAIN-SUFFIX,cil.isotope.com,privacy
+DOMAIN-SUFFIX,cincinnati-content.cresa.com,privacy
 DOMAIN-SUFFIX,cityrobotflower.com,privacy
 DOMAIN-SUFFIX,ciyacton.ciy.com,privacy
 DOMAIN-SUFFIX,cjcqls.onbuy.com,privacy
@@ -2729,6 +2732,7 @@ DOMAIN-SUFFIX,da.bodenhaus.de,privacy
 DOMAIN-SUFFIX,da.rabobank.nl,privacy
 DOMAIN-SUFFIX,da29e6b8-f018-490f-b25f-39a887fc95e7.xyz,privacy
 DOMAIN-SUFFIX,daifez.thebay.com,privacy
+DOMAIN-SUFFIX,dallas-content.cresa.com,privacy
 DOMAIN-SUFFIX,data-ssl.stepstone.at,privacy
 DOMAIN-SUFFIX,data-ssl.stepstone.be,privacy
 DOMAIN-SUFFIX,data-ssl.stepstone.de,privacy
@@ -3033,6 +3037,7 @@ DOMAIN-SUFFIX,driver.dctaxi.com,privacy
 DOMAIN-SUFFIX,dryvit.actonservice.com,privacy
 DOMAIN-SUFFIX,ds2.independer.nl,privacy
 DOMAIN-SUFFIX,dspx.tv,privacy
+DOMAIN-SUFFIX,durchsichtig.xyz,privacy
 DOMAIN-SUFFIX,dvrxgs.fc-moto.de,privacy
 DOMAIN-SUFFIX,dwin1.com,privacy
 DOMAIN-SUFFIX,dwin2.com,privacy
@@ -3046,7 +3051,6 @@ DOMAIN-SUFFIX,e.gettyimages.ae,privacy
 DOMAIN-SUFFIX,e.gettyimages.in,privacy
 DOMAIN-SUFFIX,e.gettyimages.nl,privacy
 DOMAIN-SUFFIX,e.gettyimages.pt,privacy
-DOMAIN-SUFFIX,e.htplayground.com,privacy
 DOMAIN-SUFFIX,e.mail.levi.com,privacy
 DOMAIN-SUFFIX,e.nicklauschildrens.org,privacy
 DOMAIN-SUFFIX,e.shop.app,privacy
@@ -3172,6 +3176,7 @@ DOMAIN-SUFFIX,elq.eg.co.uk,privacy
 DOMAIN-SUFFIX,elq.egi.co.uk,privacy
 DOMAIN-SUFFIX,elq.hamamatsu.com,privacy
 DOMAIN-SUFFIX,elq.icis.com,privacy
+DOMAIN-SUFFIX,elq.lansa.com,privacy
 DOMAIN-SUFFIX,elq.mouser.ca,privacy
 DOMAIN-SUFFIX,elq.mouser.cn,privacy
 DOMAIN-SUFFIX,elq.mouser.com,privacy
@@ -3365,6 +3370,8 @@ DOMAIN-SUFFIX,everesttech.net,privacy
 DOMAIN-SUFFIX,evergage1.actonservice.com,privacy
 DOMAIN-SUFFIX,evnt.iol.it,privacy
 DOMAIN-SUFFIX,evolent.actonservice.com,privacy
+DOMAIN-SUFFIX,evt.24.com,privacy
+DOMAIN-SUFFIX,ew3.io,privacy
 DOMAIN-SUFFIX,exbujk.glamood.com,privacy
 DOMAIN-SUFFIX,exd4.destinia.com.au,privacy
 DOMAIN-SUFFIX,execgroup.convio.com,privacy
@@ -3400,6 +3407,7 @@ DOMAIN-SUFFIX,fazphz.theiconic.com.au,privacy
 DOMAIN-SUFFIX,fb.echovisuals.com,privacy
 DOMAIN-SUFFIX,fckxdb.hometogo.it,privacy
 DOMAIN-SUFFIX,fdiinc.actonservice.com,privacy
+DOMAIN-SUFFIX,feature-flag-edge.live.clickbus.net,privacy
 DOMAIN-SUFFIX,featured.bradyid.com,privacy
 DOMAIN-SUFFIX,fedsched.actonservice.com,privacy
 DOMAIN-SUFFIX,feedback.campbellmetal.com,privacy
@@ -3412,6 +3420,7 @@ DOMAIN-SUFFIX,ff.pdf.ac,privacy
 DOMAIN-SUFFIX,fgosob.unhcr.it,privacy
 DOMAIN-SUFFIX,fhiwyq.axiory.com,privacy
 DOMAIN-SUFFIX,fhqrnb.feelway.com,privacy
+DOMAIN-SUFFIX,fhss.com.cn,privacy
 DOMAIN-SUFFIX,flexibleplan.actonservice.com,privacy
 DOMAIN-SUFFIX,flipt.actonservice.com,privacy
 DOMAIN-SUFFIX,flixgvid.flix360.io,privacy
@@ -3736,6 +3745,8 @@ DOMAIN-SUFFIX,go.zendesk.com,privacy
 DOMAIN-SUFFIX,go.zvooq.com,privacy
 DOMAIN-SUFFIX,go2.mathworks.com,privacy
 DOMAIN-SUFFIX,goaccredited.actonservice.com,privacy
+DOMAIN-SUFFIX,goat.skeetstats.xyz,privacy
+DOMAIN-SUFFIX,goat.tailspace.net,privacy
 DOMAIN-SUFFIX,god.vsee.me,privacy
 DOMAIN-SUFFIX,godev.steps.me,privacy
 DOMAIN-SUFFIX,gogofunding.actonservice.com,privacy
@@ -3772,6 +3783,7 @@ DOMAIN-SUFFIX,hchlqx.ghbass.com,privacy
 DOMAIN-SUFFIX,hdicsm.autoscout24.be,privacy
 DOMAIN-SUFFIX,hdmtools.com,privacy
 DOMAIN-SUFFIX,heap.drop.com,privacy
+DOMAIN-SUFFIX,hei-tong.com,privacy
 DOMAIN-SUFFIX,helens.actonservice.com,privacy
 DOMAIN-SUFFIX,hello.bpost.be,privacy
 DOMAIN-SUFFIX,hello.bpost2.be,privacy
@@ -3792,10 +3804,12 @@ DOMAIN-SUFFIX,hhglobal.actonservice.com,privacy
 DOMAIN-SUFFIX,hhhedv.luxauto.lu,privacy
 DOMAIN-SUFFIX,hi.hipcamp.com,privacy
 DOMAIN-SUFFIX,hi.wooribank.com,privacy
+DOMAIN-SUFFIX,hicore-auth.com,privacy
 DOMAIN-SUFFIX,highlights-schwackenet.schwacke.de,privacy
 DOMAIN-SUFFIX,highwoods.actonservice.com,privacy
 DOMAIN-SUFFIX,hijxfm.gaspedaal.nl,privacy
 DOMAIN-SUFFIX,hines.actonservice.com,privacy
+DOMAIN-SUFFIX,hit.cnbce.com,privacy
 DOMAIN-SUFFIX,hits.antena3.com,privacy
 DOMAIN-SUFFIX,hits.dealer.com,privacy
 DOMAIN-SUFFIX,hitserver.ibope.com.br,privacy
@@ -3826,11 +3840,14 @@ DOMAIN-SUFFIX,hootsuite.branch.rocks,privacy
 DOMAIN-SUFFIX,hopeful.coh.org,privacy
 DOMAIN-SUFFIX,hospitality.redbull.racing,privacy
 DOMAIN-SUFFIX,host.roxiapp.com,privacy
+DOMAIN-SUFFIX,houston-content.cresa.com,privacy
 DOMAIN-SUFFIX,hplkcs.emp-shop.no,privacy
 DOMAIN-SUFFIX,hsadspixel.net,privacy
 DOMAIN-SUFFIX,hst2-invite.ander.ai,privacy
 DOMAIN-SUFFIX,hstats.hepsiburada.com,privacy
+DOMAIN-SUFFIX,hstatstest.hepsiburada.com,privacy
 DOMAIN-SUFFIX,htc.oaken.com,privacy
+DOMAIN-SUFFIX,htplayground.com,privacy
 DOMAIN-SUFFIX,hub.hubinternational.com,privacy
 DOMAIN-SUFFIX,hubert.branch.rocks,privacy
 DOMAIN-SUFFIX,hudhno.jdsports.es,privacy
@@ -3873,6 +3890,7 @@ DOMAIN-SUFFIX,idbkfy.kango-roo.com,privacy
 DOMAIN-SUFFIX,ideadevice.actonservice.com,privacy
 DOMAIN-SUFFIX,ids.actonservice.com,privacy
 DOMAIN-SUFFIX,idstatus.sky.com,privacy
+DOMAIN-SUFFIX,ifcert.cn,privacy
 DOMAIN-SUFFIX,ifnyop.priceline.com,privacy
 DOMAIN-SUFFIX,ig.ig.com,privacy
 DOMAIN-SUFFIX,igc0.destinia.at,privacy
@@ -4148,6 +4166,7 @@ DOMAIN-SUFFIX,l.siply.in,privacy
 DOMAIN-SUFFIX,l.sqrrl.in,privacy
 DOMAIN-SUFFIX,l.umba.com,privacy
 DOMAIN-SUFFIX,l.urban.com.au,privacy
+DOMAIN-SUFFIX,l.voleousa.com,privacy
 DOMAIN-SUFFIX,l.whizzl.com,privacy
 DOMAIN-SUFFIX,l2k30jsa.theochu.com,privacy
 DOMAIN-SUFFIX,lan.landing.ni.com,privacy
@@ -4177,6 +4196,7 @@ DOMAIN-SUFFIX,lets.instantify.it,privacy
 DOMAIN-SUFFIX,lets.useflash.app,privacy
 DOMAIN-SUFFIX,lets.watcho.com,privacy
 DOMAIN-SUFFIX,levi247.levi.com,privacy
+DOMAIN-SUFFIX,lezntf.heydudeshoesusa.com,privacy
 DOMAIN-SUFFIX,lfercl.tcb-beauty.net,privacy
 DOMAIN-SUFFIX,lfn.lfg.com,privacy
 DOMAIN-SUFFIX,lfxdqs.mamasandpapas.ae,privacy
@@ -4310,6 +4330,7 @@ DOMAIN-SUFFIX,link.loxclubapp.com,privacy
 DOMAIN-SUFFIX,link.lpt.surkus.com,privacy
 DOMAIN-SUFFIX,link.made.com,privacy
 DOMAIN-SUFFIX,link.mail.burgerking.ca,privacy
+DOMAIN-SUFFIX,link.mail.popsa.com,privacy
 DOMAIN-SUFFIX,link.mail.step.com,privacy
 DOMAIN-SUFFIX,link.medibuddy.app,privacy
 DOMAIN-SUFFIX,link.midnite.com,privacy
@@ -4598,6 +4619,7 @@ DOMAIN-SUFFIX,mail.wondery.com,privacy
 DOMAIN-SUFFIX,mailer.conad.com,privacy
 DOMAIN-SUFFIX,maling.dn.no,privacy
 DOMAIN-SUFFIX,mallioras.openapp.link,privacy
+DOMAIN-SUFFIX,mapixl.com,privacy
 DOMAIN-SUFFIX,mapp.ewm.co.uk,privacy
 DOMAIN-SUFFIX,mapp.jysk.nl,privacy
 DOMAIN-SUFFIX,mas.nth.ch,privacy
@@ -4619,6 +4641,7 @@ DOMAIN-SUFFIX,me.sigsauer.com,privacy
 DOMAIN-SUFFIX,med.aerochambervhc.com,privacy
 DOMAIN-SUFFIX,med.androderm.com,privacy
 DOMAIN-SUFFIX,med.avycaz.com,privacy
+DOMAIN-SUFFIX,med.canasa.com,privacy
 DOMAIN-SUFFIX,med.delzicol.com,privacy
 DOMAIN-SUFFIX,med.liletta.com,privacy
 DOMAIN-SUFFIX,med.lilettahcp.com,privacy
@@ -4664,6 +4687,7 @@ DOMAIN-SUFFIX,meter.bref.sh,privacy
 DOMAIN-SUFFIX,mexico.balluff.com,privacy
 DOMAIN-SUFFIX,meylercapital.actonservice.com,privacy
 DOMAIN-SUFFIX,meypeg.videdressing.com,privacy
+DOMAIN-SUFFIX,mgln.ai,privacy
 DOMAIN-SUFFIX,microlise.actonservice.com,privacy
 DOMAIN-SUFFIX,micronetonline.actonservice.com,privacy
 DOMAIN-SUFFIX,mikelperaia.openapp.link,privacy
@@ -4795,6 +4819,7 @@ DOMAIN-SUFFIX,odepcf.modetour.com,privacy
 DOMAIN-SUFFIX,oesonx.10000recipe.com,privacy
 DOMAIN-SUFFIX,offer.coface.com,privacy
 DOMAIN-SUFFIX,offer.lyreco.com,privacy
+DOMAIN-SUFFIX,ofqkbk.proclipusa.com,privacy
 DOMAIN-SUFFIX,ogzucf.all4golf.de,privacy
 DOMAIN-SUFFIX,oimg.nbcsports.com,privacy
 DOMAIN-SUFFIX,oit4.destinia.com.br,privacy
@@ -4882,6 +4907,7 @@ DOMAIN-SUFFIX,p.cab.ua,privacy
 DOMAIN-SUFFIX,p.ejs.dev,privacy
 DOMAIN-SUFFIX,p.gazeta.pl,privacy
 DOMAIN-SUFFIX,p.ianmjones.com,privacy
+DOMAIN-SUFFIX,p.minds.com,privacy
 DOMAIN-SUFFIX,p.placed.com,privacy
 DOMAIN-SUFFIX,p.victoria.dev,privacy
 DOMAIN-SUFFIX,p.wren.co,privacy
@@ -4901,6 +4927,7 @@ DOMAIN-SUFFIX,pal-v.actonservice.com,privacy
 DOMAIN-SUFFIX,paladion.actonservice.com,privacy
 DOMAIN-SUFFIX,pampopholf.com,privacy
 DOMAIN-SUFFIX,panda.kasika.io,privacy
+DOMAIN-SUFFIX,panorama.wixapps.net,privacy
 DOMAIN-SUFFIX,pasco.actonservice.com,privacy
 DOMAIN-SUFFIX,payqjd.subito.it,privacy
 DOMAIN-SUFFIX,pbc.programbrokerage.com,privacy
@@ -4917,7 +4944,9 @@ DOMAIN-SUFFIX,pets.channeladvisor.com,privacy
 DOMAIN-SUFFIX,ph.roturadepantalla.com,privacy
 DOMAIN-SUFFIX,phadia.thermo.com,privacy
 DOMAIN-SUFFIX,phcbi-solution.phchd.com,privacy
+DOMAIN-SUFFIX,philadelphia-content.cresa.com,privacy
 DOMAIN-SUFFIX,phionline.actonservice.com,privacy
+DOMAIN-SUFFIX,phoenix-content.cresa.com,privacy
 DOMAIN-SUFFIX,phoenix.thexlife.co,privacy
 DOMAIN-SUFFIX,phyins.actonservice.com,privacy
 DOMAIN-SUFFIX,pi.ispot.tv,privacy
@@ -5006,6 +5035,7 @@ DOMAIN-SUFFIX,plausible.reabra.com.br,privacy
 DOMAIN-SUFFIX,plausible.redchamp.net,privacy
 DOMAIN-SUFFIX,plausible.regex.help,privacy
 DOMAIN-SUFFIX,plausible.retune.de,privacy
+DOMAIN-SUFFIX,plausible.server.hakai.app,privacy
 DOMAIN-SUFFIX,plausible.shadygrovepca.org,privacy
 DOMAIN-SUFFIX,plausible.simplelogin.io,privacy
 DOMAIN-SUFFIX,plausible.tasteslikeme.ca,privacy
@@ -5040,6 +5070,7 @@ DOMAIN-SUFFIX,pool.onjoyride.com,privacy
 DOMAIN-SUFFIX,pop.dmglobal.com,privacy
 DOMAIN-SUFFIX,popup-static.unisender.com,privacy
 DOMAIN-SUFFIX,portal.dcgone.com,privacy
+DOMAIN-SUFFIX,powerrobotflower.com,privacy
 DOMAIN-SUFFIX,ppadv.actonservice.com,privacy
 DOMAIN-SUFFIX,pqciix.busuu.com,privacy
 DOMAIN-SUFFIX,pr.cision.co.uk,privacy
@@ -5145,6 +5176,7 @@ DOMAIN-SUFFIX,r.niwepa.com,privacy
 DOMAIN-SUFFIX,r.onmyway.com,privacy
 DOMAIN-SUFFIX,r.powuta.com,privacy
 DOMAIN-SUFFIX,r.rover.com,privacy
+DOMAIN-SUFFIX,r.wz.de,privacy
 DOMAIN-SUFFIX,r42tag.com,privacy
 DOMAIN-SUFFIX,raac33.net,privacy
 DOMAIN-SUFFIX,radiometer.actonservice.com,privacy
@@ -5163,6 +5195,7 @@ DOMAIN-SUFFIX,ready.nerdery.com,privacy
 DOMAIN-SUFFIX,realogic.actonservice.com,privacy
 DOMAIN-SUFFIX,realogicinc.actonservice.com,privacy
 DOMAIN-SUFFIX,recoverypoint.actonservice.com,privacy
+DOMAIN-SUFFIX,recs-api.conde.digital,privacy
 DOMAIN-SUFFIX,redbooks.actonservice.com,privacy
 DOMAIN-SUFFIX,redclassic.actonservice.com,privacy
 DOMAIN-SUFFIX,redlion.actonservice.com,privacy
@@ -5460,6 +5493,7 @@ DOMAIN-SUFFIX,seyfwl.maxmodels.pl,privacy
 DOMAIN-SUFFIX,seyfwl.okazjum.pl,privacy
 DOMAIN-SUFFIX,seyfwl.pomponik.pl,privacy
 DOMAIN-SUFFIX,seyfwl.smaker.pl,privacy
+DOMAIN-SUFFIX,sf-insights.io,privacy
 DOMAIN-SUFFIX,sf-test.groc.press,privacy
 DOMAIN-SUFFIX,sf.groc.press,privacy
 DOMAIN-SUFFIX,sf4567w2a56q.branch.salesfloor.net,privacy
@@ -5599,6 +5633,7 @@ DOMAIN-SUFFIX,ssc.urduvoa.com,privacy
 DOMAIN-SUFFIX,ssc.vh1.com,privacy
 DOMAIN-SUFFIX,ssc.vidcon.com,privacy
 DOMAIN-SUFFIX,ssc.voabangla.com,privacy
+DOMAIN-SUFFIX,ssc.voahausa.com,privacy
 DOMAIN-SUFFIX,ssc.voandebele.com,privacy
 DOMAIN-SUFFIX,ssc.voanouvel.com,privacy
 DOMAIN-SUFFIX,ssc.voashona.com,privacy
@@ -5699,6 +5734,9 @@ DOMAIN-SUFFIX,st.der-kleine-ice.de,privacy
 DOMAIN-SUFFIX,st.hbrd.io,privacy
 DOMAIN-SUFFIX,st.iceportal.de,privacy
 DOMAIN-SUFFIX,st.img-bahn.de,privacy
+DOMAIN-SUFFIX,st.mapleranks.com,privacy
+DOMAIN-SUFFIX,st.mazdausa.com,privacy
+DOMAIN-SUFFIX,st.onemazdausa.com,privacy
 DOMAIN-SUFFIX,st.picshuffle.com,privacy
 DOMAIN-SUFFIX,st.preciousamber.com,privacy
 DOMAIN-SUFFIX,st.s-bahn-muenchen-magazin.de,privacy
@@ -5830,6 +5868,7 @@ DOMAIN-SUFFIX,stats.fd.nl,privacy
 DOMAIN-SUFFIX,stats.feathercss.makerkits.co,privacy
 DOMAIN-SUFFIX,stats.felipesere.com,privacy
 DOMAIN-SUFFIX,stats.fhb.com,privacy
+DOMAIN-SUFFIX,stats.flixhq.live,privacy
 DOMAIN-SUFFIX,stats.fs4c.org,privacy
 DOMAIN-SUFFIX,stats.gateio.ch,privacy
 DOMAIN-SUFFIX,stats.geobox.app,privacy
@@ -6215,6 +6254,7 @@ DOMAIN-SUFFIX,tag.shopping-feed.com,privacy
 DOMAIN-SUFFIX,tagm.tchibo.de,privacy
 DOMAIN-SUFFIX,tags.aljazeera.com,privacy
 DOMAIN-SUFFIX,tags.aljazeera.net,privacy
+DOMAIN-SUFFIX,tags.hilabel.nl,privacy
 DOMAIN-SUFFIX,tags.igeo.com.bo,privacy
 DOMAIN-SUFFIX,tags.johnlewis.com,privacy
 DOMAIN-SUFFIX,tags.master-perf-tools.com,privacy
@@ -6305,6 +6345,7 @@ DOMAIN-SUFFIX,tock.weg.plus,privacy
 DOMAIN-SUFFIX,tongji.xinmin.cn,privacy
 DOMAIN-SUFFIX,toonboom.actonservice.com,privacy
 DOMAIN-SUFFIX,top.skyzone.ro,privacy
+DOMAIN-SUFFIX,toronto-content.cresa.com,privacy
 DOMAIN-SUFFIX,torrentcorp.actonservice.com,privacy
 DOMAIN-SUFFIX,toto.pandasuite.io,privacy
 DOMAIN-SUFFIX,touchtown.actonservice.com,privacy
@@ -6393,6 +6434,7 @@ DOMAIN-SUFFIX,ussco-dev.actonservice.com,privacy
 DOMAIN-SUFFIX,utexas.actonservice.com,privacy
 DOMAIN-SUFFIX,utxokv.emp.co.uk,privacy
 DOMAIN-SUFFIX,uvzrtq.livingspaces.com,privacy
+DOMAIN-SUFFIX,uylodc.ecosa.com.au,privacy
 DOMAIN-SUFFIX,v.angha.me,privacy
 DOMAIN-SUFFIX,v.cameo.com,privacy
 DOMAIN-SUFFIX,v.myvoleo.com,privacy
@@ -6451,6 +6493,7 @@ DOMAIN-SUFFIX,vzeyba.shopee.co.id,privacy
 DOMAIN-SUFFIX,vzynem.lamporochljus.se,privacy
 DOMAIN-SUFFIX,w.ilfattoquotidiano.it,privacy
 DOMAIN-SUFFIX,w3n.llbean.com,privacy
+DOMAIN-SUFFIX,w6.chabad.org,privacy
 DOMAIN-SUFFIX,wa.and.co.uk,privacy
 DOMAIN-SUFFIX,wa.bol.com,privacy
 DOMAIN-SUFFIX,wa.childrensplace.com,privacy
@@ -6466,6 +6509,7 @@ DOMAIN-SUFFIX,wa.web.de,privacy
 DOMAIN-SUFFIX,wasc.kaufland.ro,privacy
 DOMAIN-SUFFIX,washlaundry.actonservice.com,privacy
 DOMAIN-SUFFIX,watch.vipa.me,privacy
+DOMAIN-SUFFIX,watchtower.graindata.com,privacy
 DOMAIN-SUFFIX,wave.getonthewave.com,privacy
 DOMAIN-SUFFIX,wayyaj8t094u.www.kodalia.com,privacy
 DOMAIN-SUFFIX,wbiphu.johnbeerens.com,privacy
@@ -6496,6 +6540,7 @@ DOMAIN-SUFFIX,web.mailing.storz-bickel.com,privacy
 DOMAIN-SUFFIX,web.mapp.skousen.no,privacy
 DOMAIN-SUFFIX,web.northwestern.nm.org,privacy
 DOMAIN-SUFFIX,web.novogene.com,privacy
+DOMAIN-SUFFIX,web.online.monnalisa.com,privacy
 DOMAIN-SUFFIX,web.sensilab.com,privacy
 DOMAIN-SUFFIX,web.sensilab.de,privacy
 DOMAIN-SUFFIX,web.sensilab.es,privacy
@@ -6746,6 +6791,7 @@ DOMAIN-SUFFIX,www91.intel.in,privacy
 DOMAIN-SUFFIX,www91.intel.it,privacy
 DOMAIN-SUFFIX,www91.intel.la,privacy
 DOMAIN-SUFFIX,www91.intel.pl,privacy
+DOMAIN-SUFFIX,wxbaal.ecosa.com.hk,privacy
 DOMAIN-SUFFIX,wywvyf.price.com.hk,privacy
 DOMAIN-SUFFIX,wzcnha.lenspure.com,privacy
 DOMAIN-SUFFIX,x.gldn.io,privacy
@@ -6814,9 +6860,20 @@ DOMAIN-SUFFIX,zs.voyage-prive.com,privacy
 DOMAIN-SUFFIX,zuidema.actonservice.com,privacy
 DOMAIN-SUFFIX,zxbumj.edreams.it,privacy
 DOMAIN-SUFFIX,zyq2.destinia.sk,privacy
+DOMAIN-KEYWORD,analytics.,privacy
+DOMAIN-KEYWORD,app-analytics,privacy
+DOMAIN-KEYWORD,app-log.,privacy
+DOMAIN-KEYWORD,applog.,privacy
+DOMAIN-KEYWORD,fzlm,privacy
+DOMAIN-KEYWORD,ios-log.,privacy
+DOMAIN-KEYWORD,ioslog.,privacy
+DOMAIN-KEYWORD,pc-log.,privacy
+DOMAIN-KEYWORD,pclog.,privacy
 IP-CIDR,0.0.0.1/32,privacy
 IP-CIDR,109.123.233.251/32,privacy
+IP-CIDR,157.148.47.204/32,privacy
 IP-CIDR,185.193.38.148/32,privacy
+IP-CIDR,219.143.187.136/32,privacy
 IP-CIDR,34.215.155.61/32,privacy
 IP-CIDR,35.194.26.233/32,privacy
 IP-CIDR,35.239.57.233/32,privacy

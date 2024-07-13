@@ -66,6 +66,7 @@ HOST-SUFFIX,apache.org,develop
 HOST-SUFFIX,atlassian.com,develop
 HOST-SUFFIX,debian.com,develop
 HOST-SUFFIX,docker.com,develop
+HOST-SUFFIX,docker.io,develop
 HOST-SUFFIX,elastic.co,develop
 HOST-SUFFIX,fontawesome.com,develop
 HOST-SUFFIX,gcr.io,develop

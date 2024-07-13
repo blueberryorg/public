@@ -4,15 +4,18 @@ go 1.21
 
 require (
 	github.com/Dreamacro/clash v1.18.0
+	github.com/andybalholm/brotli v1.1.0
 	github.com/antchfx/htmlquery v1.3.0
 	github.com/beefsack/go-rate v0.0.0-20220214233405-116f4ca011a0
 	github.com/elliotchance/pie/v2 v2.8.0
 	github.com/go-resty/resty/v2 v2.11.0
+	github.com/golang/snappy v0.0.4
 	github.com/ice-cream-heaven/log v0.0.0-20231226121119-ad85a78da0fd
 	github.com/ice-cream-heaven/utils v0.0.0-20240204071621-d38ffa7aca6f
 	github.com/jpillora/backoff v1.0.0
 	github.com/maxmind/mmdbwriter v1.0.0
 	github.com/minio/minio-go/v7 v7.0.66
+	github.com/pierrec/lz4/v4 v4.1.14
 	github.com/projectdiscovery/mapcidr v1.1.16
 	github.com/pterm/pterm v0.12.78
 	golang.org/x/net v0.20.0
