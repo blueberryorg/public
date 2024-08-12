@@ -129,6 +129,7 @@ IP-CIDR,2a0a:f280::/29
 PROCESS-NAME,nekox.messenger
 PROCESS-NAME,org.telegram.messenger
 PROCESS-NAME,telegram-desktop
+PROCESS-NAME,tw.nekomimi.nekogram
 DOMAIN,voice.telephony.goog
 DOMAIN-SUFFIX,0emm.com
 DOMAIN-SUFFIX,1e100.net
@@ -1640,6 +1641,7 @@ DOMAIN-SUFFIX,tiktokd.org
 DOMAIN-SUFFIX,tiktokmusic.app
 DOMAIN-SUFFIX,tiktokv.com
 DOMAIN-SUFFIX,tiktokv.us
+DOMAIN-SUFFIX,ttwebview.com
 DOMAIN-KEYWORD,musical.ly
 DOMAIN-KEYWORD,tiktok
 PROCESS-NAME,com.zhiliaoapp.musically
@@ -3096,6 +3098,7 @@ DOMAIN-SUFFIX,avyahoo.com
 DOMAIN-SUFFIX,axios.com
 DOMAIN-SUFFIX,axureformac.com
 DOMAIN-SUFFIX,azerbaycan.tv
+DOMAIN-SUFFIX,azirevpn.com
 DOMAIN-SUFFIX,azubu.tv
 DOMAIN-SUFFIX,b-ok.cc
 DOMAIN-SUFFIX,b0ne.com
@@ -3592,6 +3595,7 @@ DOMAIN-SUFFIX,clubhouseapi.com
 DOMAIN-SUFFIX,clyp.it
 DOMAIN-SUFFIX,cmail19.com
 DOMAIN-SUFFIX,cmcn.org
+DOMAIN-SUFFIX,cmegroup.com
 DOMAIN-SUFFIX,cmi.org.tw
 DOMAIN-SUFFIX,cmoinc.org
 DOMAIN-SUFFIX,cms.gov
@@ -4888,6 +4892,7 @@ DOMAIN-SUFFIX,im.tv
 DOMAIN-SUFFIX,im88.tw
 DOMAIN-SUFFIX,imageab.com
 DOMAIN-SUFFIX,imagefap.com
+DOMAIN-SUFFIX,imageglass.org
 DOMAIN-SUFFIX,imageshack.us
 DOMAIN-SUFFIX,imagevenue.com
 DOMAIN-SUFFIX,imagezilla.net
@@ -5003,6 +5008,7 @@ DOMAIN-SUFFIX,iuksky.com
 DOMAIN-SUFFIX,ivacy.com
 DOMAIN-SUFFIX,iverycd.com
 DOMAIN-SUFFIX,ivpn.net
+DOMAIN-SUFFIX,iwara.tv
 DOMAIN-SUFFIX,ixquick.com
 DOMAIN-SUFFIX,iyouport.org
 DOMAIN-SUFFIX,izaobao.us
@@ -7009,6 +7015,7 @@ DOMAIN-SUFFIX,tibetsupportgroup.org
 DOMAIN-SUFFIX,tibetswiss.ch
 DOMAIN-SUFFIX,tibettelegraph.com
 DOMAIN-SUFFIX,tibettimes.net
+DOMAIN-SUFFIX,tibettruth.com
 DOMAIN-SUFFIX,tibetwrites.org
 DOMAIN-SUFFIX,tigervpn.com
 DOMAIN-SUFFIX,timdir.com

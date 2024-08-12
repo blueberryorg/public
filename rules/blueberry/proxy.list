@@ -129,6 +129,7 @@ IP-CIDR,2a0a:f280::/29,proxy
 PROCESS-NAME,nekox.messenger,proxy
 PROCESS-NAME,org.telegram.messenger,proxy
 PROCESS-NAME,telegram-desktop,proxy
+PROCESS-NAME,tw.nekomimi.nekogram,proxy
 DOMAIN,voice.telephony.goog,proxy
 DOMAIN-SUFFIX,0emm.com,proxy
 DOMAIN-SUFFIX,1e100.net,proxy
@@ -1640,6 +1641,7 @@ DOMAIN-SUFFIX,tiktokd.org,proxy
 DOMAIN-SUFFIX,tiktokmusic.app,proxy
 DOMAIN-SUFFIX,tiktokv.com,proxy
 DOMAIN-SUFFIX,tiktokv.us,proxy
+DOMAIN-SUFFIX,ttwebview.com,proxy
 DOMAIN-KEYWORD,musical.ly,proxy
 DOMAIN-KEYWORD,tiktok,proxy
 PROCESS-NAME,com.zhiliaoapp.musically,proxy
@@ -3096,6 +3098,7 @@ DOMAIN-SUFFIX,avyahoo.com,proxy
 DOMAIN-SUFFIX,axios.com,proxy
 DOMAIN-SUFFIX,axureformac.com,proxy
 DOMAIN-SUFFIX,azerbaycan.tv,proxy
+DOMAIN-SUFFIX,azirevpn.com,proxy
 DOMAIN-SUFFIX,azubu.tv,proxy
 DOMAIN-SUFFIX,b-ok.cc,proxy
 DOMAIN-SUFFIX,b0ne.com,proxy
@@ -3592,6 +3595,7 @@ DOMAIN-SUFFIX,clubhouseapi.com,proxy
 DOMAIN-SUFFIX,clyp.it,proxy
 DOMAIN-SUFFIX,cmail19.com,proxy
 DOMAIN-SUFFIX,cmcn.org,proxy
+DOMAIN-SUFFIX,cmegroup.com,proxy
 DOMAIN-SUFFIX,cmi.org.tw,proxy
 DOMAIN-SUFFIX,cmoinc.org,proxy
 DOMAIN-SUFFIX,cms.gov,proxy
@@ -4888,6 +4892,7 @@ DOMAIN-SUFFIX,im.tv,proxy
 DOMAIN-SUFFIX,im88.tw,proxy
 DOMAIN-SUFFIX,imageab.com,proxy
 DOMAIN-SUFFIX,imagefap.com,proxy
+DOMAIN-SUFFIX,imageglass.org,proxy
 DOMAIN-SUFFIX,imageshack.us,proxy
 DOMAIN-SUFFIX,imagevenue.com,proxy
 DOMAIN-SUFFIX,imagezilla.net,proxy
@@ -5003,6 +5008,7 @@ DOMAIN-SUFFIX,iuksky.com,proxy
 DOMAIN-SUFFIX,ivacy.com,proxy
 DOMAIN-SUFFIX,iverycd.com,proxy
 DOMAIN-SUFFIX,ivpn.net,proxy
+DOMAIN-SUFFIX,iwara.tv,proxy
 DOMAIN-SUFFIX,ixquick.com,proxy
 DOMAIN-SUFFIX,iyouport.org,proxy
 DOMAIN-SUFFIX,izaobao.us,proxy
@@ -7009,6 +7015,7 @@ DOMAIN-SUFFIX,tibetsupportgroup.org,proxy
 DOMAIN-SUFFIX,tibetswiss.ch,proxy
 DOMAIN-SUFFIX,tibettelegraph.com,proxy
 DOMAIN-SUFFIX,tibettimes.net,proxy
+DOMAIN-SUFFIX,tibettruth.com,proxy
 DOMAIN-SUFFIX,tibetwrites.org,proxy
 DOMAIN-SUFFIX,tigervpn.com,proxy
 DOMAIN-SUFFIX,timdir.com,proxy

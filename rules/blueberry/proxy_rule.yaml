@@ -139,13 +139,13 @@ adapters:
 rule_list:
     - iqiyi
     - disney
-    - bilibili
-    - direct
+    - develop
+    - privacy
+    - proxy
     - game
     - youtube
-    - proxy
     - netflix
-    - openai
-    - develop
+    - direct
     - reject
-    - privacy
+    - bilibili
+    - openai

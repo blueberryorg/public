@@ -18,6 +18,8 @@ DOMAIN-SUFFIX,google-analytics.com,privacy
 
 # 开发相关
 DOMAIN-SUFFIX,hellogithub.com,direct
+DOMAIN-SUFFIX,ant.design,direct
+DOMAIN,ant.design,direct
 
 # 大米星球
 DOMAIN-SUFFIX,dami5tv.com,direct

@@ -1609,6 +1609,7 @@ HOST-SUFFIX,tiktokd.org,proxy
 HOST-SUFFIX,tiktokmusic.app,proxy
 HOST-SUFFIX,tiktokv.com,proxy
 HOST-SUFFIX,tiktokv.us,proxy
+HOST-SUFFIX,ttwebview.com,proxy
 HOST-KEYWORD,musical.ly,proxy
 HOST-KEYWORD,tiktok,proxy
 HOST-SUFFIX,dmc.nico,proxy
@@ -3061,6 +3062,7 @@ HOST-SUFFIX,avyahoo.com,proxy
 HOST-SUFFIX,axios.com,proxy
 HOST-SUFFIX,axureformac.com,proxy
 HOST-SUFFIX,azerbaycan.tv,proxy
+HOST-SUFFIX,azirevpn.com,proxy
 HOST-SUFFIX,azubu.tv,proxy
 HOST-SUFFIX,b-ok.cc,proxy
 HOST-SUFFIX,b0ne.com,proxy
@@ -3557,6 +3559,7 @@ HOST-SUFFIX,clubhouseapi.com,proxy
 HOST-SUFFIX,clyp.it,proxy
 HOST-SUFFIX,cmail19.com,proxy
 HOST-SUFFIX,cmcn.org,proxy
+HOST-SUFFIX,cmegroup.com,proxy
 HOST-SUFFIX,cmi.org.tw,proxy
 HOST-SUFFIX,cmoinc.org,proxy
 HOST-SUFFIX,cms.gov,proxy
@@ -4853,6 +4856,7 @@ HOST-SUFFIX,im.tv,proxy
 HOST-SUFFIX,im88.tw,proxy
 HOST-SUFFIX,imageab.com,proxy
 HOST-SUFFIX,imagefap.com,proxy
+HOST-SUFFIX,imageglass.org,proxy
 HOST-SUFFIX,imageshack.us,proxy
 HOST-SUFFIX,imagevenue.com,proxy
 HOST-SUFFIX,imagezilla.net,proxy
@@ -4968,6 +4972,7 @@ HOST-SUFFIX,iuksky.com,proxy
 HOST-SUFFIX,ivacy.com,proxy
 HOST-SUFFIX,iverycd.com,proxy
 HOST-SUFFIX,ivpn.net,proxy
+HOST-SUFFIX,iwara.tv,proxy
 HOST-SUFFIX,ixquick.com,proxy
 HOST-SUFFIX,iyouport.org,proxy
 HOST-SUFFIX,izaobao.us,proxy
@@ -6974,6 +6979,7 @@ HOST-SUFFIX,tibetsupportgroup.org,proxy
 HOST-SUFFIX,tibetswiss.ch,proxy
 HOST-SUFFIX,tibettelegraph.com,proxy
 HOST-SUFFIX,tibettimes.net,proxy
+HOST-SUFFIX,tibettruth.com,proxy
 HOST-SUFFIX,tibetwrites.org,proxy
 HOST-SUFFIX,tigervpn.com,proxy
 HOST-SUFFIX,timdir.com,proxy
