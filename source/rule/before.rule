@@ -1,3 +1,24 @@
+# dns
+# 腾讯
+IP-CIDR,119.29.29.29/32,direct
+IP-CIDR,1.12.12.12/32,direct
+DOMAIN,dot.pub,direct
+DOMAIN,doh.pub,direct
+# 阿里云
+IP-CIDR,223.5.5.5/32,direct
+DOMAIN,dns.alidns.com,direct
+# 字节跳动
+IP-CIDR,180.184.1.1/32,direct
+# Level3
+IP-CIDR,209.244.0.3/32,direct
+IP-CIDR,209.244.0.4/32,direct
+IP-CIDR,4.2.2.1/32,direct
+IP-CIDR,4.2.2.2/32,direct
+IP-CIDR,4.2.2.3/32,direct
+IP-CIDR,4.2.2.4/32,direct
+IP-CIDR,4.2.2.5/32,direct
+IP-CIDR,4.2.2.6/32,direct
+
 DOMAIN-SUFFIX,csdn.net,direct
 DOMAIN-SUFFIX,qvcp1z.cf,direct
 DOMAIN-SUFFIX,qvcp1z.tk,direct
@@ -18,8 +39,6 @@ DOMAIN-SUFFIX,google-analytics.com,privacy
 
 # 开发相关
 DOMAIN-SUFFIX,hellogithub.com,direct
-DOMAIN-SUFFIX,ant.design,direct
-DOMAIN,ant.design,direct
 
 # 大米星球
 DOMAIN-SUFFIX,dami5tv.com,direct
@@ -108,7 +127,7 @@ DOMAIN-SUFFIX,acgnxtracker.com,proxy
 DOMAIN-SUFFIX,incine.ru,proxy
 DOMAIN-SUFFIX,fxtt.ru,proxy
 DOMAIN-SUFFIX,fosstorrents.com,proxy
-DOMAIN-SUFFIX,okmp3.ru,proxy
+DOMAIN-SUFFIX,okmp3/32.ru,proxy
 DOMAIN-SUFFIX,tracker.bz,proxy
 DOMAIN-SUFFIX,tracker.wf,proxy
 DOMAIN-SUFFIX,0g.cx,proxy

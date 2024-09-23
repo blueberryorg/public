@@ -56,7 +56,7 @@ DOMAIN-SUFFIX,acgnxtracker.com
 DOMAIN-SUFFIX,incine.ru
 DOMAIN-SUFFIX,fxtt.ru
 DOMAIN-SUFFIX,fosstorrents.com
-DOMAIN-SUFFIX,okmp3.ru
+DOMAIN-SUFFIX,okmp3/32.ru
 DOMAIN-SUFFIX,tracker.bz
 DOMAIN-SUFFIX,tracker.wf
 DOMAIN-SUFFIX,0g.cx
@@ -1054,6 +1054,7 @@ DOMAIN-SUFFIX,msftauthimages.cn
 DOMAIN-SUFFIX,msftauthimages.net
 DOMAIN-SUFFIX,msftcenterone.cn
 DOMAIN-SUFFIX,msftcloudes.cn
+DOMAIN-SUFFIX,msftconnecttest.com
 DOMAIN-SUFFIX,msfteducation.ca
 DOMAIN-SUFFIX,msftidentity.com
 DOMAIN-SUFFIX,msftnet.org
@@ -1236,6 +1237,15 @@ DOMAIN-KEYWORD,skydrive
 PROCESS-NAME,OneDrive
 PROCESS-NAME,OneDriveUpdater
 DOMAIN-SUFFIX,cf-ipfs.com
+DOMAIN-SUFFIX,cf-ns.com
+DOMAIN-SUFFIX,cf-ns.net
+DOMAIN-SUFFIX,cf-ns.site
+DOMAIN-SUFFIX,cf-ns.tech
+DOMAIN-SUFFIX,cftest5.cn
+DOMAIN-SUFFIX,cftest6.cn
+DOMAIN-SUFFIX,cftest7.com
+DOMAIN-SUFFIX,cftest8.com
+DOMAIN-SUFFIX,cloudflare-cn.com
 DOMAIN-SUFFIX,cloudflare-dns.com
 DOMAIN-SUFFIX,cloudflare-ipfs.com
 DOMAIN-SUFFIX,cloudflare-quic.com
@@ -1246,13 +1256,18 @@ DOMAIN-SUFFIX,cloudflareaccess.com
 DOMAIN-SUFFIX,cloudflareapps.com
 DOMAIN-SUFFIX,cloudflarebolt.com
 DOMAIN-SUFFIX,cloudflareclient.com
+DOMAIN-SUFFIX,cloudflarecn.net
+DOMAIN-SUFFIX,cloudflareinsights-cn.com
 DOMAIN-SUFFIX,cloudflareinsights.com
 DOMAIN-SUFFIX,cloudflareok.com
 DOMAIN-SUFFIX,cloudflarepreview.com
+DOMAIN-SUFFIX,cloudflareprod.com
 DOMAIN-SUFFIX,cloudflareresolve.com
 DOMAIN-SUFFIX,cloudflaressl.com
+DOMAIN-SUFFIX,cloudflarestaging.com
 DOMAIN-SUFFIX,cloudflarestatus.com
 DOMAIN-SUFFIX,cloudflarestorage.com
+DOMAIN-SUFFIX,cloudflarestoragegw.com
 DOMAIN-SUFFIX,cloudflarestream.com
 DOMAIN-SUFFIX,cloudflaretest.com
 DOMAIN-SUFFIX,cloudflarewarp.com
@@ -3642,6 +3657,7 @@ DOMAIN-SUFFIX,communistcrimes.org
 DOMAIN-SUFFIX,communitychoicecu.com
 DOMAIN-SUFFIX,comodoca.com
 DOMAIN-SUFFIX,comparitech.com
+DOMAIN-SUFFIX,compose-spec.io
 DOMAIN-SUFFIX,compress.to
 DOMAIN-SUFFIX,compython.net
 DOMAIN-SUFFIX,conoha.jp
@@ -3847,6 +3863,7 @@ DOMAIN-SUFFIX,dnscrypt.org
 DOMAIN-SUFFIX,dnsimple.com
 DOMAIN-SUFFIX,dnsrd.com
 DOMAIN-SUFFIX,dnssec.net
+DOMAIN-SUFFIX,dockerhub.com
 DOMAIN-SUFFIX,doctorvoice.org
 DOMAIN-SUFFIX,documentingreality.com
 DOMAIN-SUFFIX,dogfartnetwork.com
@@ -5020,6 +5037,7 @@ DOMAIN-SUFFIX,jackjia.com
 DOMAIN-SUFFIX,jamaat.org
 DOMAIN-SUFFIX,jamestown.org
 DOMAIN-SUFFIX,jamyangnorbu.com
+DOMAIN-SUFFIX,jan.ai
 DOMAIN-SUFFIX,janwongphoto.com
 DOMAIN-SUFFIX,japan-whores.com
 DOMAIN-SUFFIX,japantimes.co.jp
@@ -6725,6 +6743,7 @@ DOMAIN-SUFFIX,stoporganharvesting.org
 DOMAIN-SUFFIX,stoptibetcrisis.net
 DOMAIN-SUFFIX,storagenewsletter.com
 DOMAIN-SUFFIX,storify.com
+DOMAIN-SUFFIX,storj.io
 DOMAIN-SUFFIX,storm.mg
 DOMAIN-SUFFIX,stormmediagroup.com
 DOMAIN-SUFFIX,stoweboyd.com
@@ -7304,7 +7323,7 @@ DOMAIN-SUFFIX,urlparser.com
 DOMAIN-SUFFIX,us.to
 DOMAIN-SUFFIX,usacn.com
 DOMAIN-SUFFIX,usaip.eu
-DOMAIN-SUFFIX,usc.edu
+DOMAIN-SUFFIX,uscardforum.com
 DOMAIN-SUFFIX,uscnpm.org
 DOMAIN-SUFFIX,usembassy.gov
 DOMAIN-SUFFIX,userapi.nytlog.com
@@ -10976,7 +10995,6 @@ DOMAIN-SUFFIX,akdn
 DOMAIN-SUFFIX,bingo
 DOMAIN-SUFFIX,casa
 DOMAIN-SUFFIX,casino
-DOMAIN-SUFFIX,chat
 DOMAIN-SUFFIX,dating
 DOMAIN-SUFFIX,gay
 DOMAIN-SUFFIX,hot
@@ -10984,7 +11002,6 @@ DOMAIN-SUFFIX,ikano
 DOMAIN-SUFFIX,imamat
 DOMAIN-SUFFIX,maif
 DOMAIN-SUFFIX,mattel
-DOMAIN-SUFFIX,poker
 DOMAIN-SUFFIX,sas
 DOMAIN-SUFFIX,shell
 DOMAIN-SUFFIX,shia
@@ -11017,7 +11034,6 @@ DOMAIN-SUFFIX,xn--e1a4c
 DOMAIN-SUFFIX,xn--qxa6a
 DOMAIN-SUFFIX,xn--node
 DOMAIN-SUFFIX,xn--qxam
-DOMAIN-SUFFIX,xn--j6w193g
 DOMAIN-SUFFIX,xn--4dbrk0ce
 DOMAIN-SUFFIX,xn--h2brj9c
 DOMAIN-SUFFIX,xn--fpcrj9c3d
@@ -11079,7 +11095,6 @@ DOMAIN-SUFFIX,bradesco
 DOMAIN-SUFFIX,capitalone
 DOMAIN-SUFFIX,cba
 DOMAIN-SUFFIX,cfa
-DOMAIN-SUFFIX,chase
 DOMAIN-SUFFIX,citadel
 DOMAIN-SUFFIX,citi
 DOMAIN-SUFFIX,deloitte
@@ -11097,7 +11112,6 @@ DOMAIN-SUFFIX,pictet
 DOMAIN-SUFFIX,pohl
 DOMAIN-SUFFIX,pramerica
 DOMAIN-SUFFIX,pwc
-DOMAIN-SUFFIX,saxo
 DOMAIN-SUFFIX,scb
 DOMAIN-SUFFIX,softbank
 DOMAIN-SUFFIX,statebank
@@ -11158,7 +11172,6 @@ DOMAIN-SUFFIX,ollo
 DOMAIN-SUFFIX,oracle
 DOMAIN-SUFFIX,orange
 DOMAIN-SUFFIX,ovh
-DOMAIN-SUFFIX,quest
 DOMAIN-SUFFIX,ricoh
 DOMAIN-SUFFIX,sakura
 DOMAIN-SUFFIX,sling

@@ -119,7 +119,6 @@ HOST,apiintl.biliapi.net,bilibili
 HOST,upos-hz-mirrorakam.akamaized.net,bilibili
 IP-CIDR,45.43.32.234/32,bilibili
 IP-CIDR,103.151.150.0/23,bilibili
-IP-CIDR,119.29.29.29/32,bilibili
 IP-CIDR,128.1.62.200/32,bilibili
 IP-CIDR,128.1.62.201/32,bilibili
 IP-CIDR,150.116.92.250/32,bilibili

@@ -56,7 +56,7 @@ HOST-SUFFIX,acgnxtracker.com,proxy
 HOST-SUFFIX,incine.ru,proxy
 HOST-SUFFIX,fxtt.ru,proxy
 HOST-SUFFIX,fosstorrents.com,proxy
-HOST-SUFFIX,okmp3.ru,proxy
+HOST-SUFFIX,okmp3/32.ru,proxy
 HOST-SUFFIX,tracker.bz,proxy
 HOST-SUFFIX,tracker.wf,proxy
 HOST-SUFFIX,0g.cx,proxy
@@ -1026,6 +1026,7 @@ HOST-SUFFIX,msftauthimages.cn,proxy
 HOST-SUFFIX,msftauthimages.net,proxy
 HOST-SUFFIX,msftcenterone.cn,proxy
 HOST-SUFFIX,msftcloudes.cn,proxy
+HOST-SUFFIX,msftconnecttest.com,proxy
 HOST-SUFFIX,msfteducation.ca,proxy
 HOST-SUFFIX,msftidentity.com,proxy
 HOST-SUFFIX,msftnet.org,proxy
@@ -1206,6 +1207,15 @@ HOST-KEYWORD,1drv,proxy
 HOST-KEYWORD,onedrive,proxy
 HOST-KEYWORD,skydrive,proxy
 HOST-SUFFIX,cf-ipfs.com,proxy
+HOST-SUFFIX,cf-ns.com,proxy
+HOST-SUFFIX,cf-ns.net,proxy
+HOST-SUFFIX,cf-ns.site,proxy
+HOST-SUFFIX,cf-ns.tech,proxy
+HOST-SUFFIX,cftest5.cn,proxy
+HOST-SUFFIX,cftest6.cn,proxy
+HOST-SUFFIX,cftest7.com,proxy
+HOST-SUFFIX,cftest8.com,proxy
+HOST-SUFFIX,cloudflare-cn.com,proxy
 HOST-SUFFIX,cloudflare-dns.com,proxy
 HOST-SUFFIX,cloudflare-ipfs.com,proxy
 HOST-SUFFIX,cloudflare-quic.com,proxy
@@ -1216,13 +1226,18 @@ HOST-SUFFIX,cloudflareaccess.com,proxy
 HOST-SUFFIX,cloudflareapps.com,proxy
 HOST-SUFFIX,cloudflarebolt.com,proxy
 HOST-SUFFIX,cloudflareclient.com,proxy
+HOST-SUFFIX,cloudflarecn.net,proxy
+HOST-SUFFIX,cloudflareinsights-cn.com,proxy
 HOST-SUFFIX,cloudflareinsights.com,proxy
 HOST-SUFFIX,cloudflareok.com,proxy
 HOST-SUFFIX,cloudflarepreview.com,proxy
+HOST-SUFFIX,cloudflareprod.com,proxy
 HOST-SUFFIX,cloudflareresolve.com,proxy
 HOST-SUFFIX,cloudflaressl.com,proxy
+HOST-SUFFIX,cloudflarestaging.com,proxy
 HOST-SUFFIX,cloudflarestatus.com,proxy
 HOST-SUFFIX,cloudflarestorage.com,proxy
+HOST-SUFFIX,cloudflarestoragegw.com,proxy
 HOST-SUFFIX,cloudflarestream.com,proxy
 HOST-SUFFIX,cloudflaretest.com,proxy
 HOST-SUFFIX,cloudflarewarp.com,proxy
@@ -3606,6 +3621,7 @@ HOST-SUFFIX,communistcrimes.org,proxy
 HOST-SUFFIX,communitychoicecu.com,proxy
 HOST-SUFFIX,comodoca.com,proxy
 HOST-SUFFIX,comparitech.com,proxy
+HOST-SUFFIX,compose-spec.io,proxy
 HOST-SUFFIX,compress.to,proxy
 HOST-SUFFIX,compython.net,proxy
 HOST-SUFFIX,conoha.jp,proxy
@@ -3811,6 +3827,7 @@ HOST-SUFFIX,dnscrypt.org,proxy
 HOST-SUFFIX,dnsimple.com,proxy
 HOST-SUFFIX,dnsrd.com,proxy
 HOST-SUFFIX,dnssec.net,proxy
+HOST-SUFFIX,dockerhub.com,proxy
 HOST-SUFFIX,doctorvoice.org,proxy
 HOST-SUFFIX,documentingreality.com,proxy
 HOST-SUFFIX,dogfartnetwork.com,proxy
@@ -4984,6 +5001,7 @@ HOST-SUFFIX,jackjia.com,proxy
 HOST-SUFFIX,jamaat.org,proxy
 HOST-SUFFIX,jamestown.org,proxy
 HOST-SUFFIX,jamyangnorbu.com,proxy
+HOST-SUFFIX,jan.ai,proxy
 HOST-SUFFIX,janwongphoto.com,proxy
 HOST-SUFFIX,japan-whores.com,proxy
 HOST-SUFFIX,japantimes.co.jp,proxy
@@ -6689,6 +6707,7 @@ HOST-SUFFIX,stoporganharvesting.org,proxy
 HOST-SUFFIX,stoptibetcrisis.net,proxy
 HOST-SUFFIX,storagenewsletter.com,proxy
 HOST-SUFFIX,storify.com,proxy
+HOST-SUFFIX,storj.io,proxy
 HOST-SUFFIX,storm.mg,proxy
 HOST-SUFFIX,stormmediagroup.com,proxy
 HOST-SUFFIX,stoweboyd.com,proxy
@@ -7268,7 +7287,7 @@ HOST-SUFFIX,urlparser.com,proxy
 HOST-SUFFIX,us.to,proxy
 HOST-SUFFIX,usacn.com,proxy
 HOST-SUFFIX,usaip.eu,proxy
-HOST-SUFFIX,usc.edu,proxy
+HOST-SUFFIX,uscardforum.com,proxy
 HOST-SUFFIX,uscnpm.org,proxy
 HOST-SUFFIX,usembassy.gov,proxy
 HOST-SUFFIX,userapi.nytlog.com,proxy
@@ -10940,7 +10959,6 @@ HOST-SUFFIX,akdn,proxy
 HOST-SUFFIX,bingo,proxy
 HOST-SUFFIX,casa,proxy
 HOST-SUFFIX,casino,proxy
-HOST-SUFFIX,chat,proxy
 HOST-SUFFIX,dating,proxy
 HOST-SUFFIX,gay,proxy
 HOST-SUFFIX,hot,proxy
@@ -10948,7 +10966,6 @@ HOST-SUFFIX,ikano,proxy
 HOST-SUFFIX,imamat,proxy
 HOST-SUFFIX,maif,proxy
 HOST-SUFFIX,mattel,proxy
-HOST-SUFFIX,poker,proxy
 HOST-SUFFIX,sas,proxy
 HOST-SUFFIX,shell,proxy
 HOST-SUFFIX,shia,proxy
@@ -10981,7 +10998,6 @@ HOST-SUFFIX,xn--e1a4c,proxy
 HOST-SUFFIX,xn--qxa6a,proxy
 HOST-SUFFIX,xn--node,proxy
 HOST-SUFFIX,xn--qxam,proxy
-HOST-SUFFIX,xn--j6w193g,proxy
 HOST-SUFFIX,xn--4dbrk0ce,proxy
 HOST-SUFFIX,xn--h2brj9c,proxy
 HOST-SUFFIX,xn--fpcrj9c3d,proxy
@@ -11043,7 +11059,6 @@ HOST-SUFFIX,bradesco,proxy
 HOST-SUFFIX,capitalone,proxy
 HOST-SUFFIX,cba,proxy
 HOST-SUFFIX,cfa,proxy
-HOST-SUFFIX,chase,proxy
 HOST-SUFFIX,citadel,proxy
 HOST-SUFFIX,citi,proxy
 HOST-SUFFIX,deloitte,proxy
@@ -11061,7 +11076,6 @@ HOST-SUFFIX,pictet,proxy
 HOST-SUFFIX,pohl,proxy
 HOST-SUFFIX,pramerica,proxy
 HOST-SUFFIX,pwc,proxy
-HOST-SUFFIX,saxo,proxy
 HOST-SUFFIX,scb,proxy
 HOST-SUFFIX,softbank,proxy
 HOST-SUFFIX,statebank,proxy
@@ -11122,7 +11136,6 @@ HOST-SUFFIX,ollo,proxy
 HOST-SUFFIX,oracle,proxy
 HOST-SUFFIX,orange,proxy
 HOST-SUFFIX,ovh,proxy
-HOST-SUFFIX,quest,proxy
 HOST-SUFFIX,ricoh,proxy
 HOST-SUFFIX,sakura,proxy
 HOST-SUFFIX,sling,proxy

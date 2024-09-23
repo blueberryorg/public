@@ -23,7 +23,7 @@ func (p *DaMiQ) Download(path string) ([]byte, error) {
 		SetHeaders(map[string]string{
 			"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
 		}).
-		Get("https://www.dami5tv.com/")
+		Get("https://www.dmxq7a2.com/")
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return nil, err
