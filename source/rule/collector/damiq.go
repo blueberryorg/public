@@ -2,6 +2,7 @@ package collector
 
 import (
 	"bytes"
+	_ "embed"
 	"errors"
 	"github.com/antchfx/htmlquery"
 	"github.com/blueberryorg/public/source/rule/rules"
@@ -12,6 +13,8 @@ import (
 	"net/http"
 	"net/url"
 	"os"
+	"path/filepath"
+	"strings"
 	"time"
 )
 
@@ -23,7 +26,7 @@ func (p *DaMiQ) Download(path string) ([]byte, error) {
 		SetHeaders(map[string]string{
 			"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
 		}).
-		Get("https://www.dmxq7a2.com/")
+		Get("https://www.dmxqx9k.com/")
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return nil, err
@@ -36,6 +39,9 @@ func (p *DaMiQ) Download(path string) ([]byte, error) {
 
 	return resp.Body(), nil
 }
+
+//go:embed damiq.urls
+var damiqUrls string
 
 func (p *DaMiQ) ParseBody(tag string, body []byte) (rs []rules.Rule) {
 	doc, err := htmlquery.Parse(bytes.NewBuffer(body))
@@ -56,6 +62,35 @@ func (p *DaMiQ) ParseBody(tag string, body []byte) (rs []rules.Rule) {
 		}
 
 		rs = append(rs, rules.NewDomainSuffix(u.Hostname(), tag))
+	})
+
+	pie.Each(strings.Split(damiqUrls, "\n"), func(s string) {
+		s = strings.TrimSpace(s)
+
+		if s == "" {
+			return
+		}
+
+		u, err := url.Parse(s)
+		if err != nil {
+			//log.Errorf("err:%v", err)
+			return
+		}
+
+		switch filepath.Ext(u.Path) {
+		case ".m3u8", ".ts":
+		case ".webp":
+		default:
+			return
+		}
+
+		host := u.Hostname()
+
+		if idx := strings.Index(host, "."); idx > 5 {
+			host = host[idx+1:]
+		}
+
+		rs = append(rs, rules.NewDomainSuffix(host, tag))
 	})
 
 	return rs
