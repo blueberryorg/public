@@ -26,7 +26,7 @@ func (p *DaMiQ) Download(path string) ([]byte, error) {
 		SetHeaders(map[string]string{
 			"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
 		}).
-		Get("https://www.dmxqx9k.com/")
+		Get("https://www.dmxqn3v.com/")
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return nil, err
@@ -77,27 +77,30 @@ func (p *DaMiQ) ParseBody(tag string, body []byte) (rs []rules.Rule) {
 			return
 		}
 
+		host := u.Hostname()
+
 		switch filepath.Ext(u.Path) {
-		case ".m3u8", ".ts":
-		case ".webp":
+		case ".m3u8", ".ts",
+			".webp":
+			if idx := strings.Index(host, "."); idx > 5 {
+				host = host[idx+1:]
+			}
+
+		case ".ico":
+
 		default:
 			return
 		}
 
-		host := u.Hostname()
-
-		if idx := strings.Index(host, "."); idx > 5 {
-			host = host[idx+1:]
-		}
-
 		rs = append(rs, rules.NewDomainSuffix(host, tag))
+		rs = append(rs, rules.NewDomain(host, tag))
 	})
 
 	return rs
 }
 
 func (p *DaMiQ) NeedUpdate(info os.FileInfo) bool {
-	return time.Since(info.ModTime()) > xtime.Week
+	return time.Since(info.ModTime()) > xtime.Day
 }
 
 func NewDaMiQ() *DaMiQ {

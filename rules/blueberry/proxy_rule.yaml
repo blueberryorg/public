@@ -137,15 +137,15 @@ adapters:
         - direct
         - reject
 rule_list:
-    - game
-    - iqiyi
-    - disney
-    - develop
     - privacy
     - proxy
-    - youtube
     - netflix
-    - bilibili
+    - iqiyi
     - openai
     - direct
     - reject
+    - youtube
+    - disney
+    - bilibili
+    - develop
+    - game
