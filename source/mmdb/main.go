@@ -8,6 +8,7 @@ import (
 	"errors"
 	"fmt"
 	"github.com/ice-cream-heaven/log"
+	"github.com/ice-cream-heaven/utils/anyx"
 	"github.com/ice-cream-heaven/utils/cryptox"
 	"github.com/ice-cream-heaven/utils/runtime"
 	"github.com/ice-cream-heaven/utils/unit"
@@ -177,67 +178,201 @@ func (p *MMDB) update(path string, logic func(record []string) error) error {
 		if err != nil {
 			log.Errorf("record %v", record)
 			log.Errorf("err:%v", err)
-			return err
+			continue
 		}
 	}
 
 	return nil
 }
 
-func (p *MMDB) UpdateASN(writer *mmdbwriter.Tree) (err error) {
-	err = p.update("https://raw.githubusercontent.com/sapics/ip-location-db/main/geolite2-asn/geolite2-asn-ipv4.csv", func(record []string) error {
-		return writer.InsertRange(net.ParseIP(record[0]), net.ParseIP(record[1]), mmdbtype.Map{
-			AsNumber:       mmdbtype.String("AS" + record[2]),
-			AsOrganization: mmdbtype.String(record[3]),
+func (p *MMDB) UpdateSapicsIpLocationDb(writer *mmdbwriter.Tree) (err error) {
+	update := func(path string, logic func(record []string) error) error {
+		return p.update("https://raw.githubusercontent.com/sapics/ip-location-db/refs/heads/main"+path, logic)
+	}
+
+	updateCountry := func(path string) error {
+		return update(path, func(record []string) error {
+			return writer.InsertRange(net.ParseIP(record[0]), net.ParseIP(record[1]), mmdbtype.Map{
+				CountryCode: mmdbtype.String(record[2]),
+			})
 		})
-	})
+	}
+
+	updateAsn := func(path string) error {
+		return update(path, func(record []string) error {
+			return writer.InsertRange(net.ParseIP(record[0]), net.ParseIP(record[1]), mmdbtype.Map{
+				AsNumber:       mmdbtype.Uint64(anyx.ToUint64(record[2])),
+				AsOrganization: mmdbtype.String(record[3]),
+			})
+		})
+	}
+
+	updateCity := func(path string) error {
+		return update(path, func(record []string) error {
+			latitude, _ := strconv.ParseFloat(record[7], 64)
+			longitude, _ := strconv.ParseFloat(record[8], 64)
+			return writer.InsertRange(net.ParseIP(record[0]), net.ParseIP(record[1]), mmdbtype.Map{
+				CountryCode: mmdbtype.String(record[2]),
+				City:        mmdbtype.String(record[5]),
+				Latitude:    mmdbtype.Float64(latitude),
+				Longitude:   mmdbtype.Float64(longitude),
+				TimeZone:    mmdbtype.String(record[9]),
+			})
+		})
+	}
+
+	// asn-country
+	err = updateCountry("/asn-country/asn-country-ipv4.csv")
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+	err = updateCountry("/asn-country/asn-country-ipv6.csv")
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err
 	}
 
-	err = p.update("https://raw.githubusercontent.com/sapics/ip-location-db/main/geolite2-asn/geolite2-asn-ipv6.csv", func(record []string) error {
-		return writer.InsertRange(net.ParseIP(record[0]), net.ParseIP(record[1]), mmdbtype.Map{
-			AsNumber:       mmdbtype.String("AS" + record[2]),
-			AsOrganization: mmdbtype.String(record[3]),
-		})
-	})
+	// asn
+	err = updateAsn("/asn/asn-ipv4.csv")
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+	err = updateAsn("/asn/asn-ipv6.csv")
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err
 	}
 
-	return nil
-}
-
-func (p *MMDB) UpdateAsnCountry(writer *mmdbwriter.Tree) (err error) {
-	err = p.update("https://raw.githubusercontent.com/sapics/ip-location-db/main/geolite2-city/geolite2-city-ipv4.csv.gz", func(record []string) error {
-		latitude, _ := strconv.ParseFloat(record[7], 64)
-		longitude, _ := strconv.ParseFloat(record[8], 64)
-		return writer.InsertRange(net.ParseIP(record[0]), net.ParseIP(record[1]), mmdbtype.Map{
-			CountryCode: mmdbtype.String(record[2]),
-			City:        mmdbtype.String(record[5]),
-			Latitude:    mmdbtype.Float64(latitude),
-			Longitude:   mmdbtype.Float64(longitude),
-			TimeZone:    mmdbtype.String(record[9]),
-		})
-	})
+	// dbip-asn
+	err = updateAsn("/dbip-asn/dbip-asn-ipv4.csv")
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+	err = updateAsn("/dbip-asn/dbip-asn-ipv6.csv")
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err
 	}
 
-	err = p.update("https://raw.githubusercontent.com/sapics/ip-location-db/main/geolite2-city/geolite2-city-ipv6.csv.gz", func(record []string) error {
-		latitude, _ := strconv.ParseFloat(record[7], 64)
-		longitude, _ := strconv.ParseFloat(record[8], 64)
-		return writer.InsertRange(net.ParseIP(record[0]), net.ParseIP(record[1]), mmdbtype.Map{
-			CountryCode: mmdbtype.String(record[2]),
-			City:        mmdbtype.String(record[5]),
-			Latitude:    mmdbtype.Float64(latitude),
-			Longitude:   mmdbtype.Float64(longitude),
-			TimeZone:    mmdbtype.String(record[9]),
-		})
-	})
+	// dbip-city
+	err = updateCity("/dbip-city/dbip-city-ipv4.csv.gz")
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+	err = updateCity("/dbip-city/dbip-city-ipv6.csv.gz")
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
+	// dbip-country
+	err = updateCountry("/dbip-country/dbip-country-ipv4.csv")
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+	err = updateCountry("/dbip-country/dbip-country-ipv6.csv")
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
+	// dbip-geo-whois-asn-country
+	err = updateCountry("/dbip-geo-whois-asn-country/dbip-geo-whois-asn-country-ipv4.csv")
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+	err = updateCountry("/dbip-geo-whois-asn-country/dbip-geo-whois-asn-country-ipv6.csv")
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
+	// iptoasn-country
+	err = updateCountry("/iptoasn-country/iptoasn-country-ipv4.csv")
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+	err = updateCountry("/iptoasn-country/iptoasn-country-ipv6.csv")
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
+	// iptoasn-asn
+	err = updateAsn("/iptoasn-asn/iptoasn-asn-ipv4.csv")
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+	err = updateAsn("/iptoasn-asn/iptoasn-asn-ipv6.csv")
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
+	// geo-asn-country
+	err = updateCountry("/geo-asn-country/geo-asn-country-ipv4.csv")
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+	err = updateCountry("/geo-asn-country/geo-asn-country-ipv6.csv")
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
+	// geolite2-geo-whois-asn-country
+	err = updateCountry("/geolite2-geo-whois-asn-country/geolite2-geo-whois-asn-country-ipv4.csv")
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+	err = updateCountry("/geolite2-geo-whois-asn-country/geolite2-geo-whois-asn-country-ipv6.csv")
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
+	// geolite2-country
+	err = updateCountry("/geolite2-country/geolite2-country-ipv4.csv")
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+	err = updateCountry("/geolite2-country/geolite2-country-ipv6.csv")
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
+	// geolite2-city
+	err = updateCity("/geolite2-city/geolite2-city-ipv4.csv.gz")
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
+	err = updateCity("/geolite2-city/geolite2-city-ipv6.csv.gz")
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
+	err = updateAsn("/heads/main/geolite2-asn/geolite2-asn-ipv4.csv")
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
+	err = updateAsn("/geolite2-asn/geolite2-asn-ipv6.csv")
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err
@@ -288,10 +423,30 @@ func (p *MMDB) UpdateChinaOrg(writer *mmdbwriter.Tree) (err error) {
 		return nil
 	}
 
+	err = update("https://github.com/mayaxcn/china-ip-list/raw/master/chnroute.txt", func(first, last net.IP) error {
+		return writer.InsertRange(first, last, mmdbtype.Map{
+			CountryCode: mmdbtype.String("CN"),
+		})
+	})
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
+	err = update("https://github.com/mayaxcn/china-ip-list/raw/master/chnroute_v6.txt", func(first, last net.IP) error {
+		return writer.InsertRange(first, last, mmdbtype.Map{
+			CountryCode: mmdbtype.String("CN"),
+		})
+	})
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
+
 	err = update("https://gaoyifan.github.io/china-operator-ip/cernet.txt", func(first, last net.IP) error {
 		return writer.InsertRange(first, last, mmdbtype.Map{
 			CountryCode:    mmdbtype.String("CN"),
-			AsOrganization: mmdbtype.String("中国教育网"),
+			AsOrganization: mmdbtype.String("Cernet"),
 		})
 	})
 	if err != nil {
@@ -302,7 +457,7 @@ func (p *MMDB) UpdateChinaOrg(writer *mmdbwriter.Tree) (err error) {
 	err = update("https://gaoyifan.github.io/china-operator-ip/cernet6.txt", func(first, last net.IP) error {
 		return writer.InsertRange(first, last, mmdbtype.Map{
 			CountryCode:    mmdbtype.String("CN"),
-			AsOrganization: mmdbtype.String("中国教育网"),
+			AsOrganization: mmdbtype.String("Cernet"),
 		})
 	})
 	if err != nil {
@@ -313,7 +468,7 @@ func (p *MMDB) UpdateChinaOrg(writer *mmdbwriter.Tree) (err error) {
 	err = update("https://gaoyifan.github.io/china-operator-ip/chinanet.txt", func(first, last net.IP) error {
 		return writer.InsertRange(first, last, mmdbtype.Map{
 			CountryCode:    mmdbtype.String("CN"),
-			AsOrganization: mmdbtype.String("中国电信"),
+			AsOrganization: mmdbtype.String("Chinanet"),
 		})
 	})
 	if err != nil {
@@ -324,7 +479,7 @@ func (p *MMDB) UpdateChinaOrg(writer *mmdbwriter.Tree) (err error) {
 	err = update("https://gaoyifan.github.io/china-operator-ip/chinanet6.txt", func(first, last net.IP) error {
 		return writer.InsertRange(first, last, mmdbtype.Map{
 			CountryCode:    mmdbtype.String("CN"),
-			AsOrganization: mmdbtype.String("中国电信"),
+			AsOrganization: mmdbtype.String("Chinanet"),
 		})
 	})
 	if err != nil {
@@ -335,7 +490,7 @@ func (p *MMDB) UpdateChinaOrg(writer *mmdbwriter.Tree) (err error) {
 	err = update("https://gaoyifan.github.io/china-operator-ip/cmcc.txt", func(first, last net.IP) error {
 		return writer.InsertRange(first, last, mmdbtype.Map{
 			CountryCode:    mmdbtype.String("CN"),
-			AsOrganization: mmdbtype.String("中国移动"),
+			AsOrganization: mmdbtype.String("CMCC"),
 		})
 	})
 	if err != nil {
@@ -346,7 +501,7 @@ func (p *MMDB) UpdateChinaOrg(writer *mmdbwriter.Tree) (err error) {
 	err = update("https://gaoyifan.github.io/china-operator-ip/cmcc6.txt", func(first, last net.IP) error {
 		return writer.InsertRange(first, last, mmdbtype.Map{
 			CountryCode:    mmdbtype.String("CN"),
-			AsOrganization: mmdbtype.String("中国移动"),
+			AsOrganization: mmdbtype.String("CMCC"),
 		})
 	})
 	if err != nil {
@@ -357,30 +512,40 @@ func (p *MMDB) UpdateChinaOrg(writer *mmdbwriter.Tree) (err error) {
 	err = update("https://gaoyifan.github.io/china-operator-ip/drpeng.txt", func(first, last net.IP) error {
 		return writer.InsertRange(first, last, mmdbtype.Map{
 			CountryCode:    mmdbtype.String("CN"),
-			AsOrganization: mmdbtype.String("鹏博士"),
+			AsOrganization: mmdbtype.String("DrPeng"),
 		})
 	})
 
 	err = update("https://gaoyifan.github.io/china-operator-ip/drpeng6.txt", func(first, last net.IP) error {
 		return writer.InsertRange(first, last, mmdbtype.Map{
 			CountryCode:    mmdbtype.String("CN"),
-			AsOrganization: mmdbtype.String("鹏博士"),
+			AsOrganization: mmdbtype.String("DrPeng"),
 		})
 	})
 
 	err = update("https://gaoyifan.github.io/china-operator-ip/unicom.txt", func(first, last net.IP) error {
 		return writer.InsertRange(first, last, mmdbtype.Map{
 			CountryCode:    mmdbtype.String("CN"),
-			AsOrganization: mmdbtype.String("中国联通"),
+			AsOrganization: mmdbtype.String("China Unicom"),
 		})
 	})
 
 	err = update("https://gaoyifan.github.io/china-operator-ip/unicom6.txt", func(first, last net.IP) error {
 		return writer.InsertRange(first, last, mmdbtype.Map{
 			CountryCode:    mmdbtype.String("CN"),
-			AsOrganization: mmdbtype.String("中国联通"),
+			AsOrganization: mmdbtype.String("China Unicom"),
 		})
 	})
+
+	err = update("https://github.com/17mon/china_ip_list/raw/refs/heads/master/china_ip_list.txt", func(first, last net.IP) error {
+		return writer.InsertRange(first, last, mmdbtype.Map{
+			CountryCode: mmdbtype.String("CN"),
+		})
+	})
+	if err != nil {
+		log.Errorf("err:%v", err)
+		return err
+	}
 
 	return nil
 }
@@ -537,13 +702,7 @@ func (p *MMDB) Update() (err error) {
 		return
 	}
 
-	err = p.UpdateASN(p.writer)
-	if err != nil {
-		log.Errorf("err:%v", err)
-		return err
-	}
-
-	err = p.UpdateAsnCountry(p.writer)
+	err = p.UpdateSapicsIpLocationDb(p.writer)
 	if err != nil {
 		log.Errorf("err:%v", err)
 		return err

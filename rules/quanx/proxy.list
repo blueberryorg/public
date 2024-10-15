@@ -89,6 +89,7 @@ HOST-SUFFIX,srv00.com,proxy
 HOST-SUFFIX,org.uk,proxy
 HOST-SUFFIX,jiesen.life,proxy
 HOST-SUFFIX,dealclub.de,proxy
+HOST-SUFFIX,aicoin.com,proxy
 HOST,api.imem.app,proxy
 HOST,api.swiftgram.app,proxy
 HOST-SUFFIX,cdn-telegram.org,proxy
@@ -5447,6 +5448,7 @@ HOST-SUFFIX,merlinblog.xyz,proxy
 HOST-SUFFIX,meshrep.com,proxy
 HOST-SUFFIX,mesotw.com,proxy
 HOST-SUFFIX,messenger.com,proxy
+HOST-SUFFIX,meta.com,proxy
 HOST-SUFFIX,metacafe.com,proxy
 HOST-SUFFIX,metafilter.com,proxy
 HOST-SUFFIX,metarthunter.com,proxy
@@ -7056,6 +7058,7 @@ HOST-SUFFIX,torrentmac.net,proxy
 HOST-SUFFIX,torrentproject.se,proxy
 HOST-SUFFIX,torrenty.org,proxy
 HOST-SUFFIX,torrentz.eu,proxy
+HOST-SUFFIX,tortoisesvn.net,proxy
 HOST-SUFFIX,torvpn.com,proxy
 HOST-SUFFIX,totalvpn.com,proxy
 HOST-SUFFIX,toypark.in,proxy

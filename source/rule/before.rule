@@ -210,3 +210,5 @@ PROCESS-NAME,tor.exe,proxy
 PROCESS-NAME,tor,proxy
 PROCESS-NAME,ZeroNet.exe,proxy
 PROCESS-NAME,ZeroNet,proxy
+
+DOMAIN-SUFFIX,aicoin.com,proxy

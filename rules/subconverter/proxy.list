@@ -93,6 +93,7 @@ PROCESS-NAME,tor.exe
 PROCESS-NAME,tor
 PROCESS-NAME,ZeroNet.exe
 PROCESS-NAME,ZeroNet
+DOMAIN-SUFFIX,aicoin.com
 PROCESS-NAME,telegram.exe
 DOMAIN,api.imem.app
 DOMAIN,api.swiftgram.app
@@ -5483,6 +5484,7 @@ DOMAIN-SUFFIX,merlinblog.xyz
 DOMAIN-SUFFIX,meshrep.com
 DOMAIN-SUFFIX,mesotw.com
 DOMAIN-SUFFIX,messenger.com
+DOMAIN-SUFFIX,meta.com
 DOMAIN-SUFFIX,metacafe.com
 DOMAIN-SUFFIX,metafilter.com
 DOMAIN-SUFFIX,metarthunter.com
@@ -7092,6 +7094,7 @@ DOMAIN-SUFFIX,torrentmac.net
 DOMAIN-SUFFIX,torrentproject.se
 DOMAIN-SUFFIX,torrenty.org
 DOMAIN-SUFFIX,torrentz.eu
+DOMAIN-SUFFIX,tortoisesvn.net
 DOMAIN-SUFFIX,torvpn.com
 DOMAIN-SUFFIX,totalvpn.com
 DOMAIN-SUFFIX,toypark.in
